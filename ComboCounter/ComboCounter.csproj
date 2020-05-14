@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DBConnection.cs" />
     <Compile Include="Classes\History.cs" />
     <Compile Include="Classes\LoggedIN.cs" />
     <Compile Include="Forms\ComboScore.cs">
