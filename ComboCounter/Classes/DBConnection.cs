@@ -1,9 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ComboCounter.Classes
@@ -51,8 +47,11 @@ namespace ComboCounter.Classes
                 }
             };
         }
+        
 
-        public bool insertUser(int id, String username, String password, String fName, String lName, String sex,
+        // insertUser takes the inputs and inserts the user information into the database 
+        // If it is successful it returns a new User otherwise it returns null
+        public User insertUser(int id, String username, String password, String fName, String lName, String sex,
             String wClass, String height, String weight, int age)
         {
             String query = "INSERT into project.users(id, username, password, fname, lname, sex, height, weight, " +
@@ -74,8 +73,73 @@ namespace ComboCounter.Classes
             int success = cmd.ExecuteNonQuery();
             dbConn.Close();
 
-            return success == 1;
+            if (success == 1)
+            {
+                User newUser = new User(id, username, password, fName, lName, sex, wClass, height, weight, age);
 
+                return newUser;
+            }
+            return null;
+
+        }
+
+
+        // getLogin checks the login information against the information stored in the database
+        // If the login info is correct the user's information is pulled from the database and is returned
+        // If the login info is incorrect a null value is returned
+        public User getLogin(string uName, string pWord)
+        {
+            String query = "SELECT username, password FROM project.users WHERE username=@username";
+
+            MySqlCommand verifyCmd = new MySqlCommand(query, dbConn);
+            dbConn.Open();
+            verifyCmd.Parameters.AddWithValue("username", uName);
+
+            MySqlDataReader reader = verifyCmd.ExecuteReader();
+
+            bool isCorrect = false;
+
+            while (reader.Read())
+            {
+                isCorrect = pWord == (reader["password"].ToString());
+            }
+
+            reader.Close();
+
+            if (isCorrect)
+            {
+                String getUserQuery = "SELECT * FROM project.users WHERE username = @username";
+
+                MySqlCommand getUserCmd = new MySqlCommand(getUserQuery, dbConn);
+
+                getUserCmd.Parameters.AddWithValue("username", uName);
+                MySqlDataReader userReader = getUserCmd.ExecuteReader();
+
+                User newUser;
+
+                if (userReader.Read())
+                {
+                    newUser = new User(
+                        (int)userReader["id"],
+                        uName,
+                        userReader["password"].ToString(),
+                        userReader["fname"].ToString(),
+                        userReader["lname"].ToString(),
+                        userReader["sex"].ToString(),
+                        userReader["class"].ToString(),
+                        userReader["height"].ToString(),
+                        userReader["weight"].ToString(),
+                        Int32.Parse(userReader["age"].ToString())
+                        );
+
+                    return newUser;
+                }
+
+                return null;
+                
+            }
+
+            return null;
         }
 
     }
