@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ComboCounter.Forms;
+using ComboCounter.Classes;
 
 namespace ComboCounter
 {
@@ -8,9 +10,9 @@ namespace ComboCounter
     {
         public String user;
         Main c = new Main();
-        Register reg = new Register();
+        Register1 reg = new Register1();
 
-        private const String SERVER = "127.0.0.1";
+       /* private const String SERVER = "127.0.0.1";
         private const String DATABASE = "project";
         private const String UID = "root";
         private const String PASSWORD = "692Trrbw83";
@@ -18,14 +20,15 @@ namespace ComboCounter
         private string username;
         private string password;
         public string fname;
-        public string lname;
+        public string lname;*/
+
 
         public Login()
         {
             InitializeComponent();
-            InitializeDB();
+            //InitializeDB();
         }
-
+        /*
         public static void InitializeDB()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
@@ -51,12 +54,13 @@ namespace ComboCounter
                     dbConn = null;
                 }
             };
-        }
+        }*/
 
+        // Reacts to button presses for the login button
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (get_login())
+            if (GetLogin())
             {
                 this.Hide();
                 c.Closed += (s, args) => this.Close();
@@ -77,10 +81,11 @@ namespace ComboCounter
 
         private void register_button_Click(object sender, EventArgs e)
         {
+            Hide();
             reg.ShowDialog();
         }
-
-        private bool get_login()
+        /*
+        private bool GetLogin()
         {
             bool flag = false;
             String query = "SELECT username, password, fname, lname FROM project.users WHERE username='" + username_tb.Text + "';";
@@ -111,7 +116,29 @@ namespace ComboCounter
 
             }
             return flag;
+        }*/
+
+
+        // Makes a call to the database to verify the username and password typed by the user
+        // If the credientials are valid the UserManagement class is populated with the user info
+        private bool GetLogin()
+        {
+            DBConnection db = DBConnection.getInstance();
+
+            User newUser = db.getLogin(username_tb.Text, password_tb.Text);
+
+            if (newUser != null)
+            {
+                //UserManagement code goes here
+
+                return true;
+            }
+            return false;
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
