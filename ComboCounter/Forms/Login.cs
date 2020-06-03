@@ -46,7 +46,7 @@ namespace ComboCounter
         {
             Hide();
             reg.ShowDialog();
-        }
+        }               
 
 
         // Makes a call to the database to verify the username and password typed by the user

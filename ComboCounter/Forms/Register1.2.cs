@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Data.Common;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace ComboCounter.Forms
 {
     public partial class Register1 : Form
     {
+
         public Register1()
         {
             InitializeComponent();
@@ -54,6 +57,7 @@ namespace ComboCounter.Forms
         private void Register1_Load(object sender, EventArgs e)
         {
 
+            
         }
 
         private void signupButton_Click(object sender, EventArgs e)

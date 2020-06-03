@@ -21,7 +21,7 @@ namespace ComboCounter.UserControls_Gabriel
         public UserAccount()
         {
             InitializeComponent();
-            User.InitializeDB();
+           // User.InitializeDB();
         }
         public static void InitializeDB()
         {
