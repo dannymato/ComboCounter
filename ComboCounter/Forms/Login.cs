@@ -73,7 +73,7 @@ namespace ComboCounter
             
             if (newUser != null)
             {
-                //UserManagement code goes here
+                UserManager.setUser(newUser);
 
                 return true;
             }

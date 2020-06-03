@@ -11,7 +11,7 @@ namespace ComboCounter.Classes
 
 
 
-        private int id;
+        private static int id;
         private static string username;
         private static string password;
         private static string fname;
@@ -23,13 +23,27 @@ namespace ComboCounter.Classes
         private static int age;
         //private static string s_lname;
 
+        public static void setUser(User user)
+        {
+            id = user.Id;
+            username = user.Username;
+            password = user.Password;
+            fname = user.fname;
+            lname = user.lname;
+            sex = user.sex;
+            c_lass = user.c_lass;
+            height = user.height;
+            weight = user.weight;
+            age = user.age;
+        }
+
         // GETTER SETTER ID
-        public int GetId()
+        public static int GetId()
         {
             return id;
         }
 
-        private void SetId(int value)
+        private static void SetId(int value)
         {
             id = value;
         }
