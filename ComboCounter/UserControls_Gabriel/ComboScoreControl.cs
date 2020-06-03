@@ -156,7 +156,7 @@ namespace ComboCounter.UserControls_Gabriel
                 txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
                 if (totalForceBox == actualForce)
                 {
-                    SoundPlayer bellRing = new SoundPlayer(@"C:\Users\gabri\Desktop\12-HeavyHangingPunchingBag-Ver1\12-HeavyHangingPunchingBag-Ver1\SourceCode\ComboMeter V.1\ComboCounter\ComboCounter\soundEffect\old-fashioned-bell.wav");
+                    SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
                     label23.Text = "4,933.98'N";
                     label24.Text = "1.25's";
                     bellRing.Play();

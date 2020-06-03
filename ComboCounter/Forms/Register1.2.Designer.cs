@@ -31,19 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register1));
             this.username_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.fNameBox = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.sexBox = new System.Windows.Forms.TextBox();
+            this.classBox = new System.Windows.Forms.TextBox();
+            this.lNameBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.heightBox = new System.Windows.Forms.TextBox();
+            this.weightBox = new System.Windows.Forms.TextBox();
+            this.monthBox = new System.Windows.Forms.TextBox();
+            this.yearBox = new System.Windows.Forms.TextBox();
+            this.dayBox = new System.Windows.Forms.TextBox();
             this.submit_b = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,185 +53,190 @@
             this.username_tb.BackColor = System.Drawing.SystemColors.WindowText;
             this.username_tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.username_tb.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_tb.ForeColor = System.Drawing.Color.DimGray;
-            this.username_tb.Location = new System.Drawing.Point(48, 139);
-            this.username_tb.Margin = new System.Windows.Forms.Padding(2);
+            this.username_tb.ForeColor = System.Drawing.Color.Gainsboro;
+            this.username_tb.Location = new System.Drawing.Point(64, 171);
+            this.username_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.username_tb.Name = "username_tb";
-            this.username_tb.Size = new System.Drawing.Size(411, 32);
-            this.username_tb.TabIndex = 11;
+            this.username_tb.Size = new System.Drawing.Size(547, 38);
+            this.username_tb.TabIndex = 0;
             this.username_tb.Text = "Username";
+            this.username_tb.TextChanged += new System.EventHandler(this.username_tb_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CadetBlue;
-            this.label1.Location = new System.Drawing.Point(114, 81);
+            this.label1.Location = new System.Drawing.Point(152, 100);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 44);
+            this.label1.Size = new System.Drawing.Size(338, 54);
             this.label1.TabIndex = 12;
             this.label1.Text = "Create an account";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // fNameBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(47, 234);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 32);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "First Name";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.fNameBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.fNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fNameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fNameBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.fNameBox.Location = new System.Drawing.Point(63, 288);
+            this.fNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fNameBox.Name = "fNameBox";
+            this.fNameBox.Size = new System.Drawing.Size(253, 38);
+            this.fNameBox.TabIndex = 2;
+            this.fNameBox.Text = "First Name";
+            this.fNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // passwordBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(48, 188);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(411, 32);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "Password";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.passwordBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.passwordBox.Location = new System.Drawing.Point(64, 231);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(547, 38);
+            this.passwordBox.TabIndex = 1;
+            this.passwordBox.Text = "Password";
+            this.passwordBox.UseSystemPasswordChar = true;
+            this.passwordBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // emailBox
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(48, 280);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(411, 32);
-            this.textBox3.TabIndex = 15;
-            this.textBox3.Text = "Email";
+            this.emailBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.emailBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.emailBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.emailBox.Location = new System.Drawing.Point(64, 345);
+            this.emailBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(547, 38);
+            this.emailBox.TabIndex = 4;
+            this.emailBox.Text = "Email";
             // 
-            // textBox4
+            // sexBox
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(47, 370);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(411, 32);
-            this.textBox4.TabIndex = 16;
-            this.textBox4.Text = "Sex";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.sexBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.sexBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sexBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sexBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.sexBox.Location = new System.Drawing.Point(63, 455);
+            this.sexBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sexBox.Name = "sexBox";
+            this.sexBox.Size = new System.Drawing.Size(547, 38);
+            this.sexBox.TabIndex = 8;
+            this.sexBox.Text = "Sex";
+            this.sexBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox5
+            // classBox
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(47, 416);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(411, 32);
-            this.textBox5.TabIndex = 17;
-            this.textBox5.Text = "Class";
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.classBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.classBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.classBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.classBox.Location = new System.Drawing.Point(63, 512);
+            this.classBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.classBox.Name = "classBox";
+            this.classBox.Size = new System.Drawing.Size(547, 38);
+            this.classBox.TabIndex = 9;
+            this.classBox.Text = "Class";
+            this.classBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // lNameBox
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox6.Location = new System.Drawing.Point(268, 234);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(191, 32);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.Text = "Last Name";
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.lNameBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lNameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lNameBox.Location = new System.Drawing.Point(357, 288);
+            this.lNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lNameBox.Name = "lNameBox";
+            this.lNameBox.Size = new System.Drawing.Size(254, 38);
+            this.lNameBox.TabIndex = 3;
+            this.lNameBox.Text = "Last Name";
+            this.lNameBox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(223, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(297, 27);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(84, 70);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox7
+            // heightBox
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox7.Location = new System.Drawing.Point(47, 463);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(190, 32);
-            this.textBox7.TabIndex = 20;
-            this.textBox7.Text = "Height";
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.heightBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.heightBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.heightBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heightBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.heightBox.Location = new System.Drawing.Point(63, 570);
+            this.heightBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.heightBox.Name = "heightBox";
+            this.heightBox.Size = new System.Drawing.Size(253, 38);
+            this.heightBox.TabIndex = 10;
+            this.heightBox.Text = "Height";
+            this.heightBox.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // textBox8
+            // weightBox
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Black;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox8.Location = new System.Drawing.Point(269, 463);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(190, 32);
-            this.textBox8.TabIndex = 13;
-            this.textBox8.Text = "Weight";
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.weightBox.BackColor = System.Drawing.Color.Black;
+            this.weightBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.weightBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weightBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.weightBox.Location = new System.Drawing.Point(359, 570);
+            this.weightBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.weightBox.Name = "weightBox";
+            this.weightBox.Size = new System.Drawing.Size(253, 38);
+            this.weightBox.TabIndex = 11;
+            this.weightBox.Text = "Weight";
+            this.weightBox.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
-            // textBox9
+            // monthBox
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox9.Location = new System.Drawing.Point(48, 328);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(117, 29);
-            this.textBox9.TabIndex = 21;
-            this.textBox9.Text = "Birt Month";
+            this.monthBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.monthBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthBox.ForeColor = System.Drawing.Color.LightGray;
+            this.monthBox.Location = new System.Drawing.Point(64, 404);
+            this.monthBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.monthBox.Name = "monthBox";
+            this.monthBox.Size = new System.Drawing.Size(155, 34);
+            this.monthBox.TabIndex = 5;
+            this.monthBox.Text = "Birth Month";
+            this.monthBox.TextChanged += new System.EventHandler(this.monthBox_TextChanged);
             // 
-            // textBox10
+            // yearBox
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox10.Location = new System.Drawing.Point(341, 325);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(117, 32);
-            this.textBox10.TabIndex = 22;
-            this.textBox10.Text = "Year";
+            this.yearBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.yearBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.yearBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.yearBox.Location = new System.Drawing.Point(455, 400);
+            this.yearBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(155, 38);
+            this.yearBox.TabIndex = 7;
+            this.yearBox.Text = "Year";
             // 
-            // textBox11
+            // dayBox
             // 
-            this.textBox11.BackColor = System.Drawing.Color.Black;
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox11.Location = new System.Drawing.Point(193, 325);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(117, 32);
-            this.textBox11.TabIndex = 23;
-            this.textBox11.Text = "Day";
+            this.dayBox.BackColor = System.Drawing.Color.Black;
+            this.dayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dayBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayBox.ForeColor = System.Drawing.Color.Gainsboro;
+            this.dayBox.Location = new System.Drawing.Point(257, 400);
+            this.dayBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dayBox.Name = "dayBox";
+            this.dayBox.Size = new System.Drawing.Size(155, 38);
+            this.dayBox.TabIndex = 6;
+            this.dayBox.Text = "Day";
+            this.dayBox.TextChanged += new System.EventHandler(this.dayBox_TextChanged);
             // 
             // submit_b
             // 
@@ -239,36 +245,51 @@
             this.submit_b.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submit_b.ForeColor = System.Drawing.Color.CadetBlue;
             this.submit_b.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.submit_b.Location = new System.Drawing.Point(163, 534);
-            this.submit_b.Margin = new System.Windows.Forms.Padding(2);
+            this.submit_b.Location = new System.Drawing.Point(217, 657);
+            this.submit_b.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submit_b.Name = "submit_b";
-            this.submit_b.Size = new System.Drawing.Size(171, 51);
+            this.submit_b.Size = new System.Drawing.Size(228, 63);
             this.submit_b.TabIndex = 24;
             this.submit_b.Text = "Sign Up";
             this.submit_b.UseVisualStyleBackColor = true;
+            this.submit_b.Click += new System.EventHandler(this.submit_b_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Turquoise;
+            this.backButton.Location = new System.Drawing.Point(48, 27);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(103, 34);
+            this.backButton.TabIndex = 25;
+            this.backButton.Text = "Go Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // Register1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(506, 656);
+            this.ClientSize = new System.Drawing.Size(675, 807);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.submit_b);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.dayBox);
+            this.Controls.Add(this.yearBox);
+            this.Controls.Add(this.monthBox);
+            this.Controls.Add(this.weightBox);
+            this.Controls.Add(this.heightBox);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lNameBox);
+            this.Controls.Add(this.classBox);
+            this.Controls.Add(this.sexBox);
+            this.Controls.Add(this.emailBox);
+            this.Controls.Add(this.passwordBox);
+            this.Controls.Add(this.fNameBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.username_tb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Register1";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Register1_Load);
@@ -282,18 +303,19 @@
 
         private System.Windows.Forms.TextBox username_tb;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox fNameBox;
+        private System.Windows.Forms.TextBox passwordBox;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.TextBox sexBox;
+        private System.Windows.Forms.TextBox classBox;
+        private System.Windows.Forms.TextBox lNameBox;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox heightBox;
+        private System.Windows.Forms.TextBox weightBox;
+        private System.Windows.Forms.TextBox monthBox;
+        private System.Windows.Forms.TextBox dayBox;
         private System.Windows.Forms.Button submit_b;
+        private System.Windows.Forms.TextBox yearBox;
+        private System.Windows.Forms.Button backButton;
     }
 }

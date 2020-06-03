@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DBConnection.cs" />
     <Compile Include="Classes\History.cs" />
     <Compile Include="Classes\LoggedIN.cs" />
     <Compile Include="Forms\ComboScore.cs">
@@ -184,6 +185,7 @@
     <Compile Include="Forms\UserAccountForm.Designer.cs">
       <DependentUpon>UserAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\UserManager.cs" />
     <Compile Include="homeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,12 +227,6 @@
     </Compile>
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="TestForms\ComboCounterForm.cs">
       <SubType>Form</SubType>
@@ -436,9 +432,6 @@
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TestForms\ComboCounterForm.resx">
       <DependentUpon>ComboCounterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +449,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls_Ariel\timeMode.resx">
       <DependentUpon>timeMode.cs</DependentUpon>
