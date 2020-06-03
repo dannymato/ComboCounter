@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ComboCounter.UserControls_Gabriel;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ComboCounter.Forms
@@ -25,6 +27,10 @@ namespace ComboCounter.Forms
             };
 
             exitMenu1.closeDialog += (o, a) => { Close(); };
+
+
+
+            exitMenu1.Location = new Point((Width / 2) - (exitMenu1.Width / 2), (Height / 2) - (exitMenu1.Height / 2));
         }
 
         protected virtual void OnExitApplication(EventArgs e)
