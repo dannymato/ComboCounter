@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using ComboCounter.Forms;
 using ComboCounter.Classes;
 
 namespace ComboCounter
 {
     public partial class Login : Form
-    {
-        public String user;
+    { 
         Main c = new Main();
         Register1 reg = new Register1();
 
@@ -16,6 +14,7 @@ namespace ComboCounter
         public Login()
         {
             InitializeComponent();
+
         }
 
 
@@ -25,8 +24,8 @@ namespace ComboCounter
 
             if (GetLogin())
             {
-                this.Hide();
-                c.Closed += (s, args) => this.Close();
+                Hide();
+                c.Closed += (s, args) => Close();
                 c.Show();
             }
             else
@@ -45,8 +44,22 @@ namespace ComboCounter
         private void register_button_Click(object sender, EventArgs e)
         {
             Hide();
+            reg.FormClosed += closeOnRegisterClose;
+            reg.ReturnToLogin += (send, args) =>
+            {
+                reg.FormClosed -= closeOnRegisterClose;
+                Show();
+                reg.Close();
+            };
             reg.ShowDialog();
-        }               
+            
+
+        }
+        
+        private void closeOnRegisterClose(object sender, EventArgs e)
+        {
+            Close();
+        }
 
 
         // Makes a call to the database to verify the username and password typed by the user
@@ -57,6 +70,7 @@ namespace ComboCounter
 
             User newUser = db.getLogin(username_tb.Text, password_tb.Text);
 
+            
             if (newUser != null)
             {
                 //UserManagement code goes here

@@ -185,6 +185,7 @@
     <Compile Include="Forms\UserAccountForm.Designer.cs">
       <DependentUpon>UserAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\UserManager.cs" />
     <Compile Include="homeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -16,5 +16,29 @@ namespace ComboCounter.UserControls_Gabriel
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OnExitApplication(EventArgs.Empty);
+        }
+
+        public event System.EventHandler exitApplication;
+
+        public event System.EventHandler closeDialog;
+
+        protected virtual void OnExitApplication(EventArgs e)
+        {
+            exitApplication?.Invoke(this, e);
+        }
+
+        protected virtual void OnCloseDialog(EventArgs e)
+        {
+            closeDialog?.Invoke(this, e);
+        }
+
+        private void vstimeBtn_Click(object sender, EventArgs e)
+        {
+            OnCloseDialog(EventArgs.Empty);
+        }
     }
 }

@@ -122,7 +122,7 @@
             this.sexBox.BackColor = System.Drawing.SystemColors.WindowText;
             this.sexBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sexBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sexBox.ForeColor = System.Drawing.Color.DimGray;
+            this.sexBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.sexBox.Location = new System.Drawing.Point(63, 455);
             this.sexBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sexBox.Name = "sexBox";
@@ -136,7 +136,7 @@
             this.classBox.BackColor = System.Drawing.SystemColors.WindowText;
             this.classBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.classBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classBox.ForeColor = System.Drawing.Color.DimGray;
+            this.classBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.classBox.Location = new System.Drawing.Point(63, 512);
             this.classBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.classBox.Name = "classBox";
@@ -174,7 +174,7 @@
             this.heightBox.BackColor = System.Drawing.SystemColors.WindowText;
             this.heightBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.heightBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heightBox.ForeColor = System.Drawing.Color.DimGray;
+            this.heightBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.heightBox.Location = new System.Drawing.Point(63, 570);
             this.heightBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.heightBox.Name = "heightBox";
@@ -188,7 +188,7 @@
             this.weightBox.BackColor = System.Drawing.Color.Black;
             this.weightBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.weightBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weightBox.ForeColor = System.Drawing.Color.DimGray;
+            this.weightBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.weightBox.Location = new System.Drawing.Point(359, 570);
             this.weightBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.weightBox.Name = "weightBox";
@@ -216,7 +216,7 @@
             this.yearBox.BackColor = System.Drawing.SystemColors.WindowText;
             this.yearBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.yearBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearBox.ForeColor = System.Drawing.Color.DimGray;
+            this.yearBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.yearBox.Location = new System.Drawing.Point(455, 400);
             this.yearBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.yearBox.Name = "yearBox";
@@ -229,7 +229,7 @@
             this.dayBox.BackColor = System.Drawing.Color.Black;
             this.dayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dayBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayBox.ForeColor = System.Drawing.Color.DimGray;
+            this.dayBox.ForeColor = System.Drawing.Color.Gainsboro;
             this.dayBox.Location = new System.Drawing.Point(257, 400);
             this.dayBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dayBox.Name = "dayBox";
@@ -260,7 +260,7 @@
             this.backButton.ForeColor = System.Drawing.Color.Turquoise;
             this.backButton.Location = new System.Drawing.Point(48, 27);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 34);
+            this.backButton.Size = new System.Drawing.Size(103, 34);
             this.backButton.TabIndex = 25;
             this.backButton.Text = "Go Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.username_tb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Register1";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Register1_Load);

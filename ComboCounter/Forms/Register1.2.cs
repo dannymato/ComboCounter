@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComboCounter.Classes;
+using System;
 using System.Data.Common;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
@@ -56,7 +57,7 @@ namespace ComboCounter.Forms
 
         private void Register1_Load(object sender, EventArgs e)
         {
-
+            Console.WriteLine(UserManager.GetAge());
             
         }
 
@@ -93,6 +94,7 @@ namespace ComboCounter.Forms
                 main.Show();
                 main.FormClosed += (o, closeEvent) => { Close(); };
             }
+
         }
 
         private int GetAgeFromDOB()
@@ -165,7 +167,14 @@ namespace ComboCounter.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            OnReturnToLogin(EventArgs.Empty);
         }
+
+        protected virtual void OnReturnToLogin(EventArgs e)
+        {
+            ReturnToLogin?.Invoke(this, e);
+        }
+
+        public event EventHandler ReturnToLogin;
     }
 }

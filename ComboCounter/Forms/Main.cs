@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ComboCounter.UserControls_Gabriel;
 using MySql.Data.MySqlClient;
 
 namespace ComboCounter
@@ -7,20 +8,12 @@ namespace ComboCounter
 
     public partial class Main : Form
     {
-        private const String SERVER = "127.0.0.1";
-        private const String DATABASE = "project";
-        private const String UID = "root";
-        private const String PASSWORD = "";
-        private static MySqlConnection dbConn;
-        private string username;
-        private string password;
-        public string fname;
-        public string lname;
+
 
         public Main()
         {
             InitializeComponent();
-            InitializeDB();
+
 
         }
 
@@ -57,15 +50,14 @@ namespace ComboCounter
 
         private void exit_button_Click(object sender, EventArgs e)
         {
-            String query = "UPDATE project.users SET isloggedin = 0";
 
-            MySqlCommand cmd = new MySqlCommand(query, dbConn);
-             dbConn.Open();
-            cmd.ExecuteNonQuery();
-            dbConn.Clone();
-            this.Close();
+            Forms.Exit exit = new Forms.Exit();
+            exit.exitApplication += (s, arg) => { Close(); };
+            exit.Show();
+
         }
 
+        
         private void time_button_Click(object sender, EventArgs e)
         {
              Forms.Exit QuickStartForm = new Forms.Exit();
@@ -90,34 +82,6 @@ namespace ComboCounter
         {
             // homeControl1.BringToFront();
             // home_user1.BringToFront();
-        }
-
-
-        public static void InitializeDB()
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = SERVER;
-            builder.UserID = UID;
-            builder.Password = PASSWORD;
-            builder.Database = DATABASE;
-            builder.SslMode = MySqlSslMode.None;
-
-            String connString = builder.ToString();
-
-            builder = null;
-
-            Console.WriteLine(connString);
-
-            dbConn = new MySqlConnection(connString);
-
-            Application.ApplicationExit += (sender, args) =>
-            {
-                if (dbConn != null)
-                {
-                    dbConn.Dispose();
-                    dbConn = null;
-                }
-            };
         }
 
         private void quickStart1_Load(object sender, EventArgs e)

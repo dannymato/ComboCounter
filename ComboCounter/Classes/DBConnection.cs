@@ -14,6 +14,12 @@ namespace ComboCounter.Classes
 
         private static DBConnection instance;
 
+
+        /// <summary>
+        /// Returns an instance of DBConnection if it has been created
+        /// Creates a new instance using the private constructor and returns otherwise
+        /// </summary>
+        /// <returns></returns>
         public static DBConnection getInstance()
         {
             if (instance == null)
@@ -47,14 +53,26 @@ namespace ComboCounter.Classes
                 }
             };
         }
-        
 
-        // insertUser takes the inputs and inserts the user information into the database 
-        // If it is successful it returns a new User otherwise it returns null
+        /// <summary>
+        /// insertUser takes the inputs and inserts the user information into the database 
+        /// If it is successful it returns a new User otherwise it returns null
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="fName"></param>
+        /// <param name="lName"></param>
+        /// <param name="sex"></param>
+        /// <param name="wClass"></param>
+        /// <param name="height"></param>
+        /// <param name="weight"></param>
+        /// <param name="age"></param>
+        /// <returns>If successful the new user, null otherwise</returns>
         public User insertUser(int id, String username, String password, String fName, String lName, String sex,
             String wClass, String height, String weight, int age)
         {
-            String query = "INSERT into project.users(id, username, password, fname, lname, sex, height, weight, " +
+            String query = "INSERT into " + DATABASE + ".users(id, username, password, fname, lname, sex, height, weight, " +
                 "class, age) values (@id, @username, @password, @fname, @lname, @sex, @height, @weight, @class, @age);";
 
             MySqlCommand cmd = new MySqlCommand(query, dbConn);
@@ -84,12 +102,17 @@ namespace ComboCounter.Classes
         }
 
 
-        // getLogin checks the login information against the information stored in the database
-        // If the login info is correct the user's information is pulled from the database and is returned
-        // If the login info is incorrect a null value is returned
+        /// <summary>
+        /// getLogin checks the login information against the information stored in the database
+        /// If the login info is correct the user's information is pulled from the database and is returned
+        /// If the login info is incorrect a null value is returned
+        /// </summary>
+        /// <param name="uName">The username provided in the login form</param>
+        /// <param name="pWord">The password provided in the login form</param>
+        /// <returns></returns>
         public User getLogin(string uName, string pWord)
         {
-            String query = "SELECT username, password FROM project.users WHERE username=@username";
+            String query = "SELECT username, password FROM " + DATABASE + ".users WHERE username=@username";
 
             MySqlCommand verifyCmd = new MySqlCommand(query, dbConn);
             dbConn.Open();
@@ -108,7 +131,7 @@ namespace ComboCounter.Classes
 
             if (isCorrect)
             {
-                String getUserQuery = "SELECT * FROM project.users WHERE username = @username";
+                String getUserQuery = "SELECT * FROM " + DATABASE + ".users WHERE username = @username";
 
                 MySqlCommand getUserCmd = new MySqlCommand(getUserQuery, dbConn);
 
@@ -131,14 +154,14 @@ namespace ComboCounter.Classes
                         userReader["weight"].ToString(),
                         Int32.Parse(userReader["age"].ToString())
                         );
-
+                    dbConn.Close();
                     return newUser;
                 }
-
+                dbConn.Close();
                 return null;
                 
             }
-
+            dbConn.Close();
             return null;
         }
 

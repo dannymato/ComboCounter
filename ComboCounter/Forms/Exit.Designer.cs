@@ -35,21 +35,25 @@
             // 
             this.exitMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.exitMenu1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.exitMenu1.Location = new System.Drawing.Point(653, 289);
+            this.exitMenu1.Location = new System.Drawing.Point(871, 356);
+            this.exitMenu1.Margin = new System.Windows.Forms.Padding(5);
             this.exitMenu1.Name = "exitMenu1";
-            this.exitMenu1.Size = new System.Drawing.Size(495, 350);
+            this.exitMenu1.Size = new System.Drawing.Size(659, 430);
             this.exitMenu1.TabIndex = 24;
+            this.exitMenu1.Load += new System.EventHandler(this.exitMenu1_Load);
             // 
             // Exit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1875, 954);
+            this.ClientSize = new System.Drawing.Size(2500, 1174);
             this.ControlBox = false;
             this.Controls.Add(this.exitMenu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 40);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Exit";
             this.Opacity = 0.95D;
             this.Text = "Warning";
