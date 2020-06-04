@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using ComboCounter.UserControls_Gabriel;
-using MySql.Data.MySqlClient;
 
 namespace ComboCounter
 {
@@ -85,7 +83,15 @@ namespace ComboCounter
         private void Main_Load(object sender, EventArgs e)
         {
             // homeControl1.BringToFront();
-            // home_user1.BringToFront();
+            // home_user1.BringToFront();;
+
+            ToolTip HomeToolTip = new ToolTip();
+            HomeToolTip.SetToolTip(home_button, "Home");
+            HomeToolTip.SetToolTip(force_tracker, "Force Tracker");
+            HomeToolTip.SetToolTip(time_button, "Time Tracker");
+            HomeToolTip.SetToolTip(histogram, "Show History");
+            HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
+            HomeToolTip.SetToolTip(exit_button, "Exit Program");
         }
 
         private void quickStart1_Load(object sender, EventArgs e)
@@ -121,7 +127,6 @@ namespace ComboCounter
         {
             Forms.PunchCount PunchCount = new Forms.PunchCount();
                PunchCount.Show();
-
 
         }
 
@@ -175,6 +180,7 @@ namespace ComboCounter
 
         }
 
+
         private void button9_Click(object sender, EventArgs e)
         {
             Forms.SensorAdjusments SensorAdjusments = new Forms.SensorAdjusments();
@@ -187,6 +193,11 @@ namespace ComboCounter
         {
             Forms.ComboScoreComp ComboScoreComp = new Forms.ComboScoreComp();
             ComboScoreComp.Show();
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 

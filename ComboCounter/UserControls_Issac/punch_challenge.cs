@@ -53,7 +53,7 @@ namespace ComboCounter.UserControls
             if (i != arrayTest.Length)
             {
                 currentForceVal = arrayTest[i]; 
-                currentForceVal = currentForceVal + lastHitVal;
+                currentForceVal += lastHitVal;
                 totalForce.Text = currentForceVal.ToString();
             }
             else
@@ -108,8 +108,8 @@ namespace ComboCounter.UserControls
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            punchNum.Text = "0".ToString();
-            totalForce.Text = "0".ToString();
+            punchNum.Text = "0";
+            totalForce.Text = "0";
             i = 0;
             j = 0;
             currentForceVal = 0;
