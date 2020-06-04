@@ -40,5 +40,15 @@ namespace ComboCounter.UserControls_Gabriel
         {
             OnCloseDialog(EventArgs.Empty);
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

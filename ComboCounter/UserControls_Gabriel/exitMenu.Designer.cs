@@ -39,23 +39,26 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(281, 36);
+            this.pictureBox2.Location = new System.Drawing.Point(280, 36);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(71, 81);
+            this.pictureBox2.Padding = new System.Windows.Forms.Padding(25);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(103, 172);
+            this.label1.Location = new System.Drawing.Point(120, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(421, 27);
             this.label1.TabIndex = 24;
             this.label1.Text = "EXITING PROGRAM. ARE YOU SURE?";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // vstimeBtn
             // 
@@ -63,7 +66,7 @@
             this.vstimeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vstimeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vstimeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.vstimeBtn.Location = new System.Drawing.Point(103, 258);
+            this.vstimeBtn.Location = new System.Drawing.Point(100, 258);
             this.vstimeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vstimeBtn.Name = "vstimeBtn";
             this.vstimeBtn.Size = new System.Drawing.Size(180, 66);
@@ -78,7 +81,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(372, 258);
+            this.button1.Location = new System.Drawing.Point(380, 258);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 66);
@@ -97,9 +100,9 @@
             this.Controls.Add(this.vstimeBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "exitMenu";
-            this.Size = new System.Drawing.Size(663, 433);
+            this.Size = new System.Drawing.Size(660, 430);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
