@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using ComboCounter.Classes;
 using MySql.Data.MySqlClient;
 
 namespace ComboCounter.UserControls
@@ -187,5 +189,28 @@ namespace ComboCounter.UserControls
 
         }
 
+        private void histogram_Load(object sender, EventArgs e)
+        {
+            chart1.Series.Clear();
+            var chartSeries = new Series
+            {
+                Name = "Linechart",
+                Color = System.Drawing.Color.CadetBlue,
+                IsVisibleInLegend = false,
+                IsXValueIndexed = false,
+                ChartType = SeriesChartType.Line
+            };
+
+            this.chart1.Series.Add(chartSeries);
+
+            Session session = History.GetSessions()[0];
+
+            for (int i = 0; i < Math.Min(session.Forces.Count, session.Times.Count); i++)
+            {
+                chartSeries.Points.AddXY(session.Times[i], session.Forces[i]);
+            }
+
+            chart1.Invalidate();
+        }
     }
 }

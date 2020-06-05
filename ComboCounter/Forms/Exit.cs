@@ -1,5 +1,4 @@
-﻿using ComboCounter.UserControls_Gabriel;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -23,7 +22,7 @@ namespace ComboCounter.Forms
             exitMenu1.exitApplication += (o, a) =>
             {
                 Close();
-                OnExitApplication(e);
+                OnExitApplication(EventArgs.Empty);
             };
 
             exitMenu1.closeDialog += (o, a) => { Close(); };
@@ -39,5 +38,11 @@ namespace ComboCounter.Forms
         }
 
         public event System.EventHandler exitApplication;
+
+        private void Exit_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

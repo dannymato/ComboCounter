@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls_Gabriel
@@ -22,9 +15,9 @@ namespace ComboCounter.UserControls_Gabriel
             OnExitApplication(EventArgs.Empty);
         }
 
-        public event System.EventHandler exitApplication;
+        public event EventHandler exitApplication;
 
-        public event System.EventHandler closeDialog;
+        public event EventHandler closeDialog;
 
         protected virtual void OnExitApplication(EventArgs e)
         {

@@ -8,5 +8,10 @@ namespace ComboCounter.Forms
         {
             InitializeComponent();
         }
+
+        private void histogram1_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

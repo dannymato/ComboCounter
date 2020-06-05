@@ -53,7 +53,6 @@ namespace ComboCounter
             Forms.Exit exit = new Forms.Exit();
             exit.exitApplication += (s, arg) => { Close(); };
 
-            Rectangle dimensions = Screen.FromControl(this).Bounds;
             exit.ClientSize = new Size(Width, Height);
             exit.Show();
 

@@ -2,6 +2,7 @@
 using System.Timers;
 using System;
 using System.Media;
+using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls_Gabriel
 {
@@ -11,13 +12,20 @@ namespace ComboCounter.UserControls_Gabriel
         int h, m, s, totalForceBox;
         int actualForce = 50000;
 
+        Label[] forceLabels = new Label[9];
+
 
 
         int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704 };
         double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 300, 0.266, 0.438 };
 
+        double cumulativeTime = 0.0;
+
+        Session session;
+
         public ComboScoreControl()
         {
+            session = new Session(DateTime.Now);
             InitializeComponent();
         }
 
@@ -26,31 +34,26 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
+        // Start Button
         private void button1_Click(object sender, System.EventArgs e)
         {
             t.Start();
             
         }
 
+        //Stop Button
         private void button2_Click(object sender, EventArgs e)
         {
             t.Stop();
         }
 
+        //Reset Button
         private void button3_Click(object sender, EventArgs e)
         {
             t.Stop();
             s = 0; m = 0; h = 0;
             totalForceBox = 0;
             txtResult.Text = "00:00.0";
-
-
-            label1.Text = "Hit1";
-            label2.Text = "Hit2";
-            label3.Text = "Hit3";
-            label4.Text = "Hit4";
-            label5.Text = "Hit5";
-            label6.Text = "Hit6";
 
             label13.Text = "";
             label14.Text = "";
@@ -60,13 +63,6 @@ namespace ComboCounter.UserControls_Gabriel
 
             label23.Text = " N/A";
             label24.Text = " N/A";
-
-            label1.ForeColor = System.Drawing.Color.DimGray;
-            label2.ForeColor = System.Drawing.Color.DimGray;
-            label3.ForeColor = System.Drawing.Color.DimGray;
-            label4.ForeColor = System.Drawing.Color.DimGray;
-            label5.ForeColor = System.Drawing.Color.DimGray;
-            label6.ForeColor = System.Drawing.Color.DimGray;
 
             //   totalForce.ForeColor = System.Drawing.Color.DimGray;
         }
@@ -81,6 +77,19 @@ namespace ComboCounter.UserControls_Gabriel
             t = new System.Timers.Timer();
             t.Interval = 1;
             t.Elapsed += OnTimeEvent;
+
+            for (int i = 0; i < forceLabels.Length; i++)
+            {
+
+                forceLabels[i] = new Label();
+                forceLabels[i].Text = "Hit " + (i + 1);
+                forceLabels[i].ForeColor = System.Drawing.Color.DimGray;
+                forceLabels[i].Font = new System.Drawing.Font("Times New Roman", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                tableLayoutPanel1.Controls.Add(forceLabels[i]);
+            }
+
+            
+
         }
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
@@ -99,60 +108,6 @@ namespace ComboCounter.UserControls_Gabriel
                     h += 1;
                 }
 
-                if (m == 2)
-                {
-                    label1.Text = "" + forceArray[0];
-                    label1.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if ( m == 4) 
-                {
-
-                    label2.Text = "" + forceArray[1];
-                    label2.ForeColor = System.Drawing.Color.Red;
-
-                    label13.Text = " " + timeArray[0];
-                    label13.ForeColor = System.Drawing.Color.Green;
-                }
-
-                if ( m == 6)
-                {
-
-                    label3.Text = "" + forceArray[2];
-                    label3.ForeColor = System.Drawing.Color.Green;
-
-                    label14.Text = " " + timeArray[1];
-                    label14.ForeColor = System.Drawing.Color.Red;
-
-                }
-
-                if (m == 8) 
-                {
-                    label4.Text = "" + forceArray[3];
-                    label4.ForeColor = System.Drawing.Color.Green;
-
-                    label11.Text = " " + timeArray[2];
-                    label11.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (m == 10) 
-                {
-                    label5.Text = "" + forceArray[4];
-                    label5.ForeColor = System.Drawing.Color.Green;
-
-                    label12.Text = " " + timeArray[3];
-                    label12.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (m == 12)
-                {
-                    label6.Text = "" + forceArray[5];
-                    label6.ForeColor = System.Drawing.Color.Green;
-
-                    label17.Text = " " + timeArray[4];
-                    label17.ForeColor = System.Drawing.Color.Red;
-                }
-
                 txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
                 if (totalForceBox == actualForce)
                 {
@@ -163,6 +118,9 @@ namespace ComboCounter.UserControls_Gabriel
                     // totalForce.ForeColor = System.Drawing.Color.Green;
                     // bellRing.Play();
                     t.Stop();
+
+                    History.GetSessions().Add(session);
+
                 }
                 else
                 {

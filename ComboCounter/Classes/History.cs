@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 
 namespace ComboCounter.Classes
 {
@@ -16,6 +18,22 @@ namespace ComboCounter.Classes
         private string fastest_hit;
         private string average_hit;
         private DateTime date;
+
+        private static List<Session> Sessions;
+
+        private static void CreateSessions()
+        {
+            Sessions = new List<Session>();
+        }
+
+        public static List<Session> GetSessions()
+        {
+            if (Sessions == null)
+            {
+                CreateSessions();
+            }
+            return Sessions;
+        }
 
 
         public static void InitializeDB()
