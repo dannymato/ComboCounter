@@ -75,7 +75,6 @@ namespace ComboCounter
             Forms.HistogramForm HistogramForm = new Forms.HistogramForm();
             HistogramForm.Show();
 
-
             //histogram1.BringToFront();
         }
 

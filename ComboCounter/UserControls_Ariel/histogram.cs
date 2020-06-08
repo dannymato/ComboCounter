@@ -210,7 +210,12 @@ namespace ComboCounter.UserControls
                 chartSeries.Points.AddXY(session.Times[i], session.Forces[i]);
             }
 
+            chartSeries.BorderWidth = 2;
+
             chart1.Invalidate();
+
+            chart1.ChartAreas[0].BackColor = System.Drawing.Color.Transparent;
+
         }
     }
 }
