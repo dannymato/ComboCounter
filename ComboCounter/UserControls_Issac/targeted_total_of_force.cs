@@ -72,7 +72,7 @@ namespace ComboCounter.UserControls
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
-            SoundPlayer bellRing = new SoundPlayer(@"C:\Users\gabri\Desktop\12-HeavyHangingPunchingBag-Ver1\12-HeavyHangingPunchingBag-Ver1\SourceCode\ComboMeter V.1\ComboCounter\ComboCounter\soundEffect\old-fashioned-bell.wav");
+            SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
             Invoke(new Action(() =>
             {
             s += 1;
