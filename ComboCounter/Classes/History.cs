@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI;
 
 namespace ComboCounter.Classes
 {

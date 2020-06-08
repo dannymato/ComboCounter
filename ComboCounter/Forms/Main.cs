@@ -13,7 +13,6 @@ namespace ComboCounter
         {
             InitializeComponent();
 
-
         }
 
         #region Force Tracker
@@ -90,6 +89,9 @@ namespace ComboCounter
             HomeToolTip.SetToolTip(histogram, "Show History");
             HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
             HomeToolTip.SetToolTip(exit_button, "Exit Program");
+
+
+
         }
 
         private void quickStart1_Load(object sender, EventArgs e)

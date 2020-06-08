@@ -34,22 +34,24 @@
             // home_user21
             // 
             this.home_user21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.home_user21.Location = new System.Drawing.Point(-2, 15);
-            this.home_user21.Margin = new System.Windows.Forms.Padding(2);
+            this.home_user21.Location = new System.Drawing.Point(-3, 18);
+            this.home_user21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.home_user21.Name = "home_user21";
-            this.home_user21.Size = new System.Drawing.Size(1861, 863);
+            this.home_user21.Size = new System.Drawing.Size(2481, 1062);
             this.home_user21.TabIndex = 0;
+            this.home_user21.Load += new System.EventHandler(this.home_user21_Load);
             // 
             // TargetTotalTime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1865, 829);
+            this.ClientSize = new System.Drawing.Size(2487, 1020);
             this.ControlBox = false;
             this.Controls.Add(this.home_user21);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 73);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TargetTotalTime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TargetTotalTime";

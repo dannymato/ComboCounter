@@ -189,7 +189,6 @@ namespace ComboCounter.UserControls
         private void histogram_Load(object sender, EventArgs e)
         {
 
-            //List<string> sessionTitles = new List<string>;
             comboBox1.DataSource = History.GetSessions();
 
             chart1.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.White;

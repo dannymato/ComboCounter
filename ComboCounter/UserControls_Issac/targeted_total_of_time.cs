@@ -12,41 +12,54 @@ namespace ComboCounter.UserControls
 {
     public partial class home_user2 : UserControl
     {
-        Int32 quick, quickMins, quickTotal;
-        int totalForceBox, timeIntervalSec, timeIntervalMin;
+
+        const int timeIntervalDefault = 30;
+
+        int quickTotal;
+        int totalForceBox;
+
+        int timeIntervalSecs = 30;
+
         public home_user2()
         {
             InitializeComponent();
         }
 
+        // Start Button
         private void button1_Click(object sender, EventArgs e)
         {
             timer1 = new System.Windows.Forms.Timer();
-            timer1.Interval = 1;
+            timer1.Interval = 100;
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Enabled = true;
-            quickMins = Int32.Parse(setTimeMins.Text);
-            quickMins = quickMins * 3600;
-            quick = Int32.Parse(setTimeSec.Text);
-            quick = quick * 60;
-            quickTotal = quickMins + quick;
+            quickTotal = timeIntervalSecs * 1000;
             totalForceBox = 0;
 
         }
 
+        // Reset Button
         private void resetButton_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            timeIntervalMin = 0;
-            timeIntervalSec = 0;
-            setTimeSec.Text = "0";
-            setTimeMins.Text = "0";
-            currentTime.Text = "0";
+            timeIntervalSecs = timeIntervalDefault;
+            updateTimeSetter();
+            currentTime.Text = "00:00.0";
             totalForceBox = 0;
             totalForce.Text = "0";
         }
 
+        private void updateTimeSetter()
+        {
+            setTimeMins.Text = String.Format("{0:00}", (timeIntervalSecs / 60));
+            setTimeSec.Text = String.Format("{0:00}", (timeIntervalSecs % 60));
+        }
+
         private void setTimeSec_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void home_user2_Load(object sender, EventArgs e)
         {
 
         }
@@ -58,9 +71,13 @@ namespace ComboCounter.UserControls
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            quickTotal--;
-            currentTime.Text = "00:" + quickTotal / 60 + "." + ((quickTotal % 60) >= 10 ? (quickTotal % 60).ToString() : "0" + (quickTotal % 60));
-            if (currentTime.Text == "00:0.00")
+            quickTotal -= 100;
+            int secs = (quickTotal / 1000);
+            int mins = (secs / 60);
+            int mSecs = (quickTotal % 1000) / 100;
+
+            currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, mSecs);
+            if (quickTotal == 0)
             {
                 timer1.Stop();
             }
@@ -70,32 +87,22 @@ namespace ComboCounter.UserControls
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
-            if (timeIntervalSec == 0)
+            timeIntervalSecs -= 15;
+            if (timeIntervalSecs < 0)
             {
-                timeIntervalMin = timeIntervalMin - 1;
-                timeIntervalSec = 30;
+                timeIntervalSecs = 0;
             }
-            else
-            {
-                timeIntervalSec = timeIntervalSec - 30;
-            }
-            setTimeMins.Text = Convert.ToString(timeIntervalMin);
-            setTimeSec.Text = Convert.ToString(timeIntervalSec);
+            updateTimeSetter();
         }
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
-            if (timeIntervalSec == 0)
+            timeIntervalSecs += 15;
+            if (timeIntervalSecs < 0)
             {
-                timeIntervalSec = 30;
+                timeIntervalSecs = 0;
             }
-            else
-            {
-                timeIntervalMin = timeIntervalMin + 1;
-                timeIntervalSec = 0;
-            }
-            setTimeMins.Text = Convert.ToString(timeIntervalMin);
-            setTimeSec.Text = Convert.ToString(timeIntervalSec);
+            updateTimeSetter();
         }
     }
 }
