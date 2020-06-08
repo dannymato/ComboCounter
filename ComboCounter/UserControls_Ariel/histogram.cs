@@ -195,7 +195,6 @@ namespace ComboCounter.UserControls
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
             chart1.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
             chart1.ChartAreas[0].AxisX.IsStartedFromZero = true;
-            chart1.ChartAreas[0].AxisX.Interval = 1.0;
 
             chart1.ChartAreas[0].AxisY.LineColor = System.Drawing.Color.White;
             chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.White;

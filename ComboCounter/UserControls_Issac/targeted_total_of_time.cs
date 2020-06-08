@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
@@ -19,6 +20,8 @@ namespace ComboCounter.UserControls
         int totalForceBox;
 
         int timeIntervalSecs = 30;
+
+        Session session;
 
         public home_user2()
         {
@@ -34,6 +37,7 @@ namespace ComboCounter.UserControls
             timer1.Enabled = true;
             quickTotal = timeIntervalSecs * 1000;
             totalForceBox = 0;
+            session = new Session(DateTime.Now);
 
         }
 
@@ -77,12 +81,16 @@ namespace ComboCounter.UserControls
             int mSecs = (quickTotal % 1000) / 100;
 
             currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, mSecs);
+            
+            totalForceBox = totalForceBox + 50;
+            totalForce.Text = totalForceBox.ToString();
+            session.insertHit(50, quickTotal / 60.0);
+
             if (quickTotal == 0)
             {
                 timer1.Stop();
+                History.GetSessions().Add(session);
             }
-            totalForceBox = totalForceBox + 50;
-            totalForce.Text = totalForceBox.ToString();
         }
 
         private void minusIcon_Click(object sender, EventArgs e)
