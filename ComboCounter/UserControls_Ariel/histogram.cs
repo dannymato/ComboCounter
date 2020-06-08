@@ -35,7 +35,6 @@ namespace ComboCounter.UserControls
 
             InitializeDB();
 
-            selDate = dateTimePicker1.Value;
 
         }
 
@@ -50,7 +49,6 @@ namespace ComboCounter.UserControls
             ds2.Clear();
 
             getID();
-            selDate = dateTimePicker1.Value;
             getStats();
             textBox2.Text = hardest_hit;
             textBox3.Text = fastest_hit;
@@ -88,7 +86,6 @@ namespace ComboCounter.UserControls
         public string getDateTime()
         {
             string date;
-            selDate = dateTimePicker1.Value;
             date = selDate.ToString("yyyyMMdd");
             return date;
         }
@@ -191,31 +188,59 @@ namespace ComboCounter.UserControls
 
         private void histogram_Load(object sender, EventArgs e)
         {
+
+            //List<string> sessionTitles = new List<string>;
+            comboBox1.DataSource = History.GetSessions();
+
+            chart1.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.White;
+            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chart1.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chart1.ChartAreas[0].AxisX.IsStartedFromZero = true;
+            chart1.ChartAreas[0].AxisX.Interval = 1.0;
+
+            chart1.ChartAreas[0].AxisY.LineColor = System.Drawing.Color.White;
+            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
+            chart1.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chart1.ChartAreas[0].AxisY.IsStartedFromZero = true;
+
+            chart1.BackColor = System.Drawing.Color.Transparent;
+            chart1.ChartAreas[0].BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void UpdateGraph()
+        {
             chart1.Series.Clear();
             var chartSeries = new Series
             {
-                Name = "Linechart",
+                Name = "Performance Chart",
                 Color = System.Drawing.Color.CadetBlue,
-                IsVisibleInLegend = false,
                 IsXValueIndexed = false,
-                ChartType = SeriesChartType.Line
+                IsVisibleInLegend = false,
+                ChartType = SeriesChartType.Spline,
+                BorderWidth = 3
             };
 
-            this.chart1.Series.Add(chartSeries);
+            chart1.Series.Add(chartSeries);
 
-            Session session = History.GetSessions()[0];
+            Session session = History.GetSessions()[comboBox1.SelectedIndex];
 
             for (int i = 0; i < Math.Min(session.Forces.Count, session.Times.Count); i++)
             {
+                if (session.Times[i] < 0 || session.Forces[i] < 0)
+                {
+                    Console.WriteLine("Time: " + session.Times[i] + "\t Force: " + session.Forces[i]);
+                }
                 chartSeries.Points.AddXY(session.Times[i], session.Forces[i]);
             }
 
-            chartSeries.BorderWidth = 2;
+            
 
             chart1.Invalidate();
+        }
 
-            chart1.ChartAreas[0].BackColor = System.Drawing.Color.Transparent;
-
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateGraph();
         }
     }
 }

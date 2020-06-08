@@ -26,6 +26,11 @@ namespace ComboCounter.Classes
             Forces = new List<double>();
             Times = new List<double>();
         }
+
+        override public string ToString()
+        {
+            return StartDate.ToString();
+        }
     
     }
 }

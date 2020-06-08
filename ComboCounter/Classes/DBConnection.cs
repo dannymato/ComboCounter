@@ -41,9 +41,8 @@ namespace ComboCounter.Classes
             };
 
             String connString = builder.ToString();
-
+         
             dbConn = new MySqlConnection(connString);
-
             Application.ApplicationExit += (sender, args) =>
             {
                 if (dbConn != null)

@@ -21,8 +21,8 @@ namespace ComboCounter.UserControls_Gabriel
 
         int timeLabelIndex = 0;
 
-        int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704 };
-        double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 0.300, 0.266, 0.438 };
+        int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704, 632, 323, 451, 341, 456, 711, 634 };
+        double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 0.300, 0.266, 0.438, .232, .453, .342, .235, .543, .343 };
 
         double cumulativeTime = 0.0;
 
@@ -65,6 +65,14 @@ namespace ComboCounter.UserControls_Gabriel
             label24.Text = " N/A";
 
             //   totalForce.ForeColor = System.Drawing.Color.DimGray;
+            for (int i = 0; i < forceLabels.Length; i++)
+            {
+                forceLabels[i].Text = "";
+            }
+            for (int i = 0; i < timeLabels.Length; i++)
+            {
+                timeLabels[i].Text = "";
+            }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -151,11 +159,6 @@ namespace ComboCounter.UserControls_Gabriel
 
                     History.GetSessions().Add(session);
 
-                }
-                else
-                {
-                      totalForceBox = totalForceBox + 50;
-                  //  totalForce.Text = totalForceBox.ToString();
                 }
             }));
 

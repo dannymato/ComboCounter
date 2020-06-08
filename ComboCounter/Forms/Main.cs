@@ -198,10 +198,5 @@ namespace ComboCounter
         {
 
         }
-
-        //  private void homeControl1_Load(object sender, EventArgs e)
-        //   {
-
-        //  }
     }
 }
