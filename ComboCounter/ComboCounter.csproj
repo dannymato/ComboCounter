@@ -52,9 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DBConnection.cs" />
+    <Compile Include="Classes\FontManager.cs" />
     <Compile Include="Classes\History.cs" />
     <Compile Include="Classes\LoggedIN.cs" />
     <Compile Include="Classes\Session.cs" />
+    <Compile Include="Classes\ThemeConstants.cs" />
+    <Compile Include="Classes\ThemeManager.cs" />
     <Compile Include="Forms\ComboScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -502,6 +505,8 @@
     <EmbeddedResource Include="UserControls_Issac\targeted_total_of_time_comp.resx">
       <DependentUpon>targeted_total_of_time_comp.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="fonts\Roboto-Regular.ttf" />
+    <None Include="fonts\RobotoSlab-ExtraBold.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

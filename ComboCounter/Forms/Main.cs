@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComboCounter.Classes;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -90,7 +91,26 @@ namespace ComboCounter
             HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
             HomeToolTip.SetToolTip(exit_button, "Exit Program");
 
+            FontManager fm = FontManager.getInstance();
+            label1.Font = fm.getSubheaderFont();
+            label3.Font = fm.getSubheaderFont();
+            label6.Font = fm.getSubheaderFont();
+            label5.Font = fm.getSubheaderFont();
+            label2.Font = fm.getSubheaderFont();
+            label4.Font = fm.getSubheaderFont();
 
+            button1.Font = fm.getButtonFont();
+            vstimeBtn.Font = fm.getButtonFont();
+            ComboButton.Font = fm.getButtonFont();
+            button6.Font = fm.getButtonFont();
+            button10.Font = fm.getButtonFont();
+            button9.Font = fm.getButtonFont();
+            button3.Font = fm.getButtonFont();
+            button7.Font = fm.getButtonFont();
+            button4.Font = fm.getButtonFont();
+            button8.Font = fm.getButtonFont();
+            button5.Font = fm.getButtonFont();
+            button2.Font = fm.getButtonFont();
 
         }
 
@@ -197,6 +217,11 @@ namespace ComboCounter
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
