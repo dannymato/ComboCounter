@@ -126,6 +126,8 @@ namespace ComboCounter.UserControls
 
         }
 
+
+        // Start Button
         private void button2_Click(object sender, EventArgs e)
         {
             timer1 = new System.Windows.Forms.Timer();

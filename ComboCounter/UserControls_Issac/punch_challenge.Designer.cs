@@ -55,9 +55,10 @@
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.startButton.Location = new System.Drawing.Point(948, 677);
+            this.startButton.Location = new System.Drawing.Point(1264, 833);
+            this.startButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(201, 76);
+            this.startButton.Size = new System.Drawing.Size(268, 94);
             this.startButton.TabIndex = 16;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -68,9 +69,10 @@
             this.minusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minusIcon.BackgroundImage")));
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.Location = new System.Drawing.Point(1086, 394);
+            this.minusIcon.Location = new System.Drawing.Point(1448, 485);
+            this.minusIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.minusIcon.Name = "minusIcon";
-            this.minusIcon.Size = new System.Drawing.Size(75, 64);
+            this.minusIcon.Size = new System.Drawing.Size(100, 79);
             this.minusIcon.TabIndex = 18;
             this.minusIcon.UseVisualStyleBackColor = true;
             this.minusIcon.Click += new System.EventHandler(this.minusIcon_Click_1);
@@ -80,9 +82,10 @@
             this.plusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("plusIcon.BackgroundImage")));
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.Location = new System.Drawing.Point(1443, 399);
+            this.plusIcon.Location = new System.Drawing.Point(1924, 491);
+            this.plusIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plusIcon.Name = "plusIcon";
-            this.plusIcon.Size = new System.Drawing.Size(52, 55);
+            this.plusIcon.Size = new System.Drawing.Size(59, 54);
             this.plusIcon.TabIndex = 17;
             this.plusIcon.UseVisualStyleBackColor = true;
             this.plusIcon.Click += new System.EventHandler(this.plusIcon_Click_1);
@@ -94,10 +97,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 80.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(535, 51);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(713, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(782, 122);
+            this.label7.Size = new System.Drawing.Size(975, 152);
             this.label7.TabIndex = 56;
             this.label7.Text = "Punch Challenge";
             // 
@@ -108,10 +110,9 @@
             this.limit.AutoSize = true;
             this.limit.Font = new System.Drawing.Font("Times New Roman", 120F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limit.ForeColor = System.Drawing.Color.DarkRed;
-            this.limit.Location = new System.Drawing.Point(1138, 345);
-            this.limit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.limit.Location = new System.Drawing.Point(1517, 425);
             this.limit.Name = "limit";
-            this.limit.Size = new System.Drawing.Size(315, 179);
+            this.limit.Size = new System.Drawing.Size(395, 225);
             this.limit.TabIndex = 60;
             this.limit.Text = "100";
             // 
@@ -122,10 +123,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(233, 509);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(311, 626);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(486, 109);
+            this.label2.Size = new System.Drawing.Size(604, 136);
             this.label2.TabIndex = 61;
             this.label2.Text = "Total Force";
             // 
@@ -136,10 +136,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(1036, 236);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1381, 290);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(498, 109);
+            this.label1.Size = new System.Drawing.Size(620, 136);
             this.label1.TabIndex = 62;
             this.label1.Text = "Punch Goal";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -151,10 +150,9 @@
             this.punchNum.AutoSize = true;
             this.punchNum.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.punchNum.ForeColor = System.Drawing.Color.Gray;
-            this.punchNum.Location = new System.Drawing.Point(390, 332);
-            this.punchNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.punchNum.Location = new System.Drawing.Point(520, 409);
             this.punchNum.Name = "punchNum";
-            this.punchNum.Size = new System.Drawing.Size(169, 194);
+            this.punchNum.Size = new System.Drawing.Size(212, 244);
             this.punchNum.TabIndex = 63;
             this.punchNum.Text = "0";
             // 
@@ -165,10 +163,9 @@
             this.totalForce.AutoSize = true;
             this.totalForce.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalForce.ForeColor = System.Drawing.Color.DimGray;
-            this.totalForce.Location = new System.Drawing.Point(317, 601);
-            this.totalForce.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.totalForce.Location = new System.Drawing.Point(520, 741);
             this.totalForce.Name = "totalForce";
-            this.totalForce.Size = new System.Drawing.Size(169, 194);
+            this.totalForce.Size = new System.Drawing.Size(212, 244);
             this.totalForce.TabIndex = 64;
             this.totalForce.Text = "0";
             // 
@@ -177,9 +174,10 @@
             this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopButton.ForeColor = System.Drawing.Color.Red;
-            this.stopButton.Location = new System.Drawing.Point(1206, 677);
+            this.stopButton.Location = new System.Drawing.Point(1608, 833);
+            this.stopButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(201, 76);
+            this.stopButton.Size = new System.Drawing.Size(268, 94);
             this.stopButton.TabIndex = 65;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -190,9 +188,10 @@
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton.Location = new System.Drawing.Point(1461, 677);
+            this.resetButton.Location = new System.Drawing.Point(1948, 833);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(201, 76);
+            this.resetButton.Size = new System.Drawing.Size(268, 94);
             this.resetButton.TabIndex = 78;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
@@ -205,16 +204,15 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(188, 236);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(251, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(588, 109);
+            this.label3.Size = new System.Drawing.Size(731, 136);
             this.label3.TabIndex = 79;
             this.label3.Text = "Total Punches";
             // 
             // punch_challenge
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.label3);
@@ -229,8 +227,9 @@
             this.Controls.Add(this.minusIcon);
             this.Controls.Add(this.plusIcon);
             this.Controls.Add(this.startButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "punch_challenge";
-            this.Size = new System.Drawing.Size(1857, 877);
+            this.Size = new System.Drawing.Size(2476, 1079);
             this.Load += new System.EventHandler(this.consecutive_punch_challenge_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

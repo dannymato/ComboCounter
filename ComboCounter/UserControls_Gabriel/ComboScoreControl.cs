@@ -73,9 +73,34 @@ namespace ComboCounter.UserControls_Gabriel
             {
                 timeLabels[i].Text = "";
             }
+
+            forceIndex = 0;
+            forceLabelIndex = 0;
+
+            timeLabelIndex = 0;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
         {
 
         }
@@ -94,24 +119,34 @@ namespace ComboCounter.UserControls_Gabriel
             for (int i = 0; i < forceLabels.Length; i++)
             {
 
-                forceLabels[i] = new Label();
-                forceLabels[i].Text = "Hit " + (i + 1);
-                forceLabels[i].ForeColor = System.Drawing.Color.DimGray;
-                forceLabels[i].Font = new System.Drawing.Font("Times New Roman", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                forceLabels[i].Height = tableLayoutPanel1.Height;
+                forceLabels[i] = new Label
+                {
+                    Text = "Hit " + (i + 1),
+                    ForeColor = System.Drawing.Color.DimGray,
+                    Font = new System.Drawing.Font("Fira Code", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Dock = DockStyle.Fill
+                };
                 tableLayoutPanel1.Controls.Add(forceLabels[i]);
             }
 
             for (int i = 0; i < timeLabels.Length; i++)
             {
-                timeLabels[i] = new Label();
-                timeLabels[i].ForeColor = System.Drawing.Color.DimGray;
-                timeLabels[i].Font = new System.Drawing.Font("Times New Roman", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-                timeLabels[i].Height = tableLayoutPanel2.Height;
+                timeLabels[i] = new Label
+                {
+                    ForeColor = System.Drawing.Color.DimGray,
+                    Font = new System.Drawing.Font("Fira Code", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0)),
+                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Dock = DockStyle.Fill
+                };
                 tableLayoutPanel2.Controls.Add(timeLabels[i]);
             }
 
-            
+            label7.Font = new System.Drawing.Font("Roboto Slab", 72, System.Drawing.FontStyle.Bold);
+            label19.Font = new System.Drawing.Font("Roboto Slab", 48, System.Drawing.FontStyle.Regular);
+            label20.Font = new System.Drawing.Font("Roboto Slab", 48, System.Drawing.FontStyle.Regular);
 
         }
 
@@ -144,22 +179,23 @@ namespace ComboCounter.UserControls_Gabriel
                     }
                     forceIndex++;
                     forceLabelIndex = (forceLabelIndex + 1) % 9;
+
+                    Console.WriteLine(forceIndex);
+                    txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+                    if (forceIndex >= forceArray.Length)
+                    {
+                        SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
+                        label23.Text = string.Format("{0:n0} N", session.GetTotalForce());
+                        label24.Text = string.Format("{0:0.00} s", cumulativeTime);
+                        bellRing.Play();
+                        t.Stop();
+
+                        History.GetSessions().Add(session);
+
+                    }
+
                 }
-
-                txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
-                if (forceIndex >= forceArray.Length)
-                {
-                    SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
-                    label23.Text = "4,933.98'N";
-                    label24.Text = "1.25's";
-                    bellRing.Play();
-                    // totalForce.ForeColor = System.Drawing.Color.Green;
-                    // bellRing.Play();
-                    t.Stop();
-
-                    History.GetSessions().Add(session);
-
-                }
+                
             }));
 
         }

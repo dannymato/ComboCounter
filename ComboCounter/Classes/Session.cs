@@ -31,6 +31,8 @@ namespace ComboCounter.Classes
         {
             return StartDate.ToString();
         }
+
+        public double GetTotalForce() => Forces.Sum<Double>(x => x);
     
     }
 }
