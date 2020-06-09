@@ -53,10 +53,11 @@
             this.Controls.Add(this.exitMenu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 40);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Exit";
             this.Opacity = 0.95D;
             this.Text = "Warning";
+            this.Load += new System.EventHandler(this.Exit_Load);
             this.ResumeLayout(false);
 
         }

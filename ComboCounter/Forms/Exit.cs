@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ComboCounter.Forms
@@ -21,10 +22,14 @@ namespace ComboCounter.Forms
             exitMenu1.exitApplication += (o, a) =>
             {
                 Close();
-                OnExitApplication(e);
+                OnExitApplication(EventArgs.Empty);
             };
 
             exitMenu1.closeDialog += (o, a) => { Close(); };
+
+
+
+            exitMenu1.Location = new Point((Width / 2) - (exitMenu1.Width / 2), (Height / 2) - (exitMenu1.Height / 2));
         }
 
         protected virtual void OnExitApplication(EventArgs e)
@@ -33,5 +38,11 @@ namespace ComboCounter.Forms
         }
 
         public event System.EventHandler exitApplication;
+
+        private void Exit_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

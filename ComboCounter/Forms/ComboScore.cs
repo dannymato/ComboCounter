@@ -9,8 +9,10 @@ namespace ComboCounter.Forms
             InitializeComponent();
         }
 
+        private void comboScoreControl1_Load(object sender, System.EventArgs e)
+        {
 
-
+        }
     }
 
 

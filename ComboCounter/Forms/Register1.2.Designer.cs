@@ -57,7 +57,7 @@
             this.username_tb.Location = new System.Drawing.Point(64, 171);
             this.username_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.username_tb.Name = "username_tb";
-            this.username_tb.Size = new System.Drawing.Size(547, 38);
+            this.username_tb.Size = new System.Drawing.Size(100, 38);
             this.username_tb.TabIndex = 0;
             this.username_tb.Text = "Username";
             this.username_tb.TextChanged += new System.EventHandler(this.username_tb_TextChanged);
@@ -162,10 +162,11 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(297, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(274, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 70);
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(25);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 

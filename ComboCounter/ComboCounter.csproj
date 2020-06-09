@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,7 @@
     <Compile Include="Classes\DBConnection.cs" />
     <Compile Include="Classes\History.cs" />
     <Compile Include="Classes\LoggedIN.cs" />
+    <Compile Include="Classes\Session.cs" />
     <Compile Include="Forms\ComboScore.cs">
       <SubType>Form</SubType>
     </Compile>

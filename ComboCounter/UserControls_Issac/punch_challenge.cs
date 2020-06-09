@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComboCounter.Classes;
+using System.Diagnostics;
 
 namespace ComboCounter.UserControls
 {
@@ -17,8 +19,15 @@ namespace ComboCounter.UserControls
         int currentForceVal, lastHitVal;
         int[] arrayTest = new int[] { 150, 210, 250, 160, 225, 300, 210, 130, 250, 200, 50, 140 };
 
+        int numPunches = 0;
+
+        Session session;
+
+        Stopwatch stopwatch;
+
         public punch_challenge()
         {
+            stopwatch = new Stopwatch();
             InitializeComponent();
         }
 
@@ -50,40 +59,30 @@ namespace ComboCounter.UserControls
         private void propagate()
         {
 
-            if (i != arrayTest.Length)
-            {
-                currentForceVal = arrayTest[i]; 
-                currentForceVal = currentForceVal + lastHitVal;
-                totalForce.Text = currentForceVal.ToString();
-            }
-            else
-            {
-                timer1.Stop();
-                i = 0;
-            }
-            i++;
-            lastHitVal = currentForceVal;
+            
+            currentForceVal = arrayTest[i];
+            currentForceVal += lastHitVal;
+            totalForce.Text = currentForceVal.ToString();
+            session.insertHit(arrayTest[i], stopwatch.Elapsed.TotalSeconds);
 
-            if (lastHitVal != 0)
+            i = (i + 1) % arrayTest.Length;
+
+            numPunches++;
+            punchNum.Text = numPunches.ToString();
+            if (numPunches >= punchLimit)
             {
-                punchNum.Text = j.ToString();
-                j++;
+                punchNum.ForeColor = System.Drawing.Color.Green;
+                timer1.Stop();
+                History.GetSessions().Add(session);
             }
+            
+            
+            lastHitVal = currentForceVal;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             propagate();
-        }
-
-        private void punchNum_TextChanged(object sender, EventArgs e)
-        {
-            if (punchNum.Text == limit.Text)
-            {
-                punchNum.ForeColor = System.Drawing.Color.Green;
-                timer1.Stop();
-            }
-
         }
 
 
@@ -102,18 +101,20 @@ namespace ComboCounter.UserControls
         private void stopButton_Click(object sender, EventArgs e)
         {
            
-                timer1.Stop();
+            timer1.Stop();
+            stopwatch.Stop();
             
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            punchNum.Text = "0".ToString();
-            totalForce.Text = "0".ToString();
+            punchNum.Text = "0";
+            totalForce.Text = "0";
             i = 0;
             j = 0;
             currentForceVal = 0;
             lastHitVal = 0;
+            numPunches = 0;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -126,12 +127,16 @@ namespace ComboCounter.UserControls
 
         }
 
+
+        // Start Button
         private void button2_Click(object sender, EventArgs e)
         {
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1000;
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Enabled = true;
+            session = new Session(DateTime.Now);
+            stopwatch.Start();
         }
     }
 }
