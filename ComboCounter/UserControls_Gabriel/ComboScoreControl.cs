@@ -116,6 +116,8 @@ namespace ComboCounter.UserControls_Gabriel
             t.Interval = 1;
             t.Elapsed += OnTimeEvent;
 
+            FontManager fm = FontManager.getInstance();
+
             for (int i = 0; i < forceLabels.Length; i++)
             {
 
@@ -144,9 +146,16 @@ namespace ComboCounter.UserControls_Gabriel
                 tableLayoutPanel2.Controls.Add(timeLabels[i]);
             }
 
-            label7.Font = new System.Drawing.Font("Roboto Slab", 72, System.Drawing.FontStyle.Bold);
-            label19.Font = new System.Drawing.Font("Roboto Slab", 48, System.Drawing.FontStyle.Regular);
-            label20.Font = new System.Drawing.Font("Roboto Slab", 48, System.Drawing.FontStyle.Regular);
+            label7.Font = fm.getHeaderFont();
+            label19.Font = fm.getHeader3Font();
+            label20.Font = fm.getHeader3Font();
+
+            button1.Font = fm.getButtonFont();
+            button2.Font = fm.getButtonFont();
+            button3.Font = fm.getButtonFont();
+
+            label21.Font = fm.getHeader3Font();
+            label22.Font = fm.getHeader3Font();
 
         }
 

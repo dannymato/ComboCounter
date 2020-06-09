@@ -92,12 +92,12 @@ namespace ComboCounter
             HomeToolTip.SetToolTip(exit_button, "Exit Program");
 
             FontManager fm = FontManager.getInstance();
-            label1.Font = fm.getSubheaderFont();
-            label3.Font = fm.getSubheaderFont();
-            label6.Font = fm.getSubheaderFont();
-            label5.Font = fm.getSubheaderFont();
-            label2.Font = fm.getSubheaderFont();
-            label4.Font = fm.getSubheaderFont();
+            label1.Font = fm.getHeader3Font();
+            label3.Font = fm.getHeader3Font();
+            label6.Font = fm.getHeader3Font();
+            label5.Font = fm.getHeader3Font();
+            label2.Font = fm.getHeader3Font();
+            label4.Font = fm.getHeader3Font();
 
             button1.Font = fm.getButtonFont();
             vstimeBtn.Font = fm.getButtonFont();

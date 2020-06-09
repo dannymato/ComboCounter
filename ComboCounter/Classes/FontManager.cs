@@ -45,10 +45,15 @@ namespace ComboCounter.Classes
 
         public Font getHeaderFont()
         {
-            return new Font(pfc.Families[1], 75);
+            return new Font(pfc.Families[1], 80);
         }
 
-        public Font getSubheaderFont()
+        public Font getHeader2Font()
+        {
+            return new Font(pfc.Families[1], 70);
+        }
+
+        public Font getHeader3Font()
         {
             return new Font(pfc.Families[1], 36);
         }
