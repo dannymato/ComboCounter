@@ -125,7 +125,7 @@ namespace ComboCounter.UserControls_Gabriel
                 {
                     Text = "Hit " + (i + 1),
                     ForeColor = System.Drawing.Color.DimGray,
-                    Font = new System.Drawing.Font("Fira Code", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                    Font = fm.getSmallInfoFont(),
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
                     Dock = DockStyle.Fill
@@ -138,7 +138,7 @@ namespace ComboCounter.UserControls_Gabriel
                 timeLabels[i] = new Label
                 {
                     ForeColor = System.Drawing.Color.DimGray,
-                    Font = new System.Drawing.Font("Fira Code", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0)),
+                    Font = fm.getSmallInfoFont(),
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
                     Dock = DockStyle.Fill
@@ -156,6 +156,9 @@ namespace ComboCounter.UserControls_Gabriel
 
             label21.Font = fm.getHeader3Font();
             label22.Font = fm.getHeader3Font();
+
+            label23.Font = fm.getHeader3Font();
+            label24.Font = fm.getHeader3Font();
 
         }
 
