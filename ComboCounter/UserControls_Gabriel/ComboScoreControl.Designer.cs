@@ -156,14 +156,12 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.Font = new System.Drawing.Font("Fira Code", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(817, 39);
+            this.label7.Location = new System.Drawing.Point(784, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(876, 148);
+            this.label7.Size = new System.Drawing.Size(1112, 183);
             this.label7.TabIndex = 65;
             this.label7.Text = "Combo Score";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,30 +171,28 @@
             // 
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label19.Location = new System.Drawing.Point(1128, 247);
+            this.label19.Location = new System.Drawing.Point(403, 240);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(292, 99);
+            this.label19.Size = new System.Drawing.Size(454, 105);
             this.label19.TabIndex = 66;
             this.label19.Text = "Force";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label20.Location = new System.Drawing.Point(944, 486);
+            this.label20.Location = new System.Drawing.Point(403, 480);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(692, 99);
+            this.label20.Size = new System.Drawing.Size(811, 116);
             this.label20.TabIndex = 67;
             this.label20.Text = "Time Interval";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21

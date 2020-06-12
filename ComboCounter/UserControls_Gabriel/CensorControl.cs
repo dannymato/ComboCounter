@@ -15,5 +15,10 @@ namespace ComboCounter.UserControls_Gabriel
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

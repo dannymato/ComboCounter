@@ -48,7 +48,20 @@ namespace ComboCounter.UserControls
 
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
         {
-            
+            FontManager fm = FontManager.getInstance();
+            label7.Font = fm.getHeaderFont();
+
+            label3.Font = fm.getHeader2Font();
+            label1.Font = fm.getHeader2Font();
+            label2.Font = fm.getHeader2Font();
+
+            startButton.Font = fm.getButtonFont();
+            stopButton.Font = fm.getButtonFont();
+            resetButton.Font = fm.getButtonFont();
+
+            limit.Font = fm.getBigInfoFont();
+            punchNum.Font = fm.getBigInfoFont();
+            totalForce.Font = fm.getBigInfoFont();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -118,6 +131,11 @@ namespace ComboCounter.UserControls
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

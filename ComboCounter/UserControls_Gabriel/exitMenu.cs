@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComboCounter.Classes;
+using System;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls_Gabriel
@@ -42,6 +43,14 @@ namespace ComboCounter.UserControls_Gabriel
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitMenu_Load(object sender, EventArgs e)
+        {
+            FontManager fm = FontManager.getInstance();
+            cancelButton.Font = fm.getButtonFont();
+            confirmButton.Font = fm.getButtonFont();
+            messageLabel.Font = fm.getSmallInfoFont();
         }
     }
 }
