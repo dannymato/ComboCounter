@@ -55,6 +55,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.containedButton1 = new ComboCounter.CustomControls.ContainedButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -470,6 +471,22 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // containedButton1
+            // 
+            this.containedButton1.AutoSize = true;
+            this.containedButton1.BackColor = System.Drawing.Color.SteelBlue;
+            this.containedButton1.FlatAppearance.BorderSize = 0;
+            this.containedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.containedButton1.Font = new System.Drawing.Font("Roboto Medium", 20F);
+            this.containedButton1.ForeColor = System.Drawing.Color.White;
+            this.containedButton1.Location = new System.Drawing.Point(0, 0);
+            this.containedButton1.Name = "containedButton1";
+            this.containedButton1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.containedButton1.Size = new System.Drawing.Size(317, 61);
+            this.containedButton1.TabIndex = 59;
+            this.containedButton1.Text = "containedButton1";
+            this.containedButton1.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -477,6 +494,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(2264, 1304);
+            this.Controls.Add(this.containedButton1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -541,5 +559,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private CustomControls.ContainedButton containedButton1;
     }
 }
