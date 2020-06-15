@@ -12,12 +12,18 @@ namespace ComboCounter.CustomControls
             Font = FontManager.getInstance().getButtonFont();
             //ForeColor = ThemeManager.getColor()
 
+
             BackColor = Color.Transparent;
             TextAlign = ContentAlignment.MiddleCenter;
 
 
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 2;
+            FlatAppearance.BorderColor = Color.SteelBlue;
+
+            ForeColor = Color.White;
+
+            AutoSize = true;
 
             Padding = new Padding()
             {
