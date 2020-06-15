@@ -71,6 +71,9 @@
     <Compile Include="CustomControls\OutlineButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\TextButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\ComboScore.cs">
       <SubType>Form</SubType>
     </Compile>
