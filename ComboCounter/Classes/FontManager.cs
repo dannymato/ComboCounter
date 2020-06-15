@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 
@@ -16,21 +17,25 @@ namespace ComboCounter.Classes
 
             pfc = new PrivateFontCollection();
 
-            int fontLength = Properties.Resources.RobotoSlab_ExtraBold.Length;
-            byte[] fontData = Properties.Resources.RobotoSlab_ExtraBold;
+            AddToPfc(Properties.Resources.RobotoSlab_ExtraBold);
+            AddToPfc(Properties.Resources.Roboto_Regular);
+            AddToPfc(Properties.Resources.Roboto_Medium);
 
-            System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
-            Marshal.Copy(fontData, 0, data, fontLength);
+            foreach(FontFamily font in pfc.Families)
+            {
+                Console.WriteLine(font.Name);
+            }
 
-            pfc.AddMemoryFont(data, fontLength);
+        }
 
-            int fontLength2 = Properties.Resources.Roboto_Regular.Length;
-            byte[] fontData2 = Properties.Resources.Roboto_Regular;
+        private void AddToPfc(byte[] newFont)
+        {
+            int fontLength = newFont.Length;
 
-            System.IntPtr data2 = Marshal.AllocCoTaskMem(fontLength2);
-            Marshal.Copy(fontData2, 0, data2, fontLength2);
+            System.IntPtr fontPtr = Marshal.AllocCoTaskMem(fontLength);
+            Marshal.Copy(newFont, 0, fontPtr, fontLength);
 
-            pfc.AddMemoryFont(data2, fontLength2);
+            this.pfc.AddMemoryFont(fontPtr, fontLength);
         }
 
         public static FontManager getInstance()
@@ -45,17 +50,17 @@ namespace ComboCounter.Classes
 
         public Font getHeaderFont()
         {
-            return new Font(pfc.Families[1], 80);
+            return new Font(pfc.Families[2], 80);
         }
 
         public Font getHeader2Font()
         {
-            return new Font(pfc.Families[1], 70);
+            return new Font(pfc.Families[2], 70);
         }
 
         public Font getHeader3Font()
         {
-            return new Font(pfc.Families[1], 36);
+            return new Font(pfc.Families[2], 36);
         }
 
         public Font getBigInfoFont()
@@ -70,7 +75,7 @@ namespace ComboCounter.Classes
 
         public Font getButtonFont()
         {
-            return new Font(pfc.Families[0], 20);
+            return new Font(pfc.Families[1], 20);
         }
     }
 }

@@ -121,6 +121,9 @@
   <data name="RobotoSlab_ExtraBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\fonts\RobotoSlab-ExtraBold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Roboto_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\fonts\Roboto-Medium.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Roboto_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\fonts\Roboto-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
