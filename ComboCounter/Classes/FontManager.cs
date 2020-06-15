@@ -21,11 +21,6 @@ namespace ComboCounter.Classes
             AddToPfc(Properties.Resources.Roboto_Regular);
             AddToPfc(Properties.Resources.Roboto_Medium);
 
-            foreach(FontFamily font in pfc.Families)
-            {
-                Console.WriteLine(font.Name);
-            }
-
         }
 
         private void AddToPfc(byte[] newFont)
@@ -77,5 +72,6 @@ namespace ComboCounter.Classes
         {
             return new Font(pfc.Families[1], 20);
         }
+
     }
 }
