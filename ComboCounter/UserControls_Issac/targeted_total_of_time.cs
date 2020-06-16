@@ -11,7 +11,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class home_user2 : UserControl
+    public partial class targeted_total_of_time : UserControl
     {
 
         const int timeIntervalDefault = 30;
@@ -23,7 +23,7 @@ namespace ComboCounter.UserControls
 
         Session session;
 
-        public home_user2()
+        public targeted_total_of_time()
         {
             InitializeComponent();
         }
