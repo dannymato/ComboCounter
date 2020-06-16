@@ -55,13 +55,14 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.containedButton1 = new ComboCounter.CustomControls.ContainedButton();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // time_button
             // 
+            this.time_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.time_button.FlatAppearance.BorderSize = 0;
             this.time_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.time_button.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,7 +71,7 @@
             this.time_button.Location = new System.Drawing.Point(755, 1);
             this.time_button.Margin = new System.Windows.Forms.Padding(1);
             this.time_button.Name = "time_button";
-            this.time_button.Size = new System.Drawing.Size(266, 56);
+            this.time_button.Size = new System.Drawing.Size(375, 57);
             this.time_button.TabIndex = 3;
             this.time_button.UseVisualStyleBackColor = true;
             this.time_button.Click += new System.EventHandler(this.time_button_Click);
@@ -78,6 +79,7 @@
             // histogram
             // 
             this.histogram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.histogram.Dock = System.Windows.Forms.DockStyle.Fill;
             this.histogram.FlatAppearance.BorderSize = 0;
             this.histogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.histogram.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,13 +88,14 @@
             this.histogram.Location = new System.Drawing.Point(1132, 1);
             this.histogram.Margin = new System.Windows.Forms.Padding(1);
             this.histogram.Name = "histogram";
-            this.histogram.Size = new System.Drawing.Size(266, 56);
+            this.histogram.Size = new System.Drawing.Size(375, 57);
             this.histogram.TabIndex = 1;
             this.histogram.UseVisualStyleBackColor = true;
             this.histogram.Click += new System.EventHandler(this.histogram_Click);
             // 
             // force_tracker
             // 
+            this.force_tracker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.force_tracker.FlatAppearance.BorderSize = 0;
             this.force_tracker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.force_tracker.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,7 +104,7 @@
             this.force_tracker.Location = new System.Drawing.Point(378, 1);
             this.force_tracker.Margin = new System.Windows.Forms.Padding(1);
             this.force_tracker.Name = "force_tracker";
-            this.force_tracker.Size = new System.Drawing.Size(266, 56);
+            this.force_tracker.Size = new System.Drawing.Size(375, 57);
             this.force_tracker.TabIndex = 0;
             this.force_tracker.Tag = "";
             this.force_tracker.UseVisualStyleBackColor = true;
@@ -110,6 +113,7 @@
             // home_button
             // 
             this.home_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.home_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home_button.FlatAppearance.BorderSize = 0;
             this.home_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.home_button.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,7 +122,7 @@
             this.home_button.Location = new System.Drawing.Point(1, 1);
             this.home_button.Margin = new System.Windows.Forms.Padding(1);
             this.home_button.Name = "home_button";
-            this.home_button.Size = new System.Drawing.Size(266, 56);
+            this.home_button.Size = new System.Drawing.Size(375, 57);
             this.home_button.TabIndex = 6;
             this.home_button.UseVisualStyleBackColor = true;
             this.home_button.Click += new System.EventHandler(this.home_button_Click);
@@ -126,6 +130,7 @@
             // user_button
             // 
             this.user_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.user_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.user_button.FlatAppearance.BorderSize = 0;
             this.user_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.user_button.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,7 +139,7 @@
             this.user_button.Location = new System.Drawing.Point(1509, 1);
             this.user_button.Margin = new System.Windows.Forms.Padding(1);
             this.user_button.Name = "user_button";
-            this.user_button.Size = new System.Drawing.Size(266, 56);
+            this.user_button.Size = new System.Drawing.Size(375, 57);
             this.user_button.TabIndex = 5;
             this.user_button.UseVisualStyleBackColor = true;
             this.user_button.Click += new System.EventHandler(this.user_button_Click);
@@ -142,6 +147,7 @@
             // exit_button
             // 
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.exit_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.exit_button.FlatAppearance.BorderSize = 0;
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,7 +156,7 @@
             this.exit_button.Location = new System.Drawing.Point(1886, 1);
             this.exit_button.Margin = new System.Windows.Forms.Padding(1);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(261, 56);
+            this.exit_button.Size = new System.Drawing.Size(377, 57);
             this.exit_button.TabIndex = 9;
             this.exit_button.UseVisualStyleBackColor = true;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
@@ -471,21 +477,14 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // containedButton1
+            // panel1
             // 
-            this.containedButton1.AutoSize = true;
-            this.containedButton1.BackColor = System.Drawing.Color.SteelBlue;
-            this.containedButton1.FlatAppearance.BorderSize = 0;
-            this.containedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.containedButton1.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.containedButton1.ForeColor = System.Drawing.Color.White;
-            this.containedButton1.Location = new System.Drawing.Point(0, 0);
-            this.containedButton1.Name = "containedButton1";
-            this.containedButton1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.containedButton1.Size = new System.Drawing.Size(317, 61);
-            this.containedButton1.TabIndex = 59;
-            this.containedButton1.Text = "containedButton1";
-            this.containedButton1.UseVisualStyleBackColor = false;
+            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.mainPanel.Location = new System.Drawing.Point(31, 82);
+            this.mainPanel.Name = "panel1";
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(100);
+            this.mainPanel.Size = new System.Drawing.Size(2183, 1145);
+            this.mainPanel.TabIndex = 59;
             // 
             // Main
             // 
@@ -494,7 +493,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(2264, 1304);
-            this.Controls.Add(this.containedButton1);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -559,6 +558,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private CustomControls.ContainedButton containedButton1;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

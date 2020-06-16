@@ -1,4 +1,6 @@
 ﻿using ComboCounter.Classes;
+using ComboCounter.Forms;
+using ComboCounter.UserControls_Gabriel;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,7 +10,7 @@ namespace ComboCounter
 
     public partial class Main : Form
     {
-
+        HomeScreen home;
 
         public Main()
         {
@@ -30,8 +32,10 @@ namespace ComboCounter
         #region Welcome Page
         private void home_button_Click(object sender, EventArgs e)
         {
-            // homeControl1.BringToFront();
-            //home_user1.BringToFront();
+            mainPanel.Hide();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(home);
+            mainPanel.Show();
         }
 
         #endregion
@@ -51,7 +55,7 @@ namespace ComboCounter
         {
 
             Forms.Exit exit = new Forms.Exit();
-            exit.exitApplication += (s, arg) => { Close(); };
+            exit.ExitApplication += (s, arg) => { Close(); };
 
             exit.ClientSize = new Size(Width, Height);
             exit.Show();
@@ -112,6 +116,34 @@ namespace ComboCounter
             button5.Font = fm.getButtonFont();
             button2.Font = fm.getButtonFont();
 
+            Rectangle screenSize = Screen.PrimaryScreen.Bounds;
+            Width = screenSize.Width;
+            Height = screenSize.Height;
+
+            Console.WriteLine(screenSize);
+
+            home = new HomeScreen();
+            this.mainPanel.Controls.Add(home);
+            this.mainPanel.Width = this.Width;
+            this.mainPanel.Height = this.Height - tableLayoutPanel1.Height;
+            mainPanel.Location = new Point(0, tableLayoutPanel1.Height);
+
+            home.Width = mainPanel.Width;
+            home.Height = mainPanel.Height;
+
+            home.OnOptionClicked += (send, args) => {
+                switch (args.ClassToCall)
+                {
+                    case ClassToCall.ComboCounter:
+                        this.mainPanel.Hide();
+                        this.mainPanel.Controls.Remove(home);
+                        this.mainPanel.Controls.Add(new ComboScoreControl());
+                        this.mainPanel.Show();
+                        break;
+                    default:
+                        break;
+                }
+            };
 
 
         }
@@ -224,6 +256,11 @@ namespace ComboCounter
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void homeScreen1_Load(object sender, EventArgs e)
         {
 
         }
