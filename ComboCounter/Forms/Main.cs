@@ -1,5 +1,6 @@
 ﻿using ComboCounter.Classes;
 using ComboCounter.Forms;
+using ComboCounter.UserControls;
 using ComboCounter.UserControls_Gabriel;
 using System;
 using System.Drawing;
@@ -11,6 +12,21 @@ namespace ComboCounter
     public partial class Main : Form
     {
         HomeScreen home;
+        
+        ComboScoreControl comboScore;
+
+        targeted_total_of_force totalForce;
+        targeted_total_of_force_comp totalForceComp;
+        targeted_total_of_time totalTime;
+        targeted_total_of_time_comp totalTimeComp;
+        ComboScoreCompControl poundForPound;
+        CensorControl sensorAdj;
+        punch_count punchCount;
+        punch_count_comp punchCountComp;
+        punch_challenge punchChallenge;
+        punch_challenge_comp punchChallengeComp;
+
+
 
         public Main()
         {
@@ -76,10 +92,7 @@ namespace ComboCounter
 
         private void histogram_Click(object sender, EventArgs e)
         {
-            Forms.HistogramForm HistogramForm = new Forms.HistogramForm();
-            HistogramForm.Show();
-
-            //histogram1.BringToFront();
+            LoadNewPage(new histogram());
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -135,10 +148,81 @@ namespace ComboCounter
                 switch (args.ClassToCall)
                 {
                     case ClassToCall.ComboCounter:
-                        this.mainPanel.Hide();
-                        this.mainPanel.Controls.Remove(home);
-                        this.mainPanel.Controls.Add(new ComboScoreControl());
-                        this.mainPanel.Show();
+                        if (comboScore == null)
+                        {
+                            comboScore = new ComboScoreControl();
+                        }
+                        LoadNewPage(comboScore);
+                        break;
+                    case ClassToCall.TotalForce:
+                        if (totalForce == null)
+                        {
+                            totalForce = new targeted_total_of_force();
+                        }
+                        LoadNewPage(totalForce);
+                        break;
+                    case ClassToCall.TotalForce2Play:
+                        if (totalForceComp == null)
+                        {
+                            totalForceComp = new targeted_total_of_force_comp();
+                        }
+                        LoadNewPage(totalForce);
+                        break;
+                    case ClassToCall.TotalTime:
+                        if (totalTime == null)
+                        {
+                            totalTime = new targeted_total_of_time();
+                        }
+                        LoadNewPage(totalTime);
+                        break;
+                    case ClassToCall.TotalTimeCustom:
+                        if (totalTimeComp == null)
+                        {
+                            totalTimeComp = new targeted_total_of_time_comp();
+                        }
+                        LoadNewPage(totalTimeComp);
+                        break;
+                    case ClassToCall.CompetePound:
+                        if (poundForPound == null)
+                        {
+                            poundForPound = new ComboScoreCompControl();
+                        }
+                        LoadNewPage(poundForPound);
+                        break;
+                    case ClassToCall.SensorAdj:
+                        if (sensorAdj == null)
+                        {
+                            sensorAdj = new CensorControl();
+                        }
+                        LoadNewPage(sensorAdj);
+                        break;
+                    case ClassToCall.PunchCount:
+                        if (punchCount == null)
+                        {
+                            punchCount = new punch_count();
+                        }
+                        LoadNewPage(punchCount);
+                        break;
+                    case ClassToCall.PunchCountCustom:
+                        if (punchCountComp == null)
+                        {
+                            punchCountComp = new punch_count_comp();
+                        }
+                        LoadNewPage(punchCountComp);
+                        break;
+                    case ClassToCall.PunchChallenge:
+                        if (punchChallenge == null)
+                        {
+                            punchChallenge = new punch_challenge();
+                        }
+                        LoadNewPage(punchChallenge);
+                        break;
+                    case ClassToCall.PunchChallengeCustom:
+                        if (punchChallengeComp == null)
+                        {
+                            punchChallengeComp = new punch_challenge_comp();
+                        }
+                        LoadNewPage(punchChallengeComp);
                         break;
                     default:
                         break;
@@ -146,6 +230,16 @@ namespace ComboCounter
             };
 
 
+        }
+
+        private void LoadNewPage(UserControl newPage)
+        {
+            this.mainPanel.Hide();
+            this.mainPanel.Controls.Clear();
+            this.mainPanel.Controls.Add(newPage);
+            newPage.Size = new Size(mainPanel.Width, mainPanel.Height);
+            newPage.Dock = DockStyle.Fill;
+            this.mainPanel.Show();
         }
 
         private void quickStart1_Load(object sender, EventArgs e)

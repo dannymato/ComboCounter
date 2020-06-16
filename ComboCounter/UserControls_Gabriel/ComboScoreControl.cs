@@ -192,7 +192,6 @@ namespace ComboCounter.UserControls_Gabriel
                     forceIndex++;
                     forceLabelIndex = (forceLabelIndex + 1) % 9;
 
-                    Console.WriteLine(forceIndex);
                     txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
                     if (forceIndex >= forceArray.Length)
                     {

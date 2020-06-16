@@ -29,29 +29,33 @@ namespace ComboCounter.Forms
         public HomeScreen()
         {
             InitializeComponent();
+            tableLayoutPanel1.Dock = DockStyle.None;
+            tableLayoutPanel1.Anchor = AnchorStyles.None;
+        /*    tableLayoutPanel1.Width = (this.Width / 4) * 3;
+            tableLayoutPanel1.Height = (Height / 4) * 3;*/
         }
 
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboCounterDefault = new ComboCounter.CustomControls.OutlineButton();
             this.h31 = new ComboCounter.Classes.H3();
             this.h32 = new ComboCounter.Classes.H3();
-            this.totalForceDefault = new ComboCounter.CustomControls.OutlineButton();
             this.h33 = new ComboCounter.Classes.H3();
-            this.totalTimeDefault = new ComboCounter.CustomControls.OutlineButton();
-            this.comboCountCustom = new ComboCounter.CustomControls.OutlineButton();
             this.compPound = new ComboCounter.CustomControls.OutlineButton();
             this.sensorAdj = new ComboCounter.CustomControls.OutlineButton();
             this.punchCountDefault = new ComboCounter.CustomControls.OutlineButton();
             this.punchCountCustom = new ComboCounter.CustomControls.OutlineButton();
-            this.totalTimeCustom = new ComboCounter.CustomControls.OutlineButton();
-            this.totalForce2Play = new ComboCounter.CustomControls.OutlineButton();
             this.punchChallengeDefault = new ComboCounter.CustomControls.OutlineButton();
             this.punchChallengeCustom = new ComboCounter.CustomControls.OutlineButton();
             this.h35 = new ComboCounter.Classes.H3();
             this.h36 = new ComboCounter.Classes.H3();
             this.h34 = new ComboCounter.Classes.H3();
+            this.comboCountCustom = new ComboCounter.CustomControls.OutlineButton();
+            this.totalForce2Play = new ComboCounter.CustomControls.OutlineButton();
+            this.totalTimeCustom = new ComboCounter.CustomControls.OutlineButton();
+            this.totalTimeDefault = new ComboCounter.CustomControls.OutlineButton();
+            this.totalForceDefault = new ComboCounter.CustomControls.OutlineButton();
+            this.comboCounterDefault = new ComboCounter.CustomControls.OutlineButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,24 +65,24 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.32333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.32333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.35335F));
-            this.tableLayoutPanel1.Controls.Add(this.comboCounterDefault, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.h31, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.h32, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.totalForceDefault, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.h33, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.totalTimeDefault, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboCountCustom, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.h31, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.h32, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.h33, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.compPound, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.sensorAdj, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.punchCountDefault, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.punchCountCustom, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.totalTimeCustom, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.totalForce2Play, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.punchChallengeDefault, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.punchChallengeCustom, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.h35, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.h36, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.h34, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboCountCustom, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.totalForce2Play, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.totalTimeCustom, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.totalTimeDefault, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.totalForceDefault, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboCounterDefault, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(40);
@@ -95,30 +99,12 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // comboCounterDefault
-            // 
-            this.comboCounterDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboCounterDefault.AutoSize = true;
-            this.comboCounterDefault.BackColor = System.Drawing.Color.Transparent;
-            this.comboCounterDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.comboCounterDefault.FlatAppearance.BorderSize = 2;
-            this.comboCounterDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboCounterDefault.ForeColor = System.Drawing.Color.White;
-            this.comboCounterDefault.Location = new System.Drawing.Point(156, 153);
-            this.comboCounterDefault.Name = "comboCounterDefault";
-            this.comboCounterDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.comboCounterDefault.Size = new System.Drawing.Size(208, 65);
-            this.comboCounterDefault.TabIndex = 1;
-            this.comboCounterDefault.Text = "DEFAULT";
-            this.comboCounterDefault.UseVisualStyleBackColor = false;
-            this.comboCounterDefault.Click += new System.EventHandler(this.comboCounterDefault_Click);
-            // 
             // h31
             // 
             this.h31.AutoSize = true;
             this.h31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.h31.ForeColor = System.Drawing.Color.SteelBlue;
-            this.h31.Location = new System.Drawing.Point(3, 0);
+            this.h31.Location = new System.Drawing.Point(4, 155);
             this.h31.Name = "h31";
             this.h31.Size = new System.Drawing.Size(515, 124);
             this.h31.TabIndex = 2;
@@ -131,78 +117,24 @@ namespace ComboCounter.Forms
             this.h32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.h32.ForeColor = System.Drawing.Color.SteelBlue;
             this.h32.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.h32.Location = new System.Drawing.Point(524, 0);
+            this.h32.Location = new System.Drawing.Point(655, 155);
             this.h32.Name = "h32";
             this.h32.Size = new System.Drawing.Size(515, 124);
             this.h32.TabIndex = 3;
             this.h32.Text = "Total Force";
             this.h32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // totalForceDefault
-            // 
-            this.totalForceDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.totalForceDefault.AutoSize = true;
-            this.totalForceDefault.BackColor = System.Drawing.Color.Transparent;
-            this.totalForceDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.totalForceDefault.FlatAppearance.BorderSize = 2;
-            this.totalForceDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalForceDefault.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.totalForceDefault.Location = new System.Drawing.Point(677, 153);
-            this.totalForceDefault.Name = "totalForceDefault";
-            this.totalForceDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.totalForceDefault.Size = new System.Drawing.Size(208, 65);
-            this.totalForceDefault.TabIndex = 4;
-            this.totalForceDefault.Text = "DEFAULT";
-            this.totalForceDefault.UseVisualStyleBackColor = false;
-            this.totalForceDefault.Click += new System.EventHandler(this.totalForceDefault_Click);
-            // 
             // h33
             // 
             this.h33.AutoSize = true;
             this.h33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.h33.ForeColor = System.Drawing.Color.SteelBlue;
-            this.h33.Location = new System.Drawing.Point(1045, 0);
+            this.h33.Location = new System.Drawing.Point(1306, 155);
             this.h33.Name = "h33";
             this.h33.Size = new System.Drawing.Size(517, 124);
             this.h33.TabIndex = 5;
             this.h33.Text = "Total Time";
             this.h33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // totalTimeDefault
-            // 
-            this.totalTimeDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.totalTimeDefault.AutoSize = true;
-            this.totalTimeDefault.BackColor = System.Drawing.Color.Transparent;
-            this.totalTimeDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.totalTimeDefault.FlatAppearance.BorderSize = 2;
-            this.totalTimeDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalTimeDefault.ForeColor = System.Drawing.Color.White;
-            this.totalTimeDefault.Location = new System.Drawing.Point(1199, 153);
-            this.totalTimeDefault.Name = "totalTimeDefault";
-            this.totalTimeDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.totalTimeDefault.Size = new System.Drawing.Size(208, 65);
-            this.totalTimeDefault.TabIndex = 6;
-            this.totalTimeDefault.Text = "DEFAULT";
-            this.totalTimeDefault.UseVisualStyleBackColor = false;
-            this.totalTimeDefault.Click += new System.EventHandler(this.totalTimeDefault_Click);
-            // 
-            // comboCountCustom
-            // 
-            this.comboCountCustom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboCountCustom.AutoSize = true;
-            this.comboCountCustom.BackColor = System.Drawing.Color.Transparent;
-            this.comboCountCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.comboCountCustom.FlatAppearance.BorderSize = 2;
-            this.comboCountCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboCountCustom.ForeColor = System.Drawing.Color.White;
-            this.comboCountCustom.Location = new System.Drawing.Point(161, 277);
-            this.comboCountCustom.Name = "comboCountCustom";
-            this.comboCountCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.comboCountCustom.Size = new System.Drawing.Size(199, 65);
-            this.comboCountCustom.TabIndex = 7;
-            this.comboCountCustom.Text = "CUSTOM";
-            this.comboCountCustom.UseVisualStyleBackColor = false;
-            this.comboCountCustom.Click += new System.EventHandler(this.comboCountCustom_Click);
             // 
             // compPound
             // 
@@ -276,42 +208,6 @@ namespace ComboCounter.Forms
             this.punchCountCustom.UseVisualStyleBackColor = false;
             this.punchCountCustom.Click += new System.EventHandler(this.punchCountCustom_Click);
             // 
-            // totalTimeCustom
-            // 
-            this.totalTimeCustom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.totalTimeCustom.AutoSize = true;
-            this.totalTimeCustom.BackColor = System.Drawing.Color.Transparent;
-            this.totalTimeCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.totalTimeCustom.FlatAppearance.BorderSize = 2;
-            this.totalTimeCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalTimeCustom.ForeColor = System.Drawing.Color.White;
-            this.totalTimeCustom.Location = new System.Drawing.Point(1204, 277);
-            this.totalTimeCustom.Name = "totalTimeCustom";
-            this.totalTimeCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.totalTimeCustom.Size = new System.Drawing.Size(199, 65);
-            this.totalTimeCustom.TabIndex = 13;
-            this.totalTimeCustom.Text = "CUSTOM";
-            this.totalTimeCustom.UseVisualStyleBackColor = false;
-            this.totalTimeCustom.Click += new System.EventHandler(this.totalTimeCustom_Click);
-            // 
-            // totalForce2Play
-            // 
-            this.totalForce2Play.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.totalForce2Play.AutoSize = true;
-            this.totalForce2Play.BackColor = System.Drawing.Color.Transparent;
-            this.totalForce2Play.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.totalForce2Play.FlatAppearance.BorderSize = 2;
-            this.totalForce2Play.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalForce2Play.ForeColor = System.Drawing.Color.White;
-            this.totalForce2Play.Location = new System.Drawing.Point(663, 277);
-            this.totalForce2Play.Name = "totalForce2Play";
-            this.totalForce2Play.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.totalForce2Play.Size = new System.Drawing.Size(237, 65);
-            this.totalForce2Play.TabIndex = 14;
-            this.totalForce2Play.Text = "2 PLAYERS";
-            this.totalForce2Play.UseVisualStyleBackColor = false;
-            this.totalForce2Play.Click += new System.EventHandler(this.totalForce2Play_Click);
-            // 
             // punchChallengeDefault
             // 
             this.punchChallengeDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -384,6 +280,114 @@ namespace ComboCounter.Forms
             this.h34.Text = "Competition";
             this.h34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboCountCustom
+            // 
+            this.comboCountCustom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboCountCustom.AutoSize = true;
+            this.comboCountCustom.BackColor = System.Drawing.Color.Transparent;
+            this.comboCountCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.comboCountCustom.FlatAppearance.BorderSize = 2;
+            this.comboCountCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboCountCustom.ForeColor = System.Drawing.Color.White;
+            this.comboCountCustom.Location = new System.Drawing.Point(161, 401);
+            this.comboCountCustom.Name = "comboCountCustom";
+            this.comboCountCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.comboCountCustom.Size = new System.Drawing.Size(199, 65);
+            this.comboCountCustom.TabIndex = 7;
+            this.comboCountCustom.Text = "CUSTOM";
+            this.comboCountCustom.UseVisualStyleBackColor = false;
+            this.comboCountCustom.Click += new System.EventHandler(this.comboCountCustom_Click);
+            // 
+            // totalForce2Play
+            // 
+            this.totalForce2Play.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalForce2Play.AutoSize = true;
+            this.totalForce2Play.BackColor = System.Drawing.Color.Transparent;
+            this.totalForce2Play.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.totalForce2Play.FlatAppearance.BorderSize = 2;
+            this.totalForce2Play.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.totalForce2Play.ForeColor = System.Drawing.Color.White;
+            this.totalForce2Play.Location = new System.Drawing.Point(663, 401);
+            this.totalForce2Play.Name = "totalForce2Play";
+            this.totalForce2Play.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.totalForce2Play.Size = new System.Drawing.Size(237, 65);
+            this.totalForce2Play.TabIndex = 14;
+            this.totalForce2Play.Text = "2 PLAYERS";
+            this.totalForce2Play.UseVisualStyleBackColor = false;
+            this.totalForce2Play.Click += new System.EventHandler(this.totalForce2Play_Click);
+            // 
+            // totalTimeCustom
+            // 
+            this.totalTimeCustom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalTimeCustom.AutoSize = true;
+            this.totalTimeCustom.BackColor = System.Drawing.Color.Transparent;
+            this.totalTimeCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.totalTimeCustom.FlatAppearance.BorderSize = 2;
+            this.totalTimeCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.totalTimeCustom.ForeColor = System.Drawing.Color.White;
+            this.totalTimeCustom.Location = new System.Drawing.Point(1204, 401);
+            this.totalTimeCustom.Name = "totalTimeCustom";
+            this.totalTimeCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.totalTimeCustom.Size = new System.Drawing.Size(199, 65);
+            this.totalTimeCustom.TabIndex = 13;
+            this.totalTimeCustom.Text = "CUSTOM";
+            this.totalTimeCustom.UseVisualStyleBackColor = false;
+            this.totalTimeCustom.Click += new System.EventHandler(this.totalTimeCustom_Click);
+            // 
+            // totalTimeDefault
+            // 
+            this.totalTimeDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalTimeDefault.AutoSize = true;
+            this.totalTimeDefault.BackColor = System.Drawing.Color.Transparent;
+            this.totalTimeDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.totalTimeDefault.FlatAppearance.BorderSize = 2;
+            this.totalTimeDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.totalTimeDefault.ForeColor = System.Drawing.Color.White;
+            this.totalTimeDefault.Location = new System.Drawing.Point(1199, 277);
+            this.totalTimeDefault.Name = "totalTimeDefault";
+            this.totalTimeDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.totalTimeDefault.Size = new System.Drawing.Size(208, 65);
+            this.totalTimeDefault.TabIndex = 6;
+            this.totalTimeDefault.Text = "DEFAULT";
+            this.totalTimeDefault.UseVisualStyleBackColor = false;
+            this.totalTimeDefault.Click += new System.EventHandler(this.totalTimeDefault_Click);
+            // 
+            // totalForceDefault
+            // 
+            this.totalForceDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalForceDefault.AutoSize = true;
+            this.totalForceDefault.BackColor = System.Drawing.Color.Transparent;
+            this.totalForceDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.totalForceDefault.FlatAppearance.BorderSize = 2;
+            this.totalForceDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.totalForceDefault.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.totalForceDefault.Location = new System.Drawing.Point(677, 277);
+            this.totalForceDefault.Name = "totalForceDefault";
+            this.totalForceDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.totalForceDefault.Size = new System.Drawing.Size(208, 65);
+            this.totalForceDefault.TabIndex = 4;
+            this.totalForceDefault.Text = "DEFAULT";
+            this.totalForceDefault.UseVisualStyleBackColor = false;
+            this.totalForceDefault.Click += new System.EventHandler(this.totalForceDefault_Click);
+            // 
+            // comboCounterDefault
+            // 
+            this.comboCounterDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboCounterDefault.AutoSize = true;
+            this.comboCounterDefault.BackColor = System.Drawing.Color.Transparent;
+            this.comboCounterDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.comboCounterDefault.FlatAppearance.BorderSize = 2;
+            this.comboCounterDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboCounterDefault.ForeColor = System.Drawing.Color.White;
+            this.comboCounterDefault.Location = new System.Drawing.Point(156, 277);
+            this.comboCounterDefault.Name = "comboCounterDefault";
+            this.comboCounterDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.comboCounterDefault.Size = new System.Drawing.Size(208, 65);
+            this.comboCounterDefault.TabIndex = 1;
+            this.comboCounterDefault.Text = "DEFAULT";
+            this.comboCounterDefault.UseVisualStyleBackColor = false;
+            this.comboCounterDefault.Click += new System.EventHandler(this.comboCounterDefault_Click);
+            // 
             // HomeScreen
             // 
             this.BackColor = System.Drawing.Color.Transparent;
@@ -415,57 +419,57 @@ namespace ComboCounter.Forms
 
         private void totalForceDefault_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.TotalForce);
         }
 
         private void comboCountCustom_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.ComboCounterCustom);
         }
 
         private void totalForce2Play_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.TotalForce2Play);
         }
 
         private void totalTimeDefault_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.TotalTime);
         }
 
         private void totalTimeCustom_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.TotalTimeCustom);
         }
 
         private void compPound_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.CompetePound);
         }
 
         private void sensorAdj_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.SensorAdj);
         }
 
         private void punchCountDefault_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.PunchCount);
         }
 
         private void punchCountCustom_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.PunchCountCustom);
         }
 
         private void punchChallengeDefault_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.PunchChallenge);
         }
 
         private void punchChallengeCustom_Click(object sender, EventArgs e)
         {
-
+            Option_Clicked(ClassToCall.PunchChallengeCustom);
         }
     }
 

@@ -477,11 +477,11 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // panel1
+            // mainPanel
             // 
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.mainPanel.Location = new System.Drawing.Point(31, 82);
-            this.mainPanel.Name = "panel1";
+            this.mainPanel.Location = new System.Drawing.Point(32, 98);
+            this.mainPanel.Name = "mainPanel";
             this.mainPanel.Padding = new System.Windows.Forms.Padding(100);
             this.mainPanel.Size = new System.Drawing.Size(2183, 1145);
             this.mainPanel.TabIndex = 59;
