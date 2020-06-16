@@ -180,17 +180,35 @@ namespace ComboCounter.UserControls_Gabriel
 
                 if (s % 30 == 0)
                 {
-                    forceLabels[forceLabelIndex].Text = forceArray[forceIndex].ToString();
-                    forceLabels[forceLabelIndex].ForeColor = System.Drawing.Color.CadetBlue;
-                    if (forceIndex > 0)
+                    
+                    if (forceIndex >= forceLabels.Length)
+                    {
+                        for (int i = 0; i < forceLabels.Length; i++)
+                        {
+                            forceLabels[i].Text = forceArray[forceIndex - (forceLabels.Length - i) + 1].ToString();
+                        }
+                        for (int i = 0; i < timeLabels.Length; i++)
+                        {
+                            timeLabels[i].Text = timeArray[forceIndex - (timeLabels.Length - i)].ToString();
+                        }
+                    }
+                    else if (forceIndex > 0)
                     {
                         cumulativeTime += timeArray[forceIndex - 1];
-                        timeLabels[timeLabelIndex].Text = timeArray[forceIndex - 1].ToString();
+                        timeLabels[forceIndex - 1].Text = timeArray[forceIndex - 1].ToString();
                         session.insertHit(forceArray[forceIndex], cumulativeTime);
-                        timeLabelIndex = (timeLabelIndex + 1) % 8;
+                        forceLabels[forceIndex].Text = forceArray[forceIndex].ToString();
+                        forceLabels[forceIndex].ForeColor = System.Drawing.Color.CadetBlue;
+                        
+                    }
+                    else
+                    {
+                        forceLabels[forceIndex].Text = forceArray[forceIndex].ToString();
+                        forceLabels[forceIndex].ForeColor = System.Drawing.Color.CadetBlue;
+                        
                     }
                     forceIndex++;
-                    forceLabelIndex = (forceLabelIndex + 1) % 9;
+
 
                     txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
                     if (forceIndex >= forceArray.Length)
