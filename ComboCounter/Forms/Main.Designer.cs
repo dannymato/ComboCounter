@@ -170,11 +170,13 @@
             // mainPanel
             // 
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.mainPanel.BackColor = System.Drawing.Color.Transparent;
             this.mainPanel.Location = new System.Drawing.Point(59, 75);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Padding = new System.Windows.Forms.Padding(100);
             this.mainPanel.Size = new System.Drawing.Size(2183, 1145);
             this.mainPanel.TabIndex = 59;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // Main
             // 
