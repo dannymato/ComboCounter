@@ -16,7 +16,6 @@ namespace ComboCounter.UserControls_Gabriel
         SmallInfo[] forceLabels = new SmallInfo[9];
         SmallInfo[] timeLabels = new SmallInfo[8];
 
-        int forceLabelIndex = 0;
         int forceIndex = 0;
 
         int timeLabelIndex = 0;
@@ -75,7 +74,6 @@ namespace ComboCounter.UserControls_Gabriel
             }
 
             forceIndex = 0;
-            forceLabelIndex = 0;
 
             timeLabelIndex = 0;
         }
