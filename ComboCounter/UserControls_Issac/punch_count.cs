@@ -12,6 +12,9 @@ namespace ComboCounter.UserControls
         int setThreshold = 200;
         int timeIntervalSec = 30;
 
+        // The amount of seconds each press of either the plus or minus button changes the time
+        const int TIME_UNIT = 15;
+
         private readonly SoundPlayer bellRung;
 
         private Session session;
@@ -66,8 +69,7 @@ namespace ComboCounter.UserControls
 
         private void updateTimeSetter()
         {
-            setTime.Text = String.Format("{0:00}", (timeIntervalSec % 60));
-            setTimeMins.Text = String.Format("{0:00}", (timeIntervalSec / 60));
+            setTime.Text = String.Format("{0:00}:{1:00}", (timeIntervalSec / 60), timeIntervalSec % 60);
         }
 
         private void propagate()
@@ -141,7 +143,7 @@ namespace ComboCounter.UserControls
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
-            timeIntervalSec -= 30;
+            timeIntervalSec -= TIME_UNIT;
             if (timeIntervalSec < 0)
             {
                 timeIntervalSec = 0;
@@ -164,7 +166,7 @@ namespace ComboCounter.UserControls
             punchCounter.Text = "0"; ;
             i = 0;
             missPunch = 0;
-            textBox7.Text = missPunch.ToString();
+            numInvalidPunch.Text = missPunch.ToString();
             
         }
 
@@ -199,7 +201,7 @@ namespace ComboCounter.UserControls
                 {
                     lastHit.ForeColor = System.Drawing.Color.Red;
                     missPunch++;
-                    textBox7.Text = missPunch.ToString();
+                    numInvalidPunch.Text = missPunch.ToString();
                 }
                 else if (lastHitVal >= (thresholdVal - (thresholdVal * 0.1)) && lastHitVal < (thresholdVal + (thresholdVal * 0.1)))
                 {
@@ -220,7 +222,7 @@ namespace ComboCounter.UserControls
                 else
                 {
                     missPunch++;
-                    textBox7.Text = missPunch.ToString();
+                    numInvalidPunch.Text = missPunch.ToString();
 
 
                 }
@@ -231,7 +233,7 @@ namespace ComboCounter.UserControls
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
-            timeIntervalSec += 30;
+            timeIntervalSec += TIME_UNIT;
             updateTimeSetter();
         }
 
@@ -253,6 +255,11 @@ namespace ComboCounter.UserControls
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void setTimeMins_Click(object sender, EventArgs e)
         {
 
         }
