@@ -10,14 +10,14 @@ namespace ComboCounter.Classes
 {
     class ThemeManager
     {
-        private static int DBThemeNum = 1;
+        private static int DBThemeNum = 2;
+
         private static int ThemeNum = 2;
         //Boolean ThemeBoolean;
 
 
         public static Color initBackground()
-        {
-           
+        {           
             if (Verify())
             {
                 return ChangeBackground(GetDBThemeNum());
@@ -38,12 +38,14 @@ namespace ComboCounter.Classes
             }
             else
             {
+
                 return ChangeButtonColor(GetThemeNum());
             }
         }
 
         public static Color initHeaderColor()
         {
+
             if (Verify())
             {
                 // DEFINE METOD FOR RETURNING ISHHH
@@ -54,6 +56,7 @@ namespace ComboCounter.Classes
             {
                 return ChangeHeaderColor(GetThemeNum());
             }
+
         }
 
 
@@ -68,6 +71,34 @@ namespace ComboCounter.Classes
             else
             {
                 return ChangeH2Color(GetThemeNum());
+            }
+        }
+
+        public static Color initH2HoverColor()
+        {
+            if (Verify())
+            {
+
+                return ChangeHeaderColor(GetDBThemeNum());
+
+            }
+            else
+            {
+                return ChangeHeaderColor(GetThemeNum());
+            }
+        }
+
+        public static Color initH2ClickColor()
+        {
+            if (Verify())
+            {
+
+                return ChangeHeaderColor(GetDBThemeNum());
+
+            }
+            else
+            {
+                return ChangeHeaderColor(GetThemeNum());
             }
         }
 
@@ -128,7 +159,8 @@ namespace ComboCounter.Classes
         //----------------------------
 
 
-        // CHANGE COLOR ELEMENTS
+
+        // CHANGE ELEMENTS
         
         private static Color ChangeBackground(int t)
         {
@@ -136,11 +168,11 @@ namespace ComboCounter.Classes
           
             if(t == 1)
             {
-                return ThemeConstants.white;
+                return ThemeConstants.Theme1BgColor;
             }
             else if(t == 2)
             {
-                return ThemeConstants.red;
+                return ThemeConstants.Theme2BgColor;
             }
             else if (t == 3)
             {
@@ -152,7 +184,7 @@ namespace ComboCounter.Classes
             }
         }
 
-
+        // MAY NOT USE****
         private static Color ChangeButtonColor(int t)
         {
 
@@ -175,18 +207,16 @@ namespace ComboCounter.Classes
             }
         }
 
-
         private static Color ChangeHeaderColor(int t)
         {
 
-
             if (t == 1)
             {
-                return ThemeConstants.white;
+                return ThemeConstants.HeaderTextColor1;
             }
             else if (t == 2)
             {
-                return ThemeConstants.red;
+                return ThemeConstants.HeaderTextColor2;
             }
             else if (t == 3)
             {
@@ -203,15 +233,32 @@ namespace ComboCounter.Classes
 
             if (t == 1)
             {
-                return ThemeConstants.white;
+                return ThemeConstants.H2TextColor1;
             }
             else if (t == 2)
             {
-                return ThemeConstants.red;
+                return ThemeConstants.H2TextColor2;
             }
             else if (t == 3)
             {
                 return ThemeConstants.green;
+            }
+            else
+            {
+                return ThemeConstants.white;
+            }
+        }
+
+        private static Color ChangeH2ClickColor(int t)
+        {
+
+            if (t == 1)
+            {
+                return ThemeConstants.H2ClickColor1;
+            }
+            else if (t == 2)
+            {
+                return ThemeConstants.H2ClickColor2;
             }
             else
             {
@@ -258,8 +305,6 @@ namespace ComboCounter.Classes
                 return ThemeConstants.white;
             }
         }
-
-
 
     }
 }
