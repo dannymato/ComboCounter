@@ -1,4 +1,5 @@
 ﻿using ComboCounter.Classes;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,6 +7,8 @@ namespace ComboCounter.CustomControls
 {
     class OutlineButton : Button
     {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Font Font { get; set; }
 
         public OutlineButton() : base()
         {

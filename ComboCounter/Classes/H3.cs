@@ -14,7 +14,9 @@ namespace ComboCounter.Classes
         public H3() : base()
         {
             FontManager fm = FontManager.getInstance();
-            Font = fm.getBigInfoFont();
+            Font = fm.getHeader3Font();
+
+
 
             AutoSize = false;
 

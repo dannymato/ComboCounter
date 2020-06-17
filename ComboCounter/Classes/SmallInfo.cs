@@ -14,7 +14,7 @@ namespace ComboCounter.Classes
         public SmallInfo() : base()
         {
             FontManager fm = FontManager.getInstance();
-            Font = fm.getBigInfoFont();
+            Font = fm.getSmallInfoFont();
 
             //ForeColor = System.Drawing.Color.FromArgb(255, 0, 255);
             AutoSize = false;

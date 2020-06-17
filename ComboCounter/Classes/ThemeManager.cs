@@ -45,6 +45,7 @@ namespace ComboCounter.Classes
 
         public static Color initHeaderColor()
         {
+
             if (Verify())
             {
                 // DEFINE METOD FOR RETURNING ISHHH
@@ -55,6 +56,7 @@ namespace ComboCounter.Classes
             {
                 return ChangeHeaderColor(GetThemeNum());
             }
+
         }
 
 
@@ -99,7 +101,6 @@ namespace ComboCounter.Classes
                 return ChangeHeaderColor(GetThemeNum());
             }
         }
-
 
         public static Color initH3Color()
         {
@@ -158,6 +159,7 @@ namespace ComboCounter.Classes
         //----------------------------
 
 
+
         // CHANGE ELEMENTS
         
         private static Color ChangeBackground(int t)
@@ -204,7 +206,6 @@ namespace ComboCounter.Classes
                 return ThemeConstants.white;
             }
         }
-
 
         private static Color ChangeHeaderColor(int t)
         {

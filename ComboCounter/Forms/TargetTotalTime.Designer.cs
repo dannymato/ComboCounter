@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.home_user21 = new ComboCounter.UserControls.home_user2();
+            this.home_user21 = new ComboCounter.UserControls.targeted_total_of_time();
             this.SuspendLayout();
             // 
             // home_user21
@@ -59,7 +59,7 @@
 
         }
 
-        private UserControls.home_user2 home_user21;
+        private UserControls.targeted_total_of_time home_user21;
 
         #endregion
 

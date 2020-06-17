@@ -1,4 +1,7 @@
-﻿namespace ComboCounter.UserControls
+﻿using ComboCounter.Classes;
+using ComboCounter.CustomControls;
+
+namespace ComboCounter.UserControls
 {
     partial class targeted_total_of_force
     {
@@ -31,16 +34,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(targeted_total_of_force));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.startButton = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.stopButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.forceGoal = new System.Windows.Forms.Label();
-            this.totalForce = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.Label();
+            this.startButton = new OutlineButton();
+            this.resetButton = new OutlineButton();
+            this.stopButton = new OutlineButton();
+            this.header = new Header1();
+            this.forceGoalHeader = new H2();
+            this.currTimeHeader = new H2();
+            this.forceAccruedHeader = new H2();
+            this.forceGoal = new BigInfo();
+            this.totalForce = new BigInfo();
+            this.txtResult = new BigInfo();
             this.plusIcon = new System.Windows.Forms.Button();
             this.minusIcon = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,7 +55,6 @@
             // startButton
             // 
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.Lime;
             this.startButton.Location = new System.Drawing.Point(994, 676);
             this.startButton.Name = "startButton";
@@ -65,7 +67,6 @@
             // resetButton
             // 
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.resetButton.Location = new System.Drawing.Point(1578, 676);
             this.resetButton.Name = "resetButton";
@@ -78,7 +79,6 @@
             // stopButton
             // 
             this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopButton.ForeColor = System.Drawing.Color.Red;
             this.stopButton.Location = new System.Drawing.Point(1294, 676);
             this.stopButton.Name = "stopButton";
@@ -90,67 +90,62 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 80.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(361, 38);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1081, 122);
-            this.label7.TabIndex = 57;
-            this.label7.Text = "Targeted Total of  Force";
+            this.header.AutoSize = true;
+            this.header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.header.Location = new System.Drawing.Point(361, 38);
+            this.header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.header.Name = "label7";
+            this.header.Size = new System.Drawing.Size(1081, 122);
+            this.header.TabIndex = 57;
+            this.header.Text = "Targeted Total of  Force";
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.forceGoalHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(172, 233);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(476, 109);
-            this.label6.TabIndex = 66;
-            this.label6.Text = "Force Goal";
+            this.forceGoalHeader.AutoSize = true;
+            this.forceGoalHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceGoalHeader.Location = new System.Drawing.Point(172, 233);
+            this.forceGoalHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.forceGoalHeader.Name = "label6";
+            this.forceGoalHeader.Size = new System.Drawing.Size(476, 109);
+            this.forceGoalHeader.TabIndex = 66;
+            this.forceGoalHeader.Text = "Force Goal";
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.currTimeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(1106, 233);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(564, 109);
-            this.label8.TabIndex = 67;
-            this.label8.Text = "Current Time";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.currTimeHeader.AutoSize = true;
+            this.currTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.currTimeHeader.Location = new System.Drawing.Point(1106, 233);
+            this.currTimeHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currTimeHeader.Name = "label8";
+            this.currTimeHeader.Size = new System.Drawing.Size(564, 109);
+            this.currTimeHeader.TabIndex = 67;
+            this.currTimeHeader.Text = "Current Time";
+            this.currTimeHeader.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.forceAccruedHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(113, 543);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(610, 109);
-            this.label9.TabIndex = 68;
-            this.label9.Text = "Force Accrued";
+            this.forceAccruedHeader.AutoSize = true;
+            this.forceAccruedHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceAccruedHeader.Location = new System.Drawing.Point(113, 543);
+            this.forceAccruedHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.forceAccruedHeader.Name = "label9";
+            this.forceAccruedHeader.Size = new System.Drawing.Size(610, 109);
+            this.forceAccruedHeader.TabIndex = 68;
+            this.forceAccruedHeader.Text = "Force Accrued";
             // 
             // forceGoal
             // 
             this.forceGoal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.forceGoal.AutoSize = true;
-            this.forceGoal.Font = new System.Drawing.Font("Times New Roman", 120F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forceGoal.ForeColor = System.Drawing.Color.DimGray;
             this.forceGoal.Location = new System.Drawing.Point(149, 342);
             this.forceGoal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -164,7 +159,6 @@
             this.totalForce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalForce.AutoSize = true;
-            this.totalForce.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalForce.ForeColor = System.Drawing.Color.DimGray;
             this.totalForce.Location = new System.Drawing.Point(158, 643);
             this.totalForce.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -178,7 +172,6 @@
             this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtResult.AutoSize = true;
-            this.txtResult.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.ForeColor = System.Drawing.Color.DimGray;
             this.txtResult.Location = new System.Drawing.Point(1078, 342);
             this.txtResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -221,10 +214,10 @@
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.totalForce);
             this.Controls.Add(this.forceGoal);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.forceAccruedHeader);
+            this.Controls.Add(this.currTimeHeader);
+            this.Controls.Add(this.forceGoalHeader);
+            this.Controls.Add(this.header);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.startButton);
@@ -241,10 +234,10 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label header;
+        private System.Windows.Forms.Label forceGoalHeader;
+        private System.Windows.Forms.Label currTimeHeader;
+        private System.Windows.Forms.Label forceAccruedHeader;
         private System.Windows.Forms.Label forceGoal;
         private System.Windows.Forms.Label totalForce;
         private System.Windows.Forms.Label txtResult;
