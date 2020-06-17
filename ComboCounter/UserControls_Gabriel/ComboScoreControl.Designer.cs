@@ -259,7 +259,7 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.totalTimeLabelnfo);
             this.Controls.Add(this.scoreInfoLabel);
             this.Controls.Add(this.totalTimeLabel);
