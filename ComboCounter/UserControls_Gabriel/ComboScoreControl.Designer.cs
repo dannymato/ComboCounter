@@ -1,4 +1,6 @@
-﻿namespace ComboCounter.UserControls_Gabriel
+﻿using ComboCounter.Classes;
+
+namespace ComboCounter.UserControls_Gabriel
 {
     partial class ComboScoreControl
     {
@@ -31,18 +33,18 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new ComboCounter.CustomControls.OutlineButton();
+            this.button2 = new ComboCounter.CustomControls.OutlineButton();
+            this.button3 = new ComboCounter.CustomControls.OutlineButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtResult = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.totalTime = new BigInfo();
+            this.headerLabel = new Header1();
+            this.forceHeader = new H2();
+            this.timeLabel = new H2();
+            this.scoreLabel = new H3();
+            this.totalTimeLabel = new H3();
+            this.scoreInfoLabel = new SmallInfo();
+            this.totalTimeLabelnfo = new SmallInfo();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -90,15 +92,17 @@
             // 
             // button1
             // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.button1.ForeColor = System.Drawing.Color.Green;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button1.Location = new System.Drawing.Point(48, 363);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 62);
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.button1.Size = new System.Drawing.Size(207, 63);
             this.button1.TabIndex = 51;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -106,15 +110,17 @@
             // 
             // button2
             // 
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button2.Location = new System.Drawing.Point(48, 523);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 62);
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.button2.Size = new System.Drawing.Size(207, 63);
             this.button2.TabIndex = 52;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
@@ -122,15 +128,17 @@
             // 
             // button3
             // 
+            this.button3.AutoSize = true;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button3.Location = new System.Drawing.Point(48, 683);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(207, 62);
+            this.button3.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.button3.Size = new System.Drawing.Size(207, 63);
             this.button3.TabIndex = 53;
             this.button3.Text = "Reset";
             this.button3.UseVisualStyleBackColor = true;
@@ -140,126 +148,126 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txtResult
+            // totalTime
             // 
-            this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResult.AutoSize = true;
-            this.txtResult.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.ForeColor = System.Drawing.Color.DimGray;
-            this.txtResult.Location = new System.Drawing.Point(121, 52);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(527, 170);
-            this.txtResult.TabIndex = 64;
-            this.txtResult.Text = "00:00.0";
-            this.txtResult.Visible = false;
+            this.totalTime.AutoSize = true;
+            this.totalTime.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTime.ForeColor = System.Drawing.Color.DimGray;
+            this.totalTime.Location = new System.Drawing.Point(121, 52);
+            this.totalTime.Name = "totalTime";
+            this.totalTime.Size = new System.Drawing.Size(527, 170);
+            this.totalTime.TabIndex = 64;
+            this.totalTime.Text = "00:00.0";
+            this.totalTime.Visible = false;
             // 
-            // label7
+            // headerLabel
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Font = new System.Drawing.Font("Fira Code", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(784, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1112, 183);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Combo Score";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.headerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.headerLabel.Font = new System.Drawing.Font("Fira Code", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerLabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.headerLabel.Location = new System.Drawing.Point(784, 0);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(1112, 183);
+            this.headerLabel.TabIndex = 65;
+            this.headerLabel.Text = "Combo Score";
+            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.headerLabel.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label19
+            // forceHeader
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.forceHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label19.Location = new System.Drawing.Point(403, 240);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(454, 105);
-            this.label19.TabIndex = 66;
-            this.label19.Text = "Force";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label19.Click += new System.EventHandler(this.label19_Click);
+            this.forceHeader.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forceHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceHeader.Location = new System.Drawing.Point(403, 240);
+            this.forceHeader.Name = "forceHeader";
+            this.forceHeader.Size = new System.Drawing.Size(454, 105);
+            this.forceHeader.TabIndex = 66;
+            this.forceHeader.Text = "Force";
+            this.forceHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.forceHeader.Click += new System.EventHandler(this.label19_Click);
             // 
-            // label20
+            // timeLabel
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.timeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label20.Location = new System.Drawing.Point(403, 480);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(811, 116);
-            this.label20.TabIndex = 67;
-            this.label20.Text = "Time Interval";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label20.Click += new System.EventHandler(this.label20_Click);
+            this.timeLabel.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.timeLabel.Location = new System.Drawing.Point(403, 480);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(811, 116);
+            this.timeLabel.TabIndex = 67;
+            this.timeLabel.Text = "Time Interval";
+            this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.timeLabel.Click += new System.EventHandler(this.label20_Click);
             // 
-            // label21
+            // scoreLabel
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.scoreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label21.Location = new System.Drawing.Point(647, 732);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(336, 99);
-            this.label21.TabIndex = 68;
-            this.label21.Text = "Score:";
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.scoreLabel.Location = new System.Drawing.Point(647, 732);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(336, 99);
+            this.scoreLabel.TabIndex = 68;
+            this.scoreLabel.Text = "Score:";
             // 
-            // label22
+            // totalTimeLabel
             // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label22.Location = new System.Drawing.Point(1415, 735);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(287, 99);
-            this.label22.TabIndex = 69;
-            this.label22.Text = "Time:";
+            this.totalTimeLabel.AutoSize = true;
+            this.totalTimeLabel.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTimeLabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.totalTimeLabel.Location = new System.Drawing.Point(1415, 735);
+            this.totalTimeLabel.Name = "totalTimeLabel";
+            this.totalTimeLabel.Size = new System.Drawing.Size(287, 99);
+            this.totalTimeLabel.TabIndex = 69;
+            this.totalTimeLabel.Text = "Time:";
             // 
-            // label23
+            // scoreInfoLabel
             // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.scoreInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(972, 735);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(189, 99);
-            this.label23.TabIndex = 71;
-            this.label23.Text = "N/A";
+            this.scoreInfoLabel.AutoSize = true;
+            this.scoreInfoLabel.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreInfoLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.scoreInfoLabel.Location = new System.Drawing.Point(972, 735);
+            this.scoreInfoLabel.Name = "scoreInfoLabel";
+            this.scoreInfoLabel.Size = new System.Drawing.Size(189, 99);
+            this.scoreInfoLabel.TabIndex = 71;
+            this.scoreInfoLabel.Text = "N/A";
             // 
-            // label24
+            // totalTimeLabelnfo
             // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalTimeLabelnfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.DimGray;
-            this.label24.Location = new System.Drawing.Point(1687, 735);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(189, 99);
-            this.label24.TabIndex = 72;
-            this.label24.Text = "N/A";
+            this.totalTimeLabelnfo.AutoSize = true;
+            this.totalTimeLabelnfo.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTimeLabelnfo.ForeColor = System.Drawing.Color.DimGray;
+            this.totalTimeLabelnfo.Location = new System.Drawing.Point(1687, 735);
+            this.totalTimeLabelnfo.Name = "totalTimeLabelnfo";
+            this.totalTimeLabelnfo.Size = new System.Drawing.Size(189, 99);
+            this.totalTimeLabelnfo.TabIndex = 72;
+            this.totalTimeLabelnfo.Text = "N/A";
             // 
             // ComboScoreControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtResult);
+            this.Controls.Add(this.totalTimeLabelnfo);
+            this.Controls.Add(this.scoreInfoLabel);
+            this.Controls.Add(this.totalTimeLabel);
+            this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.forceHeader);
+            this.Controls.Add(this.headerLabel);
+            this.Controls.Add(this.totalTime);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -277,17 +285,17 @@
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label txtResult;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label totalTime;
+        private System.Windows.Forms.Label headerLabel;
+        private System.Windows.Forms.Label forceHeader;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label totalTimeLabel;
+        private System.Windows.Forms.Label scoreInfoLabel;
+        private System.Windows.Forms.Label totalTimeLabelnfo;
+        private CustomControls.OutlineButton button1;
+        private CustomControls.OutlineButton button2;
+        private CustomControls.OutlineButton button3;
     }
 }

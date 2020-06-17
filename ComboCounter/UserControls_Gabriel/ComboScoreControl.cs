@@ -13,8 +13,8 @@ namespace ComboCounter.UserControls_Gabriel
         int h, m, s, totalForceBox;
         int actualForce = 50000;
 
-        Label[] forceLabels = new Label[9];
-        Label[] timeLabels = new Label[8];
+        SmallInfo[] forceLabels = new SmallInfo[9];
+        SmallInfo[] timeLabels = new SmallInfo[8];
 
         int forceLabelIndex = 0;
         int forceIndex = 0;
@@ -59,10 +59,10 @@ namespace ComboCounter.UserControls_Gabriel
             t.Stop();
             s = 0; m = 0; h = 0;
             totalForceBox = 0;
-            txtResult.Text = "00:00.0";
+            totalTime.Text = "00:00.0";
 
-            label23.Text = " N/A";
-            label24.Text = " N/A";
+            scoreInfoLabel.Text = " N/A";
+            totalTimeLabelnfo.Text = " N/A";
 
             //   totalForce.ForeColor = System.Drawing.Color.DimGray;
             for (int i = 0; i < forceLabels.Length; i++)
@@ -121,11 +121,10 @@ namespace ComboCounter.UserControls_Gabriel
             for (int i = 0; i < forceLabels.Length; i++)
             {
 
-                forceLabels[i] = new Label
+                forceLabels[i] = new SmallInfo
                 {
                     Text = "Hit " + (i + 1),
                     ForeColor = System.Drawing.Color.DimGray,
-                    Font = fm.getSmallInfoFont(),
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
                     Dock = DockStyle.Fill
@@ -135,10 +134,9 @@ namespace ComboCounter.UserControls_Gabriel
 
             for (int i = 0; i < timeLabels.Length; i++)
             {
-                timeLabels[i] = new Label
+                timeLabels[i] = new SmallInfo
                 {
                     ForeColor = System.Drawing.Color.DimGray,
-                    Font = fm.getSmallInfoFont(),
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
                     Dock = DockStyle.Fill
@@ -146,19 +144,19 @@ namespace ComboCounter.UserControls_Gabriel
                 tableLayoutPanel2.Controls.Add(timeLabels[i]);
             }
 
-            label7.Font = fm.getHeaderFont();
-            label19.Font = fm.getHeader3Font();
-            label20.Font = fm.getHeader3Font();
+            headerLabel.Font = fm.getHeaderFont();
+            forceHeader.Font = fm.getHeader3Font();
+            timeLabel.Font = fm.getHeader3Font();
 
             button1.Font = fm.getButtonFont();
             button2.Font = fm.getButtonFont();
             button3.Font = fm.getButtonFont();
 
-            label21.Font = fm.getHeader3Font();
-            label22.Font = fm.getHeader3Font();
+            scoreLabel.Font = fm.getHeader3Font();
+            totalTimeLabel.Font = fm.getHeader3Font();
 
-            label23.Font = fm.getHeader3Font();
-            label24.Font = fm.getHeader3Font();
+            scoreInfoLabel.Font = fm.getHeader3Font();
+            totalTimeLabelnfo.Font = fm.getHeader3Font();
 
         }
 
@@ -210,12 +208,12 @@ namespace ComboCounter.UserControls_Gabriel
                     forceIndex++;
 
 
-                    txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+                    totalTime.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
                     if (forceIndex >= forceArray.Length)
                     {
                         SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
-                        label23.Text = string.Format("{0:n0} N", session.GetTotalForce());
-                        label24.Text = string.Format("{0:0.00} s", cumulativeTime);
+                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.GetTotalForce());
+                        totalTimeLabelnfo.Text = string.Format("{0:0.00} s", cumulativeTime);
                         bellRing.Play();
                         t.Stop();
 

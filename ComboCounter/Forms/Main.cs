@@ -145,6 +145,7 @@ namespace ComboCounter
             home.Height = mainPanel.Height;
 
             home.OnOptionClicked += (send, args) => {
+                // Determines which control to page in depending on the argument passed through the event
                 switch (args.ClassToCall)
                 {
                     case ClassToCall.ComboCounter:
@@ -232,14 +233,17 @@ namespace ComboCounter
 
         }
 
+        // Removes the old page in the panel and places the new one in
         private void LoadNewPage(UserControl newPage)
         {
             this.mainPanel.Hide();
             this.mainPanel.Controls.Clear();
             this.mainPanel.Controls.Add(newPage);
-            newPage.Size = new Size(mainPanel.Width, mainPanel.Height);
-            newPage.Dock = DockStyle.Fill;
+            newPage.Anchor = AnchorStyles.None;
             this.mainPanel.Show();
+
+            newPage.Left = (mainPanel.Width - newPage.Width) / 2;
+            newPage.Top = (mainPanel.Height - newPage.Height) / 2;
         }
 
         private void quickStart1_Load(object sender, EventArgs e)
