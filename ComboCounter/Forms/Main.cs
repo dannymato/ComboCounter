@@ -108,27 +108,6 @@ namespace ComboCounter
             HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
             HomeToolTip.SetToolTip(exit_button, "Exit Program");
 
-            FontManager fm = FontManager.getInstance();
-            label1.Font = fm.getHeader3Font();
-            label3.Font = fm.getHeader3Font();
-            label6.Font = fm.getHeader3Font();
-            label5.Font = fm.getHeader3Font();
-            label2.Font = fm.getHeader3Font();
-            label4.Font = fm.getHeader3Font();
-
-            button1.Font = fm.getButtonFont();
-            vstimeBtn.Font = fm.getButtonFont();
-            ComboButton.Font = fm.getButtonFont();
-            button6.Font = fm.getButtonFont();
-            button10.Font = fm.getButtonFont();
-            button9.Font = fm.getButtonFont();
-            button3.Font = fm.getButtonFont();
-            button7.Font = fm.getButtonFont();
-            button4.Font = fm.getButtonFont();
-            button8.Font = fm.getButtonFont();
-            button5.Font = fm.getButtonFont();
-            button2.Font = fm.getButtonFont();
-
             Rectangle screenSize = Screen.PrimaryScreen.Bounds;
             Width = screenSize.Width;
             Height = screenSize.Height;
