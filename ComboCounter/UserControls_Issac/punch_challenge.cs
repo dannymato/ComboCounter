@@ -49,11 +49,11 @@ namespace ComboCounter.UserControls
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
         {
             FontManager fm = FontManager.getInstance();
-            label7.Font = fm.getHeaderFont();
+            header.Font = fm.getHeaderFont();
 
-            label3.Font = fm.getHeader2Font();
-            label1.Font = fm.getHeader2Font();
-            label2.Font = fm.getHeader2Font();
+            totalPunchHeader.Font = fm.getHeader2Font();
+            punchGoalHeader.Font = fm.getHeader2Font();
+            totalForceHeader.Font = fm.getHeader2Font();
 
             startButton.Font = fm.getButtonFont();
             stopButton.Font = fm.getButtonFont();
@@ -85,8 +85,9 @@ namespace ComboCounter.UserControls
             if (numPunches >= punchLimit)
             {
                 punchNum.ForeColor = System.Drawing.Color.Green;
-                timer1.Stop();
+                
                 History.GetSessions().Add(session);
+                ResetClocks();
             }
             
             
@@ -113,9 +114,8 @@ namespace ComboCounter.UserControls
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-           
-            timer1.Stop();
-            stopwatch.Stop();
+
+            ResetClocks();
             
         }
 
@@ -128,6 +128,16 @@ namespace ComboCounter.UserControls
             currentForceVal = 0;
             lastHitVal = 0;
             numPunches = 0;
+
+            ResetClocks();
+        }
+
+        private void ResetClocks()
+        {
+            timer1.Stop();
+            timer1.Enabled = false;
+            stopwatch.Stop();
+            stopwatch.Reset();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -149,12 +159,15 @@ namespace ComboCounter.UserControls
         // Start Button
         private void button2_Click(object sender, EventArgs e)
         {
-            timer1 = new System.Windows.Forms.Timer();
-            timer1.Interval = 1000;
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Enabled = true;
-            session = new Session(DateTime.Now);
-            stopwatch.Start();
+            if (!timer1.Enabled)
+            {
+                timer1 = new System.Windows.Forms.Timer();
+                timer1.Interval = 1000;
+                timer1.Tick += new EventHandler(timer1_Tick);
+                timer1.Enabled = true;
+                session = new Session(DateTime.Now);
+                stopwatch.Start();
+            }
         }
     }
 }
