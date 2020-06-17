@@ -8,5 +8,10 @@ namespace ComboCounter.Forms
         {
             InitializeComponent();
         }
+
+        private void home_user21_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

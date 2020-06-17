@@ -11,13 +11,13 @@ namespace ComboCounter.Classes
     class ThemeManager
     {
         private static int DBThemeNum = 2;
+
         private static int ThemeNum = 2;
         //Boolean ThemeBoolean;
 
 
         public static Color initBackground()
-        {
-           
+        {           
             if (Verify())
             {
                 return ChangeBackground(GetDBThemeNum());
@@ -38,6 +38,7 @@ namespace ComboCounter.Classes
             }
             else
             {
+
                 return ChangeButtonColor(GetThemeNum());
             }
         }
@@ -98,10 +99,6 @@ namespace ComboCounter.Classes
                 return ChangeHeaderColor(GetThemeNum());
             }
         }
-
-
-
-
 
 
         public static Color initH3Color()
@@ -184,7 +181,6 @@ namespace ComboCounter.Classes
                 return ThemeConstants.white;
             }
         }
-
 
         // MAY NOT USE****
         private static Color ChangeButtonColor(int t)
@@ -308,8 +304,6 @@ namespace ComboCounter.Classes
                 return ThemeConstants.white;
             }
         }
-
-
 
     }
 }

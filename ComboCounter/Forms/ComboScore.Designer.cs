@@ -34,21 +34,24 @@
             // comboScoreControl1
             // 
             this.comboScoreControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.comboScoreControl1.Location = new System.Drawing.Point(12, 19);
+            this.comboScoreControl1.Location = new System.Drawing.Point(16, 23);
+            this.comboScoreControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.comboScoreControl1.Name = "comboScoreControl1";
-            this.comboScoreControl1.Size = new System.Drawing.Size(1621, 751);
+            this.comboScoreControl1.Size = new System.Drawing.Size(2161, 924);
             this.comboScoreControl1.TabIndex = 0;
+            this.comboScoreControl1.Load += new System.EventHandler(this.comboScoreControl1_Load);
             // 
             // ComboScore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1645, 862);
+            this.ClientSize = new System.Drawing.Size(2193, 1061);
             this.ControlBox = false;
             this.Controls.Add(this.comboScoreControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 73);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ComboScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ComboScore";

@@ -1,26 +1,18 @@
-﻿using System;
+﻿using ComboCounter.Classes;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace ComboCounter
 {
 
     public partial class Main : Form
     {
-        private const String SERVER = "127.0.0.1";
-        private const String DATABASE = "project";
-        private const String UID = "root";
-        private const String PASSWORD = "";
-        private static MySqlConnection dbConn;
-        private string username;
-        private string password;
-        public string fname;
-        public string lname;
+
 
         public Main()
         {
             InitializeComponent();
-            InitializeDB();
 
         }
 
@@ -57,15 +49,16 @@ namespace ComboCounter
 
         private void exit_button_Click(object sender, EventArgs e)
         {
-            String query = "UPDATE project.users SET isloggedin = 0";
 
-            MySqlCommand cmd = new MySqlCommand(query, dbConn);
-             dbConn.Open();
-            cmd.ExecuteNonQuery();
-            dbConn.Clone();
-            this.Close();
+            Forms.Exit exit = new Forms.Exit();
+            exit.exitApplication += (s, arg) => { Close(); };
+
+            exit.ClientSize = new Size(Width, Height);
+            exit.Show();
+
         }
 
+        
         private void time_button_Click(object sender, EventArgs e)
         {
              Forms.Exit QuickStartForm = new Forms.Exit();
@@ -82,47 +75,50 @@ namespace ComboCounter
             Forms.HistogramForm HistogramForm = new Forms.HistogramForm();
             HistogramForm.Show();
 
-
             //histogram1.BringToFront();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             // homeControl1.BringToFront();
-            // home_user1.BringToFront();
-        }
+            // home_user1.BringToFront();;
+
+            ToolTip HomeToolTip = new ToolTip();
+            HomeToolTip.SetToolTip(home_button, "Home");
+            HomeToolTip.SetToolTip(force_tracker, "Force Tracker");
+            HomeToolTip.SetToolTip(time_button, "Time Tracker");
+            HomeToolTip.SetToolTip(histogram, "Show History");
+            HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
+            HomeToolTip.SetToolTip(exit_button, "Exit Program");
+
+            FontManager fm = FontManager.getInstance();
+            label1.Font = fm.getHeader3Font();
+            label3.Font = fm.getHeader3Font();
+            label6.Font = fm.getHeader3Font();
+            label5.Font = fm.getHeader3Font();
+            label2.Font = fm.getHeader3Font();
+            label4.Font = fm.getHeader3Font();
+
+            button1.Font = fm.getButtonFont();
+            vstimeBtn.Font = fm.getButtonFont();
+            ComboButton.Font = fm.getButtonFont();
+            button6.Font = fm.getButtonFont();
+            button10.Font = fm.getButtonFont();
+            button9.Font = fm.getButtonFont();
+            button3.Font = fm.getButtonFont();
+            button7.Font = fm.getButtonFont();
+            button4.Font = fm.getButtonFont();
+            button8.Font = fm.getButtonFont();
+            button5.Font = fm.getButtonFont();
+            button2.Font = fm.getButtonFont();
 
 
-        public static void InitializeDB()
-        {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = SERVER;
-            builder.UserID = UID;
-            builder.Password = PASSWORD;
-            builder.Database = DATABASE;
-            builder.SslMode = MySqlSslMode.None;
 
-            String connString = builder.ToString();
-
-            builder = null;
-
-            Console.WriteLine(connString);
-
-            dbConn = new MySqlConnection(connString);
-
-            Application.ApplicationExit += (sender, args) =>
-            {
-                if (dbConn != null)
-                {
-                    dbConn.Dispose();
-                    dbConn = null;
-                }
-            };
         }
 
         private void quickStart1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -153,7 +149,6 @@ namespace ComboCounter
         {
             Forms.PunchCount PunchCount = new Forms.PunchCount();
                PunchCount.Show();
-
 
         }
 
@@ -207,6 +202,7 @@ namespace ComboCounter
 
         }
 
+
         private void button9_Click(object sender, EventArgs e)
         {
             Forms.SensorAdjusments SensorAdjusments = new Forms.SensorAdjusments();
@@ -222,9 +218,14 @@ namespace ComboCounter
 
         }
 
-        //  private void homeControl1_Load(object sender, EventArgs e)
-        //   {
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
-        //  }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

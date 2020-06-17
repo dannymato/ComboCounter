@@ -44,9 +44,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(178, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(158, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(84, 70);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -55,9 +56,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(209)))));
-            this.button1.Location = new System.Drawing.Point(140, 333);
+            this.button1.Location = new System.Drawing.Point(124, 266);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 54);
+            this.button1.Size = new System.Drawing.Size(160, 43);
             this.button1.TabIndex = 1;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
@@ -68,9 +70,10 @@
             this.username_tb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.username_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_tb.ForeColor = System.Drawing.Color.White;
-            this.username_tb.Location = new System.Drawing.Point(140, 195);
+            this.username_tb.Location = new System.Drawing.Point(124, 156);
+            this.username_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.username_tb.Name = "username_tb";
-            this.username_tb.Size = new System.Drawing.Size(180, 35);
+            this.username_tb.Size = new System.Drawing.Size(160, 30);
             this.username_tb.TabIndex = 2;
             // 
             // password_tb
@@ -78,28 +81,31 @@
             this.password_tb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.password_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_tb.ForeColor = System.Drawing.Color.White;
-            this.password_tb.Location = new System.Drawing.Point(140, 258);
+            this.password_tb.Location = new System.Drawing.Point(124, 206);
+            this.password_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.password_tb.Name = "password_tb";
             this.password_tb.PasswordChar = '*';
-            this.password_tb.Size = new System.Drawing.Size(180, 35);
+            this.password_tb.Size = new System.Drawing.Size(160, 30);
             this.password_tb.TabIndex = 3;
             this.password_tb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(100, 195);
+            this.pictureBox2.Location = new System.Drawing.Point(89, 156);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(100, 258);
+            this.pictureBox3.Location = new System.Drawing.Point(89, 206);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox3.Size = new System.Drawing.Size(30, 28);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
@@ -108,9 +114,10 @@
             this.register_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.register_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(209)))));
-            this.register_button.Location = new System.Drawing.Point(140, 407);
+            this.register_button.Location = new System.Drawing.Point(124, 326);
+            this.register_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.register_button.Name = "register_button";
-            this.register_button.Size = new System.Drawing.Size(180, 54);
+            this.register_button.Size = new System.Drawing.Size(160, 43);
             this.register_button.TabIndex = 6;
             this.register_button.Text = "Register";
             this.register_button.UseVisualStyleBackColor = false;
@@ -118,10 +125,10 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(474, 557);
+            this.ClientSize = new System.Drawing.Size(421, 446);
             this.Controls.Add(this.register_button);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -130,11 +137,13 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

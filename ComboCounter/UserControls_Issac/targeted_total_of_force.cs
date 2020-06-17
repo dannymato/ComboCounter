@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Media;
+using System.Diagnostics;
+using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
@@ -18,6 +20,10 @@ namespace ComboCounter.UserControls
         int h, m, s, totalForceBox;
         int forceGoal1 = 15;
         int actualForce = 15000;
+
+        Stopwatch stopwatch = new Stopwatch();
+        Session session;
+
         public targeted_total_of_force()
         {
             InitializeComponent();
@@ -33,6 +39,8 @@ namespace ComboCounter.UserControls
             t = new System.Timers.Timer();
             t.Interval = 1;
             t.Elapsed += OnTimeEvent;
+            session = new Session(DateTime.Now);
+            stopwatch.Start();
         }
 
         private void totalForce_TextChanged(object sender, EventArgs e)
@@ -72,31 +80,42 @@ namespace ComboCounter.UserControls
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
-            SoundPlayer bellRing = new SoundPlayer(@"C:\Users\gabri\Desktop\12-HeavyHangingPunchingBag-Ver1\12-HeavyHangingPunchingBag-Ver1\SourceCode\ComboMeter V.1\ComboCounter\ComboCounter\soundEffect\old-fashioned-bell.wav");
+            SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
             Invoke(new Action(() =>
             {
-            s += 1;
-            if (s == 60)
-            {
-                s = 0;
-                m += 1;
-            }
-            if (m == 60)
-            {
-                m = 0;
-                h += 1;
-            }
-            txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
-                if (totalForceBox == actualForce)
+                
+                s += 1;
+                if (s == 60)
+                {
+                    s = 0;
+                    m += 1;
+                }
+                if (m == 60)
+                {
+                    m = 0;
+                    h += 1;
+                }
+
+                txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+
+                if (totalForceBox >= actualForce)
                 {
                     totalForce.ForeColor = System.Drawing.Color.Green;
                     bellRing.Play();
                     t.Stop();
+                    stopwatch.Stop();
+                    History.GetSessions().Add(session);
                 }
                 else
                 {
-                    totalForceBox = totalForceBox + 50;
+                    double time = stopwatch.Elapsed.TotalSeconds;
+                    int newForce = new Random().Next(5, 70);
+                    totalForceBox = totalForceBox + newForce;
                     totalForce.Text = totalForceBox.ToString();
+
+                    session.insertHit(newForce, time);
+
+
                 }
             }));
         }

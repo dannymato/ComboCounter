@@ -26,30 +26,6 @@ namespace ComboCounter.Forms
         
         private void punch_count1_Load(object sender, EventArgs e)
         {
-            punch_count1.force = "" + forcee;
-
-            if (min > 9)
-            {
-                punch_count1.minutes = "" + min;
-            }
-            else
-            {
-                punch_count1.minutes = "0" + min;
-            }
-
-            if (sec == 0)
-            {
-                punch_count1.seconds = "0" + sec;
-            }
-            else 
-            {
-                punch_count1.seconds = "" + sec;
-            }
-
-            //punch_count1.minutes = "" + min;
-            //punch_count1.seconds = "" + sec;
-
-
 
         }
 

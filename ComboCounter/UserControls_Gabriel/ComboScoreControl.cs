@@ -2,6 +2,8 @@
 using System.Timers;
 using System;
 using System.Media;
+using ComboCounter.Classes;
+using MySqlX.XDevAPI.Relational;
 
 namespace ComboCounter.UserControls_Gabriel
 {
@@ -11,10 +13,21 @@ namespace ComboCounter.UserControls_Gabriel
         int h, m, s, totalForceBox;
         int actualForce = 50000;
 
+        Label[] forceLabels = new Label[9];
+        Label[] timeLabels = new Label[8];
+
+        int forceLabelIndex = 0;
+        int forceIndex = 0;
+
+        int timeLabelIndex = 0;
+
+        int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704, 632, 323, 451, 341, 456, 711, 634 };
+        double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 0.300, 0.266, 0.438, .232, .453, .342, .235, .543, .343 };
+
+        double cumulativeTime = 0.0;
 
 
-        int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704 };
-        double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 300, 0.266, 0.438 };
+        Session session;
 
         public ComboScoreControl()
         {
@@ -26,17 +39,21 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
+        // Start Button
         private void button1_Click(object sender, System.EventArgs e)
         {
             t.Start();
+            session = new Session(DateTime.Now);
             
         }
 
+        //Stop Button
         private void button2_Click(object sender, EventArgs e)
         {
             t.Stop();
         }
 
+        //Reset Button
         private void button3_Click(object sender, EventArgs e)
         {
             t.Stop();
@@ -44,31 +61,48 @@ namespace ComboCounter.UserControls_Gabriel
             totalForceBox = 0;
             txtResult.Text = "00:00.0";
 
-
-            label1.Text = "Hit1";
-            label2.Text = "Hit2";
-            label3.Text = "Hit3";
-            label4.Text = "Hit4";
-            label5.Text = "Hit5";
-            label6.Text = "Hit6";
-
-            label13.Text = "";
-            label14.Text = "";
-            label11.Text = "";
-            label12.Text = "";
-            label17.Text = "";
-
             label23.Text = " N/A";
             label24.Text = " N/A";
 
-            label1.ForeColor = System.Drawing.Color.DimGray;
-            label2.ForeColor = System.Drawing.Color.DimGray;
-            label3.ForeColor = System.Drawing.Color.DimGray;
-            label4.ForeColor = System.Drawing.Color.DimGray;
-            label5.ForeColor = System.Drawing.Color.DimGray;
-            label6.ForeColor = System.Drawing.Color.DimGray;
-
             //   totalForce.ForeColor = System.Drawing.Color.DimGray;
+            for (int i = 0; i < forceLabels.Length; i++)
+            {
+                forceLabels[i].Text = "";
+            }
+            for (int i = 0; i < timeLabels.Length; i++)
+            {
+                timeLabels[i].Text = "";
+            }
+
+            forceIndex = 0;
+            forceLabelIndex = 0;
+
+            timeLabelIndex = 0;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void timer1_Tick(object sender, System.EventArgs e)
@@ -81,6 +115,51 @@ namespace ComboCounter.UserControls_Gabriel
             t = new System.Timers.Timer();
             t.Interval = 1;
             t.Elapsed += OnTimeEvent;
+
+            FontManager fm = FontManager.getInstance();
+
+            for (int i = 0; i < forceLabels.Length; i++)
+            {
+
+                forceLabels[i] = new Label
+                {
+                    Text = "Hit " + (i + 1),
+                    ForeColor = System.Drawing.Color.DimGray,
+                    Font = fm.getSmallInfoFont(),
+                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Dock = DockStyle.Fill
+                };
+                tableLayoutPanel1.Controls.Add(forceLabels[i]);
+            }
+
+            for (int i = 0; i < timeLabels.Length; i++)
+            {
+                timeLabels[i] = new Label
+                {
+                    ForeColor = System.Drawing.Color.DimGray,
+                    Font = fm.getSmallInfoFont(),
+                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Dock = DockStyle.Fill
+                };
+                tableLayoutPanel2.Controls.Add(timeLabels[i]);
+            }
+
+            label7.Font = fm.getHeaderFont();
+            label19.Font = fm.getHeader3Font();
+            label20.Font = fm.getHeader3Font();
+
+            button1.Font = fm.getButtonFont();
+            button2.Font = fm.getButtonFont();
+            button3.Font = fm.getButtonFont();
+
+            label21.Font = fm.getHeader3Font();
+            label22.Font = fm.getHeader3Font();
+
+            label23.Font = fm.getHeader3Font();
+            label24.Font = fm.getHeader3Font();
+
         }
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
@@ -99,76 +178,36 @@ namespace ComboCounter.UserControls_Gabriel
                     h += 1;
                 }
 
-                if (m == 2)
+                if (s % 30 == 0)
                 {
-                    label1.Text = "" + forceArray[0];
-                    label1.ForeColor = System.Drawing.Color.Red;
+                    forceLabels[forceLabelIndex].Text = forceArray[forceIndex].ToString();
+                    forceLabels[forceLabelIndex].ForeColor = System.Drawing.Color.CadetBlue;
+                    if (forceIndex > 0)
+                    {
+                        cumulativeTime += timeArray[forceIndex - 1];
+                        timeLabels[timeLabelIndex].Text = timeArray[forceIndex - 1].ToString();
+                        session.insertHit(forceArray[forceIndex], cumulativeTime);
+                        timeLabelIndex = (timeLabelIndex + 1) % 8;
+                    }
+                    forceIndex++;
+                    forceLabelIndex = (forceLabelIndex + 1) % 9;
+
+                    Console.WriteLine(forceIndex);
+                    txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+                    if (forceIndex >= forceArray.Length)
+                    {
+                        SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
+                        label23.Text = string.Format("{0:n0} N", session.GetTotalForce());
+                        label24.Text = string.Format("{0:0.00} s", cumulativeTime);
+                        bellRing.Play();
+                        t.Stop();
+
+                        History.GetSessions().Add(session);
+
+                    }
+
                 }
-
-                if ( m == 4) 
-                {
-
-                    label2.Text = "" + forceArray[1];
-                    label2.ForeColor = System.Drawing.Color.Red;
-
-                    label13.Text = " " + timeArray[0];
-                    label13.ForeColor = System.Drawing.Color.Green;
-                }
-
-                if ( m == 6)
-                {
-
-                    label3.Text = "" + forceArray[2];
-                    label3.ForeColor = System.Drawing.Color.Green;
-
-                    label14.Text = " " + timeArray[1];
-                    label14.ForeColor = System.Drawing.Color.Red;
-
-                }
-
-                if (m == 8) 
-                {
-                    label4.Text = "" + forceArray[3];
-                    label4.ForeColor = System.Drawing.Color.Green;
-
-                    label11.Text = " " + timeArray[2];
-                    label11.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (m == 10) 
-                {
-                    label5.Text = "" + forceArray[4];
-                    label5.ForeColor = System.Drawing.Color.Green;
-
-                    label12.Text = " " + timeArray[3];
-                    label12.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (m == 12)
-                {
-                    label6.Text = "" + forceArray[5];
-                    label6.ForeColor = System.Drawing.Color.Green;
-
-                    label17.Text = " " + timeArray[4];
-                    label17.ForeColor = System.Drawing.Color.Red;
-                }
-
-                txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
-                if (totalForceBox == actualForce)
-                {
-                    SoundPlayer bellRing = new SoundPlayer(@"C:\Users\gabri\Desktop\12-HeavyHangingPunchingBag-Ver1\12-HeavyHangingPunchingBag-Ver1\SourceCode\ComboMeter V.1\ComboCounter\ComboCounter\soundEffect\old-fashioned-bell.wav");
-                    label23.Text = "4,933.98'N";
-                    label24.Text = "1.25's";
-                    bellRing.Play();
-                    // totalForce.ForeColor = System.Drawing.Color.Green;
-                    // bellRing.Play();
-                    t.Stop();
-                }
-                else
-                {
-                      totalForceBox = totalForceBox + 50;
-                  //  totalForce.Text = totalForceBox.ToString();
-                }
+                
             }));
 
         }

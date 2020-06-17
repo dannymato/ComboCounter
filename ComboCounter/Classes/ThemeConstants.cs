@@ -6,6 +6,7 @@ public class ThemeConstants
     {
         public static Color white = Color.FromArgb(255, 255, 255);
         public static Color green = Color.FromArgb(124, 252, 0);
+
         public static Color red = Color.FromArgb(255, 0, 0);
         public static int BorderSize = 0;
 
@@ -47,3 +48,5 @@ public class ThemeConstants
             public static Color H2TextColor3 = Color.FromArgb(255, 255, 255);
             public static Color H2HoverColor3 = Color.FromArgb(29, 161, 242);
             public static Color H2ClickColor3 = Color.FromArgb(200, 200, 200);
+}
+

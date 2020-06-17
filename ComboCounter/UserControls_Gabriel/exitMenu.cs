@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ComboCounter.Classes;
+using System;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls_Gabriel
@@ -15,6 +9,48 @@ namespace ComboCounter.UserControls_Gabriel
         public exitMenu()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OnExitApplication(EventArgs.Empty);
+        }
+
+        public event EventHandler exitApplication;
+
+        public event EventHandler closeDialog;
+
+        protected virtual void OnExitApplication(EventArgs e)
+        {
+            exitApplication?.Invoke(this, e);
+        }
+
+        protected virtual void OnCloseDialog(EventArgs e)
+        {
+            closeDialog?.Invoke(this, e);
+        }
+
+        private void vstimeBtn_Click(object sender, EventArgs e)
+        {
+            OnCloseDialog(EventArgs.Empty);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitMenu_Load(object sender, EventArgs e)
+        {
+            FontManager fm = FontManager.getInstance();
+            cancelButton.Font = fm.getButtonFont();
+            confirmButton.Font = fm.getButtonFont();
+            messageLabel.Font = fm.getSmallInfoFont();
         }
     }
 }
