@@ -56,7 +56,7 @@ namespace ComboCounter.UserControls
             {
                 forceGoalNumPlayer2 -= 1000;
             }
-            forceGoalPlayer2.Text = String.Format("{0:n0}", forceGoalPlayer2);
+            forceGoalPlayer2.Text = String.Format("{0:n0}", forceGoalNumPlayer2);
         }
 
         // Minus Button Player 1
