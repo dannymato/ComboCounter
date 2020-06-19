@@ -115,9 +115,9 @@ namespace ComboCounter
             Console.WriteLine(screenSize);
 
             home = new HomeScreen();
-            this.mainPanel.Controls.Add(home);
-            this.mainPanel.Width = this.Width;
-            this.mainPanel.Height = this.Height - tableLayoutPanel1.Height;
+            mainPanel.Controls.Add(home);
+            mainPanel.Width = Width;
+            mainPanel.Height = Height - tableLayoutPanel1.Height;
             mainPanel.Location = new Point(0, tableLayoutPanel1.Height);
 
             home.Width = mainPanel.Width;
@@ -146,7 +146,7 @@ namespace ComboCounter
                         {
                             totalForceComp = new targeted_total_of_force_comp();
                         }
-                        LoadNewPage(totalForce);
+                        LoadNewPage(totalForceComp);
                         break;
                     case ClassToCall.TotalTime:
                         if (totalTime == null)
@@ -219,15 +219,10 @@ namespace ComboCounter
             this.mainPanel.Controls.Clear();
             this.mainPanel.Controls.Add(newPage);
             newPage.Anchor = AnchorStyles.None;
-            this.mainPanel.Show();
-
             newPage.Left = (mainPanel.Width - newPage.Width) / 2;
             newPage.Top = (mainPanel.Height - newPage.Height) / 2;
-        }
+            this.mainPanel.Show();
 
-        private void quickStart1_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -237,20 +232,11 @@ namespace ComboCounter
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ComboButton_Click(object sender, EventArgs e)
         {
             Forms.ComboScore ComboScore = new Forms.ComboScore();
             ComboScore.Show();
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -327,19 +313,6 @@ namespace ComboCounter
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void homeScreen1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

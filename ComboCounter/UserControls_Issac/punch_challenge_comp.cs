@@ -23,12 +23,17 @@ namespace ComboCounter.UserControls
         public punch_challenge_comp()
         {
             InitializeComponent();
+            limit.Text = punchLimit.ToString();
 
         }
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
             punchLimit = punchLimit - 5;
+            if (punchLimit < 5)
+            {
+                punchLimit = 200;
+            }
             limit.Text = Convert.ToString(punchLimit);
         }
 
@@ -54,9 +59,9 @@ namespace ComboCounter.UserControls
 
         private void punchNum_TextChanged(object sender, EventArgs e)
         {
-            if(punchNum.Text == limit.Text)
+            if(punchNumPlay1.Text == limit.Text)
             {
-                punchNum.ForeColor = System.Drawing.Color.Green;
+                punchNumPlay1.ForeColor = System.Drawing.Color.Green;
                 timer1.Stop();
             }
         }
@@ -68,9 +73,9 @@ namespace ComboCounter.UserControls
 
         private void punchNum1_TextChanged(object sender, EventArgs e)
         {
-            if(punchNum1.Text == limit.Text )
+            if(totalPunchPlay2.Text == limit.Text )
             {
-                punchNum1.ForeColor = System.Drawing.Color.Green;
+                totalPunchPlay2.ForeColor = System.Drawing.Color.Green;
                 timer2.Stop();
             }
         }
@@ -82,8 +87,8 @@ namespace ComboCounter.UserControls
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            punchNum.Text = "0".ToString();
-            totalForce.Text = "0".ToString();
+            punchNumPlay1.Text = "0".ToString();
+            totalForcePlayer1.Text = "0".ToString();
             i = 0;
             j = 0;
             currentForceVal = 0;
@@ -97,8 +102,8 @@ namespace ComboCounter.UserControls
 
         private void resetButton1_Click(object sender, EventArgs e)
         {
-            punchNum1.Text = "0".ToString();
-            totalForce1.Text = "0".ToString();
+            totalPunchPlay2.Text = "0".ToString();
+            totalForcePlayer2.Text = "0".ToString();
             k = 0;
             l= 0;
             currentForceVal1 = 0;
@@ -116,6 +121,10 @@ namespace ComboCounter.UserControls
         private void plusIcon_Click(object sender, EventArgs e)
         {
             punchLimit = punchLimit + 5;
+            if (punchLimit > 200)
+            {
+                punchLimit = 5;
+            }
             limit.Text = Convert.ToString(punchLimit);
 
         }
@@ -140,7 +149,7 @@ namespace ComboCounter.UserControls
             {
                 currentForceVal = arrayTest[i];
                 currentForceVal = currentForceVal + lastHitVal;
-                totalForce.Text = currentForceVal.ToString();
+                totalForcePlayer1.Text = currentForceVal.ToString();
             }
             else
             {
@@ -151,7 +160,7 @@ namespace ComboCounter.UserControls
             lastHitVal = currentForceVal;
             if (lastHitVal != 0)
             {
-                punchNum.Text = j.ToString();
+                punchNumPlay1.Text = j.ToString();
                 j++;
             }
         }
@@ -163,7 +172,7 @@ namespace ComboCounter.UserControls
             {
                 currentForceVal1 = arrayTest1[k];
                 currentForceVal1 = currentForceVal1 + lastHitVal1;
-                totalForce1.Text = currentForceVal1.ToString();
+                totalForcePlayer2.Text = currentForceVal1.ToString();
             }
             else
             {
@@ -175,7 +184,7 @@ namespace ComboCounter.UserControls
 
             if (lastHitVal != 0)
             {
-                punchNum1.Text = l.ToString();
+                totalPunchPlay2.Text = l.ToString();
                 l++;
             }
         }

@@ -104,7 +104,7 @@ namespace ComboCounter.Forms
             this.h31.AutoSize = true;
             this.h31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.h31.ForeColor = System.Drawing.Color.SteelBlue;
-            this.h31.Location = new System.Drawing.Point(4, 155);
+            this.h31.Location = new System.Drawing.Point(3, 124);
             this.h31.Name = "h31";
             this.h31.Size = new System.Drawing.Size(515, 124);
             this.h31.TabIndex = 2;
@@ -117,7 +117,7 @@ namespace ComboCounter.Forms
             this.h32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.h32.ForeColor = System.Drawing.Color.SteelBlue;
             this.h32.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.h32.Location = new System.Drawing.Point(655, 155);
+            this.h32.Location = new System.Drawing.Point(524, 124);
             this.h32.Name = "h32";
             this.h32.Size = new System.Drawing.Size(515, 124);
             this.h32.TabIndex = 3;
@@ -129,7 +129,7 @@ namespace ComboCounter.Forms
             this.h33.AutoSize = true;
             this.h33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.h33.ForeColor = System.Drawing.Color.SteelBlue;
-            this.h33.Location = new System.Drawing.Point(1306, 155);
+            this.h33.Location = new System.Drawing.Point(1045, 124);
             this.h33.Name = "h33";
             this.h33.Size = new System.Drawing.Size(517, 124);
             this.h33.TabIndex = 5;
@@ -186,7 +186,7 @@ namespace ComboCounter.Forms
             this.punchCountDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.punchCountDefault.Size = new System.Drawing.Size(208, 65);
             this.punchCountDefault.TabIndex = 10;
-            this.punchCountDefault.Text = "DEFAULT";
+            this.punchCountDefault.Text = "Default";
             this.punchCountDefault.UseVisualStyleBackColor = false;
             this.punchCountDefault.Click += new System.EventHandler(this.punchCountDefault_Click);
             // 
@@ -204,7 +204,7 @@ namespace ComboCounter.Forms
             this.punchCountCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.punchCountCustom.Size = new System.Drawing.Size(199, 65);
             this.punchCountCustom.TabIndex = 11;
-            this.punchCountCustom.Text = "CUSTOM";
+            this.punchCountCustom.Text = "2 Players";
             this.punchCountCustom.UseVisualStyleBackColor = false;
             this.punchCountCustom.Click += new System.EventHandler(this.punchCountCustom_Click);
             // 
@@ -222,7 +222,7 @@ namespace ComboCounter.Forms
             this.punchChallengeDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.punchChallengeDefault.Size = new System.Drawing.Size(208, 65);
             this.punchChallengeDefault.TabIndex = 15;
-            this.punchChallengeDefault.Text = "DEFAULT";
+            this.punchChallengeDefault.Text = "Default";
             this.punchChallengeDefault.UseVisualStyleBackColor = false;
             this.punchChallengeDefault.Click += new System.EventHandler(this.punchChallengeDefault_Click);
             // 
@@ -240,7 +240,7 @@ namespace ComboCounter.Forms
             this.punchChallengeCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.punchChallengeCustom.Size = new System.Drawing.Size(199, 65);
             this.punchChallengeCustom.TabIndex = 16;
-            this.punchChallengeCustom.Text = "CUSTOM";
+            this.punchChallengeCustom.Text = "2 Players";
             this.punchChallengeCustom.UseVisualStyleBackColor = false;
             this.punchChallengeCustom.Click += new System.EventHandler(this.punchChallengeCustom_Click);
             // 
@@ -294,7 +294,7 @@ namespace ComboCounter.Forms
             this.comboCountCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.comboCountCustom.Size = new System.Drawing.Size(199, 65);
             this.comboCountCustom.TabIndex = 7;
-            this.comboCountCustom.Text = "CUSTOM";
+            this.comboCountCustom.Text = "Custom";
             this.comboCountCustom.UseVisualStyleBackColor = false;
             this.comboCountCustom.Click += new System.EventHandler(this.comboCountCustom_Click);
             // 
@@ -312,7 +312,7 @@ namespace ComboCounter.Forms
             this.totalForce2Play.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.totalForce2Play.Size = new System.Drawing.Size(237, 65);
             this.totalForce2Play.TabIndex = 14;
-            this.totalForce2Play.Text = "2 PLAYERS";
+            this.totalForce2Play.Text = "2 Players";
             this.totalForce2Play.UseVisualStyleBackColor = false;
             this.totalForce2Play.Click += new System.EventHandler(this.totalForce2Play_Click);
             // 
@@ -330,7 +330,7 @@ namespace ComboCounter.Forms
             this.totalTimeCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.totalTimeCustom.Size = new System.Drawing.Size(199, 65);
             this.totalTimeCustom.TabIndex = 13;
-            this.totalTimeCustom.Text = "CUSTOM";
+            this.totalTimeCustom.Text = "2 Players";
             this.totalTimeCustom.UseVisualStyleBackColor = false;
             this.totalTimeCustom.Click += new System.EventHandler(this.totalTimeCustom_Click);
             // 
@@ -348,7 +348,7 @@ namespace ComboCounter.Forms
             this.totalTimeDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.totalTimeDefault.Size = new System.Drawing.Size(208, 65);
             this.totalTimeDefault.TabIndex = 6;
-            this.totalTimeDefault.Text = "DEFAULT";
+            this.totalTimeDefault.Text = "Default";
             this.totalTimeDefault.UseVisualStyleBackColor = false;
             this.totalTimeDefault.Click += new System.EventHandler(this.totalTimeDefault_Click);
             // 
@@ -366,7 +366,7 @@ namespace ComboCounter.Forms
             this.totalForceDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.totalForceDefault.Size = new System.Drawing.Size(208, 65);
             this.totalForceDefault.TabIndex = 4;
-            this.totalForceDefault.Text = "DEFAULT";
+            this.totalForceDefault.Text = "Default";
             this.totalForceDefault.UseVisualStyleBackColor = false;
             this.totalForceDefault.Click += new System.EventHandler(this.totalForceDefault_Click);
             // 
@@ -384,7 +384,7 @@ namespace ComboCounter.Forms
             this.comboCounterDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.comboCounterDefault.Size = new System.Drawing.Size(208, 65);
             this.comboCounterDefault.TabIndex = 1;
-            this.comboCounterDefault.Text = "DEFAULT";
+            this.comboCounterDefault.Text = "Default";
             this.comboCounterDefault.UseVisualStyleBackColor = false;
             this.comboCounterDefault.Click += new System.EventHandler(this.comboCounterDefault_Click);
             // 
