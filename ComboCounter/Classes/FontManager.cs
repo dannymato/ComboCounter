@@ -63,6 +63,11 @@ namespace ComboCounter.Classes
             return new Font(pfc.Families[0], 120);
         }
 
+        public Font getMediumInfoFont()
+        {
+            return new Font(pfc.Families[0], 60);
+        }
+
         public Font getSmallInfoFont()
         {
             return new Font(pfc.Families[0], 30);
