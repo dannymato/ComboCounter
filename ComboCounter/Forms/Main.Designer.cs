@@ -165,7 +165,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2264, 59);
             this.tableLayoutPanel1.TabIndex = 12;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // mainPanel
             // 
@@ -176,7 +175,6 @@
             this.mainPanel.Padding = new System.Windows.Forms.Padding(100);
             this.mainPanel.Size = new System.Drawing.Size(2183, 1145);
             this.mainPanel.TabIndex = 59;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // Main
             // 

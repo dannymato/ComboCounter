@@ -146,7 +146,7 @@ namespace ComboCounter
                         {
                             totalForceComp = new targeted_total_of_force_comp();
                         }
-                        LoadNewPage(totalForce);
+                        LoadNewPage(totalForceComp);
                         break;
                     case ClassToCall.TotalTime:
                         if (totalTime == null)
@@ -225,11 +225,6 @@ namespace ComboCounter
 
         }
 
-        private void quickStart1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Forms.TargetedTotalForce TargetedTotalForce = new Forms.TargetedTotalForce();
@@ -237,20 +232,11 @@ namespace ComboCounter
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ComboButton_Click(object sender, EventArgs e)
         {
             Forms.ComboScore ComboScore = new Forms.ComboScore();
             ComboScore.Show();
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -327,24 +313,6 @@ namespace ComboCounter
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void homeScreen1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
