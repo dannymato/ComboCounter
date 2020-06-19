@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using ComboCounter.Classes;
 using MySql.Data.MySqlClient;
@@ -32,7 +33,7 @@ namespace ComboCounter.UserControls_Gabriel
                 //   sex_tb.Text = (reader["age"]).ToString();
                 textBox17.Text = username;
                 textBox18.Text = password;
-                textBox11.Text = fname;
+              //  textBox11.Text = fname;
 
         }
 
@@ -50,6 +51,12 @@ namespace ComboCounter.UserControls_Gabriel
             textBox9.Visible = true;
             textBox7.Visible = true;
             submit_b.Visible = true;
+            panel1.Visible = false;
+            panel2.Location = new Point((Width / 2) - (panel3.Width / 2) + 200, (Height / 2) - (panel3.Height / 2) + 150);
+            // panel2.Location = panel1.Location;
+            // panel1.SendToBack();
+            // panel2.BringToFront();
+            panel2.Show();
 
         }
 
@@ -70,9 +77,74 @@ namespace ComboCounter.UserControls_Gabriel
         private void UserAccount_Load(object sender, EventArgs e)
         {
 
-            //       textBox18.Text = "load";
-                   getInfo();
-            //   
+
+            FontManager fm = FontManager.getInstance();
+
+            header11.Font = fm.getHeader2Font();
+            header11.ForeColor = ThemeConstants.HeaderTextColor1;
+            UsernameAccount.ForeColor = ThemeConstants.HeaderTextColor1;
+            PasswordAccount.ForeColor = ThemeConstants.HeaderTextColor1;
+            NameAccount.ForeColor = ThemeConstants.HeaderTextColor1;
+            EmailAccount.ForeColor = ThemeConstants.HeaderTextColor1;
+            SexAccount.ForeColor = ThemeConstants.HeaderTextColor1;
+            ClassAccount.ForeColor = ThemeConstants.HeaderTextColor1;
+
+
+            panel3.Location = new Point((Width / 2) - (panel3.Width / 2), (Height / 2) - (panel3.Height / 2));
+            panel1.Location = new Point((panel3.Width / 2) - (panel1.Width / 2), (panel1.Height / 2) - (panel1.Height / 2) + 110);
+            header11.Location = new Point((panel3.Width / 2) - (header11.Width / 2), 0);
+            /**
+            panel1.Visible = false;
+            panel2.Visible = true;
+            panel2.Location = new Point((panel3.Width / 2) - (panel2.Width / 2), (panel2.Height / 2) - (panel2.Height / 2) + 110);
+            **/    
+    
+
+
         }
+
+        private void panel1_Enter(object sender, EventArgs e)
+        {
+
+            //groupBox1.Visibility = System.Visibility.Hidden;
+
+        }
+
+        private void header11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallInfo1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smallInfo1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        /**
+        private void button1(object sender, EventArgs e)
+        {
+
+        }
+        **/
     }
 }
