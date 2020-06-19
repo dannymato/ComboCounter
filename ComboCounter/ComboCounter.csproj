@@ -67,6 +67,9 @@
     <Compile Include="CustomControls\Header.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\MediumInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\SmallInfo.cs">
       <SubType>Component</SubType>
     </Compile>

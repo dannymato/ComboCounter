@@ -55,7 +55,6 @@ namespace ComboCounter.UserControls
             this.forceAccruedPlayer1Header = new ComboCounter.Classes.H3();
             this.forceAccruedPlayer2Header = new ComboCounter.Classes.H3();
             this.setTimePlayer1 = new ComboCounter.Classes.BigInfo();
-            this.label6 = new System.Windows.Forms.Label();
             this.currentTimePlayer1 = new ComboCounter.Classes.BigInfo();
             this.currTimePlayer2 = new ComboCounter.Classes.BigInfo();
             this.totalForcePlayer1 = new ComboCounter.Classes.BigInfo();
@@ -373,19 +372,7 @@ namespace ComboCounter.UserControls
             this.setTimePlayer1.Size = new System.Drawing.Size(596, 240);
             this.setTimePlayer1.TabIndex = 79;
             this.setTimePlayer1.Text = "00:30";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(1543, 406);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(12, 17);
-            this.label6.TabIndex = 84;
-            this.label6.Text = ":";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+
             // 
             // currentTimePlayer1
             // 
@@ -422,7 +409,6 @@ namespace ComboCounter.UserControls
             this.totalForcePlayer1.Size = new System.Drawing.Size(212, 240);
             this.totalForcePlayer1.TabIndex = 87;
             this.totalForcePlayer1.Text = "0";
-            this.totalForcePlayer1.Click += new System.EventHandler(this.totalForce_Click);
             // 
             // totalForcePlayer2
             // 
@@ -458,7 +444,6 @@ namespace ComboCounter.UserControls
             this.Controls.Add(this.totalForcePlayer2);
             this.Controls.Add(this.totalForcePlayer1);
             this.Controls.Add(this.currTimePlayer2);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.forceAccruedPlayer2Header);
             this.Controls.Add(this.currTimePlayer1Header);
             this.Controls.Add(this.timeSetPlayer1Header);
@@ -492,7 +477,6 @@ namespace ComboCounter.UserControls
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Label label6;
         private OutlineButton startButtonPlayer1;
         private OutlineButton stopButtonPlayer1;
         private OutlineButton resetButtonPlayer1;
