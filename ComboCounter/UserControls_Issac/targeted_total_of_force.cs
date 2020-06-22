@@ -32,15 +32,19 @@ namespace ComboCounter.UserControls
         private void startButton_Click(object sender, EventArgs e)
         {
             t.Start();
+            session = new Session(DateTime.Now);
+            stopwatch.Start();
         }
 
         private void targeted_total_of_force_Load(object sender, EventArgs e)
         {
+
+            this.splitContainer1.SplitterDistance = Width / 2;
+
             t = new System.Timers.Timer();
             t.Interval = 1;
             t.Elapsed += OnTimeEvent;
-            session = new Session(DateTime.Now);
-            stopwatch.Start();
+            
         }
 
         private void totalForce_TextChanged(object sender, EventArgs e)

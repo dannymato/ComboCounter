@@ -113,7 +113,7 @@ namespace ComboCounter.UserControls
         private string currentTimeLabelText(int msecs)
         {
             int numMins = msecs / 1000 / 60;
-            int numSecs = msecs / 1000;
+            int numSecs = msecs / 1000 % 60;
             int fracSecs = (msecs % 1000) / 100;
 
             return String.Format("{0:00}:{1:00}.{2:0}", numMins, numSecs, fracSecs);

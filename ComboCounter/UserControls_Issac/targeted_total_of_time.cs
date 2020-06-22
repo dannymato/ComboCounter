@@ -54,8 +54,7 @@ namespace ComboCounter.UserControls
 
         private void updateTimeSetter()
         {
-            setTimeMins.Text = String.Format("{0:00}", (timeIntervalSecs / 60));
-            setTimeSec.Text = String.Format("{0:00}", (timeIntervalSecs % 60));
+            setTime.Text = String.Format("{0:00}:{1:00}", timeIntervalSecs / 60, (timeIntervalSecs % 60));
         }
 
         private void setTimeSec_Click(object sender, EventArgs e)
@@ -76,8 +75,8 @@ namespace ComboCounter.UserControls
         private void timer1_Tick(object sender, EventArgs e)
         {
             quickTotal -= 100;
-            int secs = (quickTotal / 1000);
-            int mins = (secs / 60);
+            int secs = (quickTotal / 1000 % 60);
+            int mins = (quickTotal / 1000 / 60);
             int mSecs = (quickTotal % 1000) / 100;
 
             currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, mSecs);

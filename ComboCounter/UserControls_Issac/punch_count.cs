@@ -120,8 +120,8 @@ namespace ComboCounter.UserControls
         {
 
             quickTotal -= 100;
-            int secs = (quickTotal / 1000);
-            int mins = (secs / 60);
+            int secs = (quickTotal / 1000 % 60);
+            int mins = quickTotal / 1000 / 60;
             int fracSecs = (quickTotal % 1000) / 100;
             currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, fracSecs);
             if (quickTotal == 0)
