@@ -21,6 +21,7 @@ namespace ComboCounter.UserControls
         public targeted_total_of_force()
         {
             InitializeComponent();
+            header.Left = (Width - header.Width) / 2;
         }
 
         private void startButton_Click(object sender, EventArgs e)

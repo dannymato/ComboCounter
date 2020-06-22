@@ -62,7 +62,6 @@ namespace ComboCounter.UserControls
             this.plusIconPlayer1 = new ComboCounter.CustomControls.TextButton();
             this.currTimePlayer1Header = new ComboCounter.Classes.H3();
             this.currentTimePlayer1 = new ComboCounter.Classes.BigInfo();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -234,11 +233,10 @@ namespace ComboCounter.UserControls
             // 
             // header
             // 
-            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.header.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.header.AutoSize = true;
             this.header.ForeColor = System.Drawing.Color.SteelBlue;
-            this.header.Location = new System.Drawing.Point(244, 11);
+            this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(2024, 158);
             this.header.TabIndex = 57;
@@ -473,13 +471,6 @@ namespace ComboCounter.UserControls
             this.currentTimePlayer1.TabIndex = 85;
             this.currentTimePlayer1.Text = "00:00.0";
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(-19, -19);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel2.TabIndex = 91;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.AutoSize = true;
@@ -565,7 +556,6 @@ namespace ComboCounter.UserControls
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.header);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -612,7 +602,6 @@ namespace ComboCounter.UserControls
         private BigInfo totalForcePlayer2;
         private MediumInfo setTimePlayer2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private H3 forceAccruedPlayer1Header;
         private H3 guest1Header;
         private BigInfo totalForcePlayer1;

@@ -153,11 +153,11 @@ namespace ComboCounter.UserControls
             this.headerLabel.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.headerLabel, 2);
             this.headerLabel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.headerLabel.Location = new System.Drawing.Point(488, 0);
+            this.headerLabel.Location = new System.Drawing.Point(861, 0);
             this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(1504, 180);
+            this.headerLabel.Size = new System.Drawing.Size(759, 180);
             this.headerLabel.TabIndex = 56;
-            this.headerLabel.Text = "Targeted Total of Time";
+            this.headerLabel.Text = "Total Time";
             this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timeSetHeader

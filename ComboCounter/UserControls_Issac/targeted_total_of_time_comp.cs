@@ -15,6 +15,7 @@ namespace ComboCounter.UserControls
         public targeted_total_of_time_comp()
         {
             InitializeComponent();
+            header.Left = (Width - header.Width) / 2;
         }
 
         private void stopButton_Click(object sender, EventArgs e)
@@ -155,6 +156,7 @@ namespace ComboCounter.UserControls
         {
 
         }
+
 
 
         // Player 2 Minus Icon

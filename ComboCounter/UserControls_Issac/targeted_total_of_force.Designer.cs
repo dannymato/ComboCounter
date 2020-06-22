@@ -37,20 +37,20 @@ namespace ComboCounter.UserControls
             this.plusIcon = new System.Windows.Forms.Button();
             this.minusIcon = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.header = new ComboCounter.Classes.Header1();
             this.forceGoalHeader = new ComboCounter.Classes.H2();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.forceGoal = new ComboCounter.Classes.BigInfo();
             this.totalForce = new ComboCounter.Classes.BigInfo();
             this.forceAccruedHeader = new ComboCounter.Classes.H2();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.currTimeHeader = new ComboCounter.Classes.H2();
             this.txtResult = new ComboCounter.Classes.BigInfo();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.startButton = new ComboCounter.CustomControls.OutlineButton();
             this.stopButton = new ComboCounter.CustomControls.OutlineButton();
             this.resetButton = new ComboCounter.CustomControls.OutlineButton();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.header = new ComboCounter.Classes.Header1();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,7 +72,7 @@ namespace ComboCounter.UserControls
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plusIcon.Location = new System.Drawing.Point(784, 91);
-            this.plusIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
             this.plusIcon.Size = new System.Drawing.Size(68, 58);
             this.plusIcon.TabIndex = 78;
@@ -86,7 +86,7 @@ namespace ComboCounter.UserControls
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusIcon.Location = new System.Drawing.Point(4, 83);
-            this.minusIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
             this.minusIcon.Size = new System.Drawing.Size(67, 73);
             this.minusIcon.TabIndex = 79;
@@ -113,6 +113,17 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 845);
             this.tableLayoutPanel1.TabIndex = 80;
             // 
+            // forceGoalHeader
+            // 
+            this.forceGoalHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceGoalHeader.AutoSize = true;
+            this.forceGoalHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceGoalHeader.Location = new System.Drawing.Point(295, 0);
+            this.forceGoalHeader.Name = "forceGoalHeader";
+            this.forceGoalHeader.Size = new System.Drawing.Size(644, 158);
+            this.forceGoalHeader.TabIndex = 66;
+            this.forceGoalHeader.Text = "Force Goal";
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -124,83 +135,6 @@ namespace ComboCounter.UserControls
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(856, 240);
             this.flowLayoutPanel1.TabIndex = 67;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.currTimeHeader, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtResult, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1233, 845);
-            this.tableLayoutPanel2.TabIndex = 81;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.startButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.stopButton, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.resetButton, 2, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 401);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1227, 441);
-            this.tableLayoutPanel3.TabIndex = 78;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(17, 212);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(2471, 845);
-            this.splitContainer1.SplitterDistance = 1234;
-            this.splitContainer1.TabIndex = 82;
-            // 
-            // header
-            // 
-            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.header.AutoSize = true;
-            this.header.ForeColor = System.Drawing.Color.SteelBlue;
-            this.header.Location = new System.Drawing.Point(478, 10);
-            this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(162, 17);
-            this.header.TabIndex = 57;
-            this.header.Text = "Targeted Total of  Force";
-            this.header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // forceGoalHeader
-            // 
-            this.forceGoalHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.forceGoalHeader.AutoSize = true;
-            this.forceGoalHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.forceGoalHeader.Location = new System.Drawing.Point(295, 0);
-            this.forceGoalHeader.Name = "forceGoalHeader";
-            this.forceGoalHeader.Size = new System.Drawing.Size(644, 158);
-            this.forceGoalHeader.TabIndex = 66;
-            this.forceGoalHeader.Text = "Force Goal";
             // 
             // forceGoal
             // 
@@ -236,6 +170,25 @@ namespace ComboCounter.UserControls
             this.forceAccruedHeader.TabIndex = 68;
             this.forceAccruedHeader.Text = "Force Accrued";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.currTimeHeader, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtResult, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1233, 845);
+            this.tableLayoutPanel2.TabIndex = 81;
+            // 
             // currTimeHeader
             // 
             this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -257,6 +210,23 @@ namespace ComboCounter.UserControls
             this.txtResult.Size = new System.Drawing.Size(761, 240);
             this.txtResult.TabIndex = 77;
             this.txtResult.Text = "00:00.0";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.startButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.stopButton, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.resetButton, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 401);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1227, 441);
+            this.tableLayoutPanel3.TabIndex = 78;
             // 
             // startButton
             // 
@@ -282,7 +252,7 @@ namespace ComboCounter.UserControls
             this.stopButton.BackColor = System.Drawing.Color.Transparent;
             this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stopButton.ForeColor = System.Drawing.Color.Red;
-            this.stopButton.Location = new System.Drawing.Point(478, 174);
+            this.stopButton.Location = new System.Drawing.Point(479, 174);
             this.stopButton.Margin = new System.Windows.Forms.Padding(4);
             this.stopButton.Name = "stopButton";
             this.stopButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
@@ -299,7 +269,7 @@ namespace ComboCounter.UserControls
             this.resetButton.BackColor = System.Drawing.Color.Transparent;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton.Location = new System.Drawing.Point(887, 174);
+            this.resetButton.Location = new System.Drawing.Point(888, 174);
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
             this.resetButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
@@ -309,6 +279,36 @@ namespace ComboCounter.UserControls
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(17, 212);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
+            this.splitContainer1.Size = new System.Drawing.Size(2471, 845);
+            this.splitContainer1.SplitterDistance = 1234;
+            this.splitContainer1.TabIndex = 82;
+            // 
+            // header
+            // 
+            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.header.AutoSize = true;
+            this.header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.header.Location = new System.Drawing.Point(478, 10);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(778, 180);
+            this.header.TabIndex = 57;
+            this.header.Text = "Total Force";
+            this.header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // targeted_total_of_force
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,7 +316,7 @@ namespace ComboCounter.UserControls
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.header);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "targeted_total_of_force";
             this.Size = new System.Drawing.Size(2488, 1097);
             this.Load += new System.EventHandler(this.targeted_total_of_force_Load);
