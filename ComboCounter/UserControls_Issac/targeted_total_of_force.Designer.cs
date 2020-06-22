@@ -246,7 +246,6 @@ namespace ComboCounter.UserControls
             this.currTimeHeader.Size = new System.Drawing.Size(801, 158);
             this.currTimeHeader.TabIndex = 67;
             this.currTimeHeader.Text = "Current Time";
-            this.currTimeHeader.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtResult
             // 

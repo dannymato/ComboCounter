@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls
@@ -156,6 +149,11 @@ namespace ComboCounter.UserControls
             numSecsPlay1 += 15;
 
             updateTimeText(setTimePlayer1, numSecsPlay1);
+        }
+
+        private void targeted_total_of_time_comp_Load(object sender, EventArgs e)
+        {
+
         }
 
 

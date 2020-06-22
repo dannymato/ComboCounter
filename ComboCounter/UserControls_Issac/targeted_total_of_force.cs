@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Media;
@@ -17,9 +10,10 @@ namespace ComboCounter.UserControls
     public partial class targeted_total_of_force : UserControl
     {
         System.Timers.Timer t;
-        int h, m, s, totalForceBox;
-        int forceGoal1 = 15;
-        int actualForce = 15000;
+        int totalForceBox;
+        int forceGoal1 = 15000;
+
+        const int FORCE_INTERVAL = 1000;
 
         Stopwatch stopwatch = new Stopwatch();
         Session session;
@@ -47,33 +41,19 @@ namespace ComboCounter.UserControls
             
         }
 
-        private void totalForce_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void plusIcon_Click(object sender, EventArgs e)
         {
-            forceGoal1++;
-            forceGoal.Text = "" + forceGoal1 + ",000";
-            actualForce = actualForce + 1000;
+            forceGoal1 += FORCE_INTERVAL;
+            forceGoal.Text = string.Format("{0:n0}", forceGoal1);
         }
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
             if (forceGoal1 != 0)
             {
-                forceGoal1--;
-                forceGoal.Text = "" + forceGoal1 + ",000";
+                forceGoal1 -= FORCE_INTERVAL;
+                forceGoal.Text = string.Format("{0:n0}", forceGoal1);
             }
-           
-            if (actualForce != 0)
-            actualForce = actualForce - 1000;
             
         }
 
@@ -87,22 +67,16 @@ namespace ComboCounter.UserControls
             SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
             Invoke(new Action(() =>
             {
-                
-                s += 1;
-                if (s == 60)
-                {
-                    s = 0;
-                    m += 1;
-                }
-                if (m == 60)
-                {
-                    m = 0;
-                    h += 1;
-                }
 
-                txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
 
-                if (totalForceBox >= actualForce)
+                long seconds = stopwatch.ElapsedMilliseconds / 1000 % 60;
+                long minutes = stopwatch.ElapsedMilliseconds / 1000 / 60;
+                long fracSecs = stopwatch.ElapsedMilliseconds % 1000 / 100;
+
+           
+                txtResult.Text = string.Format("{0:00}:{1:00}.{2:0}", minutes, seconds, fracSecs);
+
+                if (totalForceBox >= forceGoal1)
                 {
                     totalForce.ForeColor = System.Drawing.Color.Green;
                     bellRing.Play();
@@ -132,7 +106,6 @@ namespace ComboCounter.UserControls
         private void resetButton_Click(object sender, EventArgs e)
         {
             t.Stop();
-            s = 0; m = 0; h = 0;
             totalForceBox = 0;
             totalForce.Text = "0";
             txtResult.Text = "00:00.00";

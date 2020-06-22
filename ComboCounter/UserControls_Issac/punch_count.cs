@@ -61,8 +61,10 @@ namespace ComboCounter.UserControls
                 timer2.Tick += new EventHandler(timer2_Tick);
                 timer2.Enabled = true;
 
-                session = new Session(DateTime.Now);
+                
             }
+
+            session = new Session(DateTime.Now);
 
 
         }
