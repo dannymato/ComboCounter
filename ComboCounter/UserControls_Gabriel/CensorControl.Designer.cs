@@ -28,189 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CensorControl));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mediumInfo2 = new ComboCounter.Classes.MediumInfo();
+            this.SensorHeader = new ComboCounter.Classes.MediumInfo();
+            this.Minus_Icon1 = new System.Windows.Forms.Button();
+            this.Handicap1 = new ComboCounter.Classes.SmallInfo();
+            this.Plus_Icon1 = new System.Windows.Forms.Button();
+            this.mediumInfo3 = new ComboCounter.Classes.MediumInfo();
+            this.Plus_Icon2 = new System.Windows.Forms.Button();
+            this.Minus_Icon2 = new System.Windows.Forms.Button();
+            this.Handicap2 = new ComboCounter.Classes.SmallInfo();
+            this.SensorPanel = new System.Windows.Forms.Panel();
+            this.SensorPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // mediumInfo2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-139, 194);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(813, 590);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.mediumInfo2.AutoSize = true;
+            this.mediumInfo2.BackColor = System.Drawing.Color.Transparent;
+            this.mediumInfo2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mediumInfo2.Location = new System.Drawing.Point(65, 17);
+            this.mediumInfo2.Name = "mediumInfo2";
+            this.mediumInfo2.Size = new System.Drawing.Size(316, 89);
+            this.mediumInfo2.TabIndex = 81;
+            this.mediumInfo2.Text = "Guest 1";
             // 
-            // textBox3
+            // SensorHeader
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Green;
-            this.textBox3.Location = new System.Drawing.Point(929, 370);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(433, 91);
-            this.textBox3.TabIndex = 67;
-            this.textBox3.Text = "100%";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.SensorHeader.AutoSize = true;
+            this.SensorHeader.BackColor = System.Drawing.Color.Transparent;
+            this.SensorHeader.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SensorHeader.Location = new System.Drawing.Point(523, 29);
+            this.SensorHeader.Name = "SensorHeader";
+            this.SensorHeader.Size = new System.Drawing.Size(608, 89);
+            this.SensorHeader.TabIndex = 82;
+            this.SensorHeader.Text = "Sensor Reading";
             // 
-            // textBox4
+            // Minus_Icon1
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textBox4.Location = new System.Drawing.Point(929, 687);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(433, 91);
-            this.textBox4.TabIndex = 68;
-            this.textBox4.Text = "68%";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Minus_Icon1.BackgroundImage = global::ComboCounter.Properties.Resources.minus_icon;
+            this.Minus_Icon1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Minus_Icon1.FlatAppearance.BorderSize = 0;
+            this.Minus_Icon1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Minus_Icon1.ForeColor = System.Drawing.Color.Transparent;
+            this.Minus_Icon1.Location = new System.Drawing.Point(80, 123);
+            this.Minus_Icon1.Name = "Minus_Icon1";
+            this.Minus_Icon1.Size = new System.Drawing.Size(77, 76);
+            this.Minus_Icon1.TabIndex = 77;
+            this.Minus_Icon1.UseVisualStyleBackColor = true;
+            this.Minus_Icon1.Click += new System.EventHandler(this.Minus_Icon1_Click);
             // 
-            // textBox7
+            // Handicap1
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.Transparent;
-            this.textBox7.Location = new System.Drawing.Point(1273, 382);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(44, 68);
-            this.textBox7.TabIndex = 69;
-            this.textBox7.Text = "+";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Handicap1.AutoSize = true;
+            this.Handicap1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Handicap1.Location = new System.Drawing.Point(148, 134);
+            this.Handicap1.Name = "Handicap1";
+            this.Handicap1.Size = new System.Drawing.Size(133, 45);
+            this.Handicap1.TabIndex = 78;
+            this.Handicap1.Text = " 100%";
+            this.Handicap1.Click += new System.EventHandler(this.smallInfo1_Click);
             // 
-            // textBox5
+            // Plus_Icon1
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.Transparent;
-            this.textBox5.Location = new System.Drawing.Point(1244, 694);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(44, 68);
-            this.textBox5.TabIndex = 70;
-            this.textBox5.Text = "+";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Plus_Icon1.BackColor = System.Drawing.Color.Transparent;
+            this.Plus_Icon1.BackgroundImage = global::ComboCounter.Properties.Resources.plus_sign;
+            this.Plus_Icon1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Plus_Icon1.FlatAppearance.BorderSize = 0;
+            this.Plus_Icon1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Plus_Icon1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Plus_Icon1.Location = new System.Drawing.Point(287, 134);
+            this.Plus_Icon1.Name = "Plus_Icon1";
+            this.Plus_Icon1.Size = new System.Drawing.Size(50, 55);
+            this.Plus_Icon1.TabIndex = 76;
+            this.Plus_Icon1.UseVisualStyleBackColor = false;
+            this.Plus_Icon1.Click += new System.EventHandler(this.Plus_Icon1_Click);
             // 
-            // textBox8
+            // mediumInfo3
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.Transparent;
-            this.textBox8.Location = new System.Drawing.Point(992, 382);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(36, 68);
-            this.textBox8.TabIndex = 71;
-            this.textBox8.Text = "-";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mediumInfo3.AutoSize = true;
+            this.mediumInfo3.BackColor = System.Drawing.Color.Transparent;
+            this.mediumInfo3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mediumInfo3.Location = new System.Drawing.Point(65, 266);
+            this.mediumInfo3.Name = "mediumInfo3";
+            this.mediumInfo3.Size = new System.Drawing.Size(316, 89);
+            this.mediumInfo3.TabIndex = 83;
+            this.mediumInfo3.Text = "Guest 2";
             // 
-            // textBox9
+            // Plus_Icon2
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.Transparent;
-            this.textBox9.Location = new System.Drawing.Point(1008, 694);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(36, 68);
-            this.textBox9.TabIndex = 72;
-            this.textBox9.Text = "-";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Plus_Icon2.BackColor = System.Drawing.Color.Transparent;
+            this.Plus_Icon2.BackgroundImage = global::ComboCounter.Properties.Resources.plus_sign;
+            this.Plus_Icon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Plus_Icon2.FlatAppearance.BorderSize = 0;
+            this.Plus_Icon2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Plus_Icon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Plus_Icon2.Location = new System.Drawing.Point(296, 379);
+            this.Plus_Icon2.Name = "Plus_Icon2";
+            this.Plus_Icon2.Size = new System.Drawing.Size(50, 55);
+            this.Plus_Icon2.TabIndex = 84;
+            this.Plus_Icon2.UseVisualStyleBackColor = false;
+            this.Plus_Icon2.Click += new System.EventHandler(this.Plus_Icon2_Click);
             // 
-            // label7
+            // Minus_Icon2
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(757, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(813, 136);
-            this.label7.TabIndex = 73;
-            this.label7.Text = "Sensor Reading";
+            this.Minus_Icon2.BackgroundImage = global::ComboCounter.Properties.Resources.minus_icon;
+            this.Minus_Icon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Minus_Icon2.FlatAppearance.BorderSize = 0;
+            this.Minus_Icon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Minus_Icon2.ForeColor = System.Drawing.Color.Transparent;
+            this.Minus_Icon2.Location = new System.Drawing.Point(63, 368);
+            this.Minus_Icon2.Name = "Minus_Icon2";
+            this.Minus_Icon2.Size = new System.Drawing.Size(77, 76);
+            this.Minus_Icon2.TabIndex = 85;
+            this.Minus_Icon2.UseVisualStyleBackColor = true;
+            this.Minus_Icon2.Click += new System.EventHandler(this.Minus_Icon2_Click);
             // 
-            // label19
+            // Handicap2
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label19.Location = new System.Drawing.Point(1016, 274);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(265, 90);
-            this.label19.TabIndex = 74;
-            this.label19.Text = "Guest1";
+            this.Handicap2.AutoSize = true;
+            this.Handicap2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Handicap2.Location = new System.Drawing.Point(157, 385);
+            this.Handicap2.Name = "Handicap2";
+            this.Handicap2.Size = new System.Drawing.Size(133, 45);
+            this.Handicap2.TabIndex = 86;
+            this.Handicap2.Text = " 100%";
             // 
-            // label1
+            // SensorPanel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(1020, 590);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 90);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "Guest2";
+            this.SensorPanel.Controls.Add(this.Handicap2);
+            this.SensorPanel.Controls.Add(this.Minus_Icon2);
+            this.SensorPanel.Controls.Add(this.Plus_Icon2);
+            this.SensorPanel.Controls.Add(this.mediumInfo3);
+            this.SensorPanel.Controls.Add(this.Handicap1);
+            this.SensorPanel.Controls.Add(this.Plus_Icon1);
+            this.SensorPanel.Controls.Add(this.Minus_Icon1);
+            this.SensorPanel.Controls.Add(this.mediumInfo2);
+            this.SensorPanel.Location = new System.Drawing.Point(600, 187);
+            this.SensorPanel.Name = "SensorPanel";
+            this.SensorPanel.Size = new System.Drawing.Size(450, 469);
+            this.SensorPanel.TabIndex = 87;
             // 
             // CensorControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.SensorPanel);
+            this.Controls.Add(this.SensorHeader);
             this.Name = "CensorControl";
-            this.Size = new System.Drawing.Size(2133, 862);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(1600, 700);
+            this.Load += new System.EventHandler(this.CensorControl_Load);
+            this.SensorPanel.ResumeLayout(false);
+            this.SensorPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label1;
+        private Classes.MediumInfo mediumInfo2;
+        private Classes.MediumInfo SensorHeader;
+        private System.Windows.Forms.Button Minus_Icon1;
+        private Classes.SmallInfo Handicap1;
+        private System.Windows.Forms.Button Plus_Icon1;
+        private Classes.MediumInfo mediumInfo3;
+        private System.Windows.Forms.Button Plus_Icon2;
+        private System.Windows.Forms.Button Minus_Icon2;
+        private Classes.SmallInfo Handicap2;
+        private System.Windows.Forms.Panel SensorPanel;
     }
 }
