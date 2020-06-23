@@ -32,13 +32,12 @@ namespace ComboCounter.UserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(punch_count));
             this.startButton = new ComboCounter.CustomControls.OutlineButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.stopButton = new ComboCounter.CustomControls.OutlineButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.minusIcon = new System.Windows.Forms.Button();
-            this.plusIcon = new System.Windows.Forms.Button();
+            this.minusIcon = new ComboCounter.CustomControls.TextButton();
+            this.plusIcon = new ComboCounter.CustomControls.TextButton();
             this.resetButton = new ComboCounter.CustomControls.OutlineButton();
             this.timeSetHeader = new ComboCounter.Classes.H3();
             this.thresholdHeader = new ComboCounter.Classes.H3();
@@ -53,6 +52,10 @@ namespace ComboCounter.UserControls
             this.punchCounter = new ComboCounter.Classes.BigInfo();
             this.lastHit = new ComboCounter.Classes.BigInfo();
             this.currentTime = new ComboCounter.Classes.BigInfo();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // startButton
@@ -98,27 +101,39 @@ namespace ComboCounter.UserControls
             // 
             // minusIcon
             // 
-            this.minusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minusIcon.BackgroundImage")));
+            this.minusIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusIcon.AutoSize = true;
+            this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.Location = new System.Drawing.Point(422, 735);
+            this.minusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
+            this.minusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.minusIcon.Location = new System.Drawing.Point(4, 82);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
-            this.minusIcon.Size = new System.Drawing.Size(81, 68);
+            this.minusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.minusIcon.Size = new System.Drawing.Size(75, 75);
             this.minusIcon.TabIndex = 22;
+            this.minusIcon.Text = "-";
             this.minusIcon.UseVisualStyleBackColor = true;
             this.minusIcon.Click += new System.EventHandler(this.minusIcon_Click);
             // 
             // plusIcon
             // 
-            this.plusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("plusIcon.BackgroundImage")));
+            this.plusIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusIcon.AutoSize = true;
+            this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.Location = new System.Drawing.Point(1167, 740);
+            this.plusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
+            this.plusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.plusIcon.Location = new System.Drawing.Point(689, 82);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
-            this.plusIcon.Size = new System.Drawing.Size(61, 58);
+            this.plusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.plusIcon.Size = new System.Drawing.Size(75, 75);
             this.plusIcon.TabIndex = 23;
+            this.plusIcon.Text = "+";
             this.plusIcon.UseVisualStyleBackColor = true;
             this.plusIcon.Click += new System.EventHandler(this.plusIcon_Click);
             // 
@@ -141,74 +156,70 @@ namespace ComboCounter.UserControls
             // 
             // timeSetHeader
             // 
-            this.timeSetHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeSetHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeSetHeader.AutoSize = true;
             this.timeSetHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.timeSetHeader.Location = new System.Drawing.Point(625, 579);
+            this.timeSetHeader.Location = new System.Drawing.Point(334, 321);
             this.timeSetHeader.Name = "timeSetHeader";
-            this.timeSetHeader.Size = new System.Drawing.Size(367, 69);
+            this.timeSetHeader.Size = new System.Drawing.Size(397, 81);
             this.timeSetHeader.TabIndex = 49;
             this.timeSetHeader.Text = "Time Setting";
             // 
             // thresholdHeader
             // 
-            this.thresholdHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.thresholdHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.thresholdHeader.AutoSize = true;
             this.thresholdHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.thresholdHeader.Location = new System.Drawing.Point(572, 879);
+            this.thresholdHeader.Location = new System.Drawing.Point(285, 648);
             this.thresholdHeader.Name = "thresholdHeader";
-            this.thresholdHeader.Size = new System.Drawing.Size(465, 69);
+            this.thresholdHeader.Size = new System.Drawing.Size(495, 81);
             this.thresholdHeader.TabIndex = 50;
             this.thresholdHeader.Text = "Threshold Force";
             // 
             // invalidPunchHeader
             // 
-            this.invalidPunchHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.invalidPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invalidPunchHeader.AutoSize = true;
             this.invalidPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.invalidPunchHeader.Location = new System.Drawing.Point(585, 284);
+            this.invalidPunchHeader.Location = new System.Drawing.Point(286, 0);
             this.invalidPunchHeader.Name = "invalidPunchHeader";
-            this.invalidPunchHeader.Size = new System.Drawing.Size(452, 69);
+            this.invalidPunchHeader.Size = new System.Drawing.Size(492, 81);
             this.invalidPunchHeader.TabIndex = 51;
             this.invalidPunchHeader.Text = "Invalid Punches";
+            this.invalidPunchHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.invalidPunchHeader.Click += new System.EventHandler(this.label2_Click);
             // 
             // validPunchHeader
             // 
-            this.validPunchHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.validPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.validPunchHeader.AutoSize = true;
             this.validPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.validPunchHeader.Location = new System.Drawing.Point(1590, 234);
+            this.validPunchHeader.Location = new System.Drawing.Point(1375, 0);
             this.validPunchHeader.Name = "validPunchHeader";
-            this.validPunchHeader.Size = new System.Drawing.Size(412, 69);
+            this.validPunchHeader.Size = new System.Drawing.Size(444, 81);
             this.validPunchHeader.TabIndex = 52;
             this.validPunchHeader.Text = "Valid Punches";
+            this.validPunchHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // currTimeHeader
             // 
-            this.currTimeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimeHeader.AutoSize = true;
             this.currTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.currTimeHeader.Location = new System.Drawing.Point(1607, 537);
+            this.currTimeHeader.Location = new System.Drawing.Point(1392, 321);
             this.currTimeHeader.Name = "currTimeHeader";
-            this.currTimeHeader.Size = new System.Drawing.Size(379, 69);
+            this.currTimeHeader.Size = new System.Drawing.Size(410, 81);
             this.currTimeHeader.TabIndex = 53;
             this.currTimeHeader.Text = "Current Time";
             // 
             // lastHitHeader
             // 
-            this.lastHitHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lastHitHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastHitHeader.AutoSize = true;
             this.lastHitHeader.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lastHitHeader.Location = new System.Drawing.Point(1462, 985);
+            this.lastHitHeader.Location = new System.Drawing.Point(1469, 648);
             this.lastHitHeader.Name = "lastHitHeader";
-            this.lastHitHeader.Size = new System.Drawing.Size(233, 69);
+            this.lastHitHeader.Size = new System.Drawing.Size(256, 81);
             this.lastHitHeader.TabIndex = 54;
             this.lastHitHeader.Text = "Last Hit";
             // 
@@ -218,9 +229,9 @@ namespace ComboCounter.UserControls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Header.AutoSize = true;
             this.Header.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Header.Location = new System.Drawing.Point(891, 57);
+            this.Header.Location = new System.Drawing.Point(1024, 12);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(730, 132);
+            this.Header.Size = new System.Drawing.Size(779, 158);
             this.Header.TabIndex = 55;
             this.Header.Text = "Punch Count";
             // 
@@ -230,102 +241,134 @@ namespace ComboCounter.UserControls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.setTime.AutoSize = true;
             this.setTime.ForeColor = System.Drawing.Color.DimGray;
-            this.setTime.Location = new System.Drawing.Point(510, 653);
+            this.setTime.Location = new System.Drawing.Point(86, 0);
             this.setTime.Name = "setTime";
-            this.setTime.Size = new System.Drawing.Size(595, 226);
+            this.setTime.Size = new System.Drawing.Size(596, 240);
             this.setTime.TabIndex = 57;
             this.setTime.Text = "00:30";
+            this.setTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.setTime.Click += new System.EventHandler(this.setTimeMins_Click);
             // 
             // threshold
             // 
-            this.threshold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.threshold.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.threshold.AutoSize = true;
             this.threshold.ForeColor = System.Drawing.Color.DimGray;
-            this.threshold.Location = new System.Drawing.Point(599, 942);
+            this.threshold.Location = new System.Drawing.Point(314, 731);
             this.threshold.Name = "threshold";
-            this.threshold.Size = new System.Drawing.Size(428, 226);
+            this.threshold.Size = new System.Drawing.Size(436, 240);
             this.threshold.TabIndex = 58;
             this.threshold.Text = "200";
+            this.threshold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numInvalidPunch
             // 
-            this.numInvalidPunch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numInvalidPunch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numInvalidPunch.AutoSize = true;
             this.numInvalidPunch.ForeColor = System.Drawing.Color.DarkRed;
-            this.numInvalidPunch.Location = new System.Drawing.Point(707, 353);
+            this.numInvalidPunch.Location = new System.Drawing.Point(426, 81);
             this.numInvalidPunch.Name = "numInvalidPunch";
-            this.numInvalidPunch.Size = new System.Drawing.Size(206, 226);
+            this.numInvalidPunch.Size = new System.Drawing.Size(212, 240);
             this.numInvalidPunch.TabIndex = 59;
             this.numInvalidPunch.Text = "0";
+            this.numInvalidPunch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // punchCounter
             // 
-            this.punchCounter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.punchCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.punchCounter.AutoSize = true;
             this.punchCounter.ForeColor = System.Drawing.Color.Green;
-            this.punchCounter.Location = new System.Drawing.Point(1713, 315);
+            this.punchCounter.Location = new System.Drawing.Point(1491, 81);
             this.punchCounter.Name = "punchCounter";
-            this.punchCounter.Size = new System.Drawing.Size(206, 226);
+            this.punchCounter.Size = new System.Drawing.Size(212, 240);
             this.punchCounter.TabIndex = 60;
             this.punchCounter.Text = "0";
+            this.punchCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lastHit
             // 
-            this.lastHit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lastHit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastHit.AutoSize = true;
             this.lastHit.ForeColor = System.Drawing.Color.DimGray;
-            this.lastHit.Location = new System.Drawing.Point(1767, 895);
+            this.lastHit.Location = new System.Drawing.Point(1370, 731);
             this.lastHit.Name = "lastHit";
-            this.lastHit.Size = new System.Drawing.Size(411, 255);
+            this.lastHit.Size = new System.Drawing.Size(455, 240);
             this.lastHit.TabIndex = 61;
             this.lastHit.Text = "N/A";
-            this.lastHit.UseCompatibleTextRendering = true;
+            this.lastHit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lastHit.TextChanged += new System.EventHandler(this.lastHit_TextChanged_1);
             // 
             // currentTime
             // 
-            this.currentTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currentTime.AutoSize = true;
             this.currentTime.ForeColor = System.Drawing.Color.DimGray;
-            this.currentTime.Location = new System.Drawing.Point(1402, 634);
+            this.currentTime.Location = new System.Drawing.Point(1161, 405);
             this.currentTime.Name = "currentTime";
-            this.currentTime.Size = new System.Drawing.Size(873, 226);
+            this.currentTime.Size = new System.Drawing.Size(873, 240);
             this.currentTime.TabIndex = 62;
             this.currentTime.Text = "00:00.00";
+            this.currentTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.punchCounter, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.validPunchHeader, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.currentTime, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.invalidPunchHeader, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.currTimeHeader, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lastHit, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.numInvalidPunch, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.timeSetHeader, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.threshold, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lastHitHeader, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.thresholdHeader, 0, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(363, 188);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2130, 973);
+            this.tableLayoutPanel1.TabIndex = 63;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.minusIcon);
+            this.flowLayoutPanel1.Controls.Add(this.setTime);
+            this.flowLayoutPanel1.Controls.Add(this.plusIcon);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(148, 405);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(768, 240);
+            this.flowLayoutPanel1.TabIndex = 60;
             // 
             // punch_count
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.currentTime);
-            this.Controls.Add(this.lastHit);
-            this.Controls.Add(this.punchCounter);
-            this.Controls.Add(this.numInvalidPunch);
-            this.Controls.Add(this.threshold);
-            this.Controls.Add(this.setTime);
             this.Controls.Add(this.Header);
-            this.Controls.Add(this.lastHitHeader);
-            this.Controls.Add(this.currTimeHeader);
-            this.Controls.Add(this.validPunchHeader);
-            this.Controls.Add(this.invalidPunchHeader);
-            this.Controls.Add(this.thresholdHeader);
-            this.Controls.Add(this.timeSetHeader);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.plusIcon);
-            this.Controls.Add(this.minusIcon);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "punch_count";
             this.Size = new System.Drawing.Size(2496, 1164);
             this.Load += new System.EventHandler(this.punch_count_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,8 +377,6 @@ namespace ComboCounter.UserControls
         #endregion
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button minusIcon;
-        private System.Windows.Forms.Button plusIcon;
         private OutlineButton startButton;
         private OutlineButton stopButton;
         private OutlineButton resetButton;
@@ -352,5 +393,9 @@ namespace ComboCounter.UserControls
         private BigInfo punchCounter;
         private BigInfo lastHit;
         private BigInfo currentTime;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private TextButton minusIcon;
+        private TextButton plusIcon;
     }
 }

@@ -125,7 +125,7 @@ namespace ComboCounter.UserControls
 
         private string FormatTimeString(int msecs)
         {
-            int secs = msecs / 1000;
+            int secs = msecs / 1000 % 60;
             int mins = msecs / 1000 / 60;
             int fracSecs = msecs % 1000 / 100;
             return String.Format("{0:00}:{1:00}.{2:0}", mins, secs, fracSecs);

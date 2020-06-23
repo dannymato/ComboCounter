@@ -1,9 +1,14 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ComboCounter.Classes
 {
     class Header1 : Label
     {
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Font Font { get; set; }
+
         public Header1() : base()
         {
             FontManager fm = FontManager.getInstance();

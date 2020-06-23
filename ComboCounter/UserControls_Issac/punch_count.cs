@@ -16,6 +16,7 @@ namespace ComboCounter.UserControls
         const int TIME_UNIT = 15;
 
         private readonly SoundPlayer bellRung;
+        private readonly SoundPlayer missedHit;
 
         private Session session;
 
@@ -27,7 +28,10 @@ namespace ComboCounter.UserControls
         public punch_count()
         {
             bellRung = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
+            missedHit = new SoundPlayer(@"soundEffect\MissedHit.wav");
             InitializeComponent();
+
+            Header.Left = tableLayoutPanel1.Left + ((tableLayoutPanel1.Width - Header.Width) / 2);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -61,8 +65,10 @@ namespace ComboCounter.UserControls
                 timer2.Tick += new EventHandler(timer2_Tick);
                 timer2.Enabled = true;
 
-                session = new Session(DateTime.Now);
+                
             }
+
+            session = new Session(DateTime.Now);
 
 
         }
@@ -76,7 +82,7 @@ namespace ComboCounter.UserControls
         {
 
             lastHit.Text = arrayTest[i].ToString();
-            session.insertHit(arrayTest[i], ((timeIntervalSec * 1000) - quickTotal) / 1000.0);
+            session.insertHit(arrayTest[i], timeIntervalSec - (quickTotal / 1000.0));
             
 
             i = (i + 1) % arrayTest.Length;
@@ -120,8 +126,8 @@ namespace ComboCounter.UserControls
         {
 
             quickTotal -= 100;
-            int secs = (quickTotal / 1000);
-            int mins = (secs / 60);
+            int secs = (quickTotal / 1000 % 60);
+            int mins = quickTotal / 1000 / 60;
             int fracSecs = (quickTotal % 1000) / 100;
             currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, fracSecs);
             if (quickTotal == 0)
@@ -163,7 +169,7 @@ namespace ComboCounter.UserControls
             lastHit.Text = "N/A";
             lastHit.ForeColor = System.Drawing.Color.DimGray;
             punchCounterVal = 0;
-            punchCounter.Text = "0"; ;
+            punchCounter.Text = "0";
             i = 0;
             missPunch = 0;
             numInvalidPunch.Text = missPunch.ToString();
@@ -202,6 +208,7 @@ namespace ComboCounter.UserControls
                     lastHit.ForeColor = System.Drawing.Color.Red;
                     missPunch++;
                     numInvalidPunch.Text = missPunch.ToString();
+                    missedHit.Play();
                 }
                 else if (lastHitVal >= (thresholdVal - (thresholdVal * 0.1)) && lastHitVal < (thresholdVal + (thresholdVal * 0.1)))
                 {

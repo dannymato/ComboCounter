@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls
@@ -22,6 +15,7 @@ namespace ComboCounter.UserControls
         public targeted_total_of_time_comp()
         {
             InitializeComponent();
+            header.Left = (Width - header.Width) / 2;
         }
 
         private void stopButton_Click(object sender, EventArgs e)
@@ -113,7 +107,7 @@ namespace ComboCounter.UserControls
         private string currentTimeLabelText(int msecs)
         {
             int numMins = msecs / 1000 / 60;
-            int numSecs = msecs / 1000;
+            int numSecs = msecs / 1000 % 60;
             int fracSecs = (msecs % 1000) / 100;
 
             return String.Format("{0:00}:{1:00}.{2:0}", numMins, numSecs, fracSecs);
@@ -157,6 +151,12 @@ namespace ComboCounter.UserControls
 
             updateTimeText(setTimePlayer1, numSecsPlay1);
         }
+
+        private void targeted_total_of_time_comp_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         // Player 2 Minus Icon
