@@ -39,7 +39,7 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.forceGoalHeader = new ComboCounter.Classes.H2();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.forceGoal = new ComboCounter.Classes.BigInfo();
+            this.forceGoalLabel = new ComboCounter.Classes.BigInfo();
             this.totalForce = new ComboCounter.Classes.BigInfo();
             this.forceAccruedHeader = new ComboCounter.Classes.H2();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -129,7 +129,7 @@ namespace ComboCounter.UserControls
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.minusIcon);
-            this.flowLayoutPanel1.Controls.Add(this.forceGoal);
+            this.flowLayoutPanel1.Controls.Add(this.forceGoalLabel);
             this.flowLayoutPanel1.Controls.Add(this.plusIcon);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(189, 161);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -138,15 +138,15 @@ namespace ComboCounter.UserControls
             // 
             // forceGoal
             // 
-            this.forceGoal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.forceGoalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.forceGoal.AutoSize = true;
-            this.forceGoal.ForeColor = System.Drawing.Color.DimGray;
-            this.forceGoal.Location = new System.Drawing.Point(78, 0);
-            this.forceGoal.Name = "forceGoal";
-            this.forceGoal.Size = new System.Drawing.Size(699, 240);
-            this.forceGoal.TabIndex = 75;
-            this.forceGoal.Text = "15,000";
+            this.forceGoalLabel.AutoSize = true;
+            this.forceGoalLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.forceGoalLabel.Location = new System.Drawing.Point(78, 0);
+            this.forceGoalLabel.Name = "forceGoal";
+            this.forceGoalLabel.Size = new System.Drawing.Size(699, 240);
+            this.forceGoalLabel.TabIndex = 75;
+            this.forceGoalLabel.Text = "15,000";
             // 
             // totalForce
             // 
@@ -350,7 +350,7 @@ namespace ComboCounter.UserControls
         private H2 forceGoalHeader;
         private H2 currTimeHeader;
         private H2 forceAccruedHeader;
-        private BigInfo forceGoal;
+        private BigInfo forceGoalLabel;
         private BigInfo totalForce;
         private BigInfo txtResult;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

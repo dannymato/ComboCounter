@@ -11,9 +11,9 @@ namespace ComboCounter.UserControls
     {
         System.Timers.Timer t;
         int totalForceBox;
-        int forceGoal1 = 15000;
+        int forceGoalNum = 15000;
 
-        const int FORCE_INTERVAL = 1000;
+        const int FORCE_INTERVAL = 100;
 
         Stopwatch stopwatch = new Stopwatch();
         Session session;
@@ -44,16 +44,16 @@ namespace ComboCounter.UserControls
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
-            forceGoal1 += FORCE_INTERVAL;
-            forceGoal.Text = string.Format("{0:n0}", forceGoal1);
+            forceGoalNum += FORCE_INTERVAL;
+            forceGoalLabel.Text = string.Format("{0:n0}", forceGoalNum);
         }
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
-            if (forceGoal1 != 0)
+            if (forceGoalNum != 0)
             {
-                forceGoal1 -= FORCE_INTERVAL;
-                forceGoal.Text = string.Format("{0:n0}", forceGoal1);
+                forceGoalNum -= FORCE_INTERVAL;
+                forceGoalLabel.Text = string.Format("{0:n0}", forceGoalNum);
             }
             
         }
@@ -77,7 +77,7 @@ namespace ComboCounter.UserControls
            
                 txtResult.Text = string.Format("{0:00}:{1:00}.{2:0}", minutes, seconds, fracSecs);
 
-                if (totalForceBox >= forceGoal1)
+                if (totalForceBox >= forceGoalNum)
                 {
                     totalForce.ForeColor = System.Drawing.Color.Green;
                     bellRing.Play();
@@ -111,6 +111,8 @@ namespace ComboCounter.UserControls
             totalForce.Text = "0";
             txtResult.Text = "00:00.00";
             totalForce.ForeColor = System.Drawing.Color.DimGray;
+            stopwatch.Stop();
+            stopwatch.Reset(); 
 
         }
     }
