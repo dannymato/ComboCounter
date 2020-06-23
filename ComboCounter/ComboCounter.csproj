@@ -61,6 +61,9 @@
     <Compile Include="CustomControls\H2.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\H4.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\H3.cs">
       <SubType>Component</SubType>
     </Compile>
