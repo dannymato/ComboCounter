@@ -84,10 +84,6 @@ namespace ComboCounter
              Forms.Exit QuickStartForm = new Forms.Exit();
              QuickStartForm.Show();
 
-            //Forms.QuickStartForm QuickStartForm = new Forms.QuickStartForm();
-            // QuickStartForm.Show();
-
-            // timeMode1.BringToFront();
         }
 
         private void histogram_Click(object sender, EventArgs e)
@@ -97,8 +93,6 @@ namespace ComboCounter
 
         private void Main_Load(object sender, EventArgs e)
         {
-            // homeControl1.BringToFront();
-            // home_user1.BringToFront();;
 
             ToolTip HomeToolTip = new ToolTip();
             HomeToolTip.SetToolTip(home_button, "Home");
@@ -111,8 +105,6 @@ namespace ComboCounter
             Rectangle screenSize = Screen.PrimaryScreen.Bounds;
             Width = screenSize.Width;
             Height = screenSize.Height;
-
-            Console.WriteLine(screenSize);
 
             home = new HomeScreen();
             mainPanel.Controls.Add(home);
@@ -224,95 +216,6 @@ namespace ComboCounter
             this.mainPanel.Show();
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Forms.TargetedTotalForce TargetedTotalForce = new Forms.TargetedTotalForce();
-            TargetedTotalForce.Show();
-
-        }
-
-
-        private void ComboButton_Click(object sender, EventArgs e)
-        {
-            Forms.ComboScore ComboScore = new Forms.ComboScore();
-            ComboScore.Show();
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Forms.PunchCount PunchCount = new Forms.PunchCount();
-               PunchCount.Show();
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Forms.CustomPunchCount CustomPunchCount = new Forms.CustomPunchCount();
-            CustomPunchCount.Show();
-
-        }
-
-        private void vstimeBtn_Click(object sender, EventArgs e)
-        {
-            Forms.TargetTotalForceComp CustomTargetTotalForm = new Forms.TargetTotalForceComp();
-            CustomTargetTotalForm.Show();
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Forms.CustomTargetTotalTime CustomTargetTotalTime = new Forms.CustomTargetTotalTime();
-            CustomTargetTotalTime.Show();
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Forms.TargetTotalTime TargetTotalTime = new Forms.TargetTotalTime();
-            TargetTotalTime.Show();
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Forms.PunchChallange PunchChallange = new Forms.PunchChallange();
-            PunchChallange.Show();
-
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Forms.CustomPunchChallange CustomPunchChallange = new Forms.CustomPunchChallange();
-            CustomPunchChallange.Show();
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Forms.CustomComboScore CustomComboScore = new Forms.CustomComboScore();
-            CustomComboScore.Show();
-
-        }
-
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Forms.SensorAdjusments SensorAdjusments = new Forms.SensorAdjusments();
-            SensorAdjusments.Show();
-
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Forms.ComboScoreComp ComboScoreComp = new Forms.ComboScoreComp();
-            ComboScoreComp.Show();
-
-        }
-
 
     }
 }
