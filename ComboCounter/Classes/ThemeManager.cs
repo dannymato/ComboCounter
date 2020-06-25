@@ -10,10 +10,13 @@ namespace ComboCounter.Classes
 {
     class ThemeManager
     {
+
+        // THEME NUMBER FROM DB
         private static int DBThemeNum = 2;
 
+        // THEME CHOSEN BY USER
         private static int ThemeNum = 2;
-        //Boolean ThemeBoolean;
+        
 
 
         public static Color initBackground()
@@ -45,9 +48,10 @@ namespace ComboCounter.Classes
 
         public static Color initHeaderColor()
         {
+
             if (Verify())
             {
-                // DEFINE METOD FOR RETURNING ISHHH
+                
                 return ChangeHeaderColor(GetDBThemeNum());
 
             }
@@ -55,6 +59,7 @@ namespace ComboCounter.Classes
             {
                 return ChangeHeaderColor(GetThemeNum());
             }
+
         }
 
 
@@ -100,7 +105,6 @@ namespace ComboCounter.Classes
             }
         }
 
-
         public static Color initH3Color()
         {
             if (Verify())
@@ -130,6 +134,8 @@ namespace ComboCounter.Classes
 
 
         //----------------------------
+
+        // VERIFIES THEME CHOSEN BY USER IS DIFFERENT FROM ONE STORED IN DB
         public static Boolean Verify()
         {
             // GET LAST THEME NUMBER
@@ -156,6 +162,7 @@ namespace ComboCounter.Classes
         }
 
         //----------------------------
+
 
 
         // CHANGE ELEMENTS
@@ -205,7 +212,7 @@ namespace ComboCounter.Classes
             }
         }
 
-
+        // CHANGES COLOR OF HEADER ELEMENT
         private static Color ChangeHeaderColor(int t)
         {
 
@@ -227,6 +234,7 @@ namespace ComboCounter.Classes
             }
         }
 
+        // CHANGES COLOR OF H2 ELEMENT
         private static Color ChangeH2Color(int t)
         {
 
@@ -248,6 +256,7 @@ namespace ComboCounter.Classes
             }
         }
 
+        // COLOR OF BUTTON CLICK FEEDBACK
         private static Color ChangeH2ClickColor(int t)
         {
 
