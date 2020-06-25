@@ -37,14 +37,14 @@ namespace ComboCounter.UserControls_Gabriel
             this.button2 = new ComboCounter.CustomControls.OutlineButton();
             this.button3 = new ComboCounter.CustomControls.OutlineButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.totalTime = new BigInfo();
-            this.headerLabel = new Header1();
-            this.forceHeader = new H2();
-            this.timeLabel = new H2();
-            this.scoreLabel = new H3();
-            this.totalTimeLabel = new H3();
-            this.scoreInfoLabel = new SmallInfo();
-            this.totalTimeLabelnfo = new SmallInfo();
+            this.totalTime = new ComboCounter.Classes.BigInfo();
+            this.headerLabel = new ComboCounter.Classes.Header1();
+            this.forceHeader = new ComboCounter.Classes.H2();
+            this.timeLabel = new ComboCounter.Classes.H2();
+            this.scoreLabel = new ComboCounter.Classes.H3();
+            this.totalTimeLabel = new ComboCounter.Classes.H3();
+            this.scoreInfoLabel = new ComboCounter.Classes.SmallInfo();
+            this.totalTimeLabelnfo = new ComboCounter.Classes.SmallInfo();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -59,12 +59,12 @@ namespace ComboCounter.UserControls_Gabriel
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(420, 606);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(508, 600);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1686, 102);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1516, 102);
             this.tableLayoutPanel2.TabIndex = 49;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -153,7 +153,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.totalTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalTime.AutoSize = true;
-            this.totalTime.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTime.ForeColor = System.Drawing.Color.DimGray;
             this.totalTime.Location = new System.Drawing.Point(121, 52);
             this.totalTime.Name = "totalTime";
@@ -165,7 +164,6 @@ namespace ComboCounter.UserControls_Gabriel
             // headerLabel
             // 
             this.headerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.headerLabel.Font = new System.Drawing.Font("Fira Code", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.headerLabel.Location = new System.Drawing.Point(784, 0);
             this.headerLabel.Name = "headerLabel";
@@ -179,7 +177,6 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             this.forceHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.forceHeader.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forceHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.forceHeader.Location = new System.Drawing.Point(403, 240);
             this.forceHeader.Name = "forceHeader";
@@ -193,7 +190,6 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             this.timeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.timeLabel.Font = new System.Drawing.Font("Fira Code Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.timeLabel.Location = new System.Drawing.Point(403, 480);
             this.timeLabel.Name = "timeLabel";
@@ -208,7 +204,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.scoreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreLabel.AutoSize = true;
-            this.scoreLabel.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.scoreLabel.Location = new System.Drawing.Point(647, 732);
             this.scoreLabel.Name = "scoreLabel";
@@ -221,7 +216,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.totalTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalTimeLabel.AutoSize = true;
-            this.totalTimeLabel.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTimeLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.totalTimeLabel.Location = new System.Drawing.Point(1415, 735);
             this.totalTimeLabel.Name = "totalTimeLabel";
@@ -234,7 +228,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.scoreInfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreInfoLabel.AutoSize = true;
-            this.scoreInfoLabel.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreInfoLabel.ForeColor = System.Drawing.Color.DimGray;
             this.scoreInfoLabel.Location = new System.Drawing.Point(972, 735);
             this.scoreInfoLabel.Name = "scoreInfoLabel";
@@ -247,7 +240,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.totalTimeLabelnfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalTimeLabelnfo.AutoSize = true;
-            this.totalTimeLabelnfo.Font = new System.Drawing.Font("Fira Code", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTimeLabelnfo.ForeColor = System.Drawing.Color.DimGray;
             this.totalTimeLabelnfo.Location = new System.Drawing.Point(1687, 735);
             this.totalTimeLabelnfo.Name = "totalTimeLabelnfo";
@@ -286,16 +278,16 @@ namespace ComboCounter.UserControls_Gabriel
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label totalTime;
-        private System.Windows.Forms.Label headerLabel;
-        private System.Windows.Forms.Label forceHeader;
-        private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Label scoreLabel;
-        private System.Windows.Forms.Label totalTimeLabel;
-        private System.Windows.Forms.Label scoreInfoLabel;
-        private System.Windows.Forms.Label totalTimeLabelnfo;
         private CustomControls.OutlineButton button1;
         private CustomControls.OutlineButton button2;
         private CustomControls.OutlineButton button3;
+        private BigInfo totalTime;
+        private Header1 headerLabel;
+        private H2 forceHeader;
+        private H2 timeLabel;
+        private H3 scoreLabel;
+        private H3 totalTimeLabel;
+        private SmallInfo scoreInfoLabel;
+        private SmallInfo totalTimeLabelnfo;
     }
 }

@@ -194,12 +194,6 @@
     <Compile Include="Forms\Register1.2.Designer.cs">
       <DependentUpon>Register1.2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SensorAdjusments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SensorAdjusments.Designer.cs">
-      <DependentUpon>SensorAdjusments.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TargetedTotalForce.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,9 +434,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register1.2.resx">
       <DependentUpon>Register1.2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SensorAdjusments.resx">
-      <DependentUpon>SensorAdjusments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TargetedTotalForce.resx">
       <DependentUpon>TargetedTotalForce.cs</DependentUpon>
