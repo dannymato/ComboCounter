@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace ComboCounter
 {
+    /// <summary>
+    /// Represents the user as it is shown in the database
+    /// </summary>
     class User
     {
 
@@ -20,7 +21,19 @@ namespace ComboCounter
 
 
 
-
+        /// <summary>
+        /// Initializes a new user with the paramaters shown
+        /// </summary>
+        /// <param name="id">Individual user ID</param>
+        /// <param name="u">Username</param>
+        /// <param name="p">Password</param>
+        /// <param name="f">First Name</param>
+        /// <param name="l">Last Name</param>
+        /// <param name="s">Sex</param>
+        /// <param name="c">Weight Class</param>
+        /// <param name="h">Height</param>
+        /// <param name="w">Weight</param>
+        /// <param name="a">Age</param>
         public User(int id, String u, String p, String f, String l, String s, String c, String h, String w, int a)
         {
             Id = id;

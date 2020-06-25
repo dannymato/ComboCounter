@@ -31,8 +31,6 @@ namespace ComboCounter.Forms
             InitializeComponent();
             tableLayoutPanel1.Dock = DockStyle.None;
             tableLayoutPanel1.Anchor = AnchorStyles.None;
-        /*    tableLayoutPanel1.Width = (this.Width / 4) * 3;
-            tableLayoutPanel1.Height = (Height / 4) * 3;*/
         }
 
         private void InitializeComponent()
@@ -97,7 +95,6 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1565, 871);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // h31
             // 
@@ -471,8 +468,11 @@ namespace ComboCounter.Forms
         {
             Option_Clicked(ClassToCall.PunchChallengeCustom);
         }
+
     }
 
+    // Provides an enum to determine which element on screen is needed to be shown
+    // Makes it easier to implement new pages if need be
     public enum ClassToCall
     {
         ComboCounter,
@@ -488,7 +488,9 @@ namespace ComboCounter.Forms
         PunchChallenge,
         PunchChallengeCustom
     }
-
+    
+    // Allows us to pass through to the main page the enum to tell the main page
+    // which page to place in the panel next. This feeds into the switch case.
     public class OptionClickEventArgs : EventArgs
     {
 

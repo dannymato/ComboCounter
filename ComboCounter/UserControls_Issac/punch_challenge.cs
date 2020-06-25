@@ -48,20 +48,6 @@ namespace ComboCounter.UserControls
 
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
         {
-            FontManager fm = FontManager.getInstance();
-            header.Font = fm.getHeaderFont();
-
-            totalPunchHeader.Font = fm.getHeader2Font();
-            punchGoalHeader.Font = fm.getHeader2Font();
-            totalForceHeader.Font = fm.getHeader2Font();
-
-            startButton.Font = fm.getButtonFont();
-            stopButton.Font = fm.getButtonFont();
-            resetButton.Font = fm.getButtonFont();
-
-            limit.Font = fm.getBigInfoFont();
-            punchNum.Font = fm.getBigInfoFont();
-            totalForce.Font = fm.getBigInfoFont();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -69,10 +55,10 @@ namespace ComboCounter.UserControls
 
         }
 
+        // Occurs on every tick of the clock
         private void propagate()
         {
-
-            
+  
             currentForceVal = arrayTest[i];
             currentForceVal += lastHitVal;
             totalForce.Text = currentForceVal.ToString();

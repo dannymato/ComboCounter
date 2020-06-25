@@ -8,7 +8,7 @@ namespace ComboCounter.Classes
     class History
     {
         //set variables for connection
-        private const String SERVER = "127.0.0.1";
+        /*private const String SERVER = "127.0.0.1";
         private const String DATABASE = "project";
         private const String UID = "root";
         private const String PASSWORD = "692Trrbw83";
@@ -16,7 +16,7 @@ namespace ComboCounter.Classes
         private string hardest_hit;
         private string fastest_hit;
         private string average_hit;
-        private DateTime date;
+        private DateTime date;*/
 
         private static List<Session> Sessions;
 
@@ -25,6 +25,12 @@ namespace ComboCounter.Classes
             Sessions = new List<Session>();
         }
 
+        /// <summary>
+        /// Creates the sessions array if it has not yet been created.
+        /// Allows the sessions to be shared by many pages without
+        /// being garbage collected
+        /// </summary>
+        /// <returns>The current state of the Session list</returns>
         public static List<Session> GetSessions()
         {
             if (Sessions == null)
@@ -34,8 +40,9 @@ namespace ComboCounter.Classes
             return Sessions;
         }
 
-
-        public static void InitializeDB()
+        // Leftover code from previous group where the database was being called by each page.
+        // Now defuct as the history is 
+        /*public static void InitializeDB()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = SERVER;
@@ -60,10 +67,10 @@ namespace ComboCounter.Classes
                     dbConn = null;
                 }
             };
-        }
+        }*/
 
 
-        public DateTime getDate()
+        /*public DateTime getDate()
         {
             String query = "SELECT date FROM project.history WHERE id = 0";
 
@@ -156,7 +163,7 @@ namespace ComboCounter.Classes
             dbConn.Close();
 
             return average_hit;
-        }
+        }*/
 
     }
 }
