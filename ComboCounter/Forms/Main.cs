@@ -26,6 +26,8 @@ namespace ComboCounter
         punch_challenge punchChallenge;
         punch_challenge_comp punchChallengeComp;
 
+        UserAccount userAccount;
+
 
 
         public Main()
@@ -37,10 +39,11 @@ namespace ComboCounter
         #region Force Tracker
         private void force_tracker_Click(object sender, EventArgs e)
         {
-            Forms.SensorAdjusments SensorAdjusments = new Forms.SensorAdjusments();
-            SensorAdjusments.Show();
-
-            // combo_tracker1.BringToFront();
+            if (sensorAdj == null)
+            {
+                sensorAdj = new CensorControl();
+            }
+            LoadNewPage(sensorAdj);
         }
 
         #endregion
@@ -64,6 +67,12 @@ namespace ComboCounter
             Forms.UserAccountForm UserAccountForm = new Forms.UserAccountForm();
             UserAccountForm.Show();
 
+            if (userAccount == null)
+            {
+                userAccount = new UserAccount();
+            }
+            LoadNewPage(userAccount);
+
             // user_control1.BringToFront();
         }
 
@@ -81,9 +90,9 @@ namespace ComboCounter
         
         private void time_button_Click(object sender, EventArgs e)
         {
-             Forms.Exit QuickStartForm = new Forms.Exit();
-             QuickStartForm.Show();
-
+            // Currently shows exit but is now disabled
+            /* Forms.Exit QuickStartForm = new Forms.Exit();
+             QuickStartForm.Show();*/
         }
 
         private void histogram_Click(object sender, EventArgs e)
@@ -116,6 +125,7 @@ namespace ComboCounter
             home.Height = mainPanel.Height;
 
             home.OnOptionClicked += (send, args) => {
+
                 // Determines which control to page in depending on the argument passed through the event
                 switch (args.ClassToCall)
                 {
@@ -205,6 +215,7 @@ namespace ComboCounter
         }
 
         // Removes the old page in the panel and places the new one in
+        // With the exception of the history page the old pages are still kept in memory for quicker access
         private void LoadNewPage(UserControl newPage)
         {
             this.mainPanel.Hide();
@@ -214,7 +225,6 @@ namespace ComboCounter
             newPage.Left = (mainPanel.Width - newPage.Width) / 2;
             newPage.Top = (mainPanel.Height - newPage.Height) / 2;
             this.mainPanel.Show();
-
         }
 
     }
