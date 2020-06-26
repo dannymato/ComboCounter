@@ -10,9 +10,9 @@ namespace ComboCounter.UserControls
 {
     public partial class histogram : UserControl
     {
-        //set variables for connection
+        // set variables for connection
         // List<string> allhits = new List<string>();
-        //List<string> alltimes = new List<string>();
+        // List<string> alltimes = new List<string>();
         List<string> allhits = new List<string>();
         DataSet ds = new DataSet();
         DataSet ds2 = new DataSet();

@@ -124,6 +124,8 @@ namespace ComboCounter
             home.Width = mainPanel.Width;
             home.Height = mainPanel.Height;
 
+            BackColor = ThemeManager.initBackground();
+
             home.OnOptionClicked += (send, args) => {
 
                 // Determines which control to page in depending on the argument passed through the event

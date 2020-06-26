@@ -290,11 +290,11 @@ namespace ComboCounter.Classes
         {
             if (t == 1)
             {
-                return ThemeConstants.white;
+                return ThemeConstants.black;
             }
             else if (t == 2)
             {
-                return ThemeConstants.red;
+                return ThemeConstants.Theme2TextColor;
             }
             else if (t == 3)
             {

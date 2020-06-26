@@ -37,7 +37,7 @@ namespace ComboCounter.UserControls
             this.splitContainer1.SplitterDistance = Width / 2;
 
             t = new System.Timers.Timer();
-            t.Interval = 1;
+            t.Interval = 100;
             t.Elapsed += OnTimeEvent;
             
         }
@@ -88,7 +88,7 @@ namespace ComboCounter.UserControls
                 else
                 {
                     double time = stopwatch.Elapsed.TotalSeconds;
-                    int newForce = new Random().Next(5, 70);
+                    int newForce = new Random().Next(100, 700);
                     totalForceBox = totalForceBox + newForce;
                     totalForce.Text = totalForceBox.ToString();
 

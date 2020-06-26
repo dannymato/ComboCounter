@@ -200,8 +200,6 @@ namespace ComboCounter.UserControls
             this.plusIconPlayer2.BackColor = System.Drawing.Color.Transparent;
             this.plusIconPlayer2.FlatAppearance.BorderSize = 0;
             this.plusIconPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIconPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.plusIconPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
             this.plusIconPlayer2.Location = new System.Drawing.Point(391, 22);
             this.plusIconPlayer2.Margin = new System.Windows.Forms.Padding(4);
             this.plusIconPlayer2.Name = "plusIconPlayer2";
@@ -219,8 +217,6 @@ namespace ComboCounter.UserControls
             this.minusIconPlayer2.BackColor = System.Drawing.Color.Transparent;
             this.minusIconPlayer2.FlatAppearance.BorderSize = 0;
             this.minusIconPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIconPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.minusIconPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
             this.minusIconPlayer2.Location = new System.Drawing.Point(4, 22);
             this.minusIconPlayer2.Margin = new System.Windows.Forms.Padding(4);
             this.minusIconPlayer2.Name = "minusIconPlayer2";
@@ -235,7 +231,6 @@ namespace ComboCounter.UserControls
             // 
             this.header.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.header.AutoSize = true;
-            this.header.ForeColor = System.Drawing.Color.SteelBlue;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(2024, 158);
@@ -246,7 +241,6 @@ namespace ComboCounter.UserControls
             // 
             this.guest2Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guest2Header.AutoSize = true;
-            this.guest2Header.ForeColor = System.Drawing.Color.Silver;
             this.guest2Header.Location = new System.Drawing.Point(358, 0);
             this.guest2Header.Name = "guest2Header";
             this.guest2Header.Size = new System.Drawing.Size(240, 81);
@@ -257,7 +251,6 @@ namespace ComboCounter.UserControls
             // 
             this.timeSetPlayer2Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeSetPlayer2Header.AutoSize = true;
-            this.timeSetPlayer2Header.ForeColor = System.Drawing.Color.SteelBlue;
             this.timeSetPlayer2Header.Location = new System.Drawing.Point(279, 81);
             this.timeSetPlayer2Header.Name = "timeSetPlayer2Header";
             this.timeSetPlayer2Header.Size = new System.Drawing.Size(397, 81);
@@ -268,7 +261,6 @@ namespace ComboCounter.UserControls
             // 
             this.curTimePlayer2Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.curTimePlayer2Header.AutoSize = true;
-            this.curTimePlayer2Header.ForeColor = System.Drawing.Color.SteelBlue;
             this.curTimePlayer2Header.Location = new System.Drawing.Point(273, 288);
             this.curTimePlayer2Header.Name = "curTimePlayer2Header";
             this.curTimePlayer2Header.Size = new System.Drawing.Size(410, 81);
@@ -290,7 +282,6 @@ namespace ComboCounter.UserControls
             // 
             this.currTimePlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimePlayer2.AutoSize = true;
-            this.currTimePlayer2.ForeColor = System.Drawing.Color.DimGray;
             this.currTimePlayer2.Location = new System.Drawing.Point(97, 369);
             this.currTimePlayer2.Name = "currTimePlayer2";
             this.currTimePlayer2.Size = new System.Drawing.Size(761, 240);
@@ -313,7 +304,6 @@ namespace ComboCounter.UserControls
             this.setTimePlayer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.setTimePlayer2.AutoSize = true;
-            this.setTimePlayer2.ForeColor = System.Drawing.Color.DimGray;
             this.setTimePlayer2.Location = new System.Drawing.Point(86, 0);
             this.setTimePlayer2.Name = "setTimePlayer2";
             this.setTimePlayer2.Size = new System.Drawing.Size(298, 120);
@@ -348,7 +338,6 @@ namespace ComboCounter.UserControls
             // 
             this.forceAccruedPlayer1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forceAccruedPlayer1Header.AutoSize = true;
-            this.forceAccruedPlayer1Header.ForeColor = System.Drawing.Color.SteelBlue;
             this.forceAccruedPlayer1Header.Location = new System.Drawing.Point(276, 609);
             this.forceAccruedPlayer1Header.Name = "forceAccruedPlayer1Header";
             this.forceAccruedPlayer1Header.Size = new System.Drawing.Size(440, 81);
@@ -359,7 +348,6 @@ namespace ComboCounter.UserControls
             // 
             this.guest1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guest1Header.AutoSize = true;
-            this.guest1Header.ForeColor = System.Drawing.Color.Gray;
             this.guest1Header.Location = new System.Drawing.Point(380, 0);
             this.guest1Header.Name = "guest1Header";
             this.guest1Header.Size = new System.Drawing.Size(232, 81);
@@ -370,7 +358,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForcePlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForcePlayer1.AutoSize = true;
-            this.totalForcePlayer1.ForeColor = System.Drawing.Color.DarkRed;
             this.totalForcePlayer1.Location = new System.Drawing.Point(390, 702);
             this.totalForcePlayer1.Name = "totalForcePlayer1";
             this.totalForcePlayer1.Size = new System.Drawing.Size(212, 240);
@@ -381,7 +368,6 @@ namespace ComboCounter.UserControls
             // 
             this.timeSetPlayer1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeSetPlayer1Header.AutoSize = true;
-            this.timeSetPlayer1Header.ForeColor = System.Drawing.Color.SteelBlue;
             this.timeSetPlayer1Header.Location = new System.Drawing.Point(297, 81);
             this.timeSetPlayer1Header.Name = "timeSetPlayer1Header";
             this.timeSetPlayer1Header.Size = new System.Drawing.Size(397, 81);
@@ -423,7 +409,6 @@ namespace ComboCounter.UserControls
             // 
             this.setTimePlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.setTimePlayer1.AutoSize = true;
-            this.setTimePlayer1.ForeColor = System.Drawing.Color.DimGray;
             this.setTimePlayer1.Location = new System.Drawing.Point(86, 0);
             this.setTimePlayer1.Name = "setTimePlayer1";
             this.setTimePlayer1.Size = new System.Drawing.Size(298, 120);
@@ -437,8 +422,6 @@ namespace ComboCounter.UserControls
             this.plusIconPlayer1.BackColor = System.Drawing.Color.Transparent;
             this.plusIconPlayer1.FlatAppearance.BorderSize = 0;
             this.plusIconPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIconPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.plusIconPlayer1.ForeColor = System.Drawing.Color.SteelBlue;
             this.plusIconPlayer1.Location = new System.Drawing.Point(391, 22);
             this.plusIconPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.plusIconPlayer1.Name = "plusIconPlayer1";
@@ -453,7 +436,6 @@ namespace ComboCounter.UserControls
             // 
             this.currTimePlayer1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimePlayer1Header.AutoSize = true;
-            this.currTimePlayer1Header.ForeColor = System.Drawing.Color.SteelBlue;
             this.currTimePlayer1Header.Location = new System.Drawing.Point(291, 288);
             this.currTimePlayer1Header.Name = "currTimePlayer1Header";
             this.currTimePlayer1Header.Size = new System.Drawing.Size(410, 81);
@@ -464,7 +446,6 @@ namespace ComboCounter.UserControls
             // 
             this.currentTimePlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currentTimePlayer1.AutoSize = true;
-            this.currentTimePlayer1.ForeColor = System.Drawing.Color.DimGray;
             this.currentTimePlayer1.Location = new System.Drawing.Point(115, 369);
             this.currentTimePlayer1.Name = "currentTimePlayer1";
             this.currentTimePlayer1.Size = new System.Drawing.Size(761, 240);
@@ -553,7 +534,7 @@ namespace ComboCounter.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.header);

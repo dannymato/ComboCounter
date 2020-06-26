@@ -10,10 +10,13 @@ namespace ComboCounter.CustomControls
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override Font Font { get; set; }
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
+
         public OutlineButton() : base()
         {
             Font = FontManager.getInstance().getButtonFont();
-            //ForeColor = ThemeManager.getColor()
+            ForeColor = ThemeManager.initButtonColor();
 
 
             BackColor = Color.Transparent;

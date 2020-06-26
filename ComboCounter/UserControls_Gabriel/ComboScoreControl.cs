@@ -122,7 +122,6 @@ namespace ComboCounter.UserControls_Gabriel
                 forceLabels[i] = new SmallInfo
                 {
                     Text = "Hit " + (i + 1),
-                    ForeColor = System.Drawing.Color.DimGray,
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
                     Dock = DockStyle.Fill
@@ -134,7 +133,6 @@ namespace ComboCounter.UserControls_Gabriel
             {
                 timeLabels[i] = new SmallInfo
                 {
-                    ForeColor = System.Drawing.Color.DimGray,
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
                     Dock = DockStyle.Fill
