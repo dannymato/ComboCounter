@@ -7,7 +7,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class targeted_total_of_force : UserControl
+    public partial class targeted_total_of_force : BaseFormControl
     {
         System.Timers.Timer t;
         int totalForceBox;
@@ -113,6 +113,21 @@ namespace ComboCounter.UserControls
             totalForce.ForeColor = System.Drawing.Color.DimGray;
             stopwatch.Stop();
             stopwatch.Reset(); 
+
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
 
         }
     }

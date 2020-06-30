@@ -62,6 +62,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BaseFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CustomControls\BigInfo.cs">
       <SubType>Component</SubType>
     </Compile>

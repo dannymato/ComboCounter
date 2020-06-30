@@ -7,7 +7,7 @@ using MySqlX.XDevAPI.Relational;
 
 namespace ComboCounter.UserControls_Gabriel
 {
-    public partial class ComboScoreControl : UserControl
+    public partial class ComboScoreControl : BaseFormControl
     {
         System.Timers.Timer t;
         int h, m, s, totalForceBox;
@@ -223,5 +223,19 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
+        public override void OnPageAttached()
+        {
+            Console.WriteLine("Page Attached");
+        }
+
+        public override void OnPageRemoved()
+        {
+            Console.WriteLine("Page Removed");
+        }
+
+        public override void OnExit()
+        {
+
+        }
     }
 }

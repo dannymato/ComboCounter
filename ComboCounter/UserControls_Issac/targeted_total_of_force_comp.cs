@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Media;
+using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class targeted_total_of_force_comp : UserControl
+    public partial class Targeted_total_of_force_comp : BaseFormControl
     {
         System.Timers.Timer t;
         System.Timers.Timer t1;
@@ -21,7 +22,7 @@ namespace ComboCounter.UserControls
         int forceGoalNumPlayer1 = 15000;
         int forceGoalNumPlayer2 = 15000;
 
-        public targeted_total_of_force_comp()
+        public Targeted_total_of_force_comp()
         {
             InitializeComponent();
         }
@@ -177,5 +178,19 @@ namespace ComboCounter.UserControls
             }));
         }
 
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
+        }
     }
 }

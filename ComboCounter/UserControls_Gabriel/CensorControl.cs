@@ -5,7 +5,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls_Gabriel
 {
-    public partial class CensorControl : UserControl
+    public partial class CensorControl : BaseFormControl
     {
 
         int handicapVal1 = 75;
@@ -97,6 +97,21 @@ namespace ComboCounter.UserControls_Gabriel
 
 
         private void smallInfo1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
         {
 
         }

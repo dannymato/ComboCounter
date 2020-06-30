@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ComboCounter.Classes;
+using System;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls
 {
-    public partial class targeted_total_of_time_comp : UserControl
+    public partial class targeted_total_of_time_comp : BaseFormControl
     {
         int totalForceNumPlay1, totalForceNumPlay2;
 
@@ -181,6 +182,21 @@ namespace ComboCounter.UserControls
             }
 
             updateTimeText(setTimePlayer2, numSecsPlay2);
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

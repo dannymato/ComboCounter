@@ -4,7 +4,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.Forms
 {
-    class HomeScreen : UserControl
+    public class HomeScreen : BaseFormControl
     {
         private CustomControls.OutlineButton comboCounterDefault;
         private H3 h31;
@@ -469,6 +469,20 @@ namespace ComboCounter.Forms
             Option_Clicked(ClassToCall.PunchChallengeCustom);
         }
 
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+            
+        }
     }
 
     // Provides an enum to determine which element on screen is needed to be shown

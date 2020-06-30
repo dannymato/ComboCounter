@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ComboCounter.Classes;
 using MySql.Data.MySqlClient;
 
 namespace ComboCounter.UserControls
 {
-    public partial class histogram : UserControl
+    public partial class histogram : BaseFormControl
     {
         // set variables for connection
         // List<string> allhits = new List<string>();
@@ -250,6 +249,21 @@ namespace ComboCounter.UserControls
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateGraph();
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

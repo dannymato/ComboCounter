@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace ComboCounter.UserControls
 {
-    public partial class punch_challenge : UserControl
+    public partial class punch_challenge : BaseFormControl
     {
         int punchLimit = 100;
         int i,j = 0;
@@ -154,6 +154,21 @@ namespace ComboCounter.UserControls
                 session = new Session(DateTime.Now);
                 stopwatch.Start();
             }
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

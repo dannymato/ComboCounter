@@ -3,7 +3,7 @@ using ComboCounter.CustomControls;
 
 namespace ComboCounter.UserControls
 {
-    partial class targeted_total_of_force_comp
+    partial class Targeted_total_of_force_comp
     {
         /// <summary> 
         /// Required designer variable.

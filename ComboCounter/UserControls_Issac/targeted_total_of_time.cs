@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace ComboCounter.UserControls
 {
-    public partial class targeted_total_of_time : UserControl
+    public partial class targeted_total_of_time : BaseFormControl
     {
 
         const int timeIntervalDefault = 30;
@@ -103,6 +103,21 @@ namespace ComboCounter.UserControls
         {
             timeIntervalSecs += 15;
             updateTimeSetter();
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }
