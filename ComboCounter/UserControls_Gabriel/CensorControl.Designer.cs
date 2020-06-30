@@ -33,12 +33,12 @@ namespace ComboCounter.UserControls_Gabriel
         {
             this.mediumInfo2 = new ComboCounter.Classes.MediumInfo();
             this.SensorHeader = new ComboCounter.Classes.MediumInfo();
-            this.Minus_Icon1 = new TextButton();
+            this.Minus_Icon1 = new ComboCounter.CustomControls.TextButton();
             this.Handicap1 = new ComboCounter.Classes.SmallInfo();
-            this.Plus_Icon1 = new TextButton();
+            this.Plus_Icon1 = new ComboCounter.CustomControls.TextButton();
             this.mediumInfo3 = new ComboCounter.Classes.MediumInfo();
-            this.Plus_Icon2 = new TextButton();
-            this.Minus_Icon2 = new TextButton();
+            this.Plus_Icon2 = new ComboCounter.CustomControls.TextButton();
+            this.Minus_Icon2 = new ComboCounter.CustomControls.TextButton();
             this.Handicap2 = new ComboCounter.Classes.SmallInfo();
             this.SensorPanel = new System.Windows.Forms.Panel();
             this.SensorPanel.SuspendLayout();
@@ -70,13 +70,16 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             // Minus_Icon1
             // 
+            this.Minus_Icon1.AutoSize = true;
+            this.Minus_Icon1.BackColor = System.Drawing.Color.Transparent;
             this.Minus_Icon1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Minus_Icon1.FlatAppearance.BorderSize = 0;
             this.Minus_Icon1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Minus_Icon1.ForeColor = System.Drawing.Color.SteelBlue;
             this.Minus_Icon1.Location = new System.Drawing.Point(107, 151);
-            this.Minus_Icon1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Minus_Icon1.Margin = new System.Windows.Forms.Padding(4);
             this.Minus_Icon1.Name = "Minus_Icon1";
+            this.Minus_Icon1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.Minus_Icon1.Size = new System.Drawing.Size(103, 94);
             this.Minus_Icon1.TabIndex = 77;
             this.Minus_Icon1.Text = "-";
@@ -97,6 +100,7 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             // Plus_Icon1
             // 
+            this.Plus_Icon1.AutoSize = true;
             this.Plus_Icon1.BackColor = System.Drawing.Color.Transparent;
             this.Plus_Icon1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Plus_Icon1.FlatAppearance.BorderSize = 0;
@@ -104,8 +108,9 @@ namespace ComboCounter.UserControls_Gabriel
             this.Plus_Icon1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Plus_Icon1.ForeColor = System.Drawing.Color.SteelBlue;
             this.Plus_Icon1.Location = new System.Drawing.Point(383, 165);
-            this.Plus_Icon1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Plus_Icon1.Margin = new System.Windows.Forms.Padding(4);
             this.Plus_Icon1.Name = "Plus_Icon1";
+            this.Plus_Icon1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.Plus_Icon1.Size = new System.Drawing.Size(67, 68);
             this.Plus_Icon1.TabIndex = 76;
             this.Plus_Icon1.Text = "+";
@@ -126,6 +131,7 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             // Plus_Icon2
             // 
+            this.Plus_Icon2.AutoSize = true;
             this.Plus_Icon2.BackColor = System.Drawing.Color.Transparent;
             this.Plus_Icon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Plus_Icon2.FlatAppearance.BorderSize = 0;
@@ -133,8 +139,9 @@ namespace ComboCounter.UserControls_Gabriel
             this.Plus_Icon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Plus_Icon2.ForeColor = System.Drawing.Color.SteelBlue;
             this.Plus_Icon2.Location = new System.Drawing.Point(395, 466);
-            this.Plus_Icon2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Plus_Icon2.Margin = new System.Windows.Forms.Padding(4);
             this.Plus_Icon2.Name = "Plus_Icon2";
+            this.Plus_Icon2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.Plus_Icon2.Size = new System.Drawing.Size(67, 68);
             this.Plus_Icon2.TabIndex = 84;
             this.Plus_Icon2.Text = "+";
@@ -143,13 +150,16 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             // Minus_Icon2
             // 
+            this.Minus_Icon2.AutoSize = true;
+            this.Minus_Icon2.BackColor = System.Drawing.Color.Transparent;
             this.Minus_Icon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Minus_Icon2.FlatAppearance.BorderSize = 0;
             this.Minus_Icon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Minus_Icon2.ForeColor = System.Drawing.Color.SteelBlue;
             this.Minus_Icon2.Location = new System.Drawing.Point(84, 453);
-            this.Minus_Icon2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Minus_Icon2.Margin = new System.Windows.Forms.Padding(4);
             this.Minus_Icon2.Name = "Minus_Icon2";
+            this.Minus_Icon2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.Minus_Icon2.Size = new System.Drawing.Size(103, 94);
             this.Minus_Icon2.TabIndex = 85;
             this.Minus_Icon2.Text = "-";
@@ -178,7 +188,7 @@ namespace ComboCounter.UserControls_Gabriel
             this.SensorPanel.Controls.Add(this.Minus_Icon1);
             this.SensorPanel.Controls.Add(this.mediumInfo2);
             this.SensorPanel.Location = new System.Drawing.Point(800, 230);
-            this.SensorPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SensorPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SensorPanel.Name = "SensorPanel";
             this.SensorPanel.Size = new System.Drawing.Size(600, 577);
             this.SensorPanel.TabIndex = 87;
@@ -187,10 +197,10 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.SensorPanel);
             this.Controls.Add(this.SensorHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CensorControl";
             this.Size = new System.Drawing.Size(2133, 862);
             this.Load += new System.EventHandler(this.CensorControl_Load);
@@ -204,13 +214,13 @@ namespace ComboCounter.UserControls_Gabriel
         #endregion
         private Classes.MediumInfo mediumInfo2;
         private Classes.MediumInfo SensorHeader;
-        private System.Windows.Forms.Button Minus_Icon1;
         private Classes.SmallInfo Handicap1;
-        private System.Windows.Forms.Button Plus_Icon1;
         private Classes.MediumInfo mediumInfo3;
-        private System.Windows.Forms.Button Plus_Icon2;
-        private System.Windows.Forms.Button Minus_Icon2;
         private Classes.SmallInfo Handicap2;
         private System.Windows.Forms.Panel SensorPanel;
+        private TextButton Minus_Icon1;
+        private TextButton Plus_Icon1;
+        private TextButton Plus_Icon2;
+        private TextButton Minus_Icon2;
     }
 }
