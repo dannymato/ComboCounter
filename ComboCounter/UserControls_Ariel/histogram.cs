@@ -187,8 +187,7 @@ namespace ComboCounter.UserControls
 
         private void histogram_Load(object sender, EventArgs e)
         {
-       
-            comboBox1.DataSource = History.GetSessions();
+      
 
             chart1.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.White;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
@@ -253,7 +252,9 @@ namespace ComboCounter.UserControls
 
         public override void OnPageAttached()
         {
-            
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(History.GetSessions().ToArray());
+
         }
 
         public override void OnPageRemoved()

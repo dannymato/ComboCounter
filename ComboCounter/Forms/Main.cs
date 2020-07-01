@@ -29,6 +29,7 @@ namespace ComboCounter
         UserAccount userAccount;
 
         BaseFormControl currentControl;
+        histogram histogramForm;
 
         public Main()
         {
@@ -77,7 +78,7 @@ namespace ComboCounter
         {
 
             Forms.Exit exit = new Forms.Exit();
-            exit.ExitApplication += (s, arg) => { Close(); };
+            exit.ExitApplication += (s, arg) => { Close(); currentControl.OnExit(); };
 
             exit.ClientSize = new Size(Width, Height);
             exit.Show();
@@ -94,7 +95,12 @@ namespace ComboCounter
 
         private void histogram_Click(object sender, EventArgs e)
         {
-            LoadNewPage(new histogram());
+            if (this.histogramForm == null)
+            {
+                histogramForm = new histogram();
+            }
+            LoadNewPage(histogramForm);
+
         }
 
         private void Main_Load(object sender, EventArgs e)

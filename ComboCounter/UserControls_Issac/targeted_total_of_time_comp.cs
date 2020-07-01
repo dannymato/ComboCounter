@@ -191,7 +191,8 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            timer1.Enabled = false;
+            timer2.Enabled = false;
         }
 
         public override void OnExit()
