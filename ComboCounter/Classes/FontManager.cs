@@ -8,6 +8,11 @@ namespace ComboCounter.Classes
     class FontManager
     {
 
+        // pfc Family indices
+        // 0 Roboto 
+        // 1 Roboto Medium
+        // 2 Roboto Slab Extra Bold
+
         PrivateFontCollection pfc;
 
         private static FontManager instance;
@@ -81,6 +86,11 @@ namespace ComboCounter.Classes
         public Font getButtonFont()
         {
             return new Font(pfc.Families[1], 20);
+        }
+
+        public Font getTextBoxFont()
+        {
+            return new Font(pfc.Families[0], 18);
         }
 
     }

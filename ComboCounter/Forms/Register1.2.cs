@@ -57,7 +57,16 @@ namespace ComboCounter.Forms
 
         private void Register1_Load(object sender, EventArgs e)
         {
-            
+            FontManager fm = FontManager.getInstance();
+
+            username_tb.Font = fm.getTextBoxFont();
+            passwordBox.Font = fm.getTextBoxFont();
+            fNameBox.Font = fm.getTextBoxFont();
+            lNameBox.Font = fm.getTextBoxFont();
+            sexBox.Font = fm.getTextBoxFont();
+            heightBox.Font = fm.getTextBoxFont();
+            weightBox.Font = fm.getTextBoxFont();
+            yearBox.Font = fm.getTextBoxFont();
         }
 
         private void signupButton_Click(object sender, EventArgs e)
@@ -82,7 +91,8 @@ namespace ComboCounter.Forms
                 sexBox.Text,
                 Int32.Parse(heightBox.Text),
                 Int32.Parse(weightBox.Text),
-                2002);
+                Int32.Parse(yearBox.Text)
+                );
 #else
             User newUser = db.insertUser(
                 id,
@@ -113,24 +123,6 @@ namespace ComboCounter.Forms
                 main.FormClosed += (o, closeEvent) => { Close(); };
             }
 
-        }
-
-        private int GetAgeFromDOB()
-        {
-            int age = 0;
-
-            DateTime today = DateTime.Today;
-
-            if (today.Month > Int32.Parse(monthBox.Text))
-            {
-                age = today.Year - Int32.Parse(yearBox.Text);
-            }
-            else
-            {
-                age = today.Year - Int32.Parse(yearBox.Text) - 1;
-            }
-
-            return age;
         }
 
         private void username_tb_TextChanged(object sender, EventArgs e)
@@ -213,5 +205,7 @@ namespace ComboCounter.Forms
         }
 
         public event EventHandler ReturnToLogin;
+
+
     }
 }

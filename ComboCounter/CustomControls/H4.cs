@@ -24,7 +24,7 @@ namespace ComboCounter.Classes
             FontManager fm = FontManager.getInstance();
             Font = fm.getHeader4Font();
 
-            ThemeManager.initHeaderColor();
+            ForeColor = ThemeManager.initHeaderColor();
 
             AutoSize = true;
 
