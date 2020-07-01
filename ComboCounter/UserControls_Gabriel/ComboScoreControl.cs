@@ -123,7 +123,7 @@ namespace ComboCounter.UserControls_Gabriel
                 {
                     Text = "Hit " + (i + 1),
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
                 tableLayoutPanel1.Controls.Add(forceLabels[i]);
@@ -134,7 +134,7 @@ namespace ComboCounter.UserControls_Gabriel
                 timeLabels[i] = new SmallInfo
                 {
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
                 tableLayoutPanel2.Controls.Add(timeLabels[i]);
@@ -204,7 +204,7 @@ namespace ComboCounter.UserControls_Gabriel
                     forceIndex++;
 
 
-                    totalTime.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+                    totalTime.Text = string.Format("{0:00}:{1:00}:{2:00}", h, m, s);
                     if (forceIndex >= forceArray.Length)
                     {
                         SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
@@ -213,7 +213,7 @@ namespace ComboCounter.UserControls_Gabriel
                         bellRing.Play();
                         t.Stop();
 
-                        History.GetSessions().Add(session);
+                        History.InsertSession(session);
 
                     }
 
@@ -225,12 +225,10 @@ namespace ComboCounter.UserControls_Gabriel
 
         public override void OnPageAttached()
         {
-            Console.WriteLine("Page Attached");
         }
 
         public override void OnPageRemoved()
         {
-            Console.WriteLine("Page Removed");
         }
 
         public override void OnExit()

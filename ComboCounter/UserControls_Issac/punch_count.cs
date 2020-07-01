@@ -136,7 +136,7 @@ namespace ComboCounter.UserControls
                 timer1.Stop();
 
                 bellRung.Play();
-                History.GetSessions().Add(session);
+                History.InsertSession(session);
             }
 
         }

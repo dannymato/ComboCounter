@@ -85,7 +85,7 @@ namespace ComboCounter.UserControls
             {
                 timer1.Stop();
                 timeKeeper.Stop();
-                History.GetSessions().Add(session);
+                History.InsertSession(session);
             }
         }
 

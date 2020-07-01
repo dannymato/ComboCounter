@@ -28,6 +28,9 @@ namespace ComboCounter.Classes
         // Useful to determine the time between hits of the bag
         public List<double> Times { get; private set; }
 
+        public int SessionID { get; set; }
+
+
         /// <summary>
         /// Adds a record to both the forces and the time list
         /// </summary>
@@ -50,6 +53,12 @@ namespace ComboCounter.Classes
             StartDate = start;
             Forces = new List<double>();
             Times = new List<double>();
+        }
+
+        public Session(DateTime start, int ID) 
+            : this(start)
+        {
+            SessionID = ID;
         }
 
 

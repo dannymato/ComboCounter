@@ -404,9 +404,9 @@ namespace ComboCounter.Forms
 
         public event EventHandler<OptionClickEventArgs> OnOptionClicked;
 
-        private void Option_Clicked(ClassToCall classCall)
+        private void Option_Clicked(ClassToCall classToCall)
         {
-            OnOptionClicked?.Invoke(this, new OptionClickEventArgs(classCall));
+            OnOptionClicked?.Invoke(this, new OptionClickEventArgs(classToCall));
         }
 
         private void comboCounterDefault_Click(object sender, EventArgs e)

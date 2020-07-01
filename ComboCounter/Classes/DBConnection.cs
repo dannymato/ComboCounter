@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ComboCounter.Classes
@@ -336,5 +337,192 @@ namespace ComboCounter.Classes
 
         }
 
+        public List<Session> GetSessions(int userID)
+        {
+
+            string Query = "SELECT workout_sessionid, date " +
+                "FROM " + DATABASE + ".workout_sessions " +
+                "WHERE user_id = @user_id";
+
+            dbConn.Open();
+
+            MySqlCommand command = new MySqlCommand(Query, dbConn);
+            command.Parameters.AddWithValue("user_id", userID);
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                
+                List<Session> sessions = new List<Session>();
+                while (reader.Read())
+                {
+                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid")));
+                }
+
+                dbConn.Close();
+
+                for (int i = 0; i < sessions.Count; i++)
+                {
+                    sessions[i] = AddDataToSession(sessions[i]);
+                }
+
+                return sessions;
+
+            }
+            dbConn.Close();
+            return new List<Session>();
+
+        }
+
+        public Session AddDataToSession(Session session)
+        {
+            string Query = "SELECT `index`, `force`, `time_interval` " +
+                "FROM " + DATABASE + ".hit_data " +
+                "WHERE session_id = @sessionID " +
+                "ORDER BY `index`";
+
+            dbConn.Open();
+
+            MySqlCommand sqlCommand = new MySqlCommand(Query, dbConn);
+            sqlCommand.Parameters.AddWithValue("sessionID", session.SessionID);
+
+            MySqlDataReader reader = sqlCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while(reader.Read())
+                {
+                    session.insertHit(
+                        reader.GetFloat("force"),
+                        reader.GetFloat("time_interval"));
+                }
+
+                dbConn.Close();
+                return session;
+
+            }
+            dbConn.Close();
+            return null;
+
+        }
+        
+
+        public Session GetSession(int sessionID, DateTime sessionStart)
+        {
+            string Query = "SELECT index, force, time_interval " +
+                "FROM " + DATABASE + ".hit_data " +
+                "WHERE session_id = @sessionID " +
+                "ORDER BY index";
+
+            dbConn.Open();
+
+            MySqlCommand sessionCommand = new MySqlCommand(Query, dbConn);
+
+            sessionCommand.Parameters.AddWithValue("sessionID", sessionID);
+
+            MySqlDataReader reader = sessionCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                
+                Session session = new Session(sessionStart);
+                while (reader.Read())
+                {
+                    session.insertHit(reader.GetFloat("force"), 
+                        reader.GetFloat("time_interval"));   
+
+                }
+
+                dbConn.Close();
+                return session;
+
+            }
+            return null;
+
+        }
+
+        public Session GetSession(int sessionID, DateTime sessionStart, bool isAlreadyOpen)
+        {
+            string Query = "SELECT index, force, time_interval " +
+                "FROM " + DATABASE + ".hit_data " +
+                "WHERE session_id = @sessionID " +
+                "ORDER BY index";
+
+            if (!isAlreadyOpen)
+                dbConn.Open();
+
+            MySqlCommand sessionCommand = new MySqlCommand(Query, dbConn);
+
+            sessionCommand.Parameters.AddWithValue("sessionID", sessionID);
+
+            MySqlDataReader reader = sessionCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+
+                Session session = new Session(sessionStart);
+                while (reader.Read())
+                {
+                    session.insertHit(reader.GetFloat("force"),
+                        reader.GetFloat("time_interval"));
+
+                }
+
+                dbConn.Close();
+                return session;
+
+            }
+            return null;
+
+        }
+
+        public void InsertSession(int userID, Session session)
+        {
+            string Query = "INSERT INTO " + DATABASE + ".workout_sessions (user_id, date)" +
+                "VALUES (@userID, @date);" +
+                "SELECT LAST_INSERT_ID();";
+
+            dbConn.Open();
+
+            MySqlCommand cmd = new MySqlCommand(Query, dbConn);
+
+            cmd.Parameters.AddWithValue("userID", userID);
+            cmd.Parameters.AddWithValue("date", session.StartDate);
+
+            int newSessionID;
+
+            object result = cmd.ExecuteScalar();
+
+            if (result != null)
+            {
+                newSessionID = Convert.ToInt32(result);
+            }
+            else
+            {
+                return;
+            }
+
+            string InsertHitQuery = "INSERT INTO " + DATABASE + ".hit_data (`index`, `force`, `time_interval`, `session_id`) " +
+                "VALUES (@index, @force, @time_interval, @sessionID);";
+
+            cmd = new MySqlCommand(InsertHitQuery, dbConn);
+
+            cmd.Parameters.Add("index", MySqlDbType.Int32);
+            cmd.Parameters.Add("force", MySqlDbType.Float);
+            cmd.Parameters.Add("time_interval", MySqlDbType.Float);
+            cmd.Parameters.AddWithValue("sessionID", newSessionID);
+
+            for (int i = 0; i < session.Forces.Count; i++)
+            {
+                cmd.Parameters[0].Value = i;
+                cmd.Parameters[1].Value = session.Forces[i];
+                cmd.Parameters[2].Value = session.Times[i];
+
+                cmd.ExecuteNonQuery();
+            }
+
+            dbConn.Close();
+        }
     }
 }

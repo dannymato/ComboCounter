@@ -83,7 +83,7 @@ namespace ComboCounter.UserControls
                     bellRing.Play();
                     t.Stop();
                     stopwatch.Stop();
-                    History.GetSessions().Add(session);
+                    History.InsertSession(session);
                 }
                 else
                 {

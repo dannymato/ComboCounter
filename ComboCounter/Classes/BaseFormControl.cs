@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ComboCounter.Classes
 {
-    abstract public class BaseFormControl : UserControl
+    public class BaseFormControl : UserControl
     {
 
-        public abstract void OnPageAttached();
+        virtual public void OnPageAttached() { }
 
-        public abstract void OnPageRemoved();
+        virtual public void OnPageRemoved() { }
 
-        public abstract void OnExit();
+        virtual public void OnExit() { }
 
     }
 }

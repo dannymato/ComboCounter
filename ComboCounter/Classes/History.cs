@@ -22,7 +22,8 @@ namespace ComboCounter.Classes
 
         private static void CreateSessions()
         {
-            Sessions = new List<Session>();
+            Sessions = DBConnection.getInstance()
+                .GetSessions(UserManager.GetId());
         }
 
         /// <summary>
@@ -38,6 +39,23 @@ namespace ComboCounter.Classes
                 CreateSessions();
             }
             return Sessions;
+        }
+
+
+        public static void InsertSession(Session newSession)
+        {
+
+            if (Sessions == null)
+            {
+                CreateSessions();
+            }
+
+            DBConnection db = DBConnection.getInstance();
+
+            db.InsertSession(UserManager.GetId(), newSession);
+
+            Sessions.Add(newSession);
+
         }
 
         // Leftover code from previous group where the database was being called by each page.
