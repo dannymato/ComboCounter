@@ -37,7 +37,6 @@ public class ThemeConstants
             public static Color H2ClickColor2 = Color.FromArgb(200, 200, 200);
 
     //-------------------------
-}
             // THEME 2 (UR A PHYSCO MF BOI MODE)
             public static Color Theme3BgColor = Color.FromArgb(0, 0, 0);
 

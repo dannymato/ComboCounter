@@ -1,6 +1,9 @@
-﻿namespace ComboCounter.UserControls
+﻿using ComboCounter.Classes;
+using ComboCounter.CustomControls;
+
+namespace ComboCounter.UserControls
 {
-    partial class home_user2
+    partial class targeted_total_of_time
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,42 +32,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home_user2));
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new ComboCounter.CustomControls.OutlineButton();
+            this.button2 = new ComboCounter.CustomControls.OutlineButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.minusIcon = new System.Windows.Forms.Button();
-            this.plusIcon = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.currentTime = new System.Windows.Forms.Label();
-            this.totalForce = new System.Windows.Forms.Label();
-            this.setTimeSec = new System.Windows.Forms.Label();
-            this.setTimeMins = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.minusIcon = new ComboCounter.CustomControls.TextButton();
+            this.plusIcon = new ComboCounter.CustomControls.TextButton();
+            this.resetButton = new ComboCounter.CustomControls.OutlineButton();
+            this.headerLabel = new ComboCounter.Classes.Header1();
+            this.timeSetHeader = new ComboCounter.Classes.H2();
+            this.currTimeHeader = new ComboCounter.Classes.H2();
+            this.forceAccruedHeader = new ComboCounter.Classes.H2();
+            this.currentTime = new ComboCounter.Classes.BigInfo();
+            this.totalForce = new ComboCounter.Classes.BigInfo();
+            this.setTime = new ComboCounter.Classes.BigInfo();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 28);
-            this.label1.TabIndex = 0;
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(1287, 868);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(73, 71);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 94);
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.button1.Size = new System.Drawing.Size(264, 92);
             this.button1.TabIndex = 9;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -72,13 +72,16 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(1647, 868);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(484, 71);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(268, 94);
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.button2.Size = new System.Drawing.Size(264, 92);
             this.button2.TabIndex = 10;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,209 +94,232 @@
             // 
             // minusIcon
             // 
-            this.minusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minusIcon.BackgroundImage")));
+            this.minusIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusIcon.AutoSize = true;
+            this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.Location = new System.Drawing.Point(303, 555);
-            this.minusIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minusIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.minusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.minusIcon.Location = new System.Drawing.Point(4, 80);
+            this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
+            this.minusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.minusIcon.Size = new System.Drawing.Size(100, 79);
             this.minusIcon.TabIndex = 13;
+            this.minusIcon.Text = "-";
             this.minusIcon.UseVisualStyleBackColor = true;
             this.minusIcon.Click += new System.EventHandler(this.minusIcon_Click);
             // 
             // plusIcon
             // 
-            this.plusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("plusIcon.BackgroundImage")));
+            this.plusIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusIcon.AutoSize = true;
+            this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.Location = new System.Drawing.Point(1024, 562);
-            this.plusIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plusIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.plusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.plusIcon.Location = new System.Drawing.Point(714, 87);
+            this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
+            this.plusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.plusIcon.Size = new System.Drawing.Size(69, 65);
             this.plusIcon.TabIndex = 14;
+            this.plusIcon.Text = "+";
             this.plusIcon.UseVisualStyleBackColor = true;
             this.plusIcon.Click += new System.EventHandler(this.plusIcon_Click);
             // 
             // resetButton
             // 
+            this.resetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetButton.AutoSize = true;
+            this.resetButton.BackColor = System.Drawing.Color.Transparent;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton.Location = new System.Drawing.Point(2025, 868);
-            this.resetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resetButton.Location = new System.Drawing.Point(895, 71);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(268, 94);
+            this.resetButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.resetButton.Size = new System.Drawing.Size(267, 92);
             this.resetButton.TabIndex = 16;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // label7
+            // headerLabel
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 80.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(545, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1288, 152);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Targeted Total of Time";
+            this.headerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.headerLabel.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.headerLabel, 2);
+            this.headerLabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.headerLabel.Location = new System.Drawing.Point(861, 0);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(759, 180);
+            this.headerLabel.TabIndex = 56;
+            this.headerLabel.Text = "Total Time";
+            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // timeSetHeader
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(344, 340);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(673, 136);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Time Setting";
+            this.timeSetHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timeSetHeader.AutoSize = true;
+            this.timeSetHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.timeSetHeader.Location = new System.Drawing.Point(233, 285);
+            this.timeSetHeader.Name = "timeSetHeader";
+            this.timeSetHeader.Size = new System.Drawing.Size(774, 158);
+            this.timeSetHeader.TabIndex = 57;
+            this.timeSetHeader.Text = "Time Setting";
             // 
-            // label5
+            // currTimeHeader
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(1411, 340);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(698, 136);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "Current Time";
+            this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currTimeHeader.AutoSize = true;
+            this.currTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.currTimeHeader.Location = new System.Drawing.Point(1460, 285);
+            this.currTimeHeader.Name = "currTimeHeader";
+            this.currTimeHeader.Size = new System.Drawing.Size(801, 158);
+            this.currTimeHeader.TabIndex = 58;
+            this.currTimeHeader.Text = "Current Time";
             // 
-            // label9
+            // forceAccruedHeader
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(344, 690);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(759, 136);
-            this.label9.TabIndex = 69;
-            this.label9.Text = "Force Accrued";
+            this.forceAccruedHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceAccruedHeader.AutoSize = true;
+            this.forceAccruedHeader.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceAccruedHeader.Location = new System.Drawing.Point(189, 689);
+            this.forceAccruedHeader.Name = "forceAccruedHeader";
+            this.forceAccruedHeader.Size = new System.Drawing.Size(861, 158);
+            this.forceAccruedHeader.TabIndex = 69;
+            this.forceAccruedHeader.Text = "Force Accrued";
             // 
             // currentTime
             // 
-            this.currentTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currentTime.AutoSize = true;
-            this.currentTime.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentTime.ForeColor = System.Drawing.Color.DimGray;
-            this.currentTime.Location = new System.Drawing.Point(1392, 474);
+            this.currentTime.Location = new System.Drawing.Point(1480, 446);
             this.currentTime.Name = "currentTime";
-            this.currentTime.Size = new System.Drawing.Size(762, 244);
+            this.currentTime.Size = new System.Drawing.Size(761, 240);
             this.currentTime.TabIndex = 78;
             this.currentTime.Text = "00:00.0";
             // 
             // totalForce
             // 
-            this.totalForce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForce.AutoSize = true;
-            this.totalForce.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalForce.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForce.ForeColor = System.Drawing.Color.Maroon;
-            this.totalForce.Location = new System.Drawing.Point(499, 804);
+            this.totalForce.Location = new System.Drawing.Point(514, 847);
             this.totalForce.Name = "totalForce";
-            this.totalForce.Size = new System.Drawing.Size(212, 244);
+            this.totalForce.Size = new System.Drawing.Size(212, 240);
             this.totalForce.TabIndex = 79;
             this.totalForce.Text = "0";
             // 
-            // setTimeSec
+            // setTime
             // 
-            this.setTimeSec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.setTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.setTimeSec.AutoSize = true;
-            this.setTimeSec.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setTimeSec.ForeColor = System.Drawing.Color.DimGray;
-            this.setTimeSec.Location = new System.Drawing.Point(700, 474);
-            this.setTimeSec.Name = "setTimeSec";
-            this.setTimeSec.Size = new System.Drawing.Size(321, 244);
-            this.setTimeSec.TabIndex = 80;
-            this.setTimeSec.Text = "30";
-            this.setTimeSec.Click += new System.EventHandler(this.setTimeSec_Click);
+            this.setTime.AutoSize = true;
+            this.setTime.ForeColor = System.Drawing.Color.DimGray;
+            this.setTime.Location = new System.Drawing.Point(111, 0);
+            this.setTime.Name = "setTime";
+            this.setTime.Size = new System.Drawing.Size(596, 240);
+            this.setTime.TabIndex = 80;
+            this.setTime.Text = "00:30";
+            this.setTime.Click += new System.EventHandler(this.setTimeSec_Click);
             // 
-            // setTimeMins
+            // tableLayoutPanel1
             // 
-            this.setTimeMins.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.setTimeMins.AutoSize = true;
-            this.setTimeMins.Font = new System.Drawing.Font("Times New Roman", 129.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setTimeMins.ForeColor = System.Drawing.Color.DimGray;
-            this.setTimeMins.Location = new System.Drawing.Point(364, 474);
-            this.setTimeMins.Name = "setTimeMins";
-            this.setTimeMins.Size = new System.Drawing.Size(321, 244);
-            this.setTimeMins.TabIndex = 81;
-            this.setTimeMins.Text = "00";
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.headerLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.currentTime, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.totalForce, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.currTimeHeader, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.timeSetHeader, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.forceAccruedHeader, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 5);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2481, 1087);
+            this.tableLayoutPanel1.TabIndex = 83;
             // 
-            // label8
+            // flowLayoutPanel1
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(632, 505);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 170);
-            this.label8.TabIndex = 82;
-            this.label8.Text = ":";
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.minusIcon);
+            this.flowLayoutPanel1.Controls.Add(this.setTime);
+            this.flowLayoutPanel1.Controls.Add(this.plusIcon);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(226, 446);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(787, 240);
+            this.flowLayoutPanel1.TabIndex = 58;
             // 
-            // home_user2
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.resetButton, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1243, 850);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1235, 234);
+            this.tableLayoutPanel2.TabIndex = 80;
+            // 
+            // targeted_total_of_time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.setTimeMins);
-            this.Controls.Add(this.setTimeSec);
-            this.Controls.Add(this.totalForce);
-            this.Controls.Add(this.currentTime);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.plusIcon);
-            this.Controls.Add(this.minusIcon);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "home_user2";
+            this.Name = "targeted_total_of_time";
             this.Size = new System.Drawing.Size(2481, 1087);
             this.Load += new System.EventHandler(this.home_user2_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button minusIcon;
-        private System.Windows.Forms.Button plusIcon;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label currentTime;
-        private System.Windows.Forms.Label totalForce;
-        private System.Windows.Forms.Label setTimeSec;
-        private System.Windows.Forms.Label setTimeMins;
-        private System.Windows.Forms.Label label8;
+        private OutlineButton button1;
+        private OutlineButton button2;
+        private OutlineButton resetButton;
+        private Header1 headerLabel;
+        private H2 timeSetHeader;
+        private H2 currTimeHeader;
+        private H2 forceAccruedHeader;
+        private BigInfo currentTime;
+        private BigInfo totalForce;
+        private BigInfo setTime;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private TextButton minusIcon;
+        private TextButton plusIcon;
     }
 }

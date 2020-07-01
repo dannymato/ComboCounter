@@ -58,9 +58,19 @@ namespace ComboCounter.Classes
             return new Font(pfc.Families[2], 36);
         }
 
+        public Font getHeader4Font()
+        {
+            return new Font(pfc.Families[2], 24);
+        }
+
         public Font getBigInfoFont()
         {
             return new Font(pfc.Families[0], 120);
+        }
+
+        public Font getMediumInfoFont()
+        {
+            return new Font(pfc.Families[0], 60);
         }
 
         public Font getSmallInfoFont()

@@ -2,25 +2,24 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+
+
 namespace ComboCounter.Classes
 {
-    class Header1 : Label
+    class H2 : Label
     {
+
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override Font Font { get; set; }
 
-        public Header1() : base()
+        public H2() : base()
         {
             FontManager fm = FontManager.getInstance();
-            Font = fm.getHeaderFont();
-
-            // ForeColor = ThemeManager thing
-            ForeColor = System.Drawing.Color.FromArgb(255, 0, 255);
+            Font = fm.getHeader2Font();
 
             AutoSize = false;
-            TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
         }
 
-        
     }
 }

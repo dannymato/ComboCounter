@@ -1,10 +1,15 @@
 ﻿using ComboCounter.Classes;
+using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ComboCounter.CustomControls
 {
     class ContainedButton : Button
     {
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Font Font {get; set;}
 
         public ContainedButton() : base()
         {

@@ -29,14 +29,14 @@ namespace ComboCounter.UserControls
         DateTime selDate = new DateTime();
         DateTime date = new DateTime();
 
+
         public histogram()
         {
             InitializeComponent();
 
             InitializeDB();
-
-
         }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -188,8 +188,8 @@ namespace ComboCounter.UserControls
 
         private void histogram_Load(object sender, EventArgs e)
         {
-
-            comboBox1.DataSource = History.GetSessions();
+       
+            comboBox1.DataSource = History.GetSessions() ;
 
             chart1.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.White;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
@@ -204,6 +204,7 @@ namespace ComboCounter.UserControls
             chart1.BackColor = System.Drawing.Color.Transparent;
             chart1.ChartAreas[0].BackColor = System.Drawing.Color.Transparent;
         }
+
 
         private void UpdateGraph()
         {

@@ -31,6 +31,7 @@ namespace ComboCounter.Forms
         private SmallInfo clockText;
         private SmallInfo date;
         private Panel ghostPanel;
+
         private TableLayoutPanel tableLayoutPanel1;
 
         public HomeScreen()
@@ -583,6 +584,7 @@ namespace ComboCounter.Forms
     
     // Allows us to pass through to the main page the enum to tell the main page
     // which page to place in the panel next. This feeds into the switch case.
+
     public class OptionClickEventArgs : EventArgs
     {
 

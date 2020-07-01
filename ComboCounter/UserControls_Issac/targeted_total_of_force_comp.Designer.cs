@@ -1,4 +1,7 @@
-﻿namespace ComboCounter.UserControls
+﻿using ComboCounter.Classes;
+using ComboCounter.CustomControls;
+
+namespace ComboCounter.UserControls
 {
     partial class targeted_total_of_force_comp
     {
@@ -29,35 +32,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(targeted_total_of_force_comp));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.forceGoal = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.Label();
-            this.totalForce = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.forceGoal1 = new System.Windows.Forms.Label();
-            this.txtResult1 = new System.Windows.Forms.Label();
-            this.totalForce1 = new System.Windows.Forms.Label();
-            this.startButton1 = new System.Windows.Forms.Button();
-            this.stopButton1 = new System.Windows.Forms.Button();
-            this.resetButton1 = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.stopButton = new System.Windows.Forms.Button();
-            this.startButton = new System.Windows.Forms.Button();
-            this.plusIcon = new System.Windows.Forms.Button();
-            this.minusIcon = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.header = new ComboCounter.Classes.H2();
+            this.player1Header = new ComboCounter.Classes.H3();
+            this.label2 = new ComboCounter.Classes.H3();
+            this.forceGoalPlayer1Header = new ComboCounter.Classes.H3();
+            this.currTimeHeaderPlayer1 = new ComboCounter.Classes.H3();
+            this.forceAccruedPlayer1Header = new ComboCounter.Classes.H3();
+            this.currTimePlayer1 = new ComboCounter.Classes.MediumInfo();
+            this.totalForcePlayer1 = new ComboCounter.Classes.MediumInfo();
+            this.forceGoalHeaderPlayer2 = new ComboCounter.Classes.H3();
+            this.currTimeHeaderPlayer2 = new ComboCounter.Classes.H3();
+            this.forceAccruedHeaderPlayer2 = new ComboCounter.Classes.H3();
+            this.forceGoalPlayer2 = new ComboCounter.Classes.MediumInfo();
+            this.currTimePlayer2 = new ComboCounter.Classes.MediumInfo();
+            this.totalForcePlayer2 = new ComboCounter.Classes.MediumInfo();
+            this.startButton1 = new ComboCounter.CustomControls.OutlineButton();
+            this.stopButton1 = new ComboCounter.CustomControls.OutlineButton();
+            this.resetButton1 = new ComboCounter.CustomControls.OutlineButton();
+            this.resetButtonPlayer1 = new ComboCounter.CustomControls.OutlineButton();
+            this.stopButtonPlayer1 = new ComboCounter.CustomControls.OutlineButton();
+            this.startButtonPlayer1 = new ComboCounter.CustomControls.OutlineButton();
+            this.plusIconPlayer2 = new ComboCounter.CustomControls.TextButton();
+            this.minusIconPlayer2 = new ComboCounter.CustomControls.TextButton();
+            this.plusIconPlayer1 = new ComboCounter.CustomControls.TextButton();
+            this.minusIconPlayer1 = new ComboCounter.CustomControls.TextButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.forceGoalPlayer1 = new ComboCounter.Classes.MediumInfo();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -67,242 +77,180 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.White;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(810, 141);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1080, 174);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 667);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(13, 821);
             this.tableLayoutPanel2.TabIndex = 28;
             // 
-            // timer1
+            // header
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(160, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1423, 109);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Targeted Tota of Force Competition";
+            this.header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.header.Location = new System.Drawing.Point(0, 12);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(2261, 158);
+            this.header.TabIndex = 56;
+            this.header.Text = "Total Force Competition";
+            this.header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // player1Header
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(416, 141);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 73);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Guest 1";
+            this.player1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.player1Header.AutoSize = true;
+            this.player1Header.ForeColor = System.Drawing.Color.Gray;
+            this.player1Header.Location = new System.Drawing.Point(279, 0);
+            this.player1Header.Name = "player1Header";
+            this.player1Header.Size = new System.Drawing.Size(232, 81);
+            this.player1Header.TabIndex = 57;
+            this.player1Header.Text = "Guest 1";
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(1046, 141);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(308, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 73);
+            this.label2.Size = new System.Drawing.Size(240, 81);
             this.label2.TabIndex = 58;
             this.label2.Text = "Guest 2";
             // 
-            // label3
+            // forceGoalPlayer1Header
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(369, 250);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(315, 73);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "Force Goal";
+            this.forceGoalPlayer1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceGoalPlayer1Header.AutoSize = true;
+            this.forceGoalPlayer1Header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceGoalPlayer1Header.Location = new System.Drawing.Point(230, 81);
+            this.forceGoalPlayer1Header.Name = "forceGoalPlayer1Header";
+            this.forceGoalPlayer1Header.Size = new System.Drawing.Size(330, 81);
+            this.forceGoalPlayer1Header.TabIndex = 59;
+            this.forceGoalPlayer1Header.Text = "Force Goal";
             // 
-            // label4
+            // currTimeHeaderPlayer1
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(337, 452);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(375, 73);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "Current Time";
+            this.currTimeHeaderPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currTimeHeaderPlayer1.AutoSize = true;
+            this.currTimeHeaderPlayer1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.currTimeHeaderPlayer1.Location = new System.Drawing.Point(190, 288);
+            this.currTimeHeaderPlayer1.Name = "currTimeHeaderPlayer1";
+            this.currTimeHeaderPlayer1.Size = new System.Drawing.Size(410, 81);
+            this.currTimeHeaderPlayer1.TabIndex = 60;
+            this.currTimeHeaderPlayer1.Text = "Current Time";
             // 
-            // label5
+            // forceAccruedPlayer1Header
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(323, 651);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(402, 73);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "Force Accrued";
+            this.forceAccruedPlayer1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceAccruedPlayer1Header.AutoSize = true;
+            this.forceAccruedPlayer1Header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceAccruedPlayer1Header.Location = new System.Drawing.Point(175, 489);
+            this.forceAccruedPlayer1Header.Name = "forceAccruedPlayer1Header";
+            this.forceAccruedPlayer1Header.Size = new System.Drawing.Size(440, 81);
+            this.forceAccruedPlayer1Header.TabIndex = 61;
+            this.forceAccruedPlayer1Header.Text = "Force Accrued";
             // 
-            // forceGoal
+            // currTimePlayer1
             // 
-            this.forceGoal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.forceGoal.AutoSize = true;
-            this.forceGoal.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forceGoal.ForeColor = System.Drawing.Color.DimGray;
-            this.forceGoal.Location = new System.Drawing.Point(330, 323);
-            this.forceGoal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.forceGoal.Name = "forceGoal";
-            this.forceGoal.Size = new System.Drawing.Size(387, 136);
-            this.forceGoal.TabIndex = 62;
-            this.forceGoal.Text = "15,000";
-            this.forceGoal.Click += new System.EventHandler(this.forceGoal_Click);
+            this.currTimePlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currTimePlayer1.AutoSize = true;
+            this.currTimePlayer1.ForeColor = System.Drawing.Color.DimGray;
+            this.currTimePlayer1.Location = new System.Drawing.Point(205, 369);
+            this.currTimePlayer1.Name = "currTimePlayer1";
+            this.currTimePlayer1.Size = new System.Drawing.Size(380, 120);
+            this.currTimePlayer1.TabIndex = 63;
+            this.currTimePlayer1.Text = "00:00.0";
             // 
-            // txtResult
+            // totalForcePlayer1
             // 
-            this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResult.AutoSize = true;
-            this.txtResult.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.ForeColor = System.Drawing.Color.DimGray;
-            this.txtResult.Location = new System.Drawing.Point(313, 515);
-            this.txtResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(420, 136);
-            this.txtResult.TabIndex = 63;
-            this.txtResult.Text = "00:00.0";
+            this.totalForcePlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalForcePlayer1.AutoSize = true;
+            this.totalForcePlayer1.ForeColor = System.Drawing.Color.DimGray;
+            this.totalForcePlayer1.Location = new System.Drawing.Point(281, 635);
+            this.totalForcePlayer1.Name = "totalForcePlayer1";
+            this.totalForcePlayer1.Size = new System.Drawing.Size(227, 120);
+            this.totalForcePlayer1.TabIndex = 64;
+            this.totalForcePlayer1.Text = "N/A";
             // 
-            // totalForce
+            // forceGoalHeaderPlayer2
             // 
-            this.totalForce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForce.AutoSize = true;
-            this.totalForce.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalForce.ForeColor = System.Drawing.Color.DimGray;
-            this.totalForce.Location = new System.Drawing.Point(372, 718);
-            this.totalForce.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.totalForce.Name = "totalForce";
-            this.totalForce.Size = new System.Drawing.Size(264, 136);
-            this.totalForce.TabIndex = 64;
-            this.totalForce.Text = "N/A";
+            this.forceGoalHeaderPlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceGoalHeaderPlayer2.AutoSize = true;
+            this.forceGoalHeaderPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceGoalHeaderPlayer2.Location = new System.Drawing.Point(263, 81);
+            this.forceGoalHeaderPlayer2.Name = "forceGoalHeaderPlayer2";
+            this.forceGoalHeaderPlayer2.Size = new System.Drawing.Size(330, 81);
+            this.forceGoalHeaderPlayer2.TabIndex = 65;
+            this.forceGoalHeaderPlayer2.Text = "Force Goal";
             // 
-            // label6
+            // currTimeHeaderPlayer2
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(1001, 250);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(315, 73);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "Force Goal";
+            this.currTimeHeaderPlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currTimeHeaderPlayer2.AutoSize = true;
+            this.currTimeHeaderPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.currTimeHeaderPlayer2.Location = new System.Drawing.Point(223, 288);
+            this.currTimeHeaderPlayer2.Name = "currTimeHeaderPlayer2";
+            this.currTimeHeaderPlayer2.Size = new System.Drawing.Size(410, 81);
+            this.currTimeHeaderPlayer2.TabIndex = 66;
+            this.currTimeHeaderPlayer2.Text = "Current Time";
             // 
-            // label8
+            // forceAccruedHeaderPlayer2
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(970, 452);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(375, 73);
-            this.label8.TabIndex = 66;
-            this.label8.Text = "Current Time";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.forceAccruedHeaderPlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceAccruedHeaderPlayer2.AutoSize = true;
+            this.forceAccruedHeaderPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.forceAccruedHeaderPlayer2.Location = new System.Drawing.Point(208, 489);
+            this.forceAccruedHeaderPlayer2.Name = "forceAccruedHeaderPlayer2";
+            this.forceAccruedHeaderPlayer2.Size = new System.Drawing.Size(440, 81);
+            this.forceAccruedHeaderPlayer2.TabIndex = 67;
+            this.forceAccruedHeaderPlayer2.Text = "Force Accrued";
             // 
-            // label9
+            // forceGoalPlayer2
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(970, 651);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(402, 73);
-            this.label9.TabIndex = 67;
-            this.label9.Text = "Force Accrued";
+            this.forceGoalPlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forceGoalPlayer2.AutoSize = true;
+            this.forceGoalPlayer2.ForeColor = System.Drawing.Color.DimGray;
+            this.forceGoalPlayer2.Location = new System.Drawing.Point(78, 0);
+            this.forceGoalPlayer2.Name = "forceGoalPlayer2";
+            this.forceGoalPlayer2.Size = new System.Drawing.Size(350, 120);
+            this.forceGoalPlayer2.TabIndex = 68;
+            this.forceGoalPlayer2.Text = "15,000";
             // 
-            // forceGoal1
+            // currTimePlayer2
             // 
-            this.forceGoal1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.forceGoal1.AutoSize = true;
-            this.forceGoal1.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forceGoal1.ForeColor = System.Drawing.Color.DimGray;
-            this.forceGoal1.Location = new System.Drawing.Point(960, 322);
-            this.forceGoal1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.forceGoal1.Name = "forceGoal1";
-            this.forceGoal1.Size = new System.Drawing.Size(387, 136);
-            this.forceGoal1.TabIndex = 68;
-            this.forceGoal1.Text = "15,000";
+            this.currTimePlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.currTimePlayer2.AutoSize = true;
+            this.currTimePlayer2.ForeColor = System.Drawing.Color.DimGray;
+            this.currTimePlayer2.Location = new System.Drawing.Point(238, 369);
+            this.currTimePlayer2.Name = "currTimePlayer2";
+            this.currTimePlayer2.Size = new System.Drawing.Size(380, 120);
+            this.currTimePlayer2.TabIndex = 69;
+            this.currTimePlayer2.Text = "00:00.0";
             // 
-            // txtResult1
+            // totalForcePlayer2
             // 
-            this.txtResult1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResult1.AutoSize = true;
-            this.txtResult1.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult1.ForeColor = System.Drawing.Color.DimGray;
-            this.txtResult1.Location = new System.Drawing.Point(952, 521);
-            this.txtResult1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtResult1.Name = "txtResult1";
-            this.txtResult1.Size = new System.Drawing.Size(420, 136);
-            this.txtResult1.TabIndex = 69;
-            this.txtResult1.Text = "00:00.0";
-            // 
-            // totalForce1
-            // 
-            this.totalForce1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForce1.AutoSize = true;
-            this.totalForce1.Font = new System.Drawing.Font("Times New Roman", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalForce1.ForeColor = System.Drawing.Color.DimGray;
-            this.totalForce1.Location = new System.Drawing.Point(1028, 718);
-            this.totalForce1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.totalForce1.Name = "totalForce1";
-            this.totalForce1.Size = new System.Drawing.Size(264, 136);
-            this.totalForce1.TabIndex = 70;
-            this.totalForce1.Text = "N/A";
+            this.totalForcePlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalForcePlayer2.AutoSize = true;
+            this.totalForcePlayer2.ForeColor = System.Drawing.Color.DimGray;
+            this.totalForcePlayer2.Location = new System.Drawing.Point(314, 635);
+            this.totalForcePlayer2.Name = "totalForcePlayer2";
+            this.totalForcePlayer2.Size = new System.Drawing.Size(227, 120);
+            this.totalForcePlayer2.TabIndex = 70;
+            this.totalForcePlayer2.Text = "N/A";
             // 
             // startButton1
             // 
+            this.startButton1.AutoSize = true;
             this.startButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.startButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.startButton1.Location = new System.Drawing.Point(1472, 285);
+            this.startButton1.Location = new System.Drawing.Point(1963, 396);
+            this.startButton1.Margin = new System.Windows.Forms.Padding(4);
             this.startButton1.Name = "startButton1";
-            this.startButton1.Size = new System.Drawing.Size(162, 61);
+            this.startButton1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.startButton1.Size = new System.Drawing.Size(216, 75);
             this.startButton1.TabIndex = 71;
             this.startButton1.Text = "Start";
             this.startButton1.UseVisualStyleBackColor = false;
@@ -310,12 +258,15 @@
             // 
             // stopButton1
             // 
+            this.stopButton1.AutoSize = true;
+            this.stopButton1.BackColor = System.Drawing.Color.Transparent;
             this.stopButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.stopButton1.Location = new System.Drawing.Point(1472, 436);
+            this.stopButton1.Location = new System.Drawing.Point(1963, 556);
+            this.stopButton1.Margin = new System.Windows.Forms.Padding(4);
             this.stopButton1.Name = "stopButton1";
-            this.stopButton1.Size = new System.Drawing.Size(162, 61);
+            this.stopButton1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.stopButton1.Size = new System.Drawing.Size(216, 75);
             this.stopButton1.TabIndex = 72;
             this.stopButton1.Text = "Stop";
             this.stopButton1.UseVisualStyleBackColor = true;
@@ -323,142 +274,259 @@
             // 
             // resetButton1
             // 
+            this.resetButton1.AutoSize = true;
+            this.resetButton1.BackColor = System.Drawing.Color.Transparent;
             this.resetButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton1.Location = new System.Drawing.Point(1472, 596);
+            this.resetButton1.Location = new System.Drawing.Point(1963, 726);
+            this.resetButton1.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton1.Name = "resetButton1";
+            this.resetButton1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.resetButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.resetButton1.Size = new System.Drawing.Size(162, 61);
+            this.resetButton1.Size = new System.Drawing.Size(216, 75);
             this.resetButton1.TabIndex = 73;
             this.resetButton1.Text = "Reset";
             this.resetButton1.UseVisualStyleBackColor = true;
             this.resetButton1.Click += new System.EventHandler(this.resetButton1_Click_1);
             // 
-            // resetButton
+            // resetButtonPlayer1
             // 
-            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton.Location = new System.Drawing.Point(40, 590);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.resetButton.Size = new System.Drawing.Size(167, 61);
-            this.resetButton.TabIndex = 74;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click_1);
+            this.resetButtonPlayer1.AutoSize = true;
+            this.resetButtonPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.resetButtonPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButtonPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.resetButtonPlayer1.Location = new System.Drawing.Point(53, 726);
+            this.resetButtonPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButtonPlayer1.Name = "resetButtonPlayer1";
+            this.resetButtonPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.resetButtonPlayer1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.resetButtonPlayer1.Size = new System.Drawing.Size(223, 75);
+            this.resetButtonPlayer1.TabIndex = 74;
+            this.resetButtonPlayer1.Text = "Reset";
+            this.resetButtonPlayer1.UseVisualStyleBackColor = true;
+            this.resetButtonPlayer1.Click += new System.EventHandler(this.resetButton_Click_1);
             // 
-            // stopButton
+            // stopButtonPlayer1
             // 
-            this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.stopButton.Location = new System.Drawing.Point(40, 452);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(167, 61);
-            this.stopButton.TabIndex = 75;
-            this.stopButton.Text = "Stop";
-            this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click_1);
+            this.stopButtonPlayer1.AutoSize = true;
+            this.stopButtonPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.stopButtonPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopButtonPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.stopButtonPlayer1.Location = new System.Drawing.Point(53, 556);
+            this.stopButtonPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.stopButtonPlayer1.Name = "stopButtonPlayer1";
+            this.stopButtonPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.stopButtonPlayer1.Size = new System.Drawing.Size(223, 75);
+            this.stopButtonPlayer1.TabIndex = 75;
+            this.stopButtonPlayer1.Text = "Stop";
+            this.stopButtonPlayer1.UseVisualStyleBackColor = true;
+            this.stopButtonPlayer1.Click += new System.EventHandler(this.stopButton_Click_1);
             // 
-            // startButton
+            // startButtonPlayer1
             // 
-            this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.startButton.Location = new System.Drawing.Point(40, 322);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(167, 61);
-            this.startButton.TabIndex = 76;
-            this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = false;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click_1);
+            this.startButtonPlayer1.AutoSize = true;
+            this.startButtonPlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.startButtonPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButtonPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.startButtonPlayer1.Location = new System.Drawing.Point(53, 396);
+            this.startButtonPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.startButtonPlayer1.Name = "startButtonPlayer1";
+            this.startButtonPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.startButtonPlayer1.Size = new System.Drawing.Size(223, 75);
+            this.startButtonPlayer1.TabIndex = 76;
+            this.startButtonPlayer1.Text = "Start";
+            this.startButtonPlayer1.UseVisualStyleBackColor = false;
+            this.startButtonPlayer1.Click += new System.EventHandler(this.startButton_Click_1);
             // 
-            // plusIcon
+            // plusIconPlayer2
             // 
-            this.plusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("plusIcon.BackgroundImage")));
-            this.plusIcon.FlatAppearance.BorderSize = 0;
-            this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.Location = new System.Drawing.Point(1310, 364);
-            this.plusIcon.Name = "plusIcon";
-            this.plusIcon.Size = new System.Drawing.Size(51, 47);
-            this.plusIcon.TabIndex = 77;
-            this.plusIcon.UseVisualStyleBackColor = true;
-            this.plusIcon.Click += new System.EventHandler(this.plusIcon_Click);
+            this.plusIconPlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusIconPlayer2.AutoSize = true;
+            this.plusIconPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.plusIconPlayer2.FlatAppearance.BorderSize = 0;
+            this.plusIconPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plusIconPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.plusIconPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.plusIconPlayer2.Location = new System.Drawing.Point(435, 29);
+            this.plusIconPlayer2.Margin = new System.Windows.Forms.Padding(4);
+            this.plusIconPlayer2.Name = "plusIconPlayer2";
+            this.plusIconPlayer2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.plusIconPlayer2.Size = new System.Drawing.Size(68, 61);
+            this.plusIconPlayer2.TabIndex = 77;
+            this.plusIconPlayer2.Text = "+";
+            this.plusIconPlayer2.UseVisualStyleBackColor = true;
+            this.plusIconPlayer2.Click += new System.EventHandler(this.plus_icon_player_2_click);
             // 
-            // minusIcon
+            // minusIconPlayer2
             // 
-            this.minusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minusIcon.BackgroundImage")));
-            this.minusIcon.FlatAppearance.BorderSize = 0;
-            this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.Location = new System.Drawing.Point(934, 358);
-            this.minusIcon.Name = "minusIcon";
-            this.minusIcon.Size = new System.Drawing.Size(50, 59);
-            this.minusIcon.TabIndex = 78;
-            this.minusIcon.UseVisualStyleBackColor = true;
-            this.minusIcon.Click += new System.EventHandler(this.minusIcon_Click);
+            this.minusIconPlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusIconPlayer2.AutoSize = true;
+            this.minusIconPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.minusIconPlayer2.FlatAppearance.BorderSize = 0;
+            this.minusIconPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minusIconPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.minusIconPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.minusIconPlayer2.Location = new System.Drawing.Point(4, 23);
+            this.minusIconPlayer2.Margin = new System.Windows.Forms.Padding(4);
+            this.minusIconPlayer2.Name = "minusIconPlayer2";
+            this.minusIconPlayer2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.minusIconPlayer2.Size = new System.Drawing.Size(67, 73);
+            this.minusIconPlayer2.TabIndex = 78;
+            this.minusIconPlayer2.Text = "-";
+            this.minusIconPlayer2.UseVisualStyleBackColor = true;
+            this.minusIconPlayer2.Click += new System.EventHandler(this.minusIcon_Player2_Click);
             // 
-            // button1
+            // plusIconPlayer1
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(679, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 47);
-            this.button1.TabIndex = 79;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.plusIconPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusIconPlayer1.AutoSize = true;
+            this.plusIconPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.plusIconPlayer1.FlatAppearance.BorderSize = 0;
+            this.plusIconPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plusIconPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.plusIconPlayer1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.plusIconPlayer1.Location = new System.Drawing.Point(435, 29);
+            this.plusIconPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.plusIconPlayer1.Name = "plusIconPlayer1";
+            this.plusIconPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.plusIconPlayer1.Size = new System.Drawing.Size(67, 61);
+            this.plusIconPlayer1.TabIndex = 79;
+            this.plusIconPlayer1.Text = "+";
+            this.plusIconPlayer1.UseVisualStyleBackColor = true;
+            this.plusIconPlayer1.Click += new System.EventHandler(this.plus_icon_player_1_click);
             // 
-            // button2
+            // minusIconPlayer1
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(300, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 59);
-            this.button2.TabIndex = 80;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.minusIconPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusIconPlayer1.AutoSize = true;
+            this.minusIconPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.minusIconPlayer1.FlatAppearance.BorderSize = 0;
+            this.minusIconPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minusIconPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.minusIconPlayer1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.minusIconPlayer1.Location = new System.Drawing.Point(4, 23);
+            this.minusIconPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.minusIconPlayer1.Name = "minusIconPlayer1";
+            this.minusIconPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.minusIconPlayer1.Size = new System.Drawing.Size(67, 73);
+            this.minusIconPlayer1.TabIndex = 80;
+            this.minusIconPlayer1.Text = "-";
+            this.minusIconPlayer1.UseVisualStyleBackColor = true;
+            this.minusIconPlayer1.Click += new System.EventHandler(this.minusIcon_Player1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.player1Header, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.forceGoalPlayer1Header, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.currTimeHeaderPlayer1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.currTimePlayer1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.forceAccruedPlayer1Header, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.totalForcePlayer1, 0, 6);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(283, 174);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(790, 821);
+            this.tableLayoutPanel1.TabIndex = 81;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.minusIconPlayer1);
+            this.flowLayoutPanel1.Controls.Add(this.forceGoalPlayer1);
+            this.flowLayoutPanel1.Controls.Add(this.plusIconPlayer1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(142, 165);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(506, 120);
+            this.flowLayoutPanel1.TabIndex = 60;
+            // 
+            // forceGoalPlayer1
+            // 
+            this.forceGoalPlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.forceGoalPlayer1.AutoSize = true;
+            this.forceGoalPlayer1.ForeColor = System.Drawing.Color.DimGray;
+            this.forceGoalPlayer1.Location = new System.Drawing.Point(78, 0);
+            this.forceGoalPlayer1.Name = "forceGoalPlayer1";
+            this.forceGoalPlayer1.Size = new System.Drawing.Size(350, 120);
+            this.forceGoalPlayer1.TabIndex = 62;
+            this.forceGoalPlayer1.Text = "15,000";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.forceGoalHeaderPlayer2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.currTimeHeaderPlayer2, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.currTimePlayer2, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.forceAccruedHeaderPlayer2, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.totalForcePlayer2, 0, 6);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1100, 174);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 7;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(856, 821);
+            this.tableLayoutPanel3.TabIndex = 82;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.minusIconPlayer2);
+            this.flowLayoutPanel2.Controls.Add(this.forceGoalPlayer2);
+            this.flowLayoutPanel2.Controls.Add(this.plusIconPlayer2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(174, 165);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(507, 120);
+            this.flowLayoutPanel2.TabIndex = 66;
             // 
             // targeted_total_of_force_comp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.minusIcon);
-            this.Controls.Add(this.plusIcon);
-            this.Controls.Add(this.startButton);
-            this.Controls.Add(this.stopButton);
-            this.Controls.Add(this.resetButton);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.startButtonPlayer1);
+            this.Controls.Add(this.stopButtonPlayer1);
+            this.Controls.Add(this.resetButtonPlayer1);
             this.Controls.Add(this.resetButton1);
             this.Controls.Add(this.stopButton1);
             this.Controls.Add(this.startButton1);
-            this.Controls.Add(this.totalForce1);
-            this.Controls.Add(this.txtResult1);
-            this.Controls.Add(this.forceGoal1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.totalForce);
-            this.Controls.Add(this.txtResult);
-            this.Controls.Add(this.forceGoal);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.header);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "targeted_total_of_force_comp";
-            this.Size = new System.Drawing.Size(1696, 854);
+            this.Size = new System.Drawing.Size(2261, 1051);
             this.Load += new System.EventHandler(this.targeted_total_of_force_comp_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,30 +536,34 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label forceGoal;
-        private System.Windows.Forms.Label txtResult;
-        private System.Windows.Forms.Label totalForce;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label forceGoal1;
-        private System.Windows.Forms.Label txtResult1;
-        private System.Windows.Forms.Label totalForce1;
-        private System.Windows.Forms.Button startButton1;
-        private System.Windows.Forms.Button stopButton1;
-        private System.Windows.Forms.Button resetButton1;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Button plusIcon;
-        private System.Windows.Forms.Button minusIcon;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private H3 player1Header;
+        private H3 forceGoalPlayer1Header;
+        private H3 currTimeHeaderPlayer1;
+        private H3 forceAccruedPlayer1Header;
+        private H3 forceGoalHeaderPlayer2;
+        private H3 currTimeHeaderPlayer2;
+        private H3 forceAccruedHeaderPlayer2;
+        private OutlineButton startButton1;
+        private OutlineButton stopButton1;
+        private OutlineButton resetButton1;
+        private OutlineButton resetButtonPlayer1;
+        private OutlineButton stopButtonPlayer1;
+        private OutlineButton startButtonPlayer1;
+        private TextButton plusIconPlayer2;
+        private TextButton minusIconPlayer2;
+        private TextButton plusIconPlayer1;
+        private TextButton minusIconPlayer1;
+        private H3 label2;
+        private MediumInfo currTimePlayer1;
+        private MediumInfo totalForcePlayer1;
+        private MediumInfo forceGoalPlayer2;
+        private MediumInfo currTimePlayer2;
+        private MediumInfo totalForcePlayer2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private MediumInfo forceGoalPlayer1;
+        private H2 header;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

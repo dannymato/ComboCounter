@@ -50,7 +50,7 @@ namespace ComboCounter.UserControls_Gabriel
             FontManager fm = FontManager.getInstance();
             cancelButton.Font = fm.getButtonFont();
             confirmButton.Font = fm.getButtonFont();
-            messageLabel.Font = fm.getSmallInfoFont();
+            messageLabel.Font = fm.getButtonFont();
         }
     }
 }

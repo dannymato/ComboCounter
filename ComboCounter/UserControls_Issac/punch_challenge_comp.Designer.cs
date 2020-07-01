@@ -1,4 +1,7 @@
-﻿namespace ComboCounter.UserControls
+﻿using ComboCounter.Classes;
+using ComboCounter.CustomControls;
+
+namespace ComboCounter.UserControls
 {
     partial class punch_challenge_comp
     {
@@ -29,58 +32,64 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(punch_challenge_comp));
-            this.plusIcon = new System.Windows.Forms.Button();
-            this.startButton = new System.Windows.Forms.Button();
+            this.plusIcon = new ComboCounter.CustomControls.TextButton();
+            this.startButtonPlayer1 = new ComboCounter.CustomControls.OutlineButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.minusIcon = new System.Windows.Forms.Button();
+            this.minusIcon = new ComboCounter.CustomControls.TextButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.startButton1 = new System.Windows.Forms.Button();
-            this.stopButton = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.stopButton1 = new System.Windows.Forms.Button();
-            this.resetButton1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.startButtonPlayer2 = new ComboCounter.CustomControls.OutlineButton();
+            this.stopButtonPlayer1 = new ComboCounter.CustomControls.OutlineButton();
+            this.resetButtonPlayer1 = new ComboCounter.CustomControls.OutlineButton();
+            this.stopButtonPlayer2 = new ComboCounter.CustomControls.OutlineButton();
+            this.resetButtonPlayer2 = new ComboCounter.CustomControls.OutlineButton();
+            this.header = new ComboCounter.Classes.Header1();
+            this.player1Header = new ComboCounter.Classes.H3();
+            this.player2Header = new ComboCounter.Classes.H3();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.limit = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.punchNum = new System.Windows.Forms.Label();
-            this.punchNum1 = new System.Windows.Forms.Label();
-            this.totalForce = new System.Windows.Forms.Label();
-            this.totalForce1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.limit = new ComboCounter.Classes.BigInfo();
+            this.totalPunchPlayer2Header = new ComboCounter.Classes.H3();
+            this.totalForcePlay1Head = new ComboCounter.Classes.H3();
+            this.totalForcePlay2Head = new ComboCounter.Classes.H3();
+            this.punchNumPlay1 = new ComboCounter.Classes.BigInfo();
+            this.totalPunchPlay2 = new ComboCounter.Classes.BigInfo();
+            this.totalForcePlayer1 = new ComboCounter.Classes.BigInfo();
+            this.totalForcePlayer2 = new ComboCounter.Classes.BigInfo();
+            this.player1TotalPunchHead = new ComboCounter.Classes.H3();
             this.SuspendLayout();
             // 
             // plusIcon
             // 
+            this.plusIcon.AutoSize = true;
             this.plusIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.plusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("plusIcon.BackgroundImage")));
             this.plusIcon.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.ForeColor = System.Drawing.Color.Transparent;
-            this.plusIcon.Location = new System.Drawing.Point(978, 198);
+            this.plusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.plusIcon.Location = new System.Drawing.Point(1442, 252);
+            this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
-            this.plusIcon.Size = new System.Drawing.Size(50, 54);
+            this.plusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.plusIcon.Size = new System.Drawing.Size(67, 66);
             this.plusIcon.TabIndex = 44;
+            this.plusIcon.Text = "+";
             this.plusIcon.UseVisualStyleBackColor = false;
             this.plusIcon.Click += new System.EventHandler(this.plusIcon_Click);
             // 
-            // startButton
+            // startButtonPlayer1
             // 
-            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.startButton.Location = new System.Drawing.Point(52, 445);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(156, 61);
-            this.startButton.TabIndex = 51;
-            this.startButton.Text = "Start";
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            this.startButtonPlayer1.AutoSize = true;
+            this.startButtonPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.startButtonPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButtonPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.startButtonPlayer1.Location = new System.Drawing.Point(69, 548);
+            this.startButtonPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.startButtonPlayer1.Name = "startButtonPlayer1";
+            this.startButtonPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.startButtonPlayer1.Size = new System.Drawing.Size(208, 75);
+            this.startButtonPlayer1.TabIndex = 51;
+            this.startButtonPlayer1.Text = "Start";
+            this.startButtonPlayer1.UseVisualStyleBackColor = false;
+            this.startButtonPlayer1.Click += new System.EventHandler(this.startButton_Click);
             // 
             // timer1
             // 
@@ -88,14 +97,18 @@
             // 
             // minusIcon
             // 
-            this.minusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minusIcon.BackgroundImage")));
+            this.minusIcon.AutoSize = true;
+            this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.ForeColor = System.Drawing.Color.Transparent;
-            this.minusIcon.Location = new System.Drawing.Point(739, 195);
+            this.minusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.minusIcon.Location = new System.Drawing.Point(946, 261);
+            this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
-            this.minusIcon.Size = new System.Drawing.Size(72, 61);
+            this.minusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.minusIcon.Size = new System.Drawing.Size(96, 75);
             this.minusIcon.TabIndex = 50;
+            this.minusIcon.Text = "-";
             this.minusIcon.UseVisualStyleBackColor = false;
             this.minusIcon.Click += new System.EventHandler(this.minusIcon_Click);
             // 
@@ -103,113 +116,123 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // startButton1
+            // startButtonPlayer2
             // 
-            this.startButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.startButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.startButton1.Location = new System.Drawing.Point(1605, 445);
-            this.startButton1.Name = "startButton1";
-            this.startButton1.Size = new System.Drawing.Size(163, 61);
-            this.startButton1.TabIndex = 52;
-            this.startButton1.Text = "Start";
-            this.startButton1.UseVisualStyleBackColor = true;
-            this.startButton1.Click += new System.EventHandler(this.startButton1_Click);
+            this.startButtonPlayer2.AutoSize = true;
+            this.startButtonPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.startButtonPlayer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.startButtonPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButtonPlayer2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.startButtonPlayer2.Location = new System.Drawing.Point(2140, 548);
+            this.startButtonPlayer2.Margin = new System.Windows.Forms.Padding(4);
+            this.startButtonPlayer2.Name = "startButtonPlayer2";
+            this.startButtonPlayer2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.startButtonPlayer2.Size = new System.Drawing.Size(217, 75);
+            this.startButtonPlayer2.TabIndex = 52;
+            this.startButtonPlayer2.Text = "Start";
+            this.startButtonPlayer2.UseVisualStyleBackColor = true;
+            this.startButtonPlayer2.Click += new System.EventHandler(this.startButton1_Click);
             // 
-            // stopButton
+            // stopButtonPlayer1
             // 
-            this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.stopButton.Location = new System.Drawing.Point(52, 591);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(156, 61);
-            this.stopButton.TabIndex = 53;
-            this.stopButton.Text = "Stop";
-            this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.button1_Click_1);
+            this.stopButtonPlayer1.AutoSize = true;
+            this.stopButtonPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.stopButtonPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopButtonPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.stopButtonPlayer1.Location = new System.Drawing.Point(69, 727);
+            this.stopButtonPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.stopButtonPlayer1.Name = "stopButtonPlayer1";
+            this.stopButtonPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.stopButtonPlayer1.Size = new System.Drawing.Size(208, 75);
+            this.stopButtonPlayer1.TabIndex = 53;
+            this.stopButtonPlayer1.Text = "Stop";
+            this.stopButtonPlayer1.UseVisualStyleBackColor = true;
+            this.stopButtonPlayer1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // resetButton
+            // resetButtonPlayer1
             // 
-            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton.Location = new System.Drawing.Point(52, 735);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(156, 61);
-            this.resetButton.TabIndex = 54;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            this.resetButtonPlayer1.AutoSize = true;
+            this.resetButtonPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.resetButtonPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButtonPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.resetButtonPlayer1.Location = new System.Drawing.Point(69, 905);
+            this.resetButtonPlayer1.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButtonPlayer1.Name = "resetButtonPlayer1";
+            this.resetButtonPlayer1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.resetButtonPlayer1.Size = new System.Drawing.Size(208, 75);
+            this.resetButtonPlayer1.TabIndex = 54;
+            this.resetButtonPlayer1.Text = "Reset";
+            this.resetButtonPlayer1.UseVisualStyleBackColor = true;
+            this.resetButtonPlayer1.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // stopButton1
+            // stopButtonPlayer2
             // 
-            this.stopButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.stopButton1.Location = new System.Drawing.Point(1605, 591);
-            this.stopButton1.Name = "stopButton1";
-            this.stopButton1.Size = new System.Drawing.Size(163, 61);
-            this.stopButton1.TabIndex = 55;
-            this.stopButton1.Text = "Stop";
-            this.stopButton1.UseVisualStyleBackColor = true;
-            this.stopButton1.Click += new System.EventHandler(this.stopButton1_Click);
+            this.stopButtonPlayer2.AutoSize = true;
+            this.stopButtonPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.stopButtonPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopButtonPlayer2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.stopButtonPlayer2.Location = new System.Drawing.Point(2140, 727);
+            this.stopButtonPlayer2.Margin = new System.Windows.Forms.Padding(4);
+            this.stopButtonPlayer2.Name = "stopButtonPlayer2";
+            this.stopButtonPlayer2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.stopButtonPlayer2.Size = new System.Drawing.Size(217, 75);
+            this.stopButtonPlayer2.TabIndex = 55;
+            this.stopButtonPlayer2.Text = "Stop";
+            this.stopButtonPlayer2.UseVisualStyleBackColor = true;
+            this.stopButtonPlayer2.Click += new System.EventHandler(this.stopButton1_Click);
             // 
-            // resetButton1
+            // resetButtonPlayer2
             // 
-            this.resetButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton1.Location = new System.Drawing.Point(1605, 735);
-            this.resetButton1.Name = "resetButton1";
-            this.resetButton1.Size = new System.Drawing.Size(163, 61);
-            this.resetButton1.TabIndex = 56;
-            this.resetButton1.Text = "Reset";
-            this.resetButton1.UseVisualStyleBackColor = true;
-            this.resetButton1.Click += new System.EventHandler(this.resetButton1_Click);
+            this.resetButtonPlayer2.AutoSize = true;
+            this.resetButtonPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.resetButtonPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButtonPlayer2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.resetButtonPlayer2.Location = new System.Drawing.Point(2140, 905);
+            this.resetButtonPlayer2.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButtonPlayer2.Name = "resetButtonPlayer2";
+            this.resetButtonPlayer2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.resetButtonPlayer2.Size = new System.Drawing.Size(217, 75);
+            this.resetButtonPlayer2.TabIndex = 56;
+            this.resetButtonPlayer2.Text = "Reset";
+            this.resetButtonPlayer2.UseVisualStyleBackColor = true;
+            this.resetButtonPlayer2.Click += new System.EventHandler(this.resetButton1_Click);
             // 
-            // label7
+            // header
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(333, 31);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1207, 109);
-            this.label7.TabIndex = 57;
-            this.label7.Text = "Punch Challenge Competition";
+            this.header.AutoSize = true;
+            this.header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.header.Location = new System.Drawing.Point(214, 35);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(1961, 180);
+            this.header.TabIndex = 57;
+            this.header.Text = "Punch Challenge Competition";
+            this.header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // player1Header
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.player1Header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Gray;
-            this.label10.Location = new System.Drawing.Point(453, 309);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(229, 73);
-            this.label10.TabIndex = 71;
-            this.label10.Text = "Guest 1";
+            this.player1Header.AutoSize = true;
+            this.player1Header.ForeColor = System.Drawing.Color.Gray;
+            this.player1Header.Location = new System.Drawing.Point(581, 355);
+            this.player1Header.Name = "player1Header";
+            this.player1Header.Size = new System.Drawing.Size(232, 81);
+            this.player1Header.TabIndex = 71;
+            this.player1Header.Text = "Guest 1";
             // 
-            // label11
+            // player2Header
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.player2Header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(1081, 309);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(229, 73);
-            this.label11.TabIndex = 72;
-            this.label11.Text = "Guest 2";
+            this.player2Header.AutoSize = true;
+            this.player2Header.ForeColor = System.Drawing.Color.Silver;
+            this.player2Header.Location = new System.Drawing.Point(1604, 345);
+            this.player2Header.Name = "player2Header";
+            this.player2Header.Size = new System.Drawing.Size(240, 81);
+            this.player2Header.TabIndex = 72;
+            this.player2Header.Text = "Guest 2";
             // 
             // tableLayoutPanel2
             // 
@@ -218,11 +241,12 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(876, 325);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1248, 421);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(11, 559);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(15, 688);
             this.tableLayoutPanel2.TabIndex = 73;
             // 
             // limit
@@ -230,183 +254,168 @@
             this.limit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.limit.AutoSize = true;
-            this.limit.Font = new System.Drawing.Font("Times New Roman", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limit.ForeColor = System.Drawing.Color.DarkRed;
-            this.limit.Location = new System.Drawing.Point(789, 159);
-            this.limit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.limit.Location = new System.Drawing.Point(1052, 196);
             this.limit.Name = "limit";
-            this.limit.Size = new System.Drawing.Size(198, 151);
+            this.limit.Size = new System.Drawing.Size(324, 240);
             this.limit.TabIndex = 74;
             this.limit.Text = "20";
             // 
-            // label2
+            // totalPunchPlayer2Header
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalPunchPlayer2Header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(1016, 408);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(392, 73);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "Total Punches";
+            this.totalPunchPlayer2Header.AutoSize = true;
+            this.totalPunchPlayer2Header.ForeColor = System.Drawing.Color.SteelBlue;
+            this.totalPunchPlayer2Header.Location = new System.Drawing.Point(1513, 496);
+            this.totalPunchPlayer2Header.Name = "totalPunchPlayer2Header";
+            this.totalPunchPlayer2Header.Size = new System.Drawing.Size(438, 81);
+            this.totalPunchPlayer2Header.TabIndex = 76;
+            this.totalPunchPlayer2Header.Text = "Total Punches";
             // 
-            // label3
+            // totalForcePlay1Head
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalForcePlay1Head.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(398, 631);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(323, 73);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "Total Force";
+            this.totalForcePlay1Head.AutoSize = true;
+            this.totalForcePlay1Head.ForeColor = System.Drawing.Color.SteelBlue;
+            this.totalForcePlay1Head.Location = new System.Drawing.Point(526, 806);
+            this.totalForcePlay1Head.Name = "totalForcePlay1Head";
+            this.totalForcePlay1Head.Size = new System.Drawing.Size(348, 81);
+            this.totalForcePlay1Head.TabIndex = 77;
+            this.totalForcePlay1Head.Text = "Total Force";
             // 
-            // label4
+            // totalForcePlay2Head
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalForcePlay2Head.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(1054, 620);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(323, 73);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "Total Force";
+            this.totalForcePlay2Head.AutoSize = true;
+            this.totalForcePlay2Head.ForeColor = System.Drawing.Color.SteelBlue;
+            this.totalForcePlay2Head.Location = new System.Drawing.Point(1552, 806);
+            this.totalForcePlay2Head.Name = "totalForcePlay2Head";
+            this.totalForcePlay2Head.Size = new System.Drawing.Size(348, 81);
+            this.totalForcePlay2Head.TabIndex = 78;
+            this.totalForcePlay2Head.Text = "Total Force";
             // 
-            // punchNum
+            // punchNumPlay1
             // 
-            this.punchNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.punchNumPlay1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.punchNum.AutoSize = true;
-            this.punchNum.Font = new System.Drawing.Font("Times New Roman", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.punchNum.ForeColor = System.Drawing.Color.DimGray;
-            this.punchNum.Location = new System.Drawing.Point(490, 480);
-            this.punchNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.punchNum.Name = "punchNum";
-            this.punchNum.Size = new System.Drawing.Size(131, 151);
-            this.punchNum.TabIndex = 79;
-            this.punchNum.Text = "0";
+            this.punchNumPlay1.AutoSize = true;
+            this.punchNumPlay1.ForeColor = System.Drawing.Color.DimGray;
+            this.punchNumPlay1.Location = new System.Drawing.Point(601, 577);
+            this.punchNumPlay1.Name = "punchNumPlay1";
+            this.punchNumPlay1.Size = new System.Drawing.Size(212, 240);
+            this.punchNumPlay1.TabIndex = 79;
+            this.punchNumPlay1.Text = "0";
             // 
-            // punchNum1
+            // totalPunchPlay2
             // 
-            this.punchNum1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalPunchPlay2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.punchNum1.AutoSize = true;
-            this.punchNum1.Font = new System.Drawing.Font("Times New Roman", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.punchNum1.ForeColor = System.Drawing.Color.DimGray;
-            this.punchNum1.Location = new System.Drawing.Point(1129, 469);
-            this.punchNum1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.punchNum1.Name = "punchNum1";
-            this.punchNum1.Size = new System.Drawing.Size(131, 151);
-            this.punchNum1.TabIndex = 80;
-            this.punchNum1.Text = "0";
+            this.totalPunchPlay2.AutoSize = true;
+            this.totalPunchPlay2.ForeColor = System.Drawing.Color.DimGray;
+            this.totalPunchPlay2.Location = new System.Drawing.Point(1632, 577);
+            this.totalPunchPlay2.Name = "totalPunchPlay2";
+            this.totalPunchPlay2.Size = new System.Drawing.Size(212, 240);
+            this.totalPunchPlay2.TabIndex = 80;
+            this.totalPunchPlay2.Text = "0";
             // 
-            // totalForce
+            // totalForcePlayer1
             // 
-            this.totalForce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalForcePlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForce.AutoSize = true;
-            this.totalForce.Font = new System.Drawing.Font("Times New Roman", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalForce.ForeColor = System.Drawing.Color.DimGray;
-            this.totalForce.Location = new System.Drawing.Point(440, 693);
-            this.totalForce.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.totalForce.Name = "totalForce";
-            this.totalForce.Size = new System.Drawing.Size(131, 151);
-            this.totalForce.TabIndex = 81;
-            this.totalForce.Text = "0";
+            this.totalForcePlayer1.AutoSize = true;
+            this.totalForcePlayer1.ForeColor = System.Drawing.Color.DimGray;
+            this.totalForcePlayer1.Location = new System.Drawing.Point(601, 869);
+            this.totalForcePlayer1.Name = "totalForcePlayer1";
+            this.totalForcePlayer1.Size = new System.Drawing.Size(212, 240);
+            this.totalForcePlayer1.TabIndex = 81;
+            this.totalForcePlayer1.Text = "0";
             // 
-            // totalForce1
+            // totalForcePlayer2
             // 
-            this.totalForce1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalForcePlayer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForce1.AutoSize = true;
-            this.totalForce1.Font = new System.Drawing.Font("Times New Roman", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalForce1.ForeColor = System.Drawing.Color.DimGray;
-            this.totalForce1.Location = new System.Drawing.Point(1099, 693);
-            this.totalForce1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.totalForce1.Name = "totalForce1";
-            this.totalForce1.Size = new System.Drawing.Size(131, 151);
-            this.totalForce1.TabIndex = 82;
-            this.totalForce1.Text = "0";
+            this.totalForcePlayer2.AutoSize = true;
+            this.totalForcePlayer2.Font = new System.Drawing.Font("Roboto", 120F);
+            this.totalForcePlayer2.ForeColor = System.Drawing.Color.DimGray;
+            this.totalForcePlayer2.Location = new System.Drawing.Point(1632, 873);
+            this.totalForcePlayer2.Name = "totalForcePlayer2";
+            this.totalForcePlayer2.Size = new System.Drawing.Size(212, 240);
+            this.totalForcePlayer2.TabIndex = 82;
+            this.totalForcePlayer2.Text = "0";
             // 
-            // label5
+            // player1TotalPunchHead
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.player1TotalPunchHead.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(359, 408);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(392, 73);
-            this.label5.TabIndex = 83;
-            this.label5.Text = "Total Punches";
+            this.player1TotalPunchHead.AutoSize = true;
+            this.player1TotalPunchHead.Font = new System.Drawing.Font("Roboto Slab", 36F);
+            this.player1TotalPunchHead.ForeColor = System.Drawing.Color.SteelBlue;
+            this.player1TotalPunchHead.Location = new System.Drawing.Point(480, 496);
+            this.player1TotalPunchHead.Name = "player1TotalPunchHead";
+            this.player1TotalPunchHead.Size = new System.Drawing.Size(438, 81);
+            this.player1TotalPunchHead.TabIndex = 83;
+            this.player1TotalPunchHead.Text = "Total Punches";
             // 
             // punch_challenge_comp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.totalForce1);
-            this.Controls.Add(this.totalForce);
-            this.Controls.Add(this.punchNum1);
-            this.Controls.Add(this.punchNum);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.limit);
+            this.Controls.Add(this.player1TotalPunchHead);
+            this.Controls.Add(this.totalForcePlayer2);
+            this.Controls.Add(this.totalForcePlayer1);
+            this.Controls.Add(this.totalPunchPlay2);
+            this.Controls.Add(this.punchNumPlay1);
+            this.Controls.Add(this.totalForcePlay2Head);
+            this.Controls.Add(this.totalForcePlay1Head);
+            this.Controls.Add(this.totalPunchPlayer2Header);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.resetButton1);
-            this.Controls.Add(this.stopButton1);
-            this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.stopButton);
-            this.Controls.Add(this.startButton1);
+            this.Controls.Add(this.player2Header);
+            this.Controls.Add(this.player1Header);
+            this.Controls.Add(this.header);
+            this.Controls.Add(this.resetButtonPlayer2);
+            this.Controls.Add(this.stopButtonPlayer2);
+            this.Controls.Add(this.resetButtonPlayer1);
+            this.Controls.Add(this.stopButtonPlayer1);
+            this.Controls.Add(this.startButtonPlayer2);
             this.Controls.Add(this.minusIcon);
-            this.Controls.Add(this.startButton);
+            this.Controls.Add(this.startButtonPlayer1);
             this.Controls.Add(this.plusIcon);
+            this.Controls.Add(this.limit);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "punch_challenge_comp";
-            this.Size = new System.Drawing.Size(1856, 904);
+            this.Size = new System.Drawing.Size(2475, 1113);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button plusIcon;
-        private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button minusIcon;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button startButton1;
-        private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Button stopButton1;
-        private System.Windows.Forms.Button resetButton1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label limit;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label punchNum;
-        private System.Windows.Forms.Label punchNum1;
-        private System.Windows.Forms.Label totalForce;
-        private System.Windows.Forms.Label totalForce1;
-        private System.Windows.Forms.Label label5;
+        private TextButton plusIcon;
+        private OutlineButton startButtonPlayer1;
+        private TextButton minusIcon;
+        private OutlineButton startButtonPlayer2;
+        private OutlineButton stopButtonPlayer1;
+        private OutlineButton resetButtonPlayer1;
+        private OutlineButton stopButtonPlayer2;
+        private OutlineButton resetButtonPlayer2;
+        private Header1 header;
+        private H3 player1Header;
+        private H3 player2Header;
+        private BigInfo limit;
+        private H3 totalPunchPlayer2Header;
+        private H3 totalForcePlay1Head;
+        private H3 totalForcePlay2Head;
+        private BigInfo punchNumPlay1;
+        private BigInfo totalPunchPlay2;
+        private BigInfo totalForcePlayer1;
+        private BigInfo totalForcePlayer2;
+        private H3 player1TotalPunchHead;
     }
 }

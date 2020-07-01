@@ -34,10 +34,10 @@ namespace ComboCounter.Forms
 
         protected virtual void OnExitApplication(EventArgs e)
         {
-            exitApplication?.Invoke(this, e);
+            ExitApplication?.Invoke(this, e);
         }
 
-        public event System.EventHandler exitApplication;
+        public event System.EventHandler ExitApplication;
 
         private void Exit_Load(object sender, EventArgs e)
         {

@@ -16,132 +16,94 @@ namespace ComboCounter.UserControls
     {
         System.Timers.Timer t;
         System.Timers.Timer t1;
-        int h, m, s, totalForceBox;
-        int h1, m1, s1, totalForceBox1;
-        string timerOn, timerOn1;
-        string timerStart = "On";
-        int forceGoal2 = 15;
-        int forceGoal3 = 15;
-        int actualforce = 15000;
-        int actualForce1 = 15000;
+        int s, totalForceBoxPlayer1;
+        int s1, totalForceBoxPlayer2;
+        int forceGoalNumPlayer1 = 15000;
+        int forceGoalNumPlayer2 = 15000;
 
         public targeted_total_of_force_comp()
         {
             InitializeComponent();
         }
 
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void force_textbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtResult_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Player 1 Start
         private void startButton_Click_1(object sender, EventArgs e)
         {
             t.Start();
         }
 
+        // Player 1 Stop
         private void stopButton_Click_1(object sender, EventArgs e)
         {
             t.Stop();
         }
 
+        // Player 1 Reset
         private void resetButton_Click_1(object sender, EventArgs e)
         {
             t.Stop();
-            s = 0; m = 0; h = 0;
-            totalForceBox = 0;
-            totalForce.Text = "N/A";
-            totalForce.ForeColor = System.Drawing.Color.DimGray;
-            txtResult.Text = "00:00.0";
+            s = 0;
+            totalForceBoxPlayer1 = 0;
+            totalForcePlayer1.Text = "N/A";
+            totalForcePlayer1.ForeColor = System.Drawing.Color.DimGray;
+            currTimePlayer1.Text = "00:00.0";
         }
 
-        private void minusIcon_Click(object sender, EventArgs e)
+        // Minus Button Player 2
+        private void minusIcon_Player2_Click(object sender, EventArgs e)
         {
-            if (forceGoal3 != 0)
+            if (forceGoalNumPlayer2 != 0)
             {
-                forceGoal3--;
-                forceGoal1.Text = "" + forceGoal3 + ",000";
+                forceGoalNumPlayer2 -= 1000;
+            }
+            forceGoalPlayer2.Text = String.Format("{0:n0}", forceGoalNumPlayer2);
+        }
+
+        // Minus Button Player 1
+        private void minusIcon_Player1_Click(object sender, EventArgs e)
+        {
+            if (forceGoalNumPlayer1 != 0)
+            {
+                forceGoalNumPlayer1 -= 1000;
             }
 
-            if(actualForce1 != 0)
-            actualForce1 = actualForce1 - 1000;
+            forceGoalPlayer1.Text = String.Format("{0:n0}", forceGoalNumPlayer1);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        // Plus Button Player 1
+        private void plus_icon_player_1_click(object sender, EventArgs e)
         {
-            if (forceGoal2 != 0)
-            {
-                forceGoal2--;
-                forceGoal.Text = "" + forceGoal2 + ",000";
-            }
+            forceGoalNumPlayer1 += 1000;
 
-            if(actualforce != 0)
-            actualforce = actualforce - 1000;
+            forceGoalPlayer1.Text = String.Format("{0:n0}", forceGoalNumPlayer1);
         }
 
-        private void forceGoal_Click(object sender, EventArgs e)
+        // Plus Button Player 2
+        private void plus_icon_player_2_click(object sender, EventArgs e)
         {
+            forceGoalNumPlayer2 += 1000;
 
+            forceGoalPlayer2.Text = String.Format("{0:n0}", forceGoalNumPlayer2);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            forceGoal2++;
-            forceGoal.Text = "" + forceGoal2 + ",000";
-            actualforce = actualforce + 1000;
-        }
-
-        private void plusIcon_Click(object sender, EventArgs e)
-        {
-            forceGoal3++;
-            forceGoal1.Text = "" + forceGoal3 + ",000";
-            actualForce1 = actualForce1 + 1000;
-        }
-
+        // Player 2 Reset
         private void resetButton1_Click_1(object sender, EventArgs e)
         {
             t1.Stop();
-            s1 = 0; m1 = 0; h1 = 0;
-            totalForceBox1 = 0;
-            totalForce1.Text = "N/A";
-            totalForce1.ForeColor = System.Drawing.Color.DimGray;
-            txtResult1.Text = "00:00.0";
+            s1 = 0;
+            totalForceBoxPlayer2 = 0;
+            totalForcePlayer2.Text = "N/A";
+            totalForcePlayer2.ForeColor = System.Drawing.Color.DimGray;
+            currTimePlayer2.Text = "00:00.0";
         }
 
+        // Player 2 Stop
         private void stopButton1_Click_1(object sender, EventArgs e)
         {
             t1.Stop();
         }
 
+        // Player 2 Start
         private void startButton1_Click_1(object sender, EventArgs e)
         {
             t1.Start();
@@ -149,89 +111,71 @@ namespace ComboCounter.UserControls
 
         private void targeted_total_of_force_comp_Load(object sender, EventArgs e)
         {
-                t = new System.Timers.Timer();
-                t.Interval = 1;
-                t.Elapsed += OnTimeEvent;
-                t1 = new System.Timers.Timer();
-                t1.Interval = 5;
-                t1.Elapsed += OnTimeEvent1;
+            // Initialize the timer for player 1
+            t = new System.Timers.Timer();
+            t.Interval = 100;
+            t.Elapsed += OnTimeEvent;
 
+            // Initialize the timer for player 2
+            t1 = new System.Timers.Timer();
+            t1.Interval = 100;
+            t1.Elapsed += OnTimeEvent1;
 
         }
 
-        private void targeted_total_of_force_comp_Load1(object sender, EventArgs e)
+        private string FormatTimeString(int msecs)
         {
+            int secs = msecs / 1000 % 60;
+            int mins = msecs / 1000 / 60;
+            int fracSecs = msecs % 1000 / 100;
+            return String.Format("{0:00}:{1:00}.{2:0}", mins, secs, fracSecs);
 
         }
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
-            SoundPlayer bellRing = new SoundPlayer(@"C:\Users\gabri\Desktop\12-HeavyHangingPunchingBag-Ver1\12-HeavyHangingPunchingBag-Ver1\SourceCode\ComboMeter V.1\ComboCounter\ComboCounter\soundEffect\old-fashioned-bell.wav");
+
+            SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
             Invoke(new Action(() =>
             {
-                s += 1;
-                if (s == 60)
+                s += 100;
+                currTimePlayer1.Text = FormatTimeString(s);
+                if (totalForceBoxPlayer1 == forceGoalNumPlayer1)
                 {
-                    s = 0;
-                    m += 1;
-                }
-                if (m == 60)
-                {
-                    m = 0;
-                    h += 1;
-                }
-                txtResult.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
-                if (totalForceBox == actualforce)
-                {
-                    totalForce.ForeColor = System.Drawing.Color.Green;
+                    totalForcePlayer1.ForeColor = System.Drawing.Color.Green;
                     bellRing.Play();
                     t.Stop();
                 }
                 else
                 {
-                    totalForceBox = totalForceBox + 50;
-                    totalForce.Text = totalForceBox.ToString();
+                    totalForceBoxPlayer1 = totalForceBoxPlayer1 + 50;
+                    totalForcePlayer1.Text = totalForceBoxPlayer1.ToString();
                 }
             }));
         }
 
         private void OnTimeEvent1(object sender, ElapsedEventArgs e)
         {
-            SoundPlayer bellRing = new SoundPlayer(@"C:\Users\gabri\Desktop\12-HeavyHangingPunchingBag-Ver1\12-HeavyHangingPunchingBag-Ver1\SourceCode\ComboMeter V.1\ComboCounter\ComboCounter\soundEffect\old-fashioned-bell.wav");
+            SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
             Invoke(new Action(() =>
             {
-                s1 += 1;
-                if (s1 == 60)
-                {
-                    s1 = 0;
-                    m1 += 1;
-                }
-                if (m1 == 60)
-                {
-                    m1 = 0;
-                    h1 += 1;
-                }
-                txtResult1.Text = string.Format("{0}:{1}:{2}", h1.ToString().PadLeft(2, '0'), m1.ToString().PadLeft(2, '0'), s1.ToString().PadLeft(2, '0'));
+                s1 += 100;
+                currTimePlayer2.Text = FormatTimeString(s1);
                 
-                if (totalForceBox1 == actualForce1)
+                if (totalForceBoxPlayer2 == forceGoalNumPlayer2)
                 {
-                    totalForce1.ForeColor = System.Drawing.Color.Green;
+                    totalForcePlayer2.ForeColor = System.Drawing.Color.Green;
                     bellRing.Play();
                     t1.Stop();
                 }
                 else
                 {
-                    totalForceBox1 = totalForceBox1 + 50;
-                    totalForce1.Text = totalForceBox1.ToString();
+                    totalForceBoxPlayer2 = totalForceBoxPlayer2 + 50;
+                    totalForcePlayer2.Text = totalForceBoxPlayer2.ToString();
 
                 }
             }));
         }
 
-       
-
-       
-
-       
     }
 }
