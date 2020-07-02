@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ComboCounter.Classes;
 using MySql.Data.MySqlClient;
 
 namespace ComboCounter.UserControls
 {
-    public partial class histogram : UserControl
+    public partial class histogram : BaseFormControl
     {
-        //set variables for connection
+        // set variables for connection
         // List<string> allhits = new List<string>();
-        //List<string> alltimes = new List<string>();
+        // List<string> alltimes = new List<string>();
         List<string> allhits = new List<string>();
         DataSet ds = new DataSet();
         DataSet ds2 = new DataSet();
@@ -34,11 +33,11 @@ namespace ComboCounter.UserControls
         {
             InitializeComponent();
 
-            InitializeDB();
+            //InitializeDB();
         }
 
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        /*private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             hardest_hit = null;
             fastest_hit = null;
@@ -81,7 +80,7 @@ namespace ComboCounter.UserControls
             }
 
 
-        }
+        }*/
 
         public string getDateTime()
         {
@@ -91,7 +90,7 @@ namespace ComboCounter.UserControls
         }
 
 
-        public static void InitializeDB()
+        /*public static void InitializeDB()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = SERVER;
@@ -116,9 +115,9 @@ namespace ComboCounter.UserControls
                     dbConn = null;
                 }
             };
-        }
+        }*/
 
-        public void getID()
+        /*public void getID()
         {
             String query = "SELECT id FROM project.users WHERE isloggedin=1;";
 
@@ -184,12 +183,11 @@ namespace ComboCounter.UserControls
             }
 
 
-        }
+        }*/
 
         private void histogram_Load(object sender, EventArgs e)
         {
-       
-            comboBox1.DataSource = History.GetSessions() ;
+      
 
             chart1.ChartAreas[0].AxisX.LineColor = System.Drawing.Color.White;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
@@ -235,11 +233,38 @@ namespace ComboCounter.UserControls
             
 
             chart1.Invalidate();
+
+            AvgForceInfo.Text = FormatForceValue(session.GetAvgForce());
+            TotForceInfo.Text = FormatForceValue(session.GetTotalForce());
+            HardestHitInfo.Text = FormatForceValue(session.MaxForce());
+
+        }
+
+        private string FormatForceValue(double force)
+        {
+            return string.Format("{0:g5} lbs.", force);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateGraph();
+        }
+
+        public override void OnPageAttached()
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(History.GetSessions().ToArray());
+
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

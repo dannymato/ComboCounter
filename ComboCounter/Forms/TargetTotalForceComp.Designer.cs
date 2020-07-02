@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.targeted_total_of_force_comp1 = new ComboCounter.UserControls.targeted_total_of_force_comp();
+            this.targeted_total_of_force_comp1 = new ComboCounter.UserControls.Targeted_total_of_force_comp();
             this.SuspendLayout();
             // 
             // targeted_total_of_force_comp1
@@ -55,7 +55,7 @@
 
         }
 
-        private UserControls.targeted_total_of_force_comp targeted_total_of_force_comp1;
+        private UserControls.Targeted_total_of_force_comp targeted_total_of_force_comp1;
 
         #endregion
 

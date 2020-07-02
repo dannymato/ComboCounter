@@ -33,18 +33,18 @@ namespace ComboCounter.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.startButton = new OutlineButton();
-            this.minusIcon = new TextButton();
-            this.plusIcon = new TextButton();
-            this.header = new Header1();
-            this.limit = new BigInfo();
-            this.totalForceHeader = new H2();
-            this.punchGoalHeader = new H2();
-            this.punchNum = new BigInfo();
-            this.totalForce = new BigInfo();
-            this.stopButton = new OutlineButton();
-            this.resetButton = new OutlineButton();
-            this.totalPunchHeader = new H2();
+            this.startButton = new ComboCounter.CustomControls.OutlineButton();
+            this.minusIcon = new ComboCounter.CustomControls.TextButton();
+            this.plusIcon = new ComboCounter.CustomControls.TextButton();
+            this.header = new ComboCounter.Classes.Header1();
+            this.limit = new ComboCounter.Classes.BigInfo();
+            this.totalForceHeader = new ComboCounter.Classes.H2();
+            this.punchGoalHeader = new ComboCounter.Classes.H2();
+            this.punchNum = new ComboCounter.Classes.BigInfo();
+            this.totalForce = new ComboCounter.Classes.BigInfo();
+            this.stopButton = new ComboCounter.CustomControls.OutlineButton();
+            this.resetButton = new ComboCounter.CustomControls.OutlineButton();
+            this.totalPunchHeader = new ComboCounter.Classes.H2();
             this.SuspendLayout();
             // 
             // timer1
@@ -54,11 +54,14 @@ namespace ComboCounter.UserControls
             // 
             // startButton
             // 
+            this.startButton.AutoSize = true;
+            this.startButton.BackColor = System.Drawing.Color.Transparent;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.startButton.Location = new System.Drawing.Point(1264, 887);
             this.startButton.Margin = new System.Windows.Forms.Padding(4);
             this.startButton.Name = "startButton";
+            this.startButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.startButton.Size = new System.Drawing.Size(268, 94);
             this.startButton.TabIndex = 16;
             this.startButton.Text = "Start";
@@ -67,12 +70,15 @@ namespace ComboCounter.UserControls
             // 
             // minusIcon
             // 
+            this.minusIcon.AutoSize = true;
+            this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.minusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
             this.minusIcon.Location = new System.Drawing.Point(1390, 521);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
+            this.minusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.minusIcon.Size = new System.Drawing.Size(100, 79);
             this.minusIcon.TabIndex = 18;
             this.minusIcon.Text = "-";
@@ -81,13 +87,16 @@ namespace ComboCounter.UserControls
             // 
             // plusIcon
             // 
+            this.plusIcon.AutoSize = true;
+            this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.ForeColor = System.Drawing.Color.SteelBlue;
+            this.plusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
             this.plusIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.plusIcon.Location = new System.Drawing.Point(2038, 521);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
+            this.plusIcon.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.plusIcon.Size = new System.Drawing.Size(82, 79);
             this.plusIcon.TabIndex = 17;
             this.plusIcon.Text = "+";
@@ -98,7 +107,6 @@ namespace ComboCounter.UserControls
             // 
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.header.ForeColor = System.Drawing.Color.SteelBlue;
             this.header.Location = new System.Drawing.Point(282, 32);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1838, 207);
@@ -122,7 +130,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForceHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForceHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.totalForceHeader.Location = new System.Drawing.Point(156, 621);
             this.totalForceHeader.Name = "totalForceHeader";
             this.totalForceHeader.Size = new System.Drawing.Size(949, 176);
@@ -135,7 +142,6 @@ namespace ComboCounter.UserControls
             // 
             this.punchGoalHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.punchGoalHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.punchGoalHeader.Location = new System.Drawing.Point(1274, 275);
             this.punchGoalHeader.Name = "punchGoalHeader";
             this.punchGoalHeader.Size = new System.Drawing.Size(953, 172);
@@ -148,7 +154,6 @@ namespace ComboCounter.UserControls
             // 
             this.punchNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.punchNum.ForeColor = System.Drawing.Color.Gray;
             this.punchNum.Location = new System.Drawing.Point(395, 412);
             this.punchNum.Name = "punchNum";
             this.punchNum.Size = new System.Drawing.Size(512, 244);
@@ -160,7 +165,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalForce.ForeColor = System.Drawing.Color.DimGray;
             this.totalForce.Location = new System.Drawing.Point(411, 782);
             this.totalForce.Name = "totalForce";
             this.totalForce.Size = new System.Drawing.Size(477, 244);
@@ -170,10 +174,13 @@ namespace ComboCounter.UserControls
             // 
             // stopButton
             // 
+            this.stopButton.AutoSize = true;
+            this.stopButton.BackColor = System.Drawing.Color.Transparent;
             this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stopButton.ForeColor = System.Drawing.Color.Red;
             this.stopButton.Location = new System.Drawing.Point(1608, 887);
             this.stopButton.Name = "stopButton";
+            this.stopButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.stopButton.Size = new System.Drawing.Size(268, 94);
             this.stopButton.TabIndex = 65;
             this.stopButton.Text = "Stop";
@@ -182,10 +189,13 @@ namespace ComboCounter.UserControls
             // 
             // resetButton
             // 
+            this.resetButton.AutoSize = true;
+            this.resetButton.BackColor = System.Drawing.Color.Transparent;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.resetButton.Location = new System.Drawing.Point(1948, 887);
             this.resetButton.Name = "resetButton";
+            this.resetButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.resetButton.Size = new System.Drawing.Size(268, 94);
             this.resetButton.TabIndex = 78;
             this.resetButton.Text = "Reset";
@@ -196,7 +206,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalPunchHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.totalPunchHeader.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.totalPunchHeader.Location = new System.Drawing.Point(156, 263);
             this.totalPunchHeader.Name = "totalPunchHeader";
@@ -209,7 +218,7 @@ namespace ComboCounter.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.totalPunchHeader);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.stopButton);
@@ -227,22 +236,23 @@ namespace ComboCounter.UserControls
             this.Size = new System.Drawing.Size(2476, 1079);
             this.Load += new System.EventHandler(this.consecutive_punch_challenge_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Button plusIcon;
-        private System.Windows.Forms.Button minusIcon;
-        private System.Windows.Forms.Label header;
-        private System.Windows.Forms.Label limit;
-        private System.Windows.Forms.Label totalForceHeader;
-        private System.Windows.Forms.Label punchGoalHeader;
-        private System.Windows.Forms.Label punchNum;
-        private System.Windows.Forms.Label totalForce;
-        private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Label totalPunchHeader;
+        private OutlineButton startButton;
+        private TextButton plusIcon;
+        private TextButton minusIcon;
+        private Header1 header;
+        private BigInfo limit;
+        private H2 totalForceHeader;
+        private H2 punchGoalHeader;
+        private BigInfo punchNum;
+        private BigInfo totalForce;
+        private OutlineButton stopButton;
+        private OutlineButton resetButton;
+        private H2 totalPunchHeader;
     }
 }

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class punch_count_comp : UserControl
+    public partial class punch_count_comp : BaseFormControl
     {
         int setThreshold = 200;
         int setThreshold1 = 150;
@@ -332,6 +333,21 @@ namespace ComboCounter.UserControls
         }
 
         private void punch_count_comp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
         {
 
         }

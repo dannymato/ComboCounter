@@ -31,49 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComboScoreCompControl));
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            /**
-            this.Hit7R1 = new System.Windows.Forms.Label();
-            this.Hit6R1 = new System.Windows.Forms.Label();
-            this.Hit9R1 = new System.Windows.Forms.Label();
-            this.Hit8R1 = new System.Windows.Forms.Label();
-            this.Hit5R1 = new System.Windows.Forms.Label();
-            this.Hit2R1 = new System.Windows.Forms.Label();
-            this.Hit1R1 = new System.Windows.Forms.Label();
-            this.Hit4R1 = new System.Windows.Forms.Label();
-            this.Hit3R1 = new System.Windows.Forms.Label();
-            **/
-            this.Hit1R1 = new ComboCounter.Classes.H3();
-            this.Hit2R1 = new ComboCounter.Classes.H3();
-            this.Hit3R1 = new ComboCounter.Classes.H3();
-            this.Hit4R1 = new ComboCounter.Classes.H3();
-            this.Hit5R1 = new ComboCounter.Classes.H3();
-            this.Hit6R1 = new ComboCounter.Classes.H3();
             this.Hit7R1 = new ComboCounter.Classes.H3();
-            this.Hit8R1 = new ComboCounter.Classes.H3();
+            this.Hit6R1 = new ComboCounter.Classes.H3();
             this.Hit9R1 = new ComboCounter.Classes.H3();
-
+            this.Hit8R1 = new ComboCounter.Classes.H3();
+            this.Hit5R1 = new ComboCounter.Classes.H3();
+            this.Hit2R1 = new ComboCounter.Classes.H3();
+            this.Hit1R1 = new ComboCounter.Classes.H3();
+            this.Hit4R1 = new ComboCounter.Classes.H3();
+            this.Hit3R1 = new ComboCounter.Classes.H3();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            /**
-            this.Hit7R2 = new System.Windows.Forms.Label();
-            this.Hit6R2 = new System.Windows.Forms.Label();
-            this.Hit9R2 = new System.Windows.Forms.Label();
-            this.Hit8R2 = new System.Windows.Forms.Label();
-            this.Hit5R2 = new System.Windows.Forms.Label();
-            this.Hit2R2 = new System.Windows.Forms.Label();
-            this.Hit1R2 = new System.Windows.Forms.Label();
-            this.Hit4R2 = new System.Windows.Forms.Label();
-            this.Hit3R2 = new System.Windows.Forms.Label();
-            **/
-            this.Hit1R2 = new ComboCounter.Classes.H3();
-            this.Hit2R2 = new ComboCounter.Classes.H3();
-            this.Hit3R2 = new ComboCounter.Classes.H3();
-            this.Hit4R2 = new ComboCounter.Classes.H3();
-            this.Hit5R2 = new ComboCounter.Classes.H3();
-            this.Hit6R2 = new ComboCounter.Classes.H3();
             this.Hit7R2 = new ComboCounter.Classes.H3();
-            this.Hit8R2 = new ComboCounter.Classes.H3();
+            this.Hit6R2 = new ComboCounter.Classes.H3();
             this.Hit9R2 = new ComboCounter.Classes.H3();
-
+            this.Hit8R2 = new ComboCounter.Classes.H3();
+            this.Hit5R2 = new ComboCounter.Classes.H3();
+            this.Hit2R2 = new ComboCounter.Classes.H3();
+            this.Hit1R2 = new ComboCounter.Classes.H3();
+            this.Hit4R2 = new ComboCounter.Classes.H3();
+            this.Hit3R2 = new ComboCounter.Classes.H3();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -82,48 +58,23 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            /**
-            this.CSHeader = new System.Windows.Forms.Label();
-            this.ForceHeader1 = new System.Windows.Forms.Label();
-            this.TimeIntervalHeader1 = new System.Windows.Forms.Label();
-            this.ForceHeader2 = new System.Windows.Forms.Label();
-            this.TimeIntervalHeader2 = new System.Windows.Forms.Label();
-            this.ScoreHeader1 = new System.Windows.Forms.Label();
-            this.TimeHeader1 = new System.Windows.Forms.Label();
-            this.ScoreOut1 = new System.Windows.Forms.Label();
-            this.TimeOut1 = new System.Windows.Forms.Label();
-            this.ScoreHeader2 = new System.Windows.Forms.Label();
-            this.ScoreOut2 = new System.Windows.Forms.Label();
-            this.TimeOut2 = new System.Windows.Forms.Label();
-            this.TimeHeader2 = new System.Windows.Forms.Label();
-            this.Guest1 = new System.Windows.Forms.Label();
-            this.Guest2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            **/
-
             this.CSHeader = new ComboCounter.Classes.H2();
-            this.CSHeader.ForeColor = ThemeConstants.red;
-
             this.ForceHeader1 = new ComboCounter.Classes.H3();
             this.ForceHeader2 = new ComboCounter.Classes.H3();
-
             this.TimeIntervalHeader1 = new ComboCounter.Classes.H3();
             this.TimeIntervalHeader2 = new ComboCounter.Classes.H3();
-
             this.TimeHeader1 = new ComboCounter.Classes.H3();
             this.TimeHeader2 = new ComboCounter.Classes.H3();
             this.TimeOut1 = new ComboCounter.Classes.H3();
             this.TimeOut2 = new ComboCounter.Classes.H3();
-
             this.Guest1 = new ComboCounter.Classes.H3();
             this.Guest2 = new ComboCounter.Classes.H3();
-
-
             this.ScoreHeader1 = new ComboCounter.Classes.H3();
             this.ScoreHeader2 = new ComboCounter.Classes.H3();
             this.ScoreOut1 = new ComboCounter.Classes.H3();
             this.ScoreOut2 = new ComboCounter.Classes.H3();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +84,7 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(-168, 470);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1768, 24);
+            this.label1.Size = new System.Drawing.Size(886, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -176,7 +127,7 @@
             this.Hit7R1.Location = new System.Drawing.Point(819, 1);
             this.Hit7R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Hit7R1.Name = "Hit7R1";
-            this.Hit7R1.Size = new System.Drawing.Size(131, 55);
+            this.Hit7R1.Size = new System.Drawing.Size(131, 64);
             this.Hit7R1.TabIndex = 76;
             this.Hit7R1.Text = "Hit7";
             // 
@@ -185,7 +136,6 @@
             this.Hit6R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit6R1.AutoSize = true;
-            this.Hit6R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit6R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit6R1.Location = new System.Drawing.Point(683, 1);
             this.Hit6R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -199,7 +149,6 @@
             this.Hit9R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit9R1.AutoSize = true;
-            this.Hit9R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit9R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit9R1.Location = new System.Drawing.Point(1091, 1);
             this.Hit9R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -213,7 +162,6 @@
             this.Hit8R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit8R1.AutoSize = true;
-            this.Hit8R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit8R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit8R1.Location = new System.Drawing.Point(955, 1);
             this.Hit8R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -227,7 +175,6 @@
             this.Hit5R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit5R1.AutoSize = true;
-            this.Hit5R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit5R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit5R1.Location = new System.Drawing.Point(548, 1);
             this.Hit5R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -241,7 +188,6 @@
             this.Hit2R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit2R1.AutoSize = true;
-            this.Hit2R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit2R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit2R1.Location = new System.Drawing.Point(139, 1);
             this.Hit2R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -255,7 +201,6 @@
             this.Hit1R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit1R1.AutoSize = true;
-            this.Hit1R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit1R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit1R1.Location = new System.Drawing.Point(3, 1);
             this.Hit1R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -269,7 +214,6 @@
             this.Hit4R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit4R1.AutoSize = true;
-            this.Hit4R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit4R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit4R1.Location = new System.Drawing.Point(411, 1);
             this.Hit4R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -283,7 +227,6 @@
             this.Hit3R1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit3R1.AutoSize = true;
-            this.Hit3R1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit3R1.ForeColor = System.Drawing.Color.DimGray;
             this.Hit3R1.Location = new System.Drawing.Point(275, 1);
             this.Hit3R1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -327,7 +270,6 @@
             this.Hit7R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit7R2.AutoSize = true;
-            this.Hit7R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit7R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit7R2.Location = new System.Drawing.Point(819, 1);
             this.Hit7R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -341,7 +283,6 @@
             this.Hit6R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit6R2.AutoSize = true;
-            this.Hit6R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit6R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit6R2.Location = new System.Drawing.Point(683, 1);
             this.Hit6R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -355,7 +296,6 @@
             this.Hit9R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit9R2.AutoSize = true;
-            this.Hit9R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit9R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit9R2.Location = new System.Drawing.Point(1091, 1);
             this.Hit9R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -369,7 +309,6 @@
             this.Hit8R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit8R2.AutoSize = true;
-            this.Hit8R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit8R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit8R2.Location = new System.Drawing.Point(955, 1);
             this.Hit8R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -383,7 +322,6 @@
             this.Hit5R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit5R2.AutoSize = true;
-            this.Hit5R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit5R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit5R2.Location = new System.Drawing.Point(548, 1);
             this.Hit5R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -397,7 +335,6 @@
             this.Hit2R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit2R2.AutoSize = true;
-            this.Hit2R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit2R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit2R2.Location = new System.Drawing.Point(139, 1);
             this.Hit2R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -411,7 +348,6 @@
             this.Hit1R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit1R2.AutoSize = true;
-            this.Hit1R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit1R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit1R2.Location = new System.Drawing.Point(3, 1);
             this.Hit1R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -425,7 +361,6 @@
             this.Hit4R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit4R2.AutoSize = true;
-            this.Hit4R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit4R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit4R2.Location = new System.Drawing.Point(411, 1);
             this.Hit4R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -439,7 +374,6 @@
             this.Hit3R2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Hit3R2.AutoSize = true;
-            this.Hit3R2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hit3R2.ForeColor = System.Drawing.Color.DimGray;
             this.Hit3R2.Location = new System.Drawing.Point(275, 1);
             this.Hit3R2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -549,7 +483,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.34682F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.65015F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.36906F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(331, 325);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -568,7 +502,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.34682F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.65015F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.36906F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(331, 702);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -581,7 +515,6 @@
             this.CSHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CSHeader.AutoSize = true;
-            this.CSHeader.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CSHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.CSHeader.Location = new System.Drawing.Point(255, 0);
             this.CSHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -595,77 +528,58 @@
             this.ForceHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ForceHeader1.AutoSize = true;
-            this.ForceHeader1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForceHeader1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.ForceHeader1.Location = new System.Drawing.Point(808, 131);
+            this.ForceHeader1.Location = new System.Drawing.Point(732, 109);
             this.ForceHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ForceHeader1.Name = "ForceHeader1";
             this.ForceHeader1.Size = new System.Drawing.Size(132, 55);
             this.ForceHeader1.TabIndex = 65;
             this.ForceHeader1.Text = "Force";
             // 
-            // TimeIntervalHeader1
-            // 
-            this.TimeIntervalHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeIntervalHeader1.AutoSize = true;
-            this.TimeIntervalHeader1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeIntervalHeader1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.TimeIntervalHeader1.Location = new System.Drawing.Point(747, 267);
-            this.TimeIntervalHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TimeIntervalHeader1.Name = "TimeIntervalHeader1";
-            this.TimeIntervalHeader1.Size = new System.Drawing.Size(277, 55);
-            this.TimeIntervalHeader1.TabIndex = 66;
-            this.TimeIntervalHeader1.Text = "Time Interval";
-            // 
             // ForceHeader2
             // 
             this.ForceHeader2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ForceHeader2.AutoSize = true;
-            this.ForceHeader2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForceHeader2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.ForceHeader2.Location = new System.Drawing.Point(810, 504);
+            this.ForceHeader2.Location = new System.Drawing.Point(808, 494);
             this.ForceHeader2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ForceHeader2.Name = "ForceHeader2";
             this.ForceHeader2.Size = new System.Drawing.Size(132, 55);
             this.ForceHeader2.TabIndex = 67;
             this.ForceHeader2.Text = "Force";
             // 
+            // TimeIntervalHeader1
+            // 
+            this.TimeIntervalHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeIntervalHeader1.AutoSize = true;
+            this.TimeIntervalHeader1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.TimeIntervalHeader1.Location = new System.Drawing.Point(732, 259);
+            this.TimeIntervalHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TimeIntervalHeader1.Name = "TimeIntervalHeader1";
+            this.TimeIntervalHeader1.Size = new System.Drawing.Size(277, 55);
+            this.TimeIntervalHeader1.TabIndex = 66;
+            this.TimeIntervalHeader1.Text = "Time Interval";
+            // 
             // TimeIntervalHeader2
             // 
             this.TimeIntervalHeader2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TimeIntervalHeader2.AutoSize = true;
-            this.TimeIntervalHeader2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeIntervalHeader2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.TimeIntervalHeader2.Location = new System.Drawing.Point(747, 644);
+            this.TimeIntervalHeader2.Location = new System.Drawing.Point(732, 634);
             this.TimeIntervalHeader2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TimeIntervalHeader2.Name = "TimeIntervalHeader2";
             this.TimeIntervalHeader2.Size = new System.Drawing.Size(277, 55);
             this.TimeIntervalHeader2.TabIndex = 68;
             this.TimeIntervalHeader2.Text = "Time Interval";
             // 
-            // ScoreHeader1
-            // 
-            this.ScoreHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScoreHeader1.AutoSize = true;
-            this.ScoreHeader1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreHeader1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.ScoreHeader1.Location = new System.Drawing.Point(584, 400);
-            this.ScoreHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ScoreHeader1.Name = "ScoreHeader1";
-            this.ScoreHeader1.Size = new System.Drawing.Size(144, 55);
-            this.ScoreHeader1.TabIndex = 69;
-            this.ScoreHeader1.Text = "Score:";
-            // 
             // TimeHeader1
             // 
             this.TimeHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TimeHeader1.AutoSize = true;
-            this.TimeHeader1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeHeader1.ForeColor = System.Drawing.Color.SteelBlue;
             this.TimeHeader1.Location = new System.Drawing.Point(972, 400);
             this.TimeHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -674,82 +588,11 @@
             this.TimeHeader1.TabIndex = 70;
             this.TimeHeader1.Text = "Time:";
             // 
-            // ScoreOut1
-            // 
-            this.ScoreOut1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScoreOut1.AutoSize = true;
-            this.ScoreOut1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreOut1.ForeColor = System.Drawing.Color.DimGray;
-            this.ScoreOut1.Location = new System.Drawing.Point(732, 400);
-            this.ScoreOut1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ScoreOut1.Name = "ScoreOut1";
-            this.ScoreOut1.Size = new System.Drawing.Size(106, 55);
-            this.ScoreOut1.TabIndex = 71;
-            this.ScoreOut1.Text = "N/A";
-            // 
-            // TimeOut1
-            // 
-            this.TimeOut1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeOut1.AutoSize = true;
-            this.TimeOut1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeOut1.ForeColor = System.Drawing.Color.DimGray;
-            this.TimeOut1.Location = new System.Drawing.Point(1103, 400);
-            this.TimeOut1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TimeOut1.Name = "TimeOut1";
-            this.TimeOut1.Size = new System.Drawing.Size(106, 55);
-            this.TimeOut1.TabIndex = 72;
-            this.TimeOut1.Text = "N/A";
-            // 
-            // ScoreHeader2
-            // 
-            this.ScoreHeader2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScoreHeader2.AutoSize = true;
-            this.ScoreHeader2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreHeader2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.ScoreHeader2.Location = new System.Drawing.Point(584, 793);
-            this.ScoreHeader2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ScoreHeader2.Name = "ScoreHeader2";
-            this.ScoreHeader2.Size = new System.Drawing.Size(144, 55);
-            this.ScoreHeader2.TabIndex = 73;
-            this.ScoreHeader2.Text = "Score:";
-            // 
-            // ScoreOut2
-            // 
-            this.ScoreOut2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ScoreOut2.AutoSize = true;
-            this.ScoreOut2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreOut2.ForeColor = System.Drawing.Color.DimGray;
-            this.ScoreOut2.Location = new System.Drawing.Point(732, 793);
-            this.ScoreOut2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ScoreOut2.Name = "ScoreOut2";
-            this.ScoreOut2.Size = new System.Drawing.Size(106, 55);
-            this.ScoreOut2.TabIndex = 74;
-            this.ScoreOut2.Text = "N/A";
-            // 
-            // TimeOut2
-            // 
-            this.TimeOut2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeOut2.AutoSize = true;
-            this.TimeOut2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeOut2.ForeColor = System.Drawing.Color.DimGray;
-            this.TimeOut2.Location = new System.Drawing.Point(1103, 793);
-            this.TimeOut2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TimeOut2.Name = "TimeOut2";
-            this.TimeOut2.Size = new System.Drawing.Size(106, 55);
-            this.TimeOut2.TabIndex = 75;
-            this.TimeOut2.Text = "N/A";
-            // 
             // TimeHeader2
             // 
             this.TimeHeader2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TimeHeader2.AutoSize = true;
-            this.TimeHeader2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeHeader2.ForeColor = System.Drawing.Color.SteelBlue;
             this.TimeHeader2.Location = new System.Drawing.Point(972, 793);
             this.TimeHeader2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -758,12 +601,37 @@
             this.TimeHeader2.TabIndex = 76;
             this.TimeHeader2.Text = "Time:";
             // 
+            // TimeOut1
+            // 
+            this.TimeOut1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeOut1.AutoSize = true;
+            this.TimeOut1.ForeColor = System.Drawing.Color.DimGray;
+            this.TimeOut1.Location = new System.Drawing.Point(1103, 400);
+            this.TimeOut1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TimeOut1.Name = "TimeOut1";
+            this.TimeOut1.Size = new System.Drawing.Size(106, 55);
+            this.TimeOut1.TabIndex = 72;
+            this.TimeOut1.Text = "N/A";
+            // 
+            // TimeOut2
+            // 
+            this.TimeOut2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeOut2.AutoSize = true;
+            this.TimeOut2.ForeColor = System.Drawing.Color.DimGray;
+            this.TimeOut2.Location = new System.Drawing.Point(1103, 793);
+            this.TimeOut2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TimeOut2.Name = "TimeOut2";
+            this.TimeOut2.Size = new System.Drawing.Size(106, 55);
+            this.TimeOut2.TabIndex = 75;
+            this.TimeOut2.Text = "N/A";
+            // 
             // Guest1
             // 
             this.Guest1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Guest1.AutoSize = true;
-            this.Guest1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guest1.ForeColor = System.Drawing.Color.Gray;
             this.Guest1.Location = new System.Drawing.Point(1415, 120);
             this.Guest1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -777,7 +645,6 @@
             this.Guest2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Guest2.AutoSize = true;
-            this.Guest2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guest2.ForeColor = System.Drawing.Color.Silver;
             this.Guest2.Location = new System.Drawing.Point(1415, 494);
             this.Guest2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -786,11 +653,63 @@
             this.Guest2.TabIndex = 78;
             this.Guest2.Text = "Guest 2";
             // 
+            // ScoreHeader1
+            // 
+            this.ScoreHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScoreHeader1.AutoSize = true;
+            this.ScoreHeader1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.ScoreHeader1.Location = new System.Drawing.Point(584, 400);
+            this.ScoreHeader1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ScoreHeader1.Name = "ScoreHeader1";
+            this.ScoreHeader1.Size = new System.Drawing.Size(144, 55);
+            this.ScoreHeader1.TabIndex = 69;
+            this.ScoreHeader1.Text = "Score:";
+            // 
+            // ScoreHeader2
+            // 
+            this.ScoreHeader2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScoreHeader2.AutoSize = true;
+            this.ScoreHeader2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.ScoreHeader2.Location = new System.Drawing.Point(584, 793);
+            this.ScoreHeader2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ScoreHeader2.Name = "ScoreHeader2";
+            this.ScoreHeader2.Size = new System.Drawing.Size(144, 55);
+            this.ScoreHeader2.TabIndex = 73;
+            this.ScoreHeader2.Text = "Score:";
+            // 
+            // ScoreOut1
+            // 
+            this.ScoreOut1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScoreOut1.AutoSize = true;
+            this.ScoreOut1.ForeColor = System.Drawing.Color.DimGray;
+            this.ScoreOut1.Location = new System.Drawing.Point(732, 400);
+            this.ScoreOut1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ScoreOut1.Name = "ScoreOut1";
+            this.ScoreOut1.Size = new System.Drawing.Size(106, 55);
+            this.ScoreOut1.TabIndex = 71;
+            this.ScoreOut1.Text = "N/A";
+            // 
+            // ScoreOut2
+            // 
+            this.ScoreOut2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScoreOut2.AutoSize = true;
+            this.ScoreOut2.ForeColor = System.Drawing.Color.DimGray;
+            this.ScoreOut2.Location = new System.Drawing.Point(732, 793);
+            this.ScoreOut2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ScoreOut2.Name = "ScoreOut2";
+            this.ScoreOut2.Size = new System.Drawing.Size(106, 55);
+            this.ScoreOut2.TabIndex = 74;
+            this.ScoreOut2.Text = "N/A";
+            // 
             // ComboScoreCompControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.Guest2);
             this.Controls.Add(this.Guest1);
             this.Controls.Add(this.TimeHeader2);
@@ -842,38 +761,38 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label CSHeader;
-        private System.Windows.Forms.Label ForceHeader1;
-        private System.Windows.Forms.Label TimeIntervalHeader1;
-        private System.Windows.Forms.Label ForceHeader2;
-        private System.Windows.Forms.Label TimeIntervalHeader2;
-        private System.Windows.Forms.Label Hit7R1;
-        private System.Windows.Forms.Label Hit6R1;
-        private System.Windows.Forms.Label Hit9R1;
-        private System.Windows.Forms.Label Hit8R1;
-        private System.Windows.Forms.Label Hit5R1;
-        private System.Windows.Forms.Label Hit2R1;
-        private System.Windows.Forms.Label Hit1R1;
-        private System.Windows.Forms.Label Hit4R1;
-        private System.Windows.Forms.Label Hit3R1;
-        private System.Windows.Forms.Label Hit7R2;
-        private System.Windows.Forms.Label Hit6R2;
-        private System.Windows.Forms.Label Hit9R2;
-        private System.Windows.Forms.Label Hit8R2;
-        private System.Windows.Forms.Label Hit5R2;
-        private System.Windows.Forms.Label Hit2R2;
-        private System.Windows.Forms.Label Hit1R2;
-        private System.Windows.Forms.Label Hit4R2;
-        private System.Windows.Forms.Label Hit3R2;
-        private System.Windows.Forms.Label ScoreHeader1;
-        private System.Windows.Forms.Label TimeHeader1;
-        private System.Windows.Forms.Label ScoreOut1;
-        private System.Windows.Forms.Label TimeOut1;
-        private System.Windows.Forms.Label ScoreHeader2;
-        private System.Windows.Forms.Label ScoreOut2;
-        private System.Windows.Forms.Label TimeOut2;
-        private System.Windows.Forms.Label TimeHeader2;
-        private System.Windows.Forms.Label Guest1;
-        private System.Windows.Forms.Label Guest2;
+        private Classes.H2 CSHeader;
+        private Classes.H3 ForceHeader1;
+        private Classes.H3 TimeIntervalHeader1;
+        private Classes.H3 ForceHeader2;
+        private Classes.H3 TimeIntervalHeader2;
+        private Classes.H3 Hit7R1;
+        private Classes.H3 Hit6R1;
+        private Classes.H3 Hit9R1;
+        private Classes.H3 Hit8R1;
+        private Classes.H3 Hit5R1;
+        private Classes.H3 Hit2R1;
+        private Classes.H3 Hit1R1;
+        private Classes.H3 Hit4R1;
+        private Classes.H3 Hit3R1;
+        private Classes.H3 Hit7R2;
+        private Classes.H3 Hit6R2;
+        private Classes.H3 Hit9R2;
+        private Classes.H3 Hit8R2;
+        private Classes.H3 Hit5R2;
+        private Classes.H3 Hit2R2;
+        private Classes.H3 Hit1R2;
+        private Classes.H3 Hit4R2;
+        private Classes.H3 Hit3R2;
+        private Classes.H3 ScoreHeader1;
+        private Classes.H3 TimeHeader1;
+        private Classes.H3 ScoreOut1;
+        private Classes.H3 TimeOut1;
+        private Classes.H3 ScoreHeader2;
+        private Classes.H3 ScoreOut2;
+        private Classes.H3 TimeOut2;
+        private Classes.H3 TimeHeader2;
+        private Classes.H3 Guest1;
+        private Classes.H3 Guest2;
     }
 }

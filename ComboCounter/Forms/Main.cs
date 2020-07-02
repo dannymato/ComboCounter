@@ -16,7 +16,7 @@ namespace ComboCounter
         ComboScoreControl comboScore;
 
         targeted_total_of_force totalForce;
-        targeted_total_of_force_comp totalForceComp;
+        Targeted_total_of_force_comp totalForceComp;
         targeted_total_of_time totalTime;
         targeted_total_of_time_comp totalTimeComp;
         ComboScoreCompControl poundForPound;
@@ -26,7 +26,10 @@ namespace ComboCounter
         punch_challenge punchChallenge;
         punch_challenge_comp punchChallengeComp;
 
+        UserAccount userAccount;
 
+        BaseFormControl currentControl;
+        histogram histogramForm;
 
         public Main()
         {
@@ -37,10 +40,11 @@ namespace ComboCounter
         #region Force Tracker
         private void force_tracker_Click(object sender, EventArgs e)
         {
-            Forms.SensorAdjusments SensorAdjusments = new Forms.SensorAdjusments();
-            SensorAdjusments.Show();
-
-            // combo_tracker1.BringToFront();
+            if (sensorAdj == null)
+            {
+                sensorAdj = new CensorControl();
+            }
+            LoadNewPage(sensorAdj);
         }
 
         #endregion
@@ -48,10 +52,7 @@ namespace ComboCounter
         #region Welcome Page
         private void home_button_Click(object sender, EventArgs e)
         {
-            mainPanel.Hide();
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(home);
-            mainPanel.Show();
+            LoadNewPage(home);
         }
 
         #endregion
@@ -64,6 +65,12 @@ namespace ComboCounter
             Forms.UserAccountForm UserAccountForm = new Forms.UserAccountForm();
             UserAccountForm.Show();
 
+            if (userAccount == null)
+            {
+                userAccount = new UserAccount();
+            }
+            LoadNewPage(userAccount);
+
             // user_control1.BringToFront();
         }
 
@@ -71,7 +78,7 @@ namespace ComboCounter
         {
 
             Forms.Exit exit = new Forms.Exit();
-            exit.ExitApplication += (s, arg) => { Close(); };
+            exit.ExitApplication += (s, arg) => { Close(); currentControl.OnExit(); };
 
             exit.ClientSize = new Size(Width, Height);
             exit.Show();
@@ -81,14 +88,19 @@ namespace ComboCounter
         
         private void time_button_Click(object sender, EventArgs e)
         {
-             Forms.Exit QuickStartForm = new Forms.Exit();
-             QuickStartForm.Show();
-
+            // Currently shows exit but is now disabled
+            /* Forms.Exit QuickStartForm = new Forms.Exit();
+             QuickStartForm.Show();*/
         }
 
         private void histogram_Click(object sender, EventArgs e)
         {
-            LoadNewPage(new histogram());
+            if (this.histogramForm == null)
+            {
+                histogramForm = new histogram();
+            }
+            LoadNewPage(histogramForm);
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -107,6 +119,7 @@ namespace ComboCounter
             Height = screenSize.Height;
 
             home = new HomeScreen();
+            this.currentControl = home;
             mainPanel.Controls.Add(home);
             mainPanel.Width = Width;
             mainPanel.Height = Height - tableLayoutPanel1.Height;
@@ -115,7 +128,10 @@ namespace ComboCounter
             home.Width = mainPanel.Width;
             home.Height = mainPanel.Height;
 
+            BackColor = ThemeManager.initBackground();
+
             home.OnOptionClicked += (send, args) => {
+
                 // Determines which control to page in depending on the argument passed through the event
                 switch (args.ClassToCall)
                 {
@@ -136,7 +152,7 @@ namespace ComboCounter
                     case ClassToCall.TotalForce2Play:
                         if (totalForceComp == null)
                         {
-                            totalForceComp = new targeted_total_of_force_comp();
+                            totalForceComp = new Targeted_total_of_force_comp();
                         }
                         LoadNewPage(totalForceComp);
                         break;
@@ -205,16 +221,21 @@ namespace ComboCounter
         }
 
         // Removes the old page in the panel and places the new one in
-        private void LoadNewPage(UserControl newPage)
+        // With the exception of the history page the old pages are still kept in memory for quicker access
+        private void LoadNewPage(BaseFormControl newPage)
         {
+
             this.mainPanel.Hide();
             this.mainPanel.Controls.Clear();
+            currentControl.OnPageRemoved();
+
+            newPage.OnPageAttached();
             this.mainPanel.Controls.Add(newPage);
+            currentControl = newPage;
             newPage.Anchor = AnchorStyles.None;
             newPage.Left = (mainPanel.Width - newPage.Width) / 2;
             newPage.Top = (mainPanel.Height - newPage.Height) / 2;
             this.mainPanel.Show();
-
         }
 
     }

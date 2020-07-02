@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ComboCounter.Classes;
 using System.Diagnostics;
 
 namespace ComboCounter.UserControls
 {
-    public partial class punch_challenge : UserControl
+    public partial class punch_challenge : BaseFormControl
     {
         int punchLimit = 100;
         int i,j = 0;
@@ -48,20 +40,6 @@ namespace ComboCounter.UserControls
 
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
         {
-            FontManager fm = FontManager.getInstance();
-            header.Font = fm.getHeaderFont();
-
-            totalPunchHeader.Font = fm.getHeader2Font();
-            punchGoalHeader.Font = fm.getHeader2Font();
-            totalForceHeader.Font = fm.getHeader2Font();
-
-            startButton.Font = fm.getButtonFont();
-            stopButton.Font = fm.getButtonFont();
-            resetButton.Font = fm.getButtonFont();
-
-            limit.Font = fm.getBigInfoFont();
-            punchNum.Font = fm.getBigInfoFont();
-            totalForce.Font = fm.getBigInfoFont();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -69,10 +47,10 @@ namespace ComboCounter.UserControls
 
         }
 
+        // Occurs on every tick of the clock
         private void propagate()
         {
-
-            
+  
             currentForceVal = arrayTest[i];
             currentForceVal += lastHitVal;
             totalForce.Text = currentForceVal.ToString();
@@ -86,7 +64,7 @@ namespace ComboCounter.UserControls
             {
                 punchNum.ForeColor = System.Drawing.Color.Green;
                 
-                History.GetSessions().Add(session);
+                History.InsertSession(session);
                 ResetClocks();
             }
             
@@ -150,11 +128,6 @@ namespace ComboCounter.UserControls
 
         }
 
-        private void totalForce_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         // Start Button
         private void button2_Click(object sender, EventArgs e)
@@ -168,6 +141,21 @@ namespace ComboCounter.UserControls
                 session = new Session(DateTime.Now);
                 stopwatch.Start();
             }
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

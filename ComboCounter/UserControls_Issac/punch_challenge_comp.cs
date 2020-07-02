@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
-
+using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class punch_challenge_comp : UserControl
+    public partial class punch_challenge_comp : BaseFormControl
     {
         int punchLimit = 100;
         int i, j, k, l = 0;
@@ -187,6 +187,21 @@ namespace ComboCounter.UserControls
                 totalPunchPlay2.Text = l.ToString();
                 l++;
             }
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

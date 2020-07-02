@@ -74,7 +74,9 @@ namespace ComboCounter
             if (newUser != null)
             {
                 UserManager.setUser(newUser);
-
+                #if NEW_DB
+                UserManager.UserSettings = db.ReadUserSettings(newUser.Id);
+                #endif      
                 return true;
             }
             return false;

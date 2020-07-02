@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace ComboCounter.UserControls_Gabriel
 {
-    public partial class UserAccount : UserControl
+    public partial class UserAccount : BaseFormControl
     {
 
         public UserAccount()
@@ -136,6 +136,21 @@ namespace ComboCounter.UserControls_Gabriel
         }
 
         private void smallInfo1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
         {
 
         }

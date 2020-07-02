@@ -1,17 +1,30 @@
-﻿using System;
+﻿using ComboCounter.Classes;
+using System;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls_Gabriel
 {
-    public partial class ComboScoreCompControl : UserControl
+    public partial class ComboScoreCompControl : BaseFormControl
     {
         public ComboScoreCompControl()
         {
             InitializeComponent();
         }
 
+        public override void OnPageAttached()
+        {
+            
+        }
 
-       
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+
+        }
 
         private void ComboScoreCompControl_Load(object sender, EventArgs e)
         {

@@ -32,10 +32,9 @@ namespace ComboCounter.UserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(targeted_total_of_force));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.plusIcon = new System.Windows.Forms.Button();
-            this.minusIcon = new System.Windows.Forms.Button();
+            this.plusIcon = new TextButton();
+            this.minusIcon = new TextButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.forceGoalHeader = new ComboCounter.Classes.H2();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -68,7 +67,6 @@ namespace ComboCounter.UserControls
             // plusIcon
             // 
             this.plusIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.plusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("plusIcon.BackgroundImage")));
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plusIcon.Location = new System.Drawing.Point(784, 91);
@@ -76,13 +74,13 @@ namespace ComboCounter.UserControls
             this.plusIcon.Name = "plusIcon";
             this.plusIcon.Size = new System.Drawing.Size(68, 58);
             this.plusIcon.TabIndex = 78;
+            this.plusIcon.Text = "+";
             this.plusIcon.UseVisualStyleBackColor = true;
             this.plusIcon.Click += new System.EventHandler(this.plusIcon_Click);
             // 
             // minusIcon
             // 
             this.minusIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.minusIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minusIcon.BackgroundImage")));
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusIcon.Location = new System.Drawing.Point(4, 83);
@@ -90,6 +88,7 @@ namespace ComboCounter.UserControls
             this.minusIcon.Name = "minusIcon";
             this.minusIcon.Size = new System.Drawing.Size(67, 73);
             this.minusIcon.TabIndex = 79;
+            this.minusIcon.Text = "-";
             this.minusIcon.UseVisualStyleBackColor = true;
             this.minusIcon.Click += new System.EventHandler(this.minusIcon_Click);
             // 
@@ -117,7 +116,6 @@ namespace ComboCounter.UserControls
             // 
             this.forceGoalHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forceGoalHeader.AutoSize = true;
-            this.forceGoalHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.forceGoalHeader.Location = new System.Drawing.Point(295, 0);
             this.forceGoalHeader.Name = "forceGoalHeader";
             this.forceGoalHeader.Size = new System.Drawing.Size(644, 158);
@@ -136,14 +134,13 @@ namespace ComboCounter.UserControls
             this.flowLayoutPanel1.Size = new System.Drawing.Size(856, 240);
             this.flowLayoutPanel1.TabIndex = 67;
             // 
-            // forceGoal
+            // forceGoalLabel
             // 
             this.forceGoalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.forceGoalLabel.AutoSize = true;
-            this.forceGoalLabel.ForeColor = System.Drawing.Color.DimGray;
             this.forceGoalLabel.Location = new System.Drawing.Point(78, 0);
-            this.forceGoalLabel.Name = "forceGoal";
+            this.forceGoalLabel.Name = "forceGoalLabel";
             this.forceGoalLabel.Size = new System.Drawing.Size(699, 240);
             this.forceGoalLabel.TabIndex = 75;
             this.forceGoalLabel.Text = "15,000";
@@ -152,7 +149,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForce.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForce.AutoSize = true;
-            this.totalForce.ForeColor = System.Drawing.Color.DimGray;
             this.totalForce.Location = new System.Drawing.Point(511, 583);
             this.totalForce.Name = "totalForce";
             this.totalForce.Size = new System.Drawing.Size(212, 240);
@@ -163,7 +159,6 @@ namespace ComboCounter.UserControls
             // 
             this.forceAccruedHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forceAccruedHeader.AutoSize = true;
-            this.forceAccruedHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.forceAccruedHeader.Location = new System.Drawing.Point(186, 404);
             this.forceAccruedHeader.Name = "forceAccruedHeader";
             this.forceAccruedHeader.Size = new System.Drawing.Size(861, 158);
@@ -193,7 +188,6 @@ namespace ComboCounter.UserControls
             // 
             this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimeHeader.AutoSize = true;
-            this.currTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.currTimeHeader.Location = new System.Drawing.Point(216, 0);
             this.currTimeHeader.Name = "currTimeHeader";
             this.currTimeHeader.Size = new System.Drawing.Size(801, 158);
@@ -204,7 +198,6 @@ namespace ComboCounter.UserControls
             // 
             this.txtResult.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtResult.AutoSize = true;
-            this.txtResult.ForeColor = System.Drawing.Color.DimGray;
             this.txtResult.Location = new System.Drawing.Point(236, 158);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(761, 240);
@@ -301,7 +294,6 @@ namespace ComboCounter.UserControls
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header.AutoSize = true;
-            this.header.ForeColor = System.Drawing.Color.SteelBlue;
             this.header.Location = new System.Drawing.Point(478, 10);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(778, 180);
@@ -313,7 +305,7 @@ namespace ComboCounter.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.header);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(4);

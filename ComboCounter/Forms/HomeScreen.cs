@@ -4,7 +4,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.Forms
 {
-    class HomeScreen : UserControl
+    public class HomeScreen : BaseFormControl
     {
         private CustomControls.OutlineButton comboCounterDefault;
         private H3 h31;
@@ -114,6 +114,7 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15943F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1565, 871);
             this.tableLayoutPanel1.TabIndex = 0;
+
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // h31
@@ -477,9 +478,9 @@ namespace ComboCounter.Forms
 
         public event EventHandler<OptionClickEventArgs> OnOptionClicked;
 
-        private void Option_Clicked(ClassToCall classCall)
+        private void Option_Clicked(ClassToCall classToCall)
         {
-            OnOptionClicked?.Invoke(this, new OptionClickEventArgs(classCall));
+            OnOptionClicked?.Invoke(this, new OptionClickEventArgs(classToCall));
         }
 
         private void comboCounterDefault_Click(object sender, EventArgs e)
@@ -541,7 +542,20 @@ namespace ComboCounter.Forms
         {
             Option_Clicked(ClassToCall.PunchChallengeCustom);
         }
+        public override void OnPageAttached()
+        {
+            
+        }
 
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
+        
+          }
         private void h32_Click(object sender, EventArgs e)
         {
 

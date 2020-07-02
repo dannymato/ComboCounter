@@ -7,7 +7,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class targeted_total_of_force : UserControl
+    public partial class targeted_total_of_force : BaseFormControl
     {
         System.Timers.Timer t;
         int totalForceBox;
@@ -37,7 +37,7 @@ namespace ComboCounter.UserControls
             this.splitContainer1.SplitterDistance = Width / 2;
 
             t = new System.Timers.Timer();
-            t.Interval = 1;
+            t.Interval = 100;
             t.Elapsed += OnTimeEvent;
             
         }
@@ -83,12 +83,12 @@ namespace ComboCounter.UserControls
                     bellRing.Play();
                     t.Stop();
                     stopwatch.Stop();
-                    History.GetSessions().Add(session);
+                    History.InsertSession(session);
                 }
                 else
                 {
                     double time = stopwatch.Elapsed.TotalSeconds;
-                    int newForce = new Random().Next(5, 70);
+                    int newForce = new Random().Next(100, 700);
                     totalForceBox = totalForceBox + newForce;
                     totalForce.Text = totalForceBox.ToString();
 
@@ -113,6 +113,21 @@ namespace ComboCounter.UserControls
             totalForce.ForeColor = System.Drawing.Color.DimGray;
             stopwatch.Stop();
             stopwatch.Reset(); 
+
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
+        {
 
         }
     }

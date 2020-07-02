@@ -5,7 +5,7 @@ using ComboCounter.Classes;
 
 namespace ComboCounter.UserControls
 {
-    public partial class punch_count : UserControl
+    public partial class punch_count : BaseFormControl
     {
         
         Int32 quickTotal;
@@ -136,7 +136,7 @@ namespace ComboCounter.UserControls
                 timer1.Stop();
 
                 bellRung.Play();
-                History.GetSessions().Add(session);
+                History.InsertSession(session);
             }
 
         }
@@ -267,6 +267,21 @@ namespace ComboCounter.UserControls
         }
 
         private void setTimeMins_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            
+        }
+
+        public override void OnExit()
         {
 
         }
