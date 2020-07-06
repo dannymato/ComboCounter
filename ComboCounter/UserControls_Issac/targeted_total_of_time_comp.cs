@@ -1,5 +1,6 @@
 ﻿using ComboCounter.Classes;
 using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls
@@ -184,6 +185,12 @@ namespace ComboCounter.UserControls
             updateTimeText(setTimePlayer2, numSecsPlay2);
         }
 
+        private void PauseTimers()
+        {
+            timer1.Stop();
+            timer2.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -191,8 +198,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            timer1.Enabled = false;
-            timer2.Enabled = false;
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()

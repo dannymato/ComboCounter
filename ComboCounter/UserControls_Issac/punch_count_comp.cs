@@ -337,9 +337,20 @@ namespace ComboCounter.UserControls
 
         }
 
+        private void PauseClocks()
+        {
+            timer1.Stop();
+            timer2.Stop();
+            timer3.Stop();
+            timer4.Stop();
+        }
+
         public override void OnPageAttached()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseClocks();
+            }
         }
 
         public override void OnPageRemoved()

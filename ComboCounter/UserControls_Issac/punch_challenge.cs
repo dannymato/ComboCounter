@@ -98,16 +98,6 @@ namespace ComboCounter.UserControls
             stopwatch.Reset();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         // Start Button
         private void button2_Click(object sender, EventArgs e)
@@ -123,6 +113,12 @@ namespace ComboCounter.UserControls
             }
         }
 
+        private void PauseClocks()
+        {
+            timer1.Stop();
+            stopwatch.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -130,7 +126,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseClocks();
+            }
         }
 
         public override void OnExit()

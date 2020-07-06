@@ -105,6 +105,12 @@ namespace ComboCounter.UserControls
             updateTimeSetter();
         }
 
+        private void PauseTimers()
+        {
+            timer1.Stop();
+            timeKeeper.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -112,7 +118,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()

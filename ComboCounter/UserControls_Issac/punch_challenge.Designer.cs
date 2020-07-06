@@ -136,7 +136,6 @@ namespace ComboCounter.UserControls
             this.totalForceHeader.TabIndex = 61;
             this.totalForceHeader.Text = "Total Force";
             this.totalForceHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.totalForceHeader.Click += new System.EventHandler(this.label2_Click);
             // 
             // punchGoalHeader
             // 
@@ -148,7 +147,6 @@ namespace ComboCounter.UserControls
             this.punchGoalHeader.TabIndex = 62;
             this.punchGoalHeader.Text = "Punch Goal";
             this.punchGoalHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.punchGoalHeader.Click += new System.EventHandler(this.label1_Click);
             // 
             // punchNum
             // 

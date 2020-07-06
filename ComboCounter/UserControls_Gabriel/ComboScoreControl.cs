@@ -78,6 +78,11 @@ namespace ComboCounter.UserControls_Gabriel
             timeLabelIndex = 0;
         }
 
+        private void PauseTimers()
+        {
+            t.Stop();
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -229,6 +234,10 @@ namespace ComboCounter.UserControls_Gabriel
 
         public override void OnPageRemoved()
         {
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()

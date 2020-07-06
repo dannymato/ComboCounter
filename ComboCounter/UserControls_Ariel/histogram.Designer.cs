@@ -35,11 +35,11 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.h41 = new ComboCounter.Classes.H4();
+            this.TotForceInfo = new ComboCounter.Classes.SmallInfo();
             this.HardestHitInfo = new ComboCounter.Classes.SmallInfo();
             this.h42 = new ComboCounter.Classes.H4();
-            this.h43 = new ComboCounter.Classes.H4();
             this.AvgForceInfo = new ComboCounter.Classes.SmallInfo();
-            this.TotForceInfo = new ComboCounter.Classes.SmallInfo();
+            this.h43 = new ComboCounter.Classes.H4();
             this.h44 = new ComboCounter.Classes.H4();
             this.h45 = new ComboCounter.Classes.H4();
             this.shortestTimeLabel = new ComboCounter.Classes.SmallInfo();
@@ -117,16 +117,27 @@
             this.h41.TabIndex = 0;
             this.h41.Text = "Hardest Hit";
             // 
+            // TotForceInfo
+            // 
+            this.TotForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TotForceInfo.AutoSize = true;
+            this.TotForceInfo.ForeColor = System.Drawing.Color.LightBlue;
+            this.TotForceInfo.Location = new System.Drawing.Point(479, 277);
+            this.TotForceInfo.Name = "TotForceInfo";
+            this.TotForceInfo.Size = new System.Drawing.Size(133, 61);
+            this.TotForceInfo.TabIndex = 5;
+            this.TotForceInfo.Text = "0 lbs";
+            // 
             // HardestHitInfo
             // 
             this.HardestHitInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HardestHitInfo.AutoSize = true;
             this.HardestHitInfo.ForeColor = System.Drawing.Color.LightBlue;
-            this.HardestHitInfo.Location = new System.Drawing.Point(490, 31);
+            this.HardestHitInfo.Location = new System.Drawing.Point(479, 31);
             this.HardestHitInfo.Name = "HardestHitInfo";
-            this.HardestHitInfo.Size = new System.Drawing.Size(111, 61);
+            this.HardestHitInfo.Size = new System.Drawing.Size(133, 61);
             this.HardestHitInfo.TabIndex = 1;
-            this.HardestHitInfo.Text = "test";
+            this.HardestHitInfo.Text = "0 lbs";
             // 
             // h42
             // 
@@ -139,6 +150,17 @@
             this.h42.TabIndex = 2;
             this.h42.Text = "Average Force";
             // 
+            // AvgForceInfo
+            // 
+            this.AvgForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AvgForceInfo.AutoSize = true;
+            this.AvgForceInfo.ForeColor = System.Drawing.Color.LightBlue;
+            this.AvgForceInfo.Location = new System.Drawing.Point(479, 154);
+            this.AvgForceInfo.Name = "AvgForceInfo";
+            this.AvgForceInfo.Size = new System.Drawing.Size(133, 61);
+            this.AvgForceInfo.TabIndex = 4;
+            this.AvgForceInfo.Text = "0 lbs";
+            // 
             // h43
             // 
             this.h43.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -149,28 +171,6 @@
             this.h43.Size = new System.Drawing.Size(233, 54);
             this.h43.TabIndex = 3;
             this.h43.Text = "Total Force";
-            // 
-            // AvgForceInfo
-            // 
-            this.AvgForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AvgForceInfo.AutoSize = true;
-            this.AvgForceInfo.ForeColor = System.Drawing.Color.LightBlue;
-            this.AvgForceInfo.Location = new System.Drawing.Point(490, 154);
-            this.AvgForceInfo.Name = "AvgForceInfo";
-            this.AvgForceInfo.Size = new System.Drawing.Size(111, 61);
-            this.AvgForceInfo.TabIndex = 4;
-            this.AvgForceInfo.Text = "test";
-            // 
-            // TotForceInfo
-            // 
-            this.TotForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotForceInfo.AutoSize = true;
-            this.TotForceInfo.ForeColor = System.Drawing.Color.LightBlue;
-            this.TotForceInfo.Location = new System.Drawing.Point(490, 277);
-            this.TotForceInfo.Name = "TotForceInfo";
-            this.TotForceInfo.Size = new System.Drawing.Size(111, 61);
-            this.TotForceInfo.TabIndex = 5;
-            this.TotForceInfo.Text = "test";
             // 
             // h44
             // 
@@ -199,22 +199,23 @@
             this.shortestTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shortestTimeLabel.AutoSize = true;
             this.shortestTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.shortestTimeLabel.Location = new System.Drawing.Point(414, 400);
+            this.shortestTimeLabel.Location = new System.Drawing.Point(485, 400);
             this.shortestTimeLabel.Name = "shortestTimeLabel";
-            this.shortestTimeLabel.Size = new System.Drawing.Size(264, 61);
+            this.shortestTimeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.shortestTimeLabel.Size = new System.Drawing.Size(122, 61);
             this.shortestTimeLabel.TabIndex = 8;
-            this.shortestTimeLabel.Text = "smallInfo1";
+            this.shortestTimeLabel.Text = "0.0s";
             // 
             // averageTimeLabel
             // 
             this.averageTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.averageTimeLabel.AutoSize = true;
             this.averageTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.averageTimeLabel.Location = new System.Drawing.Point(414, 524);
+            this.averageTimeLabel.Location = new System.Drawing.Point(485, 524);
             this.averageTimeLabel.Name = "averageTimeLabel";
-            this.averageTimeLabel.Size = new System.Drawing.Size(264, 61);
+            this.averageTimeLabel.Size = new System.Drawing.Size(122, 61);
             this.averageTimeLabel.TabIndex = 9;
-            this.averageTimeLabel.Text = "smallInfo2";
+            this.averageTimeLabel.Text = "0.0s";
             // 
             // histogram
             // 

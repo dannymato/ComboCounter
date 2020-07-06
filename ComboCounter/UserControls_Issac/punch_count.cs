@@ -117,11 +117,6 @@ namespace ComboCounter.UserControls
 
         }
 
-        private void currentTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
 
@@ -140,12 +135,6 @@ namespace ComboCounter.UserControls
             }
 
         }
-
-        private void setTimeMins_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
@@ -174,16 +163,6 @@ namespace ComboCounter.UserControls
             missPunch = 0;
             numInvalidPunch.Text = missPunch.ToString();
             
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lastHit_TextChanged_1(object sender, EventArgs e)
@@ -271,6 +250,12 @@ namespace ComboCounter.UserControls
 
         }
 
+        private void PauseClocks()
+        {
+            timer1.Stop();
+            timer2.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -278,7 +263,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseClocks();
+            }
         }
 
         public override void OnExit()

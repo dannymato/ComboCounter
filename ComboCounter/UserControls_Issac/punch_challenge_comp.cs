@@ -27,6 +27,7 @@ namespace ComboCounter.UserControls
 
         }
 
+        
         private void minusIcon_Click(object sender, EventArgs e)
         {
             punchLimit = punchLimit - 5;
@@ -47,6 +48,7 @@ namespace ComboCounter.UserControls
 
         }
 
+        // Player 2 Tick
         private void timer2_Tick(object sender, EventArgs e)
         {
             propagate1();
@@ -80,11 +82,13 @@ namespace ComboCounter.UserControls
             }
         }
 
+        // Player 1 Stop Button
         private void button1_Click_1(object sender, EventArgs e)
         {
             timer1.Stop();
         }
 
+        // Player 1 Reset Button
         private void resetButton_Click(object sender, EventArgs e)
         {
             punchNumPlay1.Text = "0".ToString();
@@ -95,11 +99,13 @@ namespace ComboCounter.UserControls
             lastHitVal = 0;
         }
 
+        // Player 2 Stop Button
         private void stopButton1_Click(object sender, EventArgs e)
         {
             timer2.Stop();
         }
 
+        // Player 2 Reset Button
         private void resetButton1_Click(object sender, EventArgs e)
         {
             totalPunchPlay2.Text = "0".ToString();
@@ -110,6 +116,7 @@ namespace ComboCounter.UserControls
             lastHitVal1 = 0;
         }
 
+        // Player 2 Start Button
         private void startButton1_Click(object sender, EventArgs e)
         {
             timer2 = new System.Windows.Forms.Timer();
@@ -129,6 +136,7 @@ namespace ComboCounter.UserControls
 
         }
 
+        // Player 1 Start Button
         private void startButton_Click(object sender, EventArgs e)
         {
             timer1 = new System.Windows.Forms.Timer();
@@ -137,11 +145,13 @@ namespace ComboCounter.UserControls
             timer1.Enabled = true;
         }
 
+        // Player 1 Tick
         private void timer1_Tick(object sender, EventArgs e)
         {
             propagate();
         }
 
+        // Player 1 Tick
         private void propagate()
         {
 
@@ -165,6 +175,7 @@ namespace ComboCounter.UserControls
             }
         }
 
+        // Player 2 Tick
         private void propagate1()
         {
 
@@ -189,6 +200,12 @@ namespace ComboCounter.UserControls
             }
         }
 
+        private void PauseClocks()
+        {
+            timer1.Stop();
+            timer2.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -196,7 +213,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseClocks();
+            }
         }
 
         public override void OnExit()

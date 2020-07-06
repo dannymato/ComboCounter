@@ -101,7 +101,7 @@ namespace ComboCounter.UserControls
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-            t.Stop();
+            PauseTimers();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -116,6 +116,12 @@ namespace ComboCounter.UserControls
 
         }
 
+        private void PauseTimers()
+        {
+            t.Stop();
+            stopwatch.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -123,7 +129,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()
