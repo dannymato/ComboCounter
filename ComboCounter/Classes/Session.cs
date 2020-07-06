@@ -117,7 +117,7 @@ namespace ComboCounter.Classes
 
             get
             {
-                double smallestTime = 0.0;
+                double smallestTime = Double.MaxValue;
                 double lastTime = 0.0;
 
                 foreach (var time in Times)
