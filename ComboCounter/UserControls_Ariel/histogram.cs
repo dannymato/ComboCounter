@@ -234,15 +234,23 @@ namespace ComboCounter.UserControls
 
             chart1.Invalidate();
 
-            AvgForceInfo.Text = FormatForceValue(session.GetAvgForce());
-            TotForceInfo.Text = FormatForceValue(session.GetTotalForce());
-            HardestHitInfo.Text = FormatForceValue(session.MaxForce());
+            AvgForceInfo.Text = FormatForceValue(session.AvgForce);
+            TotForceInfo.Text = FormatForceValue(session.TotalForce);
+            HardestHitInfo.Text = FormatForceValue(session.MaxForce);
+
+            averageTimeLabel.Text = FormatTimeValue(session.AverageTime);
+            shortestTimeLabel.Text = FormatTimeValue(session.ShortestTime);
 
         }
 
         private string FormatForceValue(double force)
         {
             return string.Format("{0:g5} lbs.", force);
+        }
+
+        private string FormatTimeValue(double time)
+        {
+            return string.Format("{0:g5} s", time);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -257,14 +265,5 @@ namespace ComboCounter.UserControls
 
         }
 
-        public override void OnPageRemoved()
-        {
-            
-        }
-
-        public override void OnExit()
-        {
-
-        }
     }
 }

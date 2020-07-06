@@ -75,17 +75,64 @@ namespace ComboCounter.Classes
         /// Gives an easy ability to show the total force for the session
         /// </summary>
         /// <returns>The sum of the force array</returns>
-        public double GetTotalForce() => Forces.Sum<Double>(x => x);
+        public double TotalForce => Forces.Sum<Double>(x => x);
 
         /// <summary>
         /// Gives easy access to deliver the average force over the course
         /// of the session
         /// </summary>
         /// <returns>The average of all the forces</returns>
-        public double GetAvgForce() => Forces.Average();
+        public double AvgForce => Forces.Average();
 
 
-        public double MaxForce() => Forces.Max();
+        //public double MaxForce() => Forces.Max();
+
+        public double MaxForce => Forces.Max();
+
+        public double AverageTime 
+        {
+            get
+            {
+                double lastTime = 0.0;
+                double sum = 0.0;
+
+                if (Times.Count == 0)
+                {
+                    return 0.0;
+                }
+
+                foreach (var time in Times)
+                {
+                    sum += (time - lastTime);
+                    lastTime = time;
+                }
+
+                return sum / Times.Count;
+            }
+
+        }
+
+        public double ShortestTime
+        {
+
+            get
+            {
+                double smallestTime = 0.0;
+                double lastTime = 0.0;
+
+                foreach (var time in Times)
+                {
+                    if ((time - lastTime) < smallestTime)
+                    {
+                        smallestTime = time - lastTime;
+                    }
+                    lastTime = time;
+                }
+
+                return smallestTime;
+
+            }
+        }
     
     }
 }

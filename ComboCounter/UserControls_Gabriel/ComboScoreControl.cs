@@ -208,7 +208,7 @@ namespace ComboCounter.UserControls_Gabriel
                     if (forceIndex >= forceArray.Length)
                     {
                         SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
-                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.GetTotalForce());
+                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.TotalForce);
                         totalTimeLabelnfo.Text = string.Format("{0:0.00} s", cumulativeTime);
                         bellRing.Play();
                         t.Stop();

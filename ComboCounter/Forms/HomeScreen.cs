@@ -555,7 +555,7 @@ namespace ComboCounter.Forms
         public override void OnExit()
         {
         
-          }
+        }
         private void h32_Click(object sender, EventArgs e)
         {
 
