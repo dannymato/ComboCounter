@@ -46,8 +46,8 @@ namespace ComboCounter.UserControls
             s = 0;
             totalForceBoxPlayer1 = 0;
             totalForcePlayer1.Text = "N/A";
-            totalForcePlayer1.ForeColor = System.Drawing.Color.DimGray;
-            currTimePlayer1.Text = "00:00.0";
+            totalForcePlayer1.ForeColor = Color.DimGray;
+            currTimePlayer1.Text = Tools.FormatCurrentTime(0);
         }
 
         // Minus Button Player 2
@@ -95,7 +95,7 @@ namespace ComboCounter.UserControls
             totalForceBoxPlayer2 = 0;
             totalForcePlayer2.Text = "N/A";
             totalForcePlayer2.ForeColor = System.Drawing.Color.DimGray;
-            currTimePlayer2.Text = "00:00.0";
+            currTimePlayer2.Text = Tools.FormatTimeSetter(0);
         }
 
         // Player 2 Stop
@@ -124,15 +124,6 @@ namespace ComboCounter.UserControls
 
         }
 
-        private string FormatTimeString(int msecs)
-        {
-            int secs = msecs / 1000 % 60;
-            int mins = msecs / 1000 / 60;
-            int fracSecs = msecs % 1000 / 100;
-            return String.Format("{0:00}:{1:00}.{2:0}", mins, secs, fracSecs);
-
-        }
-
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
 
@@ -140,7 +131,7 @@ namespace ComboCounter.UserControls
             Invoke(new Action(() =>
             {
                 s += 100;
-                currTimePlayer1.Text = FormatTimeString(s);
+                currTimePlayer1.Text = Tools.FormatCurrentTime(s);
                 if (totalForceBoxPlayer1 == forceGoalNumPlayer1)
                 {
                     totalForcePlayer1.ForeColor = System.Drawing.Color.Green;
@@ -161,11 +152,11 @@ namespace ComboCounter.UserControls
             Invoke(new Action(() =>
             {
                 s1 += 100;
-                currTimePlayer2.Text = FormatTimeString(s1);
+                currTimePlayer2.Text = Tools.FormatCurrentTime(s1);
                 
                 if (totalForceBoxPlayer2 == forceGoalNumPlayer2)
                 {
-                    totalForcePlayer2.ForeColor = System.Drawing.Color.Green;
+                    totalForcePlayer2.ForeColor = Color.Green;
                     bellRing.Play();
                     t1.Stop();
                 }
@@ -173,7 +164,6 @@ namespace ComboCounter.UserControls
                 {
                     totalForceBoxPlayer2 = totalForceBoxPlayer2 + 50;
                     totalForcePlayer2.Text = totalForceBoxPlayer2.ToString();
-
                 }
             }));
         }

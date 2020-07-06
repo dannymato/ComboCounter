@@ -71,11 +71,7 @@ namespace ComboCounter.UserControls
 
             long remainingMsecs = (timeIntervalSecs * 1000) - timeKeeper.ElapsedMilliseconds;
 
-            long secs = (remainingMsecs / 1000 % 60);
-            long mins = remainingMsecs / 1000 / 60;
-            long mSecs = remainingMsecs % 1000 / 100;
-
-            currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, mSecs);
+            currentTime.Text = Tools.FormatCurrentTime(remainingMsecs);
             
             totalForceBox = totalForceBox + 50;
             totalForce.Text = totalForceBox.ToString();

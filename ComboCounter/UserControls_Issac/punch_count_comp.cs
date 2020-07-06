@@ -85,19 +85,19 @@ namespace ComboCounter.UserControls
             // Less than within 10% of the threshold
             if (lastHitVal1 < (thresholdVal1 - (thresholdVal1 * 0.1)))
             {
-                p2LastHit.ForeColor = System.Drawing.Color.Red;
+                p2LastHit.ForeColor = Color.Red;
             }
             // Within 10% of the threshold
             else if (lastHitVal1 >= (thresholdVal1 - (thresholdVal1 * 0.1)) && lastHitVal1 < (thresholdVal1 + (thresholdVal1 * 0.1)))
             {
-                p2LastHit.ForeColor = System.Drawing.Color.Yellow;
+                p2LastHit.ForeColor = Color.Yellow;
                 punchCounterVal1++;
                 p2ValidPunch.Text = punchCounterVal1.ToString();
             }
             // Greater than 10% of the threshold
             else
             {
-                p2LastHit.ForeColor = System.Drawing.Color.Green;
+                p2LastHit.ForeColor = Color.Green;
                 punchCounterVal1++;
                 p2ValidPunch.Text = punchCounterVal1.ToString();
             }
@@ -106,20 +106,6 @@ namespace ComboCounter.UserControls
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private string formatTimeFromMsecs(long msecs)
-        {
-            long minutes = msecs / 1000 / 60;
-            long secs = msecs / 1000 % 60;
-            long fracSecs = msecs % 1000 / 100;
-
-            return string.Format("{0:00}:{1:00}.{2:0}", minutes, secs, fracSecs);
-        }
-
-        private string formatTimeSetter(int seconds)
-        {
-            return string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -134,7 +120,7 @@ namespace ComboCounter.UserControls
         private void timer2_Tick(object sender, EventArgs e)
         {
             totalMsecsP1 -= 100;
-            p1CurrTime.Text = formatTimeFromMsecs(totalMsecsP1);
+            p1CurrTime.Text = Tools.FormatCurrentTime(totalMsecsP1);
 
 
             if (totalMsecsP1 <= 0)
@@ -174,7 +160,7 @@ namespace ComboCounter.UserControls
         {
             timer1.Stop();
             timer2.Stop();
-            p1CurrTime.Text = formatTimeFromMsecs(0);
+            p1CurrTime.Text = Tools.FormatCurrentTime(0);
             p1LastHit.Text = "0";
             punchCounterVal = 0;
             p1ValidPunch.Text = "0";
@@ -192,12 +178,12 @@ namespace ComboCounter.UserControls
             {
                 p2LastHit.Text = arrayTest1[0].ToString();
 
-                timer3 = new System.Windows.Forms.Timer();
+                timer3 = new Timer();
                 timer3.Interval = 900;
                 timer3.Tick += new EventHandler(timer3_Tick);
                 timer3.Enabled = true;
 
-                timer4 = new System.Windows.Forms.Timer();
+                timer4 = new Timer();
                 timer4.Interval = 100;
 
                 totalMsecsP2 = timeIntervalSecP2 * 1000;
@@ -211,7 +197,7 @@ namespace ComboCounter.UserControls
             timer3.Stop();
             timer4.Stop();
 
-            p2CurrTime.Text = formatTimeFromMsecs(0); ;
+            p2CurrTime.Text = Tools.FormatCurrentTime(0);
             p2LastHit.Text = "0";
             punchCounterVal1 = 0;
             p2ValidPunch.Text = "0";
@@ -221,7 +207,7 @@ namespace ComboCounter.UserControls
         private void p1PlusIcon_Click(object sender, EventArgs e)
         {
             timeIntervalSecP1 += 30;
-            setTimeP1.Text = formatTimeSetter(timeIntervalSecP1);
+            setTimeP1.Text = Tools.FormatTimeSetter(timeIntervalSecP1);
         }
 
         private void p1MinusIcon_Click(object sender, EventArgs e)
@@ -229,7 +215,7 @@ namespace ComboCounter.UserControls
             if (timeIntervalSecP1 > 30)
             {
                 timeIntervalSecP1 -= 30;
-                setTimeP1.Text = formatTimeSetter(timeIntervalSecP1);
+                setTimeP1.Text = Tools.FormatTimeSetter(timeIntervalSecP1);
             }
         }
 
@@ -241,19 +227,19 @@ namespace ComboCounter.UserControls
             // Below the threshold
             if (lastHitVal < (thresholdVal - (thresholdVal * 0.1)))
             {
-                p1LastHit.ForeColor = System.Drawing.Color.Red;
+                p1LastHit.ForeColor = Color.Red;
             }
             // Within 10% of the threshold
             else if (lastHitVal >= (thresholdVal - (thresholdVal * 0.1)) && lastHitVal < (thresholdVal + (thresholdVal * 0.1)))
             {
-                p1LastHit.ForeColor = System.Drawing.Color.Yellow;
+                p1LastHit.ForeColor = Color.Yellow;
                 punchCounterVal++;
                 p1ValidPunch.Text = punchCounterVal.ToString();
             }
             // More than 10% above the threshold
             else
             {
-                p1LastHit.ForeColor = System.Drawing.Color.Green;
+                p1LastHit.ForeColor = Color.Green;
                 punchCounterVal++;
                 p1ValidPunch.Text = punchCounterVal.ToString();
             }
@@ -279,7 +265,7 @@ namespace ComboCounter.UserControls
         {
             timeIntervalSecP2 += 30;
 
-            p2SetTime.Text = formatTimeSetter(timeIntervalSecP2);
+            p2SetTime.Text = Tools.FormatTimeSetter(timeIntervalSecP2);
         }
 
         private void minusIcon1_Click(object sender, EventArgs e)
@@ -287,7 +273,7 @@ namespace ComboCounter.UserControls
             if (timeIntervalSecP2 > 30)
             {
                 timeIntervalSecP2 -= 30;
-                p2SetTime.Text = formatTimeSetter(timeIntervalSecP2);
+                p2SetTime.Text = Tools.FormatTimeSetter(timeIntervalSecP2);
             }
         }
 
@@ -323,7 +309,7 @@ namespace ComboCounter.UserControls
         {
             totalMsecsP2 -= 100;
 
-            p2CurrTime.Text = formatTimeFromMsecs(totalMsecsP2);
+            p2CurrTime.Text = Tools.FormatCurrentTime(totalMsecsP2);
 
             if (totalMsecsP2 <= 100)
             {
