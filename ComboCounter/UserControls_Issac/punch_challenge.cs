@@ -7,7 +7,7 @@ namespace ComboCounter.UserControls
     public partial class punch_challenge : BaseFormControl
     {
         int punchLimit = 100;
-        int i,j = 0;
+        int i = 0;
         int currentForceVal, lastHitVal;
         int[] arrayTest = new int[] { 150, 210, 250, 160, 225, 300, 210, 130, 250, 200, 50, 140 };
 
@@ -21,6 +21,10 @@ namespace ComboCounter.UserControls
         {
             stopwatch = new Stopwatch();
             InitializeComponent();
+
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Interval = 1000;
+            timer1.Tick += new EventHandler(timer1_Tick);
         }
 
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
@@ -82,7 +86,6 @@ namespace ComboCounter.UserControls
             punchNum.Text = "0";
             totalForce.Text = "0";
             i = 0;
-            j = 0;
             currentForceVal = 0;
             lastHitVal = 0;
             numPunches = 0;
@@ -104,9 +107,6 @@ namespace ComboCounter.UserControls
         {
             if (!timer1.Enabled)
             {
-                timer1 = new System.Windows.Forms.Timer();
-                timer1.Interval = 1000;
-                timer1.Tick += new EventHandler(timer1_Tick);
                 timer1.Enabled = true;
                 session = new Session(DateTime.Now);
                 stopwatch.Start();
