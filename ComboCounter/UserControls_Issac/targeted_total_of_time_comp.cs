@@ -1,5 +1,6 @@
 ﻿using ComboCounter.Classes;
 using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace ComboCounter.UserControls
@@ -42,7 +43,7 @@ namespace ComboCounter.UserControls
         {
             timer1.Stop();
             updateTimeText(setTimePlayer1, numSecsPlay1);
-            currentTimePlayer1.Text = "00:00.0";
+            currentTimePlayer1.Text = Tools.FormatTimeSetter(0);
             totalForceNumPlay2 = 0;
             totalForcePlayer1.Text = "0";
             togglePlayer1SetTime();
@@ -51,7 +52,7 @@ namespace ComboCounter.UserControls
         // Player 2 Start
         private void startButton1_Click(object sender, EventArgs e)
         {
-            timer2 = new System.Windows.Forms.Timer();
+            timer2 = new Timer();
             timer2.Interval = 100;
             timer2.Tick += new EventHandler(timer2_Tick);
             timer2.Enabled = true;
@@ -69,7 +70,7 @@ namespace ComboCounter.UserControls
         private void resetButton1_Click(object sender, EventArgs e)
         {
             timer2.Stop();
-            setTimePlayer1.Text = "00:00.0";
+            setTimePlayer1.Text = Tools.FormatTimeSetter(0);
             updateTimeText(setTimePlayer1, numSecsPlay2);
             totalForceNumPlay2 = 0;
             totalForcePlayer2.Text = "0";
@@ -81,7 +82,7 @@ namespace ComboCounter.UserControls
         {
             quickTotalPlayer1 -= 100;
 
-            currentTimePlayer1.Text = currentTimeLabelText(quickTotalPlayer1);
+            currentTimePlayer1.Text = Tools.FormatCurrentTime(quickTotalPlayer1);
             if (quickTotalPlayer1 <= 0)
             {
                 timer1.Stop();
@@ -95,7 +96,7 @@ namespace ComboCounter.UserControls
         private void timer2_Tick(object sender, EventArgs e)
         {
             quickTotalPlayer2 -= 100;
-            currTimePlayer2.Text = currentTimeLabelText(quickTotalPlayer2);
+            currTimePlayer2.Text = Tools.FormatCurrentTime(quickTotalPlayer2);
             if (quickTotalPlayer2 <= 0)
             {
                 timer2.Stop();
@@ -103,15 +104,6 @@ namespace ComboCounter.UserControls
             totalForceNumPlay2 = totalForceNumPlay2 + 50;
             totalForcePlayer2.Text = totalForceNumPlay2.ToString();
 
-        }
-
-        private string currentTimeLabelText(int msecs)
-        {
-            int numMins = msecs / 1000 / 60;
-            int numSecs = msecs / 1000 % 60;
-            int fracSecs = (msecs % 1000) / 100;
-
-            return String.Format("{0:00}:{1:00}.{2:0}", numMins, numSecs, fracSecs);
         }
 
         private void togglePlayer1SetTime()
@@ -126,12 +118,9 @@ namespace ComboCounter.UserControls
             minusIconPlayer2.Enabled = !minusIconPlayer2.Enabled;
         }
 
-
-
-
         private void updateTimeText(Label timeLabel, int numSecs)
         {
-            timeLabel.Text = String.Format("{0:00}:{1:00}", numSecs / 60, numSecs % 60);
+            timeLabel.Text = Tools.FormatTimeSetter(numSecs);
         }
 
         // Player 1 Minus Icon
@@ -184,6 +173,12 @@ namespace ComboCounter.UserControls
             updateTimeText(setTimePlayer2, numSecsPlay2);
         }
 
+        private void PauseTimers()
+        {
+            timer1.Stop();
+            timer2.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -191,8 +186,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            timer1.Enabled = false;
-            timer2.Enabled = false;
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()

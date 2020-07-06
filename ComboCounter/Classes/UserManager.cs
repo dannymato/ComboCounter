@@ -181,11 +181,17 @@ namespace ComboCounter.Classes
 
     struct UserSettings
     {
+        // If true the clock for the different mode will tick upwards from zero
+        // Otherwise the clock will go down from the target towards zero
         public bool AscendingClock;
         public int ColorScheme;
+        // If it is true the timers will stop when the page is no longer displayed
         public bool TurnOffTimers;
+        // If true the screen will not show visual feedback when there is a punch
         public bool TurnOffVisualFeedback;
+        // If true the sounds for hitting will be disabled
         public bool TurnOffHitSounds;
+        // If true the sounds for missing will be disabled
         public bool TurnOffMissSounds;
 
         public UserSettings(int colorScheme, bool ascendingClock, bool turnOffTimers,

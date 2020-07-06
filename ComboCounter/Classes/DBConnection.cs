@@ -337,6 +337,36 @@ namespace ComboCounter.Classes
 
         }
 
+        public UserSettings UpdateUserSettings (int userID, UserSettings userSettings)
+        {
+            string Query = "UPDATE " + DATABASE + ".user_settings " +
+                "SET color_scheme = @colorScheme, AscendingClock = @ascendingClock, " +
+                "TurnOffTimers = @turnOffTimers, TurnOffVisualFeedback = @TurnOffVisualFeedback, " +
+                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds, " +
+                "WHERE fk_user_id = @userID";
+
+            dbConn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, dbConn);
+
+            cmd.Parameters.AddWithValue("colorScheme", userSettings.ColorScheme);
+            cmd.Parameters.AddWithValue("ascendingClock", userSettings.AscendingClock);
+            cmd.Parameters.AddWithValue("turnOffTimers", userSettings.TurnOffTimers);
+            cmd.Parameters.AddWithValue("TurnOffVisualFeedback", userSettings.TurnOffVisualFeedback);
+            cmd.Parameters.AddWithValue("turnOffHitSounds", userSettings.TurnOffHitSounds);
+            cmd.Parameters.AddWithValue("turnOffMissSounds", userSettings.TurnOffMissSounds);
+            cmd.Parameters.AddWithValue("userID", userID);
+
+            int success = cmd.ExecuteNonQuery();
+            dbConn.Close();
+            if (success >= 0)
+            {
+                return userSettings;
+            }
+            return new UserSettings();
+
+
+        }
+
         public List<Session> GetSessions(int userID)
         {
 

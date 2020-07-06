@@ -78,6 +78,11 @@ namespace ComboCounter.UserControls_Gabriel
             timeLabelIndex = 0;
         }
 
+        private void PauseTimers()
+        {
+            t.Stop();
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -208,7 +213,7 @@ namespace ComboCounter.UserControls_Gabriel
                     if (forceIndex >= forceArray.Length)
                     {
                         SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
-                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.GetTotalForce());
+                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.TotalForce);
                         totalTimeLabelnfo.Text = string.Format("{0:0.00} s", cumulativeTime);
                         bellRing.Play();
                         t.Stop();
@@ -229,6 +234,10 @@ namespace ComboCounter.UserControls_Gabriel
 
         public override void OnPageRemoved()
         {
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()

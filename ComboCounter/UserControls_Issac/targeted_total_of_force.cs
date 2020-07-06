@@ -68,14 +68,8 @@ namespace ComboCounter.UserControls
             SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
             Invoke(new Action(() =>
             {
-
-
-                long seconds = stopwatch.ElapsedMilliseconds / 1000 % 60;
-                long minutes = stopwatch.ElapsedMilliseconds / 1000 / 60;
-                long fracSecs = stopwatch.ElapsedMilliseconds % 1000 / 100;
-
-           
-                txtResult.Text = string.Format("{0:00}:{1:00}.{2:0}", minutes, seconds, fracSecs);
+                       
+                txtResult.Text = Tools.FormatCurrentTime(stopwatch.ElapsedMilliseconds);
 
                 if (totalForceBox >= forceGoalNum)
                 {
@@ -93,15 +87,13 @@ namespace ComboCounter.UserControls
                     totalForce.Text = totalForceBox.ToString();
 
                     session.insertHit(newForce, time);
-
-
                 }
             }));
         }
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-            t.Stop();
+            PauseTimers();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -109,11 +101,17 @@ namespace ComboCounter.UserControls
             t.Stop();
             totalForceBox = 0;
             totalForce.Text = "0";
-            txtResult.Text = "00:00.00";
+            txtResult.Text = Tools.FormatCurrentTime(0);
             totalForce.ForeColor = System.Drawing.Color.DimGray;
             stopwatch.Stop();
             stopwatch.Reset(); 
 
+        }
+
+        private void PauseTimers()
+        {
+            t.Stop();
+            stopwatch.Stop();
         }
 
         public override void OnPageAttached()
@@ -123,7 +121,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
         }
 
         public override void OnExit()

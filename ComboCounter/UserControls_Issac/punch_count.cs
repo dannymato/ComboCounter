@@ -33,12 +33,6 @@ namespace ComboCounter.UserControls
 
             Header.Left = tableLayoutPanel1.Left + ((tableLayoutPanel1.Width - Header.Width) / 2);
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
     
         // Start Button
         private void button2_Click(object sender, EventArgs e)
@@ -52,25 +46,20 @@ namespace ComboCounter.UserControls
             {
                 lastHit.Text = arrayTest[0].ToString();
 
-                timer1 = new System.Windows.Forms.Timer();
+                timer1 = new Timer();
                 timer1.Interval = 1000;
                 timer1.Tick += new EventHandler(timer1_Tick);
                 timer1.Enabled = true;
 
-                timer2 = new System.Windows.Forms.Timer();
+                timer2 = new Timer();
                 timer2.Interval = 100;
 
                 quickTotal = timeIntervalSec * 1000;
 
                 timer2.Tick += new EventHandler(timer2_Tick);
-                timer2.Enabled = true;
-
-                
+                timer2.Enabled = true; 
             }
-
             session = new Session(DateTime.Now);
-
-
         }
 
         private void updateTimeSetter()
@@ -117,19 +106,12 @@ namespace ComboCounter.UserControls
 
         }
 
-        private void currentTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
 
             quickTotal -= 100;
-            int secs = (quickTotal / 1000 % 60);
-            int mins = quickTotal / 1000 / 60;
-            int fracSecs = (quickTotal % 1000) / 100;
-            currentTime.Text = String.Format("{0:00}:{1:00}.{2:0}", mins, secs, fracSecs);
+            currentTime.Text = Tools.FormatCurrentTime(quickTotal);
+            
             if (quickTotal == 0)
             {
                 timer2.Stop();
@@ -141,12 +123,6 @@ namespace ComboCounter.UserControls
 
         }
 
-        private void setTimeMins_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void minusIcon_Click(object sender, EventArgs e)
         {
             timeIntervalSec -= TIME_UNIT;
@@ -154,7 +130,8 @@ namespace ComboCounter.UserControls
             {
                 timeIntervalSec = 0;
             }
-            updateTimeSetter();
+
+            setTime.Text = Tools.FormatTimeSetter(timeIntervalSec);
         }
 
         // Reset Button
@@ -174,16 +151,6 @@ namespace ComboCounter.UserControls
             missPunch = 0;
             numInvalidPunch.Text = missPunch.ToString();
             
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lastHit_TextChanged_1(object sender, EventArgs e)
@@ -241,7 +208,7 @@ namespace ComboCounter.UserControls
         private void plusIcon_Click(object sender, EventArgs e)
         {
             timeIntervalSec += TIME_UNIT;
-            updateTimeSetter();
+            setTime.Text = Tools.FormatTimeSetter(timeIntervalSec);
         }
 
         public string force
@@ -271,6 +238,12 @@ namespace ComboCounter.UserControls
 
         }
 
+        private void PauseClocks()
+        {
+            timer1.Stop();
+            timer2.Stop();
+        }
+
         public override void OnPageAttached()
         {
             
@@ -278,7 +251,10 @@ namespace ComboCounter.UserControls
 
         public override void OnPageRemoved()
         {
-            
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseClocks();
+            }
         }
 
         public override void OnExit()
