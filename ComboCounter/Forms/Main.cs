@@ -35,7 +35,6 @@ namespace ComboCounter
         public Main()
         {
             InitializeComponent();
-
         }
 
         #region Force Tracker
@@ -227,7 +226,6 @@ namespace ComboCounter
         // With the exception of the history page the old pages are still kept in memory for quicker access
         private void LoadNewPage(BaseFormControl newPage)
         {
-
             this.mainPanel.Hide();
             this.mainPanel.Controls.Clear();
             currentControl.OnPageRemoved();

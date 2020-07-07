@@ -395,6 +395,9 @@ namespace ComboCounter.Classes
                 for (int i = 0; i < sessions.Count; i++)
                 {
                     sessions[i] = AddDataToSession(sessions[i]);
+                    if (sessions[i].Forces.Count == 0 || sessions[i].Times.Count == 0)
+                        sessions.RemoveAt(i);
+                    
                 }
 
                 return sessions;

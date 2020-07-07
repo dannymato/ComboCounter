@@ -542,19 +542,6 @@ namespace ComboCounter.Forms
         {
             Option_Clicked(ClassToCall.PunchChallengeCustom);
         }
-        public override void OnPageAttached()
-        {
-            
-        }
-        public override void OnPageRemoved()
-        {
-            
-        }
-
-        public override void OnExit()
-        {
-        
-        }
 
         private void h32_Click(object sender, EventArgs e)
         {
