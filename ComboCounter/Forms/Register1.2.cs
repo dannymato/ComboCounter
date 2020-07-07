@@ -57,13 +57,21 @@ namespace ComboCounter.Forms
 
         private void Register1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(UserManager.GetAge());
-            
+            FontManager fm = FontManager.getInstance();
+
+            username_tb.Font = fm.getTextBoxFont();
+            passwordBox.Font = fm.getTextBoxFont();
+            fNameBox.Font = fm.getTextBoxFont();
+            lNameBox.Font = fm.getTextBoxFont();
+            sexBox.Font = fm.getTextBoxFont();
+            heightBox.Font = fm.getTextBoxFont();
+            weightBox.Font = fm.getTextBoxFont();
+            yearBox.Font = fm.getTextBoxFont();
         }
 
         private void signupButton_Click(object sender, EventArgs e)
         {
-            Classes.DBConnection db = Classes.DBConnection.getInstance();
+            DBConnection db = DBConnection.getInstance();
 
             Random r = new Random();
 
@@ -72,7 +80,20 @@ namespace ComboCounter.Forms
             Guid guid = Guid.NewGuid();
 
 
-
+#if NEW_DB
+            // Need to change to the year
+            User newUser = db.insertUser(
+                id,
+                username_tb.Text,
+                passwordBox.Text,
+                fNameBox.Text,
+                lNameBox.Text,
+                sexBox.Text,
+                Int32.Parse(heightBox.Text),
+                Int32.Parse(weightBox.Text),
+                Int32.Parse(yearBox.Text)
+                );
+#else
             User newUser = db.insertUser(
                 id,
                 username_tb.Text,
@@ -86,33 +107,22 @@ namespace ComboCounter.Forms
                 GetAgeFromDOB()
                 );
 
+#endif
+
             if (newUser != null)
             {
-                // UserManagement Code
+
+                UserManager.setUser(newUser);
+
+#if NEW_DB
+                UserManager.UserSettings = db.CreateNewUserSettings(newUser.Id);
+#endif
                 Main main = new Main();
                 Hide();
                 main.Show();
                 main.FormClosed += (o, closeEvent) => { Close(); };
             }
 
-        }
-
-        private int GetAgeFromDOB()
-        {
-            int age = 0;
-
-            DateTime today = DateTime.Today;
-
-            if (today.Month > Int32.Parse(monthBox.Text))
-            {
-                age = today.Year - Int32.Parse(yearBox.Text);
-            }
-            else
-            {
-                age = today.Year - Int32.Parse(yearBox.Text) - 1;
-            }
-
-            return age;
         }
 
         private void username_tb_TextChanged(object sender, EventArgs e)
@@ -132,7 +142,7 @@ namespace ComboCounter.Forms
 
         private void submit_b_Click(object sender, EventArgs e)
         {
-            Classes.DBConnection db = Classes.DBConnection.getInstance();
+            DBConnection db = DBConnection.getInstance();
 
             Random r = new Random();
 
@@ -141,7 +151,19 @@ namespace ComboCounter.Forms
             Guid guid = Guid.NewGuid();
 
 
-
+#if NEW_DB
+            // Need to change to the year
+            User newUser = db.insertUser(
+                id,
+                username_tb.Text,
+                passwordBox.Text,
+                fNameBox.Text,
+                lNameBox.Text,
+                sexBox.Text,
+                Int32.Parse(heightBox.Text),
+                Int32.Parse(weightBox.Text),
+                2002);
+#else
             User newUser = db.insertUser(
                 id,
                 username_tb.Text,
@@ -155,13 +177,20 @@ namespace ComboCounter.Forms
                 GetAgeFromDOB()
                 );
 
+#endif
+
             if (newUser != null)
             {
-                // UserManagement Code
+
+                UserManager.setUser(newUser);
+
+#if NEW_DB
+                UserManager.UserSettings = db.CreateNewUserSettings(newUser.Id);
+#endif
                 Main main = new Main();
                 Hide();
                 main.Show();
-                main.FormClosed += (s, args) => { Close(); };
+                main.FormClosed += (o, closeEvent) => { Close(); };
             }
         }
 
@@ -176,5 +205,7 @@ namespace ComboCounter.Forms
         }
 
         public event EventHandler ReturnToLogin;
+
+
     }
 }

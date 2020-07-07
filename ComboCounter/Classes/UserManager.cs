@@ -1,9 +1,9 @@
-﻿namespace ComboCounter.Classes
+﻿using System.Drawing;
+
+namespace ComboCounter.Classes
 {
     class UserManager
     {
-
-
 
         private static int id;
         private static string username;
@@ -11,11 +11,21 @@
         private static string fname;
         private static string lname;
         private static string sex;
+#if !NEW_DB
         private static string c_lass;
         private static string height;
         private static string weight;
         private static int age;
-        //private static string s_lname;
+#else
+        private static int height;
+        private static int weight;
+        private static int year;
+#endif
+
+
+#if NEW_DB
+        public static UserSettings UserSettings { get; set; }
+#endif
 
         public static void setUser(User user)
         {
@@ -25,10 +35,12 @@
             fname = user.fname;
             lname = user.lname;
             sex = user.sex;
+#if !NEW_DB
             c_lass = user.c_lass;
+            age = user.age;
+#endif
             height = user.height;
             weight = user.weight;
-            age = user.age;
         }
 
         // GETTER SETTER ID
@@ -101,7 +113,7 @@
         {
             sex = value;
         }
-
+#if !NEW_DB
         // GETTER SETTER CLASS
         public static string GetClass()
         {
@@ -147,7 +159,51 @@
         {
             age = value;
         }
+#else
+        public static void SetHeight(int value)
+        {
+            height = value;
+        }
 
+        public static int GetHeight() { return height; }
+
+        public static void SetWeight(int value) { weight = value; }
+
+        public static int GetWeight() { return weight; }
+
+        public static int GetYear() { return year; }
+
+        public static void SetYear(int value) { year = value; }
+
+#endif
+
+    }
+
+    struct UserSettings
+    {
+        // If true the clock for the different mode will tick upwards from zero
+        // Otherwise the clock will go down from the target towards zero
+        public bool AscendingClock;
+        public int ColorScheme;
+        // If it is true the timers will stop when the page is no longer displayed
+        public bool TurnOffTimers;
+        // If true the screen will not show visual feedback when there is a punch
+        public bool TurnOffVisualFeedback;
+        // If true the sounds for hitting will be disabled
+        public bool TurnOffHitSounds;
+        // If true the sounds for missing will be disabled
+        public bool TurnOffMissSounds;
+
+        public UserSettings(int colorScheme, bool ascendingClock, bool turnOffTimers,
+            bool turnOffVisualFeedback, bool turnOffHitSounds, bool turnOffMissSounds)
+        {
+            AscendingClock = ascendingClock;
+            ColorScheme = colorScheme;
+            TurnOffTimers = turnOffTimers;
+            TurnOffVisualFeedback = turnOffVisualFeedback;
+            TurnOffHitSounds = turnOffHitSounds;
+            TurnOffMissSounds = turnOffMissSounds;
+        }
     }
 
 }

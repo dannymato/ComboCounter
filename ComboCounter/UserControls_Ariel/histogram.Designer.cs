@@ -28,168 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.hitsTime_tb = new System.Windows.Forms.TextBox();
-            this.time_tb = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.h41 = new ComboCounter.Classes.H4();
+            this.TotForceInfo = new ComboCounter.Classes.SmallInfo();
+            this.HardestHitInfo = new ComboCounter.Classes.SmallInfo();
+            this.h42 = new ComboCounter.Classes.H4();
+            this.AvgForceInfo = new ComboCounter.Classes.SmallInfo();
+            this.h43 = new ComboCounter.Classes.H4();
+            this.h44 = new ComboCounter.Classes.H4();
+            this.h45 = new ComboCounter.Classes.H4();
+            this.shortestTimeLabel = new ComboCounter.Classes.SmallInfo();
+            this.averageTimeLabel = new ComboCounter.Classes.SmallInfo();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.textBox2.Location = new System.Drawing.Point(406, 198);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 49);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.label1.Location = new System.Drawing.Point(406, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 44);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Hardest Hit (lbs)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.label2.Location = new System.Drawing.Point(687, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 44);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Fastest Hit (milli)";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.textBox3.Location = new System.Drawing.Point(687, 198);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 49);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.label3.Location = new System.Drawing.Point(981, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 44);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Average Hit (lbs)";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.textBox4.Location = new System.Drawing.Point(981, 198);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(280, 49);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.label5.Location = new System.Drawing.Point(503, 273);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 42);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Time(milli)";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.label6.Location = new System.Drawing.Point(329, 273);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 42);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Hits(lbs)";
-            // 
-            // hitsTime_tb
-            // 
-            this.hitsTime_tb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.hitsTime_tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hitsTime_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hitsTime_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.hitsTime_tb.Location = new System.Drawing.Point(286, 317);
-            this.hitsTime_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.hitsTime_tb.Multiline = true;
-            this.hitsTime_tb.Name = "hitsTime_tb";
-            this.hitsTime_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.hitsTime_tb.Size = new System.Drawing.Size(207, 472);
-            this.hitsTime_tb.TabIndex = 9;
-            // 
-            // time_tb
-            // 
-            this.time_tb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.time_tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.time_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.time_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(103)))), ((int)(((byte)(122)))));
-            this.time_tb.Location = new System.Drawing.Point(499, 317);
-            this.time_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.time_tb.Multiline = true;
-            this.time_tb.Name = "time_tb";
-            this.time_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.time_tb.Size = new System.Drawing.Size(195, 472);
-            this.time_tb.TabIndex = 13;
             // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(751, 273);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(751, 209);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(821, 516);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(886, 558);
             this.chart1.TabIndex = 14;
             this.chart1.Text = "chart1";
             // 
@@ -205,45 +79,177 @@
             this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.h41, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TotForceInfo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.HardestHitInfo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.h42, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.AvgForceInfo, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.h43, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.h44, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.h45, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.shortestTimeLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.averageTimeLabel, 1, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 165);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(728, 618);
+            this.tableLayoutPanel1.TabIndex = 16;
+            // 
+            // h41
+            // 
+            this.h41.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.h41.AutoSize = true;
+            this.h41.ForeColor = System.Drawing.Color.SteelBlue;
+            this.h41.Location = new System.Drawing.Point(62, 34);
+            this.h41.Name = "h41";
+            this.h41.Size = new System.Drawing.Size(240, 54);
+            this.h41.TabIndex = 0;
+            this.h41.Text = "Hardest Hit";
+            // 
+            // TotForceInfo
+            // 
+            this.TotForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TotForceInfo.AutoSize = true;
+            this.TotForceInfo.ForeColor = System.Drawing.Color.LightBlue;
+            this.TotForceInfo.Location = new System.Drawing.Point(479, 277);
+            this.TotForceInfo.Name = "TotForceInfo";
+            this.TotForceInfo.Size = new System.Drawing.Size(133, 61);
+            this.TotForceInfo.TabIndex = 5;
+            this.TotForceInfo.Text = "0 lbs";
+            // 
+            // HardestHitInfo
+            // 
+            this.HardestHitInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.HardestHitInfo.AutoSize = true;
+            this.HardestHitInfo.ForeColor = System.Drawing.Color.LightBlue;
+            this.HardestHitInfo.Location = new System.Drawing.Point(479, 31);
+            this.HardestHitInfo.Name = "HardestHitInfo";
+            this.HardestHitInfo.Size = new System.Drawing.Size(133, 61);
+            this.HardestHitInfo.TabIndex = 1;
+            this.HardestHitInfo.Text = "0 lbs";
+            // 
+            // h42
+            // 
+            this.h42.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.h42.AutoSize = true;
+            this.h42.ForeColor = System.Drawing.Color.SteelBlue;
+            this.h42.Location = new System.Drawing.Point(36, 157);
+            this.h42.Name = "h42";
+            this.h42.Size = new System.Drawing.Size(292, 54);
+            this.h42.TabIndex = 2;
+            this.h42.Text = "Average Force";
+            // 
+            // AvgForceInfo
+            // 
+            this.AvgForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AvgForceInfo.AutoSize = true;
+            this.AvgForceInfo.ForeColor = System.Drawing.Color.LightBlue;
+            this.AvgForceInfo.Location = new System.Drawing.Point(479, 154);
+            this.AvgForceInfo.Name = "AvgForceInfo";
+            this.AvgForceInfo.Size = new System.Drawing.Size(133, 61);
+            this.AvgForceInfo.TabIndex = 4;
+            this.AvgForceInfo.Text = "0 lbs";
+            // 
+            // h43
+            // 
+            this.h43.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.h43.AutoSize = true;
+            this.h43.ForeColor = System.Drawing.Color.SteelBlue;
+            this.h43.Location = new System.Drawing.Point(65, 280);
+            this.h43.Name = "h43";
+            this.h43.Size = new System.Drawing.Size(233, 54);
+            this.h43.TabIndex = 3;
+            this.h43.Text = "Total Force";
+            // 
+            // h44
+            // 
+            this.h44.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.h44.AutoSize = true;
+            this.h44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
+            this.h44.Location = new System.Drawing.Point(3, 403);
+            this.h44.Name = "h44";
+            this.h44.Size = new System.Drawing.Size(358, 54);
+            this.h44.TabIndex = 6;
+            this.h44.Text = "Shortest Hit Time";
+            // 
+            // h45
+            // 
+            this.h45.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.h45.AutoSize = true;
+            this.h45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
+            this.h45.Location = new System.Drawing.Point(5, 528);
+            this.h45.Name = "h45";
+            this.h45.Size = new System.Drawing.Size(354, 54);
+            this.h45.TabIndex = 7;
+            this.h45.Text = "Average Hit Time";
+            // 
+            // shortestTimeLabel
+            // 
+            this.shortestTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.shortestTimeLabel.AutoSize = true;
+            this.shortestTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.shortestTimeLabel.Location = new System.Drawing.Point(485, 400);
+            this.shortestTimeLabel.Name = "shortestTimeLabel";
+            this.shortestTimeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.shortestTimeLabel.Size = new System.Drawing.Size(122, 61);
+            this.shortestTimeLabel.TabIndex = 8;
+            this.shortestTimeLabel.Text = "0.0s";
+            // 
+            // averageTimeLabel
+            // 
+            this.averageTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.averageTimeLabel.AutoSize = true;
+            this.averageTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.averageTimeLabel.Location = new System.Drawing.Point(485, 524);
+            this.averageTimeLabel.Name = "averageTimeLabel";
+            this.averageTimeLabel.Size = new System.Drawing.Size(122, 61);
+            this.averageTimeLabel.TabIndex = 9;
+            this.averageTimeLabel.Text = "0.0s";
+            // 
             // histogram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.time_tb);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.hitsTime_tb);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "histogram";
-            this.Size = new System.Drawing.Size(1730, 831);
+            this.Size = new System.Drawing.Size(1730, 846);
             this.Load += new System.EventHandler(this.histogram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox hitsTime_tb;
-        private System.Windows.Forms.TextBox time_tb;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Classes.H4 h41;
+        private Classes.SmallInfo HardestHitInfo;
+        private Classes.H4 h42;
+        private Classes.H4 h43;
+        private Classes.SmallInfo AvgForceInfo;
+        private Classes.SmallInfo TotForceInfo;
+        private Classes.H4 h44;
+        private Classes.H4 h45;
+        private Classes.SmallInfo shortestTimeLabel;
+        private Classes.SmallInfo averageTimeLabel;
     }
 }

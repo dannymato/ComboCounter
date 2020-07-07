@@ -17,12 +17,15 @@ namespace ComboCounter.Classes
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override Font Font { get; set; }
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
+
         public MediumInfo() : base()
         {
             FontManager fm = FontManager.getInstance();
             Font = fm.getMediumInfoFont();
 
-            //ForeColor = System.Drawing.Color.FromArgb(255, 0, 255);
+            ForeColor = ThemeManager.initTextColor();
             AutoSize = true;
 
             //TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

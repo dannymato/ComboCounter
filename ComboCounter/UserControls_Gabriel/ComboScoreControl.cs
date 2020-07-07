@@ -7,7 +7,7 @@ using MySqlX.XDevAPI.Relational;
 
 namespace ComboCounter.UserControls_Gabriel
 {
-    public partial class ComboScoreControl : UserControl
+    public partial class ComboScoreControl : BaseFormControl
     {
         System.Timers.Timer t;
         int h, m, s, totalForceBox;
@@ -20,8 +20,8 @@ namespace ComboCounter.UserControls_Gabriel
 
         int timeLabelIndex = 0;
 
-        int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704, 632, 323, 451, 341, 456, 711, 634 };
-        double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 0.300, 0.266, 0.438, .232, .453, .342, .235, .543, .343 };
+        readonly int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704, 632, 323, 451, 341, 456, 711, 634 };
+        readonly double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 0.300, 0.266, 0.438, .232, .453, .342, .235, .543, .343 };
 
         double cumulativeTime = 0.0;
 
@@ -78,6 +78,11 @@ namespace ComboCounter.UserControls_Gabriel
             timeLabelIndex = 0;
         }
 
+        private void PauseTimers()
+        {
+            t.Stop();
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -122,9 +127,8 @@ namespace ComboCounter.UserControls_Gabriel
                 forceLabels[i] = new SmallInfo
                 {
                     Text = "Hit " + (i + 1),
-                    ForeColor = System.Drawing.Color.DimGray,
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
                 tableLayoutPanel1.Controls.Add(forceLabels[i]);
@@ -134,9 +138,8 @@ namespace ComboCounter.UserControls_Gabriel
             {
                 timeLabels[i] = new SmallInfo
                 {
-                    ForeColor = System.Drawing.Color.DimGray,
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+                    Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
                 tableLayoutPanel2.Controls.Add(timeLabels[i]);
@@ -206,16 +209,16 @@ namespace ComboCounter.UserControls_Gabriel
                     forceIndex++;
 
 
-                    totalTime.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+                    totalTime.Text = string.Format("{0:00}:{1:00}:{2:00}", h, m, s);
                     if (forceIndex >= forceArray.Length)
                     {
                         SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
-                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.GetTotalForce());
+                        scoreInfoLabel.Text = string.Format("{0:n0} N", session.TotalForce);
                         totalTimeLabelnfo.Text = string.Format("{0:0.00} s", cumulativeTime);
                         bellRing.Play();
                         t.Stop();
 
-                        History.GetSessions().Add(session);
+                        History.InsertSession(session);
 
                     }
 
@@ -225,5 +228,21 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
+        public override void OnPageAttached()
+        {
+        }
+
+        public override void OnPageRemoved()
+        {
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseTimers();
+            }
+        }
+
+        public override void OnExit()
+        {
+
+        }
     }
 }

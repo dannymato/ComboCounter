@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ComboCounter.Classes;
 using System.Diagnostics;
 
 namespace ComboCounter.UserControls
 {
-    public partial class punch_challenge : UserControl
+    public partial class punch_challenge : BaseFormControl
     {
         int punchLimit = 100;
-        int i,j = 0;
+        int i = 0;
         int currentForceVal, lastHitVal;
         int[] arrayTest = new int[] { 150, 210, 250, 160, 225, 300, 210, 130, 250, 200, 50, 140 };
 
@@ -29,50 +21,20 @@ namespace ComboCounter.UserControls
         {
             stopwatch = new Stopwatch();
             InitializeComponent();
-        }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Interval = 1000;
+            timer1.Tick += new EventHandler(timer1_Tick);
         }
 
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
         {
-            FontManager fm = FontManager.getInstance();
-            header.Font = fm.getHeaderFont();
-
-            totalPunchHeader.Font = fm.getHeader2Font();
-            punchGoalHeader.Font = fm.getHeader2Font();
-            totalForceHeader.Font = fm.getHeader2Font();
-
-            startButton.Font = fm.getButtonFont();
-            stopButton.Font = fm.getButtonFont();
-            resetButton.Font = fm.getButtonFont();
-
-            limit.Font = fm.getBigInfoFont();
-            punchNum.Font = fm.getBigInfoFont();
-            totalForce.Font = fm.getBigInfoFont();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // Occurs on every tick of the clock
         private void propagate()
         {
-
-            
+  
             currentForceVal = arrayTest[i];
             currentForceVal += lastHitVal;
             totalForce.Text = currentForceVal.ToString();
@@ -86,7 +48,7 @@ namespace ComboCounter.UserControls
             {
                 punchNum.ForeColor = System.Drawing.Color.Green;
                 
-                History.GetSessions().Add(session);
+                History.InsertSession(session);
                 ResetClocks();
             }
             
@@ -124,7 +86,6 @@ namespace ComboCounter.UserControls
             punchNum.Text = "0";
             totalForce.Text = "0";
             i = 0;
-            j = 0;
             currentForceVal = 0;
             lastHitVal = 0;
             numPunches = 0;
@@ -140,34 +101,40 @@ namespace ComboCounter.UserControls
             stopwatch.Reset();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void totalForce_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         // Start Button
         private void button2_Click(object sender, EventArgs e)
         {
             if (!timer1.Enabled)
             {
-                timer1 = new System.Windows.Forms.Timer();
-                timer1.Interval = 1000;
-                timer1.Tick += new EventHandler(timer1_Tick);
                 timer1.Enabled = true;
                 session = new Session(DateTime.Now);
                 stopwatch.Start();
             }
+        }
+
+        private void PauseClocks()
+        {
+            timer1.Stop();
+            stopwatch.Stop();
+        }
+
+        public override void OnPageAttached()
+        {
+            
+        }
+
+        public override void OnPageRemoved()
+        {
+            if (UserManager.UserSettings.TurnOffTimers)
+            {
+                PauseClocks();
+            }
+        }
+
+        public override void OnExit()
+        {
+
         }
     }
 }

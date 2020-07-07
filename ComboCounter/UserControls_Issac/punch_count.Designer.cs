@@ -106,8 +106,6 @@ namespace ComboCounter.UserControls
             this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.minusIcon.ForeColor = System.Drawing.Color.SteelBlue;
             this.minusIcon.Location = new System.Drawing.Point(4, 82);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
@@ -125,8 +123,6 @@ namespace ComboCounter.UserControls
             this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.plusIcon.ForeColor = System.Drawing.Color.SteelBlue;
             this.plusIcon.Location = new System.Drawing.Point(689, 82);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
@@ -158,7 +154,6 @@ namespace ComboCounter.UserControls
             // 
             this.timeSetHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeSetHeader.AutoSize = true;
-            this.timeSetHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.timeSetHeader.Location = new System.Drawing.Point(334, 321);
             this.timeSetHeader.Name = "timeSetHeader";
             this.timeSetHeader.Size = new System.Drawing.Size(397, 81);
@@ -169,7 +164,6 @@ namespace ComboCounter.UserControls
             // 
             this.thresholdHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.thresholdHeader.AutoSize = true;
-            this.thresholdHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.thresholdHeader.Location = new System.Drawing.Point(285, 648);
             this.thresholdHeader.Name = "thresholdHeader";
             this.thresholdHeader.Size = new System.Drawing.Size(495, 81);
@@ -180,7 +174,6 @@ namespace ComboCounter.UserControls
             // 
             this.invalidPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invalidPunchHeader.AutoSize = true;
-            this.invalidPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.invalidPunchHeader.Location = new System.Drawing.Point(286, 0);
             this.invalidPunchHeader.Name = "invalidPunchHeader";
             this.invalidPunchHeader.Size = new System.Drawing.Size(492, 81);
@@ -193,7 +186,6 @@ namespace ComboCounter.UserControls
             // 
             this.validPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.validPunchHeader.AutoSize = true;
-            this.validPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.validPunchHeader.Location = new System.Drawing.Point(1375, 0);
             this.validPunchHeader.Name = "validPunchHeader";
             this.validPunchHeader.Size = new System.Drawing.Size(444, 81);
@@ -205,7 +197,6 @@ namespace ComboCounter.UserControls
             // 
             this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimeHeader.AutoSize = true;
-            this.currTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.currTimeHeader.Location = new System.Drawing.Point(1392, 321);
             this.currTimeHeader.Name = "currTimeHeader";
             this.currTimeHeader.Size = new System.Drawing.Size(410, 81);
@@ -216,7 +207,6 @@ namespace ComboCounter.UserControls
             // 
             this.lastHitHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastHitHeader.AutoSize = true;
-            this.lastHitHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.lastHitHeader.Location = new System.Drawing.Point(1469, 648);
             this.lastHitHeader.Name = "lastHitHeader";
             this.lastHitHeader.Size = new System.Drawing.Size(256, 81);
@@ -228,7 +218,6 @@ namespace ComboCounter.UserControls
             this.Header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Header.AutoSize = true;
-            this.Header.ForeColor = System.Drawing.Color.SteelBlue;
             this.Header.Location = new System.Drawing.Point(1024, 12);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(779, 158);
@@ -240,7 +229,6 @@ namespace ComboCounter.UserControls
             this.setTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.setTime.AutoSize = true;
-            this.setTime.ForeColor = System.Drawing.Color.DimGray;
             this.setTime.Location = new System.Drawing.Point(86, 0);
             this.setTime.Name = "setTime";
             this.setTime.Size = new System.Drawing.Size(596, 240);
@@ -253,7 +241,6 @@ namespace ComboCounter.UserControls
             // 
             this.threshold.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.threshold.AutoSize = true;
-            this.threshold.ForeColor = System.Drawing.Color.DimGray;
             this.threshold.Location = new System.Drawing.Point(314, 731);
             this.threshold.Name = "threshold";
             this.threshold.Size = new System.Drawing.Size(436, 240);
@@ -277,7 +264,6 @@ namespace ComboCounter.UserControls
             // 
             this.punchCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.punchCounter.AutoSize = true;
-            this.punchCounter.ForeColor = System.Drawing.Color.Green;
             this.punchCounter.Location = new System.Drawing.Point(1491, 81);
             this.punchCounter.Name = "punchCounter";
             this.punchCounter.Size = new System.Drawing.Size(212, 240);
@@ -289,7 +275,6 @@ namespace ComboCounter.UserControls
             // 
             this.lastHit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastHit.AutoSize = true;
-            this.lastHit.ForeColor = System.Drawing.Color.DimGray;
             this.lastHit.Location = new System.Drawing.Point(1370, 731);
             this.lastHit.Name = "lastHit";
             this.lastHit.Size = new System.Drawing.Size(455, 240);
@@ -302,7 +287,6 @@ namespace ComboCounter.UserControls
             // 
             this.currentTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currentTime.AutoSize = true;
-            this.currentTime.ForeColor = System.Drawing.Color.DimGray;
             this.currentTime.Location = new System.Drawing.Point(1161, 405);
             this.currentTime.Name = "currentTime";
             this.currentTime.Size = new System.Drawing.Size(873, 240);
@@ -355,7 +339,7 @@ namespace ComboCounter.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.Header);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.stopButton);

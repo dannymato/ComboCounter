@@ -103,7 +103,7 @@ namespace ComboCounter.UserControls
             // 
             this.p1ValidPunch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1ValidPunch.AutoSize = true;
-            this.p1ValidPunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.p1ValidPunch.BackColor = System.Drawing.Color.Transparent;
             this.p1ValidPunch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.p1ValidPunch.Location = new System.Drawing.Point(520, 56);
             this.p1ValidPunch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -117,8 +117,7 @@ namespace ComboCounter.UserControls
             // 
             this.p1CurrTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1CurrTime.AutoSize = true;
-            this.p1CurrTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p1CurrTime.ForeColor = System.Drawing.Color.DimGray;
+            this.p1CurrTime.BackColor = System.Drawing.Color.Transparent;
             this.p1CurrTime.Location = new System.Drawing.Point(113, 270);
             this.p1CurrTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p1CurrTime.Name = "p1CurrTime";
@@ -132,8 +131,7 @@ namespace ComboCounter.UserControls
             // 
             this.p1LastHit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1LastHit.AutoSize = true;
-            this.p1LastHit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p1LastHit.ForeColor = System.Drawing.Color.DimGray;
+            this.p1LastHit.BackColor = System.Drawing.Color.Transparent;
             this.p1LastHit.Location = new System.Drawing.Point(332, 789);
             this.p1LastHit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p1LastHit.Name = "p1LastHit";
@@ -147,8 +145,7 @@ namespace ComboCounter.UserControls
             // 
             this.p1Threshold.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1Threshold.AutoSize = true;
-            this.p1Threshold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p1Threshold.ForeColor = System.Drawing.Color.DimGray;
+            this.p1Threshold.BackColor = System.Drawing.Color.Transparent;
             this.p1Threshold.Location = new System.Drawing.Point(276, 559);
             this.p1Threshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p1Threshold.Name = "p1Threshold";
@@ -160,8 +157,7 @@ namespace ComboCounter.UserControls
             // setTimeP1
             // 
             this.setTimeP1.AutoSize = true;
-            this.setTimeP1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.setTimeP1.ForeColor = System.Drawing.Color.DimGray;
+            this.setTimeP1.BackColor = System.Drawing.Color.Transparent;
             this.setTimeP1.Location = new System.Drawing.Point(88, 2);
             this.setTimeP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.setTimeP1.Name = "setTimeP1";
@@ -174,7 +170,7 @@ namespace ComboCounter.UserControls
             // 
             this.p2ValidPunch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2ValidPunch.AutoSize = true;
-            this.p2ValidPunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.p2ValidPunch.BackColor = System.Drawing.Color.Transparent;
             this.p2ValidPunch.ForeColor = System.Drawing.Color.Green;
             this.p2ValidPunch.Location = new System.Drawing.Point(517, 56);
             this.p2ValidPunch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -189,8 +185,7 @@ namespace ComboCounter.UserControls
             // 
             this.p2LastHit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2LastHit.AutoSize = true;
-            this.p2LastHit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p2LastHit.ForeColor = System.Drawing.Color.DimGray;
+            this.p2LastHit.BackColor = System.Drawing.Color.Transparent;
             this.p2LastHit.Location = new System.Drawing.Point(330, 795);
             this.p2LastHit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p2LastHit.Name = "p2LastHit";
@@ -204,8 +199,7 @@ namespace ComboCounter.UserControls
             // 
             this.p2Threshold.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2Threshold.AutoSize = true;
-            this.p2Threshold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p2Threshold.ForeColor = System.Drawing.Color.DimGray;
+            this.p2Threshold.BackColor = System.Drawing.Color.Transparent;
             this.p2Threshold.Location = new System.Drawing.Point(274, 559);
             this.p2Threshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p2Threshold.Name = "p2Threshold";
@@ -219,8 +213,7 @@ namespace ComboCounter.UserControls
             // 
             this.p2CurrTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2CurrTime.AutoSize = true;
-            this.p2CurrTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p2CurrTime.ForeColor = System.Drawing.Color.DimGray;
+            this.p2CurrTime.BackColor = System.Drawing.Color.Transparent;
             this.p2CurrTime.Location = new System.Drawing.Point(113, 703);
             this.p2CurrTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p2CurrTime.Name = "p2CurrTime";
@@ -276,7 +269,7 @@ namespace ComboCounter.UserControls
             this.p1StartButton.BackColor = System.Drawing.Color.Transparent;
             this.p1StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p1StartButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.p1StartButton.Location = new System.Drawing.Point(28, 17);
+            this.p1StartButton.Location = new System.Drawing.Point(29, 17);
             this.p1StartButton.Margin = new System.Windows.Forms.Padding(4);
             this.p1StartButton.Name = "p1StartButton";
             this.p1StartButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -293,7 +286,7 @@ namespace ComboCounter.UserControls
             this.p1StopButton.BackColor = System.Drawing.Color.Transparent;
             this.p1StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p1StopButton.ForeColor = System.Drawing.Color.Red;
-            this.p1StopButton.Location = new System.Drawing.Point(246, 17);
+            this.p1StopButton.Location = new System.Drawing.Point(248, 17);
             this.p1StopButton.Margin = new System.Windows.Forms.Padding(4);
             this.p1StopButton.Name = "p1StopButton";
             this.p1StopButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -310,7 +303,7 @@ namespace ComboCounter.UserControls
             this.p1ResetButton.BackColor = System.Drawing.Color.Transparent;
             this.p1ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p1ResetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.p1ResetButton.Location = new System.Drawing.Point(466, 17);
+            this.p1ResetButton.Location = new System.Drawing.Point(467, 17);
             this.p1ResetButton.Margin = new System.Windows.Forms.Padding(4);
             this.p1ResetButton.Name = "p1ResetButton";
             this.p1ResetButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -327,7 +320,7 @@ namespace ComboCounter.UserControls
             this.p2StartButton.BackColor = System.Drawing.Color.Transparent;
             this.p2StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p2StartButton.ForeColor = System.Drawing.Color.ForestGreen;
-            this.p2StartButton.Location = new System.Drawing.Point(28, 17);
+            this.p2StartButton.Location = new System.Drawing.Point(29, 17);
             this.p2StartButton.Margin = new System.Windows.Forms.Padding(4);
             this.p2StartButton.Name = "p2StartButton";
             this.p2StartButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -344,7 +337,7 @@ namespace ComboCounter.UserControls
             this.p2StopButton.BackColor = System.Drawing.Color.Transparent;
             this.p2StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p2StopButton.ForeColor = System.Drawing.Color.Red;
-            this.p2StopButton.Location = new System.Drawing.Point(246, 17);
+            this.p2StopButton.Location = new System.Drawing.Point(248, 17);
             this.p2StopButton.Margin = new System.Windows.Forms.Padding(4);
             this.p2StopButton.Name = "p2StopButton";
             this.p2StopButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -361,7 +354,7 @@ namespace ComboCounter.UserControls
             this.p2ResetButton.BackColor = System.Drawing.Color.Transparent;
             this.p2ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p2ResetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.p2ResetButton.Location = new System.Drawing.Point(466, 17);
+            this.p2ResetButton.Location = new System.Drawing.Point(467, 17);
             this.p2ResetButton.Margin = new System.Windows.Forms.Padding(4);
             this.p2ResetButton.Name = "p2ResetButton";
             this.p2ResetButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -386,8 +379,6 @@ namespace ComboCounter.UserControls
             this.p1PlusIcon.BackColor = System.Drawing.Color.Transparent;
             this.p1PlusIcon.FlatAppearance.BorderSize = 0;
             this.p1PlusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.p1PlusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.p1PlusIcon.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1PlusIcon.Location = new System.Drawing.Point(393, 24);
             this.p1PlusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.p1PlusIcon.Name = "p1PlusIcon";
@@ -405,8 +396,6 @@ namespace ComboCounter.UserControls
             this.p1MinusIcon.BackColor = System.Drawing.Color.Transparent;
             this.p1MinusIcon.FlatAppearance.BorderSize = 0;
             this.p1MinusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.p1MinusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.p1MinusIcon.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1MinusIcon.Location = new System.Drawing.Point(4, 28);
             this.p1MinusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.p1MinusIcon.Name = "p1MinusIcon";
@@ -424,8 +413,6 @@ namespace ComboCounter.UserControls
             this.p2MinusIcon.BackColor = System.Drawing.Color.Transparent;
             this.p2MinusIcon.FlatAppearance.BorderSize = 0;
             this.p2MinusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.p2MinusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.p2MinusIcon.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2MinusIcon.Location = new System.Drawing.Point(4, 24);
             this.p2MinusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.p2MinusIcon.Name = "p2MinusIcon";
@@ -443,8 +430,6 @@ namespace ComboCounter.UserControls
             this.p2PlusIcon.BackColor = System.Drawing.Color.Transparent;
             this.p2PlusIcon.FlatAppearance.BorderSize = 0;
             this.p2PlusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.p2PlusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
-            this.p2PlusIcon.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2PlusIcon.Location = new System.Drawing.Point(391, 24);
             this.p2PlusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.p2PlusIcon.Name = "p2PlusIcon";
@@ -458,8 +443,7 @@ namespace ComboCounter.UserControls
             // p2SetTime
             // 
             this.p2SetTime.AutoSize = true;
-            this.p2SetTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p2SetTime.ForeColor = System.Drawing.Color.DimGray;
+            this.p2SetTime.BackColor = System.Drawing.Color.Transparent;
             this.p2SetTime.Location = new System.Drawing.Point(86, 2);
             this.p2SetTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p2SetTime.Name = "p2SetTime";
@@ -473,7 +457,6 @@ namespace ComboCounter.UserControls
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header.AutoSize = true;
-            this.header.ForeColor = System.Drawing.Color.SteelBlue;
             this.header.Location = new System.Drawing.Point(384, 5);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1489, 158);
@@ -484,7 +467,6 @@ namespace ComboCounter.UserControls
             // 
             this.player1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player1Header.AutoSize = true;
-            this.player1Header.ForeColor = System.Drawing.Color.Gray;
             this.player1Header.Location = new System.Drawing.Point(269, 0);
             this.player1Header.Name = "player1Header";
             this.player1Header.Size = new System.Drawing.Size(232, 81);
@@ -495,7 +477,6 @@ namespace ComboCounter.UserControls
             // 
             this.p1ValidPunchesHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1ValidPunchesHeader.AutoSize = true;
-            this.p1ValidPunchesHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1ValidPunchesHeader.Location = new System.Drawing.Point(425, 0);
             this.p1ValidPunchesHeader.Name = "p1ValidPunchesHeader";
             this.p1ValidPunchesHeader.Size = new System.Drawing.Size(296, 54);
@@ -507,7 +488,6 @@ namespace ComboCounter.UserControls
             // 
             this.p1InvalidPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1InvalidPunchHeader.AutoSize = true;
-            this.p1InvalidPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1InvalidPunchHeader.Location = new System.Drawing.Point(26, 0);
             this.p1InvalidPunchHeader.Name = "p1InvalidPunchHeader";
             this.p1InvalidPunchHeader.Size = new System.Drawing.Size(329, 54);
@@ -518,7 +498,6 @@ namespace ComboCounter.UserControls
             // 
             this.p1TimeSetHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1TimeSetHeader.AutoSize = true;
-            this.p1TimeSetHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1TimeSetHeader.Location = new System.Drawing.Point(186, 265);
             this.p1TimeSetHeader.Name = "p1TimeSetHeader";
             this.p1TimeSetHeader.Size = new System.Drawing.Size(397, 81);
@@ -529,8 +508,7 @@ namespace ComboCounter.UserControls
             // 
             this.p1InvalidPunch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1InvalidPunch.AutoSize = true;
-            this.p1InvalidPunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
-            this.p1InvalidPunch.ForeColor = System.Drawing.Color.Green;
+            this.p1InvalidPunch.BackColor = System.Drawing.Color.Transparent;
             this.p1InvalidPunch.Location = new System.Drawing.Point(138, 56);
             this.p1InvalidPunch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p1InvalidPunch.Name = "p1InvalidPunch";
@@ -543,7 +521,6 @@ namespace ComboCounter.UserControls
             // 
             this.p1ThresholdHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1ThresholdHeader.AutoSize = true;
-            this.p1ThresholdHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1ThresholdHeader.Location = new System.Drawing.Point(137, 476);
             this.p1ThresholdHeader.Name = "p1ThresholdHeader";
             this.p1ThresholdHeader.Size = new System.Drawing.Size(495, 81);
@@ -554,7 +531,6 @@ namespace ComboCounter.UserControls
             // 
             this.p1LastHitHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1LastHitHeader.AutoSize = true;
-            this.p1LastHitHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1LastHitHeader.Location = new System.Drawing.Point(257, 681);
             this.p1LastHitHeader.Name = "p1LastHitHeader";
             this.p1LastHitHeader.Size = new System.Drawing.Size(256, 81);
@@ -565,7 +541,6 @@ namespace ComboCounter.UserControls
             // 
             this.p1CurrTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p1CurrTimeHeader.AutoSize = true;
-            this.p1CurrTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p1CurrTimeHeader.Location = new System.Drawing.Point(126, 187);
             this.p1CurrTimeHeader.Name = "p1CurrTimeHeader";
             this.p1CurrTimeHeader.Size = new System.Drawing.Size(410, 81);
@@ -576,7 +551,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2CurrTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2CurrTimeHeader.AutoSize = true;
-            this.p2CurrTimeHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2CurrTimeHeader.Location = new System.Drawing.Point(126, 618);
             this.p2CurrTimeHeader.Name = "p2CurrTimeHeader";
             this.p2CurrTimeHeader.Size = new System.Drawing.Size(410, 81);
@@ -587,7 +561,7 @@ namespace ComboCounter.UserControls
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
             this.label9.Location = new System.Drawing.Point(196, 392);
             this.label9.Name = "label9";
@@ -600,7 +574,6 @@ namespace ComboCounter.UserControls
             this.p1CenterHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.p1CenterHeader.AutoSize = true;
-            this.p1CenterHeader.ForeColor = System.Drawing.Color.Gray;
             this.p1CenterHeader.Location = new System.Drawing.Point(3, 0);
             this.p1CenterHeader.Name = "p1CenterHeader";
             this.p1CenterHeader.Size = new System.Drawing.Size(657, 81);
@@ -611,7 +584,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2CenterHeader.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.p2CenterHeader.AutoSize = true;
-            this.p2CenterHeader.ForeColor = System.Drawing.Color.Silver;
             this.p2CenterHeader.Location = new System.Drawing.Point(420, 431);
             this.p2CenterHeader.Name = "p2CenterHeader";
             this.p2CenterHeader.Size = new System.Drawing.Size(240, 81);
@@ -622,7 +594,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2Header.AutoSize = true;
-            this.p2Header.ForeColor = System.Drawing.Color.Silver;
             this.p2Header.Location = new System.Drawing.Point(263, 0);
             this.p2Header.Name = "p2Header";
             this.p2Header.Size = new System.Drawing.Size(240, 81);
@@ -633,7 +604,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2ValidPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2ValidPunchHeader.AutoSize = true;
-            this.p2ValidPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2ValidPunchHeader.Location = new System.Drawing.Point(422, 0);
             this.p2ValidPunchHeader.Name = "p2ValidPunchHeader";
             this.p2ValidPunchHeader.Size = new System.Drawing.Size(296, 54);
@@ -645,7 +615,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2InvalidPunchHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2InvalidPunchHeader.AutoSize = true;
-            this.p2InvalidPunchHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2InvalidPunchHeader.Location = new System.Drawing.Point(25, 0);
             this.p2InvalidPunchHeader.Name = "p2InvalidPunchHeader";
             this.p2InvalidPunchHeader.Size = new System.Drawing.Size(329, 54);
@@ -656,7 +625,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2TimeSetHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2TimeSetHeader.AutoSize = true;
-            this.p2TimeSetHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2TimeSetHeader.Location = new System.Drawing.Point(185, 265);
             this.p2TimeSetHeader.Name = "p2TimeSetHeader";
             this.p2TimeSetHeader.Size = new System.Drawing.Size(397, 81);
@@ -667,7 +635,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2ThresholdHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2ThresholdHeader.AutoSize = true;
-            this.p2ThresholdHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2ThresholdHeader.Location = new System.Drawing.Point(136, 476);
             this.p2ThresholdHeader.Name = "p2ThresholdHeader";
             this.p2ThresholdHeader.Size = new System.Drawing.Size(495, 81);
@@ -678,7 +645,6 @@ namespace ComboCounter.UserControls
             // 
             this.p2LastHitHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2LastHitHeader.AutoSize = true;
-            this.p2LastHitHeader.ForeColor = System.Drawing.Color.SteelBlue;
             this.p2LastHitHeader.Location = new System.Drawing.Point(255, 681);
             this.p2LastHitHeader.Name = "p2LastHitHeader";
             this.p2LastHitHeader.Size = new System.Drawing.Size(256, 81);
@@ -689,7 +655,7 @@ namespace ComboCounter.UserControls
             // 
             this.p2InvalidPunch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2InvalidPunch.AutoSize = true;
-            this.p2InvalidPunch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.p2InvalidPunch.BackColor = System.Drawing.Color.Transparent;
             this.p2InvalidPunch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.p2InvalidPunch.Location = new System.Drawing.Point(137, 56);
             this.p2InvalidPunch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -882,7 +848,7 @@ namespace ComboCounter.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);

@@ -16,12 +16,15 @@ namespace ComboCounter.Classes
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override Font Font { get; set; }
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
+
         public H4() : base()
         {
             FontManager fm = FontManager.getInstance();
             Font = fm.getHeader4Font();
 
-
+            ForeColor = ThemeManager.initHeaderColor();
 
             AutoSize = true;
 

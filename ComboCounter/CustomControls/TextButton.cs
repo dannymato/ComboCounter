@@ -1,4 +1,5 @@
 ﻿using ComboCounter.Classes;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,6 +7,12 @@ namespace ComboCounter.CustomControls
 {
     class TextButton : Button
     {
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Font Font { get; set; }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
 
         public TextButton() : base()
         {
