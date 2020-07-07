@@ -27,6 +27,7 @@ namespace ComboCounter
         punch_challenge_comp punchChallengeComp;
 
         UserAccount userAccount;
+        Forms.UserSettings userSettingsForm;
 
         BaseFormControl currentControl;
         histogram histogramForm;
@@ -88,9 +89,11 @@ namespace ComboCounter
         
         private void time_button_Click(object sender, EventArgs e)
         {
-            // Currently shows exit but is now disabled
-            /* Forms.Exit QuickStartForm = new Forms.Exit();
-             QuickStartForm.Show();*/
+            if (this.userSettingsForm == null)
+            {
+                userSettingsForm = new Forms.UserSettings();
+            }
+            LoadNewPage(userSettingsForm);
         }
 
         private void histogram_Click(object sender, EventArgs e)
