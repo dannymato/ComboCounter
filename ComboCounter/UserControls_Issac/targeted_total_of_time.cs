@@ -20,18 +20,20 @@ namespace ComboCounter.UserControls
         {
             InitializeComponent();
             timeKeeper = new Stopwatch();
+            timer1 = new Timer();
+            timer1.Interval = 100;
+            timer1.Tick += new EventHandler(timer1_Tick);
         }
 
         // Start Button
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1 = new System.Windows.Forms.Timer();
-            timer1.Interval = 100;
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Enabled = true;
-            totalForceBox = 0;
-            session = new Session(DateTime.Now);
-            timeKeeper.Start();
+            if (!timer1.Enabled)
+            {
+                timer1.Start();
+                session = new Session(DateTime.Now);
+                timeKeeper.Start();
+            }
         }
 
         // Reset Button
@@ -39,16 +41,11 @@ namespace ComboCounter.UserControls
         {
             timer1.Stop();
             timeIntervalSecs = timeIntervalDefault;
-            updateTimeSetter();
-            currentTime.Text = "00:00.0";
+            setTime.Text = Tools.FormatTimeSetter(timeIntervalSecs);
+            currentTime.Text = Tools.FormatCurrentTime(0);
             totalForceBox = 0;
             totalForce.Text = "0";
             timeKeeper.Reset();
-        }
-
-        private void updateTimeSetter()
-        {
-            setTime.Text = String.Format("{0:00}:{1:00}", timeIntervalSecs / 60, (timeIntervalSecs % 60));
         }
 
         private void setTimeSec_Click(object sender, EventArgs e)
@@ -73,7 +70,7 @@ namespace ComboCounter.UserControls
 
             currentTime.Text = Tools.FormatCurrentTime(remainingMsecs);
             
-            totalForceBox = totalForceBox + 50;
+            totalForceBox += 50;
             totalForce.Text = totalForceBox.ToString();
             session.insertHit(50, timeKeeper.Elapsed.TotalSeconds);
 
@@ -92,13 +89,13 @@ namespace ComboCounter.UserControls
             {
                 timeIntervalSecs = 15;
             }
-            updateTimeSetter();
+            setTime.Text = Tools.FormatTimeSetter(timeIntervalSecs);
         }
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
             timeIntervalSecs += 15;
-            updateTimeSetter();
+            setTime.Text = Tools.FormatTimeSetter(timeIntervalSecs);
         }
 
         private void PauseTimers()
@@ -107,22 +104,14 @@ namespace ComboCounter.UserControls
             timeKeeper.Stop();
         }
 
-        public override void OnPageAttached()
-        {
-            
-        }
 
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseTimers();
             }
         }
 
-        public override void OnExit()
-        {
-
-        }
     }
 }

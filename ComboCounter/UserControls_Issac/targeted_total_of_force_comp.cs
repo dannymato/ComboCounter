@@ -124,6 +124,7 @@ namespace ComboCounter.UserControls
 
         }
 
+        // Player 1 On Tick
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
 
@@ -146,6 +147,7 @@ namespace ComboCounter.UserControls
             }));
         }
 
+        // Player 2 On Tick
         private void OnTimeEvent1(object sender, ElapsedEventArgs e)
         {
             SoundPlayer bellRing = new SoundPlayer(@"soundEffect\old-fashioned-bell.wav");
@@ -172,25 +174,15 @@ namespace ComboCounter.UserControls
         {
             t.Stop();
             t1.Stop();
-
-        }
-
-        public override void OnPageAttached()
-        {
-            
         }
 
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseTimers();
             }
         }
 
-        public override void OnExit()
-        {
-
-        }
     }
 }
