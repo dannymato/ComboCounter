@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Timers;
 using System.Media;
 using System.Diagnostics;
@@ -9,7 +8,7 @@ namespace ComboCounter.UserControls
 {
     public partial class targeted_total_of_force : BaseFormControl
     {
-        System.Timers.Timer t;
+        Timer t;
         int totalForceBox;
         int forceGoalNum = 15000;
 
@@ -26,17 +25,19 @@ namespace ComboCounter.UserControls
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            t.Start();
-            session = new Session(DateTime.Now);
-            stopwatch.Start();
+            if (!t.Enabled)
+            {
+                t.Start();
+                session = new Session(DateTime.Now);
+                stopwatch.Start();
+            }
         }
 
         private void targeted_total_of_force_Load(object sender, EventArgs e)
         {
-
             this.splitContainer1.SplitterDistance = Width / 2;
 
-            t = new System.Timers.Timer();
+            t = new Timer();
             t.Interval = 100;
             t.Elapsed += OnTimeEvent;
             
@@ -114,22 +115,13 @@ namespace ComboCounter.UserControls
             stopwatch.Stop();
         }
 
-        public override void OnPageAttached()
-        {
-            
-        }
-
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseTimers();
             }
         }
 
-        public override void OnExit()
-        {
-
-        }
     }
 }

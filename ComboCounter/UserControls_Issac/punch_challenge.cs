@@ -34,7 +34,6 @@ namespace ComboCounter.UserControls
         // Occurs on every tick of the clock
         private void propagate()
         {
-  
             currentForceVal = arrayTest[i];
             currentForceVal += lastHitVal;
             totalForce.Text = currentForceVal.ToString();
@@ -51,7 +50,6 @@ namespace ComboCounter.UserControls
                 History.InsertSession(session);
                 ResetClocks();
             }
-            
             
             lastHitVal = currentForceVal;
         }
@@ -76,9 +74,7 @@ namespace ComboCounter.UserControls
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-
             ResetClocks();
-            
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -119,22 +115,12 @@ namespace ComboCounter.UserControls
             stopwatch.Stop();
         }
 
-        public override void OnPageAttached()
-        {
-            
-        }
-
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseClocks();
             }
-        }
-
-        public override void OnExit()
-        {
-
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.CompilerServices;
 
 namespace ComboCounter.Classes
 {
@@ -24,7 +25,7 @@ namespace ComboCounter.Classes
 
 
 #if NEW_DB
-        public static UserSettings UserSettings { get; set; }
+        private static UserSettings _UserSettings;
 #endif
 
         public static void setUser(User user)
@@ -174,6 +175,46 @@ namespace ComboCounter.Classes
         public static int GetYear() { return year; }
 
         public static void SetYear(int value) { year = value; }
+
+        public static void ChangeAscendingClock(bool ascendingClock)
+        {
+            _UserSettings.AscendingClock = ascendingClock;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+        public static void ChangeTurnOffTimer(bool turnOffTimer)
+        {
+            _UserSettings.TurnOffTimers = turnOffTimer;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+        public static void ChangeTurnOffVisualFeedback(bool visualFeedback)
+        {
+            _UserSettings.TurnOffVisualFeedback = visualFeedback;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+        public static void ChangeHitSounds(bool hitSounds)
+        {
+            _UserSettings.TurnOffHitSounds = hitSounds;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+        public static void ChangeMissSounds(bool missSounds)
+        {
+            _UserSettings.TurnOffMissSounds = missSounds;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+        public static void ChangeColorScheme(int colorScheme)
+        {
+            _UserSettings.ColorScheme = colorScheme;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+
+        public static bool AscendingClockSetting() { return _UserSettings.AscendingClock; }
+        public static bool TimerSetting() { return _UserSettings.TurnOffTimers; }
+        public static bool HitSoundSetting() { return _UserSettings.TurnOffHitSounds; }
+        public static bool MissSoundSetting() { return _UserSettings.TurnOffMissSounds; }
+        public static bool VisualFeedbackSetting() { return _UserSettings.TurnOffVisualFeedback; }
+
+        public static void SetUserSettings(UserSettings userSettings) { _UserSettings = userSettings; }
+        
 
 #endif
 

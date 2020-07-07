@@ -33,11 +33,6 @@ namespace ComboCounter.UserControls_Gabriel
             InitializeComponent();
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         // Start Button
         private void button1_Click(object sender, System.EventArgs e)
         {
@@ -228,21 +223,13 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
-        public override void OnPageAttached()
-        {
-        }
-
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseTimers();
             }
         }
 
-        public override void OnExit()
-        {
-
-        }
     }
 }

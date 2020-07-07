@@ -7,10 +7,11 @@ namespace ComboCounter.UserControls
 {
     public partial class punch_count : BaseFormControl
     {
-        
+        const int DEFAULT_INTERVAL = 30;
+
         Int32 quickTotal;
         int setThreshold = 200;
-        int timeIntervalSec = 30;
+        int timeIntervalSec = DEFAULT_INTERVAL;
 
         // The amount of seconds each press of either the plus or minus button changes the time
         const int TIME_UNIT = 15;
@@ -37,12 +38,7 @@ namespace ComboCounter.UserControls
         // Start Button
         private void button2_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled == true)
-            {
-                timer1.Start();
-                timer2.Start();
-            }
-            else
+            if (!timer1.Enabled || !timer2.Enabled)
             {
                 lastHit.Text = arrayTest[0].ToString();
 
@@ -53,18 +49,15 @@ namespace ComboCounter.UserControls
 
                 timer2 = new Timer();
                 timer2.Interval = 100;
+                timer2.Tick += new EventHandler(timer2_Tick);
 
                 quickTotal = timeIntervalSec * 1000;
+                timer2.Enabled = true;
 
-                timer2.Tick += new EventHandler(timer2_Tick);
-                timer2.Enabled = true; 
+                session = new Session(DateTime.Now);
+
             }
-            session = new Session(DateTime.Now);
-        }
-
-        private void updateTimeSetter()
-        {
-            setTime.Text = String.Format("{0:00}:{1:00}", (timeIntervalSec / 60), timeIntervalSec % 60);
+            
         }
 
         private void propagate()
@@ -73,13 +66,7 @@ namespace ComboCounter.UserControls
             lastHit.Text = arrayTest[i].ToString();
             session.insertHit(arrayTest[i], timeIntervalSec - (quickTotal / 1000.0));
             
-
             i = (i + 1) % arrayTest.Length;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -89,11 +76,6 @@ namespace ComboCounter.UserControls
                 timer1.Interval = timer1.Interval * 2;
             }
             propagate();
-
-        }
-
-        private void punchCounter_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -139,8 +121,8 @@ namespace ComboCounter.UserControls
         {
             timer1.Stop();
             timer2.Stop();
-            timeIntervalSec = 30;
-            updateTimeSetter();
+            timeIntervalSec = DEFAULT_INTERVAL;
+            setTime.Text = Tools.FormatTimeSetter(timeIntervalSec);
             currentTime.Text = "00:00.00";
            
             lastHit.Text = "N/A";
@@ -201,25 +183,12 @@ namespace ComboCounter.UserControls
 
                 }
             }
-        }
-
-       
+        }       
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
             timeIntervalSec += TIME_UNIT;
             setTime.Text = Tools.FormatTimeSetter(timeIntervalSec);
-        }
-
-        public string force
-        {
-            set { threshold.Text = value; setThreshold = Int32.Parse(value) ; }
-           
-        }
-        public string seconds
-        {
-            set { timeIntervalSec = Int32.Parse(value); setTime.Text = value; }
-
         }
 
         private void punch_count_Load(object sender, EventArgs e)
@@ -244,22 +213,12 @@ namespace ComboCounter.UserControls
             timer2.Stop();
         }
 
-        public override void OnPageAttached()
-        {
-            
-        }
-
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseClocks();
             }
-        }
-
-        public override void OnExit()
-        {
-
         }
     }
 }

@@ -45,34 +45,7 @@ namespace ComboCounter.UserControls
             j = (j + 1) % arrayTest1.Length;
         }
 
-
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void threshold1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -294,8 +267,6 @@ namespace ComboCounter.UserControls
 
         }
 
-
-
         private void timer3_Tick(object sender, EventArgs e)
         {
             if (timer3.Interval == 1000)
@@ -331,22 +302,13 @@ namespace ComboCounter.UserControls
             timer4.Stop();
         }
 
-        public override void OnPageAttached()
+        public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseClocks();
             }
         }
 
-        public override void OnPageRemoved()
-        {
-            
-        }
-
-        public override void OnExit()
-        {
-
-        }
     }
 }

@@ -31,7 +31,7 @@ namespace ComboCounter.UserControls
 
         private void minusIcon_Click(object sender, EventArgs e)
         {
-            punchLimit = punchLimit - 5;
+            punchLimit -= 5;
             if (punchLimit < 5)
             {
                 punchLimit = 200;
@@ -89,7 +89,7 @@ namespace ComboCounter.UserControls
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
-            punchLimit = punchLimit + 5;
+            punchLimit += 5;
             if (punchLimit > 200)
             {
                 punchLimit = 5;
@@ -102,7 +102,6 @@ namespace ComboCounter.UserControls
         private void startButton_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-
         }
 
         // Player 1 Tick
@@ -137,7 +136,6 @@ namespace ComboCounter.UserControls
         // Player 2 Tick
         private void propagate1()
         {
-
             lastHitValPlayer2 = arrayTest1[j];
             totalForceNumPlayer2 += lastHitValPlayer2;
             totalForcePlayer2.Text = totalForceNumPlayer2.ToString();
@@ -163,22 +161,12 @@ namespace ComboCounter.UserControls
             timer2.Stop();
         }
 
-        public override void OnPageAttached()
-        {
-            
-        }
-
         public override void OnPageRemoved()
         {
-            if (UserManager.UserSettings.TurnOffTimers)
+            if (UserManager.TimerSetting())
             {
                 PauseClocks();
             }
-        }
-
-        public override void OnExit()
-        {
-
         }
     }
 }
