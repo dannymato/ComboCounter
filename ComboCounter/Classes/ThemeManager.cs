@@ -10,22 +10,20 @@ namespace ComboCounter.Classes
 {
     class ThemeManager
     {
-        private static int DBThemeNum = 2;
+        
 
-        private static int ThemeNum = 2;
-        //Boolean ThemeBoolean;
-
+        
 
         public static Color initBackground()
         {           
-            if (Verify())
+           /** if (Verify())
             {
                 return ChangeBackground(GetDBThemeNum());
             }
             else
-            {
+            {**/
                 return ChangeBackground(GetThemeNum());
-            }
+            //}
       
         }
 
@@ -148,12 +146,13 @@ namespace ComboCounter.Classes
         //RETRIEVES THEME NUMBER
         private static int GetThemeNum()
         {
-            return ThemeNum;
+            return UserManager.ThemeSetting();
+
         }
 
         private static int GetDBThemeNum()
         {
-            return DBThemeNum;
+            return UserManager.ThemeSetting();
         }
 
         //----------------------------
@@ -166,11 +165,11 @@ namespace ComboCounter.Classes
         {
          
           
-            if(t == 1)
+            if(t == 0)
             {
                 return ThemeConstants.Theme1BgColor;
             }
-            else if(t == 2)
+            else if(t == 1)
             {
                 return ThemeConstants.Theme2BgColor;
             }
@@ -189,11 +188,11 @@ namespace ComboCounter.Classes
         {
 
 
-            if (t == 1)
+            if (t == 0)
             {
                 return ThemeConstants.white;
             }
-            else if (t == 2)
+            else if (t == 1)
             {
                 return ThemeConstants.red;
             }
@@ -210,11 +209,11 @@ namespace ComboCounter.Classes
         private static Color ChangeHeaderColor(int t)
         {
 
-            if (t == 1)
+            if (t == 0)
             {
                 return ThemeConstants.HeaderTextColor1;
             }
-            else if (t == 2)
+            else if (t == 1)
             {
                 return ThemeConstants.HeaderTextColor2;
             }
@@ -231,11 +230,11 @@ namespace ComboCounter.Classes
         private static Color ChangeH2Color(int t)
         {
 
-            if (t == 1)
+            if (t == 0)
             {
                 return ThemeConstants.H2TextColor1;
             }
-            else if (t == 2)
+            else if (t == 1)
             {
                 return ThemeConstants.H2TextColor2;
             }
@@ -252,11 +251,11 @@ namespace ComboCounter.Classes
         private static Color ChangeH2ClickColor(int t)
         {
 
-            if (t == 1)
+            if (t == 0)
             {
                 return ThemeConstants.H2ClickColor1;
             }
-            else if (t == 2)
+            else if (t == 1)
             {
                 return ThemeConstants.H2ClickColor2;
             }
@@ -268,11 +267,11 @@ namespace ComboCounter.Classes
 
         private static Color ChangeH3Color(int t)
         {
-            if (t == 1)
+            if (t == 0)
             {
                 return ThemeConstants.white;
             }
-            else if (t == 2)
+            else if (t == 1)
             {
                 return ThemeConstants.red;
             }
@@ -288,11 +287,11 @@ namespace ComboCounter.Classes
 
         private static Color ChangeTextColor(int t)
         {
-            if (t == 1)
+            if (t == 0)
             {
                 return ThemeConstants.black;
             }
-            else if (t == 2)
+            else if (t == 1)
             {
                 return ThemeConstants.Theme2TextColor;
             }
