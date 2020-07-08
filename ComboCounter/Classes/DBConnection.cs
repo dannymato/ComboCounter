@@ -318,21 +318,22 @@ namespace ComboCounter.Classes
 
             MySqlDataReader reader = readSettingsCmd.ExecuteReader();
 
-            dbConn.Close();
+            
 
-            if (reader.HasRows)
+            if (reader.Read())
             {
                 UserSettings settings = new UserSettings(
                     reader.GetInt32("color_scheme"),
                     reader.GetBoolean("AscendingClock"),
                     reader.GetBoolean("TurnOffTimers"),
                     reader.GetBoolean("TurnOffVisualFeedback"),
-                    reader.GetBoolean("TurnOffHitSound"),
-                    reader.GetBoolean("TurnOffMissSound")
+                    reader.GetBoolean("TurnOffHitSounds"),
+                    reader.GetBoolean("TurnOffMissSounds")
                     );
+                dbConn.Close();
                 return settings;
             }
-
+            dbConn.Close();
             return new UserSettings();
 
         }

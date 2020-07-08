@@ -4,6 +4,7 @@ using System;
 using System.Media;
 using ComboCounter.Classes;
 using MySqlX.XDevAPI.Relational;
+using System.Drawing;
 
 namespace ComboCounter.UserControls_Gabriel
 {
@@ -13,8 +14,16 @@ namespace ComboCounter.UserControls_Gabriel
         int h, m, s, totalForceBox;
         int actualForce = 50000;
 
+        const float MAX_FORCE = 1600;
+
+        const int MAX_LENGTH = 200;
+
         SmallInfo[] forceLabels = new SmallInfo[9];
         SmallInfo[] timeLabels = new SmallInfo[8];
+
+        DateTime animationStart;
+        TimeSpan animationDuration = new TimeSpan(1000000);
+
 
         int forceIndex = 0;
 
@@ -108,6 +117,36 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
+        private void IndicateHit(float force)
+        {
+            System.Timers.Timer animate = new System.Timers.Timer();
+            animate.Interval = 16;
+            animate.Elapsed += (object sender, ElapsedEventArgs e) =>
+            {
+                TimeSpan span = e.SignalTime - animationStart;
+                double percentTime = span.TotalMilliseconds / animationDuration.TotalMilliseconds;
+
+                if (span >= animationDuration)
+                {
+                    animate.Stop();
+                }
+
+                float percentForce = force / MAX_FORCE;
+
+                Color forceColor = Tools.Interpolate(Color.Red, Color.Yellow, Color.Green, percentForce);
+                int width = (int)(Math.Min(MAX_LENGTH, (MAX_LENGTH * percentForce + 40)));
+
+                punchIndicator.Invoke((MethodInvoker)delegate
+                {
+                    punchIndicator.Width = width;
+                });
+                punchIndicator.BackColor = Color.FromArgb((int)(255 * percentTime), forceColor.R, forceColor.G, forceColor.B);
+            };
+            animationStart = DateTime.Now;
+            animate.Start();
+
+        }
+
         private void ComboScoreControl_Load(object sender, System.EventArgs e)
         {
             t = new System.Timers.Timer();
@@ -122,7 +161,7 @@ namespace ComboCounter.UserControls_Gabriel
                 forceLabels[i] = new SmallInfo
                 {
                     Text = "Hit " + (i + 1),
-                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    TextAlign = ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
@@ -133,7 +172,7 @@ namespace ComboCounter.UserControls_Gabriel
             {
                 timeLabels[i] = new SmallInfo
                 {
-                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    TextAlign = ContentAlignment.MiddleCenter,
                     Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
@@ -174,7 +213,7 @@ namespace ComboCounter.UserControls_Gabriel
 
                 if (s % 30 == 0)
                 {
-                    
+                    ;
                     if (forceIndex >= forceLabels.Length)
                     {
                         for (int i = 0; i < forceLabels.Length; i++)
@@ -188,6 +227,7 @@ namespace ComboCounter.UserControls_Gabriel
                     }
                     else if (forceIndex > 0)
                     {
+                        IndicateHit(forceArray[forceIndex]);
                         cumulativeTime += timeArray[forceIndex - 1];
                         timeLabels[forceIndex - 1].Text = timeArray[forceIndex - 1].ToString();
                         session.insertHit(forceArray[forceIndex], cumulativeTime);

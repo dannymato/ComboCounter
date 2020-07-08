@@ -45,15 +45,10 @@ namespace ComboCounter.Classes
         }
 
         // GETTER SETTER ID
-        public static int GetId()
-        {
-            return id;
-        }
+        public static int GetId() { return id; }
 
         private static void SetId(int value)
-        {
-            id = value;
-        }
+        { id = value; }
 
         public static User currentUser { get; set; }
 
@@ -212,7 +207,6 @@ namespace ComboCounter.Classes
         public static bool HitSoundSetting() { return _UserSettings.TurnOffHitSounds; }
         public static bool MissSoundSetting() { return _UserSettings.TurnOffMissSounds; }
         public static bool VisualFeedbackSetting() { return _UserSettings.TurnOffVisualFeedback; }
-
         public static void SetUserSettings(UserSettings userSettings) { _UserSettings = userSettings; }
         
 

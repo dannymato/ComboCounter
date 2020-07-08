@@ -45,6 +45,7 @@ namespace ComboCounter.UserControls_Gabriel
             this.totalTimeLabel = new ComboCounter.Classes.H3();
             this.scoreInfoLabel = new ComboCounter.Classes.SmallInfo();
             this.totalTimeLabelnfo = new ComboCounter.Classes.SmallInfo();
+            this.punchIndicator = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -247,11 +248,19 @@ namespace ComboCounter.UserControls_Gabriel
             this.totalTimeLabelnfo.TabIndex = 72;
             this.totalTimeLabelnfo.Text = "N/A";
             // 
+            // punchIndicator
+            // 
+            this.punchIndicator.Location = new System.Drawing.Point(1682, 204);
+            this.punchIndicator.Name = "punchIndicator";
+            this.punchIndicator.Size = new System.Drawing.Size(523, 112);
+            this.punchIndicator.TabIndex = 73;
+            // 
             // ComboScoreControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.punchIndicator);
             this.Controls.Add(this.totalTimeLabelnfo);
             this.Controls.Add(this.scoreInfoLabel);
             this.Controls.Add(this.totalTimeLabel);
@@ -289,5 +298,6 @@ namespace ComboCounter.UserControls_Gabriel
         private H3 totalTimeLabel;
         private SmallInfo scoreInfoLabel;
         private SmallInfo totalTimeLabelnfo;
+        private System.Windows.Forms.Panel punchIndicator;
     }
 }

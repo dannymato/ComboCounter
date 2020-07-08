@@ -17,6 +17,10 @@ namespace ComboCounter.UserControls
         Stopwatch stopwatch = new Stopwatch();
         Session session;
 
+        DateTime animationStart;
+
+        TimeSpan animationDuration = new TimeSpan(2000000);
+
         public targeted_total_of_force()
         {
             InitializeComponent();
@@ -90,6 +94,27 @@ namespace ComboCounter.UserControls
                     session.insertHit(newForce, time);
                 }
             }));
+        }
+
+        private void IndicateHit()
+        {
+            Timer animate = new Timer();
+            animate.Interval = 10;
+            animate.Elapsed += (object sender, ElapsedEventArgs e) =>
+            {
+                TimeSpan span = e.SignalTime - animationStart;
+                double percentTime = span.TotalMilliseconds / animationDuration.TotalMilliseconds;
+
+                if (span >= animationDuration)
+                {
+                    animate.Stop();
+                }
+
+                punchIndicator.BackColor = System.Drawing.Color.FromArgb((int)(255 * percentTime), 255, 255, 255);
+            };
+            animationStart = DateTime.Now;
+            animate.Start();
+            
         }
 
         private void stopButton_Click(object sender, EventArgs e)
