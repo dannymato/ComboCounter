@@ -20,6 +20,9 @@ namespace ComboCounter.UserControls
         private readonly SoundPlayer bellRung;
         private readonly SoundPlayer missedHit;
 
+        private bool hitSoundGate = UserManager.HitSoundSetting();
+        private bool missSoundGate = UserManager.MissSoundSetting(); 
+
         private VisualFeedbackControl feedbackControl;
 
         private Session session;
@@ -113,6 +116,7 @@ namespace ComboCounter.UserControls
                 timer2.Stop();
                 timer1.Stop();
 
+
                 bellRung.Play();
                 History.InsertSession(session);
             }
@@ -171,17 +175,30 @@ namespace ComboCounter.UserControls
                     lastHit.ForeColor = System.Drawing.Color.Red;
                     missPunch++;
                     numInvalidPunch.Text = missPunch.ToString();
-                    missedHit.Play();
+                    if(missSoundGate == true)
+                    {
+                        missedHit.Play();
+                    }
+                    
                 }
                 else if (lastHitVal >= (thresholdVal - (thresholdVal * 0.1)) && lastHitVal < (thresholdVal + (thresholdVal * 0.1)))
                 {
                     lastHit.ForeColor = System.Drawing.Color.Yellow;
-                    rightHook.Play();
+
+                    if(hitSoundGate == true)
+                    {
+                        rightHook.Play();
+                    }
+                   
                 }
                 else if (lastHitVal > (thresholdVal + (thresholdVal * 0.1)))
                 {
                     lastHit.ForeColor = System.Drawing.Color.Green;
-                    rightHook.Play();
+
+                    if (hitSoundGate == true)
+                    {
+                        rightHook.Play();
+                    };
                 }
 
                 if (lastHit.ForeColor == System.Drawing.Color.Yellow || lastHit.ForeColor == System.Drawing.Color.Green)

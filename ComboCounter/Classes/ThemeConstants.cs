@@ -3,7 +3,7 @@
 public class ThemeConstants
     {
         public static Color black = Color.FromArgb(0, 0, 0);
-        public static Color white = Color.FromArgb(200, 200, 200);
+        public static Color white = Color.FromArgb(0, 255, 0);
         public static Color green = Color.FromArgb(124, 252, 0);
 
         public static Color red = Color.FromArgb(255, 0, 0);

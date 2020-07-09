@@ -207,6 +207,9 @@ namespace ComboCounter.Classes
         public static bool HitSoundSetting() { return _UserSettings.TurnOffHitSounds; }
         public static bool MissSoundSetting() { return _UserSettings.TurnOffMissSounds; }
         public static bool VisualFeedbackOff() { return _UserSettings.TurnOffVisualFeedback; }
+
+        public static int ThemeSetting() { return _UserSettings.ColorScheme; }
+
         public static void SetUserSettings(UserSettings userSettings) { _UserSettings = userSettings; }
         
 
