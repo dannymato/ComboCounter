@@ -262,7 +262,6 @@ namespace ComboCounter.UserControls
         {
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(History.GetSessions().ToArray());
-
         }
 
     }

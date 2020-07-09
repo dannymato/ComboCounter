@@ -64,7 +64,6 @@
             this.username_tb.Size = new System.Drawing.Size(524, 38);
             this.username_tb.TabIndex = 0;
             this.username_tb.Text = "Username";
-            this.username_tb.TextChanged += new System.EventHandler(this.username_tb_TextChanged);
             // 
             // fNameBox
             // 
@@ -79,7 +78,6 @@
             this.fNameBox.Size = new System.Drawing.Size(263, 38);
             this.fNameBox.TabIndex = 2;
             this.fNameBox.Text = "First Name";
-            this.fNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // passwordBox
             // 
@@ -95,7 +93,6 @@
             this.passwordBox.TabIndex = 1;
             this.passwordBox.Text = "Password";
             this.passwordBox.UseSystemPasswordChar = true;
-            this.passwordBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // emailBox
             // 
@@ -124,7 +121,6 @@
             this.sexBox.Size = new System.Drawing.Size(536, 38);
             this.sexBox.TabIndex = 6;
             this.sexBox.Text = "Sex";
-            this.sexBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // lNameBox
             // 
@@ -139,7 +135,6 @@
             this.lNameBox.Size = new System.Drawing.Size(259, 38);
             this.lNameBox.TabIndex = 3;
             this.lNameBox.Text = "Last Name";
-            this.lNameBox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // pictureBox1
             // 
@@ -165,7 +160,6 @@
             this.heightBox.Size = new System.Drawing.Size(531, 38);
             this.heightBox.TabIndex = 7;
             this.heightBox.Text = "Height";
-            this.heightBox.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // weightBox
             // 
@@ -180,8 +174,6 @@
             this.weightBox.Size = new System.Drawing.Size(529, 38);
             this.weightBox.TabIndex = 8;
             this.weightBox.Text = "Weight";
-            this.weightBox.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            // 
             // yearBox
             // 
             this.yearBox.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -270,7 +262,6 @@
             this.label1.Size = new System.Drawing.Size(361, 54);
             this.label1.TabIndex = 12;
             this.label1.Text = "Create an account";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // backButton
             // 
@@ -305,7 +296,7 @@
             this.submit_b.TabIndex = 1;
             this.submit_b.Text = "Sign Up";
             this.submit_b.UseVisualStyleBackColor = true;
-            this.submit_b.Click += new System.EventHandler(this.submit_b_Click);
+            this.submit_b.Click += new System.EventHandler(this.signupButton_Click);
             // 
             // Register1
             // 
