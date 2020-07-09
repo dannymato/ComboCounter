@@ -115,7 +115,7 @@ namespace ComboCounter.Forms
                 UserManager.setUser(newUser);
 
 #if NEW_DB
-                UserManager.UserSettings = db.CreateNewUserSettings(newUser.Id);
+                UserManager.SetUserSettings(db.CreateNewUserSettings(newUser.Id));
 #endif
                 Main main = new Main();
                 Hide();
@@ -185,7 +185,7 @@ namespace ComboCounter.Forms
                 UserManager.setUser(newUser);
 
 #if NEW_DB
-                UserManager.UserSettings = db.CreateNewUserSettings(newUser.Id);
+                UserManager.SetUserSettings(db.CreateNewUserSettings(newUser.Id));
 #endif
                 Main main = new Main();
                 Hide();

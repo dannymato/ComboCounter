@@ -214,6 +214,7 @@ namespace ComboCounter.Classes
         public static bool VisualFeedbackSetting() { return _UserSettings.TurnOffVisualFeedback; }
 
         public static int ThemeSetting() { return _UserSettings.ColorScheme; }
+
         public static void SetUserSettings(UserSettings userSettings) { _UserSettings = userSettings; }
         
 
