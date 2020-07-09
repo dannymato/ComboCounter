@@ -121,6 +121,9 @@
     <Compile Include="CustomControls\TextButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\VisualFeedbackControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\ComboScore.cs">
       <SubType>Form</SubType>
     </Compile>

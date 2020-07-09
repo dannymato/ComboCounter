@@ -11,6 +11,7 @@ namespace ComboCounter
 
     public partial class Main : Form
     {
+
         HomeScreen home;
         
         ComboScoreControl comboScore;

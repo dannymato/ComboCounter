@@ -2,13 +2,14 @@
 using System.Windows.Forms;
 using System.Media;
 using ComboCounter.Classes;
+using ComboCounter.CustomControls;
 
 namespace ComboCounter.UserControls
 {
     public partial class punch_count : BaseFormControl
     {
         const int DEFAULT_INTERVAL = 30;
-
+        
         Int32 quickTotal;
         int setThreshold = 200;
         int timeIntervalSec = DEFAULT_INTERVAL;
@@ -19,8 +20,12 @@ namespace ComboCounter.UserControls
         private readonly SoundPlayer bellRung;
         private readonly SoundPlayer missedHit;
 
+        private VisualFeedbackControl feedbackControl;
+
         private Session session;
 
+
+        private bool useFeedback;
 
         int i = 0;
         int[] arrayTest = new int[] { 150, 210, 250, 160, 225, 300, 210, 130, 250, 200, 50, 140 };
@@ -32,6 +37,12 @@ namespace ComboCounter.UserControls
             missedHit = new SoundPlayer(@"soundEffect\MissedHit.wav");
             InitializeComponent();
 
+            feedbackControl = new VisualFeedbackControl();
+            
+            feedbackControl.Left = 100;
+            feedbackControl.Top = 10;
+            feedbackControl.Height = 50;
+            Controls.Add(feedbackControl);
             Header.Left = tableLayoutPanel1.Left + ((tableLayoutPanel1.Width - Header.Width) / 2);
         }
     
@@ -62,8 +73,11 @@ namespace ComboCounter.UserControls
 
         private void propagate()
         {
-
             lastHit.Text = arrayTest[i].ToString();
+
+            if (useFeedback)
+                feedbackControl.PushPunch(arrayTest[i]);
+
             session.insertHit(arrayTest[i], timeIntervalSec - (quickTotal / 1000.0));
             
             i = (i + 1) % arrayTest.Length;
@@ -213,12 +227,24 @@ namespace ComboCounter.UserControls
             timer2.Stop();
         }
 
+        public override void OnPageAttached()
+        {
+            base.OnPageAttached();
+            useFeedback = !UserManager.VisualFeedbackOff();
+        }
+
         public override void OnPageRemoved()
         {
             if (UserManager.TimerSetting())
             {
                 PauseClocks();
             }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            feedbackControl.Cleanup();
         }
     }
 }

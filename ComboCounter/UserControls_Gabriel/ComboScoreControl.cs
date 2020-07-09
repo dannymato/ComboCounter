@@ -5,6 +5,7 @@ using System.Media;
 using ComboCounter.Classes;
 using MySqlX.XDevAPI.Relational;
 using System.Drawing;
+using ComboCounter.CustomControls;
 
 namespace ComboCounter.UserControls_Gabriel
 {
@@ -24,6 +25,7 @@ namespace ComboCounter.UserControls_Gabriel
         DateTime animationStart;
         TimeSpan animationDuration = new TimeSpan(1000000);
 
+        VisualFeedbackControl feedbackControl;
 
         int forceIndex = 0;
 
@@ -40,6 +42,12 @@ namespace ComboCounter.UserControls_Gabriel
         public ComboScoreControl()
         {
             InitializeComponent();
+            feedbackControl = new VisualFeedbackControl();
+            feedbackControl.Height = 80;
+            feedbackControl.Left = 1000;
+            feedbackControl.Top = 180;
+            Controls.Add(feedbackControl);
+
         }
 
         // Start Button
@@ -117,35 +125,35 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
-        private void IndicateHit(float force)
-        {
-            System.Timers.Timer animate = new System.Timers.Timer();
-            animate.Interval = 16;
-            animate.Elapsed += (object sender, ElapsedEventArgs e) =>
-            {
-                TimeSpan span = e.SignalTime - animationStart;
-                double percentTime = span.TotalMilliseconds / animationDuration.TotalMilliseconds;
+        //private void IndicateHit(float force)
+        //{
+        //    System.Timers.Timer animate = new System.Timers.Timer();
+        //    animate.Interval = 16;
+        //    animate.Elapsed += (object sender, ElapsedEventArgs e) =>
+        //    {
+        //        TimeSpan span = e.SignalTime - animationStart;
+        //        double percentTime = span.TotalMilliseconds / animationDuration.TotalMilliseconds;
 
-                if (span >= animationDuration)
-                {
-                    animate.Stop();
-                }
+        //        if (span >= animationDuration)
+        //        {
+        //            animate.Stop();
+        //        }
 
-                float percentForce = force / MAX_FORCE;
+        //        float percentForce = force / MAX_FORCE;
 
-                Color forceColor = Tools.Interpolate(Color.Red, Color.Yellow, Color.Green, percentForce);
-                int width = (int)(Math.Min(MAX_LENGTH, (MAX_LENGTH * percentForce + 40)));
+        //        Color forceColor = Tools.Interpolate(Color.Red, Color.Yellow, Color.Green, percentForce);
+        //        int width = (int)(Math.Min(MAX_LENGTH, (MAX_LENGTH * percentForce + 40)));
 
-                punchIndicator.Invoke((MethodInvoker)delegate
-                {
-                    punchIndicator.Width = width;
-                });
-                punchIndicator.BackColor = Color.FromArgb((int)(255 * percentTime), forceColor.R, forceColor.G, forceColor.B);
-            };
-            animationStart = DateTime.Now;
-            animate.Start();
+        //        punchIndicator.Invoke((MethodInvoker)delegate
+        //        {
+        //            punchIndicator.Width = width;
+        //        });
+        //        punchIndicator.BackColor = Color.FromArgb((int)(255 * percentTime), forceColor.R, forceColor.G, forceColor.B);
+        //    };
+        //    animationStart = DateTime.Now;
+        //    animate.Start();
 
-        }
+        //}
 
         private void ComboScoreControl_Load(object sender, System.EventArgs e)
         {
@@ -227,7 +235,7 @@ namespace ComboCounter.UserControls_Gabriel
                     }
                     else if (forceIndex > 0)
                     {
-                        IndicateHit(forceArray[forceIndex]);
+                        feedbackControl.PushPunch(forceArray[forceIndex]);
                         cumulativeTime += timeArray[forceIndex - 1];
                         timeLabels[forceIndex - 1].Text = timeArray[forceIndex - 1].ToString();
                         session.insertHit(forceArray[forceIndex], cumulativeTime);
