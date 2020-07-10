@@ -23,6 +23,8 @@ namespace ComboCounter.Forms
         private CustomControls.OutlineButton LightModeTheme;
         private System.Windows.Forms.Panel MainPanel;
 
+        private int initialTheme;
+
         public UserSettings()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace ComboCounter.Forms
             
             AscendingTimeToggle.Checked = UserManager.AscendingClockSetting();
             ShowTimerToggle.Checked = UserManager.TimerSetting();
-            VisualFeedbackToggle.Checked = UserManager.VisualFeedbackSetting();
+            VisualFeedbackToggle.Checked = UserManager.VisualFeedbackOff();
             HitSoundsToggle.Checked = UserManager.HitSoundSetting();
             MissSoundsToggle.Checked = UserManager.MissSoundSetting();
            
@@ -333,11 +335,13 @@ namespace ComboCounter.Forms
         private void LightModeTheme_Click(object sender, EventArgs e)
         {
             UserManager.ChangeColorScheme(0);
+            ThemeChanged();
         }
 
         private void DarkModeTheme_Click(object sender, EventArgs e)
         {
             UserManager.ChangeColorScheme(1);
+            ThemeChanged();
         }
     }
     

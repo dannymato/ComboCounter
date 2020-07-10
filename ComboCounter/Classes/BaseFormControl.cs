@@ -11,5 +11,7 @@ namespace ComboCounter.Classes
 
         virtual public void OnExit() { }
 
+        virtual public void RecreateView() { }
+
     }
 }

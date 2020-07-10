@@ -343,7 +343,7 @@ namespace ComboCounter.Classes
             string Query = "UPDATE " + DATABASE + ".user_settings " +
                 "SET color_scheme = @colorScheme, AscendingClock = @ascendingClock, " +
                 "TurnOffTimers = @turnOffTimers, TurnOffVisualFeedback = @TurnOffVisualFeedback, " +
-                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds, " +
+                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds " +
                 "WHERE fk_user_id = @userID";
 
             dbConn.Open();

@@ -462,6 +462,13 @@ namespace ComboCounter.Forms
             InitializeComponent();
         }
 
+        public override void RecreateView()
+        {
+            base.RecreateView();
+            tableLayoutPanel1 = null;
+            InitializeComponent();
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
