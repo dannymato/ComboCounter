@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ComboCounter.Classes
 {
@@ -97,9 +94,7 @@ namespace ComboCounter.Classes
                 double sum = 0.0;
 
                 if (Times.Count == 0)
-                {
                     return 0.0;
-                }
 
                 foreach (var time in Times)
                 {
@@ -114,7 +109,6 @@ namespace ComboCounter.Classes
 
         public double ShortestTime
         {
-
             get
             {
                 double smallestTime = Double.MaxValue;
@@ -123,14 +117,12 @@ namespace ComboCounter.Classes
                 foreach (var time in Times)
                 {
                     if ((time - lastTime) < smallestTime)
-                    {
                         smallestTime = time - lastTime;
-                    }
+                    
                     lastTime = time;
                 }
 
                 return smallestTime;
-
             }
         }
     

@@ -43,7 +43,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;NEW_DB</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -120,6 +120,9 @@
     </Compile>
     <Compile Include="CustomControls\TextButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\VisualFeedbackControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\ComboScore.cs">
       <SubType>Form</SubType>
@@ -251,6 +254,9 @@
       <DependentUpon>UserAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\UserManager.cs" />
+    <Compile Include="Forms\UserSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="homeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -475,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAccountForm.resx">
       <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homeControl.resx">
       <DependentUpon>homeControl.cs</DependentUpon>

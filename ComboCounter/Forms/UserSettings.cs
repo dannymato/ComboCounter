@@ -55,6 +55,7 @@ namespace ComboCounter.Forms
             this.DarkModeTheme = new ComboCounter.CustomControls.OutlineButton();
             this.LightModeTheme = new ComboCounter.CustomControls.OutlineButton();
             this.ThemeSelectClose = new System.Windows.Forms.Button();
+
             this.ThemeButton = new ComboCounter.CustomControls.OutlineButton();
             this.MainPanel.SuspendLayout();
             this.CheckBoxPanel.SuspendLayout();
@@ -90,7 +91,7 @@ namespace ComboCounter.Forms
             this.MissSoundsToggle.ForeColor = System.Drawing.Color.White;
             this.MissSoundsToggle.Location = new System.Drawing.Point(28, 184);
             this.MissSoundsToggle.Name = "MissSoundsToggle";
-            this.MissSoundsToggle.Size = new System.Drawing.Size(278, 35);
+            this.MissSoundsToggle.Size = new System.Drawing.Size(348, 43);
             this.MissSoundsToggle.TabIndex = 7;
             this.MissSoundsToggle.Text = "Toggle Miss Sounds";
             this.MissSoundsToggle.UseVisualStyleBackColor = true;
@@ -103,7 +104,7 @@ namespace ComboCounter.Forms
             this.HitSoundsToggle.ForeColor = System.Drawing.Color.White;
             this.HitSoundsToggle.Location = new System.Drawing.Point(28, 143);
             this.HitSoundsToggle.Name = "HitSoundsToggle";
-            this.HitSoundsToggle.Size = new System.Drawing.Size(256, 35);
+            this.HitSoundsToggle.Size = new System.Drawing.Size(320, 43);
             this.HitSoundsToggle.TabIndex = 6;
             this.HitSoundsToggle.Text = "Toggle Hit Sounds";
             this.HitSoundsToggle.UseVisualStyleBackColor = true;
@@ -116,9 +117,9 @@ namespace ComboCounter.Forms
             this.VisualFeedbackToggle.ForeColor = System.Drawing.Color.White;
             this.VisualFeedbackToggle.Location = new System.Drawing.Point(28, 96);
             this.VisualFeedbackToggle.Name = "VisualFeedbackToggle";
-            this.VisualFeedbackToggle.Size = new System.Drawing.Size(234, 35);
+            this.VisualFeedbackToggle.Size = new System.Drawing.Size(416, 43);
             this.VisualFeedbackToggle.TabIndex = 5;
-            this.VisualFeedbackToggle.Text = "Visual Feedback";
+            this.VisualFeedbackToggle.Text = "Disable Visual Feedback";
             this.VisualFeedbackToggle.UseVisualStyleBackColor = true;
             this.VisualFeedbackToggle.CheckedChanged += new System.EventHandler(this.VisualFeebackToggle_CheckedChanged);
             // 
@@ -129,7 +130,7 @@ namespace ComboCounter.Forms
             this.ShowTimerToggle.ForeColor = System.Drawing.Color.White;
             this.ShowTimerToggle.Location = new System.Drawing.Point(28, 55);
             this.ShowTimerToggle.Name = "ShowTimerToggle";
-            this.ShowTimerToggle.Size = new System.Drawing.Size(223, 35);
+            this.ShowTimerToggle.Size = new System.Drawing.Size(279, 43);
             this.ShowTimerToggle.TabIndex = 4;
             this.ShowTimerToggle.Text = "Timers on Page";
             this.ShowTimerToggle.UseVisualStyleBackColor = true;
@@ -142,7 +143,7 @@ namespace ComboCounter.Forms
             this.AscendingTimeToggle.ForeColor = System.Drawing.Color.Maroon;
             this.AscendingTimeToggle.Location = new System.Drawing.Point(28, 14);
             this.AscendingTimeToggle.Name = "AscendingTimeToggle";
-            this.AscendingTimeToggle.Size = new System.Drawing.Size(227, 35);
+            this.AscendingTimeToggle.Size = new System.Drawing.Size(284, 43);
             this.AscendingTimeToggle.TabIndex = 3;
             this.AscendingTimeToggle.Text = "Ascending Time";
             this.AscendingTimeToggle.UseVisualStyleBackColor = true;
@@ -234,6 +235,12 @@ namespace ComboCounter.Forms
             this.ThemeSelectPanel.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        public event EventHandler<EventArgs> OnThemeChanged;
+
+        private void ThemeChanged() {
+            OnThemeChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void ThemeButton_Click(object sender, EventArgs e)

@@ -318,21 +318,22 @@ namespace ComboCounter.Classes
 
             MySqlDataReader reader = readSettingsCmd.ExecuteReader();
 
-            dbConn.Close();
+            
 
-            if (reader.HasRows)
+            if (reader.Read())
             {
                 UserSettings settings = new UserSettings(
                     reader.GetInt32("color_scheme"),
                     reader.GetBoolean("AscendingClock"),
                     reader.GetBoolean("TurnOffTimers"),
                     reader.GetBoolean("TurnOffVisualFeedback"),
-                    reader.GetBoolean("TurnOffHitSound"),
-                    reader.GetBoolean("TurnOffMissSound")
+                    reader.GetBoolean("TurnOffHitSounds"),
+                    reader.GetBoolean("TurnOffMissSounds")
                     );
+                dbConn.Close();
                 return settings;
             }
-
+            dbConn.Close();
             return new UserSettings();
 
         }
@@ -395,6 +396,9 @@ namespace ComboCounter.Classes
                 for (int i = 0; i < sessions.Count; i++)
                 {
                     sessions[i] = AddDataToSession(sessions[i]);
+                    if (sessions[i].Forces.Count == 0 || sessions[i].Times.Count == 0)
+                        sessions.RemoveAt(i);
+                    
                 }
 
                 return sessions;

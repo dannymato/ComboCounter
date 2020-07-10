@@ -54,7 +54,7 @@
             this.time_button.Size = new System.Drawing.Size(375, 57);
             this.time_button.TabIndex = 3;
             this.time_button.UseVisualStyleBackColor = true;
-            this.time_button.Click += new System.EventHandler(this.time_button_Click);
+            this.time_button.Click += new System.EventHandler(this.user_settings_button_Click);
             // 
             // histogram
             // 
