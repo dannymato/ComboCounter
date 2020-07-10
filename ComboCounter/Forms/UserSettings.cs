@@ -228,6 +228,12 @@ namespace ComboCounter.Forms
 
         }
 
+        public event EventHandler<EventArgs> OnThemeChanged;
+
+        private void ThemeChanged() {
+            OnThemeChanged?.Invoke(this, EventArgs.Empty);
+        }
+
         private void ThemeButton_Click(object sender, EventArgs e)
         {
             CheckBoxPanel.Visible = false;
