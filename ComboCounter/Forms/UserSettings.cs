@@ -33,59 +33,43 @@ namespace ComboCounter.Forms
             this.HitSoundsToggle.ForeColor = ThemeManager.initH2Color();
             this.MissSoundsToggle.ForeColor = ThemeManager.initH2Color();
 
-
+            
+            AscendingTimeToggle.Checked = UserManager.AscendingClockSetting();
+            ShowTimerToggle.Checked = UserManager.TimerSetting();
+            VisualFeedbackToggle.Checked = UserManager.VisualFeedbackSetting();
+            HitSoundsToggle.Checked = UserManager.HitSoundSetting();
+            MissSoundsToggle.Checked = UserManager.MissSoundSetting();
+           
         }
 
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.ThemeSelectPanel = new System.Windows.Forms.Panel();
-            this.ThemeSelectClose = new System.Windows.Forms.Button();
             this.CheckBoxPanel = new System.Windows.Forms.Panel();
             this.MissSoundsToggle = new System.Windows.Forms.CheckBox();
             this.HitSoundsToggle = new System.Windows.Forms.CheckBox();
             this.VisualFeedbackToggle = new System.Windows.Forms.CheckBox();
             this.ShowTimerToggle = new System.Windows.Forms.CheckBox();
             this.AscendingTimeToggle = new System.Windows.Forms.CheckBox();
-            this.ThemeButton = new ComboCounter.CustomControls.OutlineButton();
-            this.LightModeTheme = new ComboCounter.CustomControls.OutlineButton();
+            this.ThemeSelectPanel = new System.Windows.Forms.Panel();
             this.DarkModeTheme = new ComboCounter.CustomControls.OutlineButton();
+            this.LightModeTheme = new ComboCounter.CustomControls.OutlineButton();
+            this.ThemeSelectClose = new System.Windows.Forms.Button();
+            this.ThemeButton = new ComboCounter.CustomControls.OutlineButton();
             this.MainPanel.SuspendLayout();
-            this.ThemeSelectPanel.SuspendLayout();
             this.CheckBoxPanel.SuspendLayout();
+            this.ThemeSelectPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.Controls.Add(this.ThemeSelectPanel);
-            this.MainPanel.Controls.Add(this.CheckBoxPanel);
             this.MainPanel.Controls.Add(this.ThemeButton);
+            this.MainPanel.Controls.Add(this.CheckBoxPanel);
             this.MainPanel.Location = new System.Drawing.Point(210, 27);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(605, 529);
             this.MainPanel.TabIndex = 0;
-            // 
-            // ThemeSelectPanel
-            // 
-            this.ThemeSelectPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ThemeSelectPanel.Controls.Add(this.DarkModeTheme);
-            this.ThemeSelectPanel.Controls.Add(this.LightModeTheme);
-            this.ThemeSelectPanel.Controls.Add(this.ThemeSelectClose);
-            this.ThemeSelectPanel.Location = new System.Drawing.Point(78, 137);
-            this.ThemeSelectPanel.Name = "ThemeSelectPanel";
-            this.ThemeSelectPanel.Size = new System.Drawing.Size(443, 325);
-            this.ThemeSelectPanel.TabIndex = 5;
-            this.ThemeSelectPanel.Visible = false;
-            // 
-            // ThemeSelectClose
-            // 
-            this.ThemeSelectClose.Location = new System.Drawing.Point(191, 234);
-            this.ThemeSelectClose.Name = "ThemeSelectClose";
-            this.ThemeSelectClose.Size = new System.Drawing.Size(75, 23);
-            this.ThemeSelectClose.TabIndex = 0;
-            this.ThemeSelectClose.Text = "Close";
-            this.ThemeSelectClose.UseVisualStyleBackColor = true;
-            this.ThemeSelectClose.Click += new System.EventHandler(this.ThemeSelectClose_Click);
             // 
             // CheckBoxPanel
             // 
@@ -164,6 +148,62 @@ namespace ComboCounter.Forms
             this.AscendingTimeToggle.UseVisualStyleBackColor = true;
             this.AscendingTimeToggle.CheckedChanged += new System.EventHandler(this.AscendingTime_CheckedChanged);
             // 
+            // ThemeSelectPanel
+            // 
+            this.ThemeSelectPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ThemeSelectPanel.Controls.Add(this.DarkModeTheme);
+            this.ThemeSelectPanel.Controls.Add(this.LightModeTheme);
+            this.ThemeSelectPanel.Controls.Add(this.ThemeSelectClose);
+            this.ThemeSelectPanel.Location = new System.Drawing.Point(78, 137);
+            this.ThemeSelectPanel.Name = "ThemeSelectPanel";
+            this.ThemeSelectPanel.Size = new System.Drawing.Size(443, 325);
+            this.ThemeSelectPanel.TabIndex = 5;
+            this.ThemeSelectPanel.Visible = false;
+            // 
+            // DarkModeTheme
+            // 
+            this.DarkModeTheme.AutoSize = true;
+            this.DarkModeTheme.BackColor = System.Drawing.Color.Transparent;
+            this.DarkModeTheme.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.DarkModeTheme.FlatAppearance.BorderSize = 2;
+            this.DarkModeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DarkModeTheme.ForeColor = System.Drawing.Color.White;
+            this.DarkModeTheme.Location = new System.Drawing.Point(86, 129);
+            this.DarkModeTheme.Name = "DarkModeTheme";
+            this.DarkModeTheme.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.DarkModeTheme.Size = new System.Drawing.Size(275, 56);
+            this.DarkModeTheme.TabIndex = 2;
+            this.DarkModeTheme.Text = "Dark Mode Theme";
+            this.DarkModeTheme.UseVisualStyleBackColor = false;
+            this.DarkModeTheme.Click += new System.EventHandler(this.DarkModeTheme_Click);
+            // 
+            // LightModeTheme
+            // 
+            this.LightModeTheme.AutoSize = true;
+            this.LightModeTheme.BackColor = System.Drawing.Color.Transparent;
+            this.LightModeTheme.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.LightModeTheme.FlatAppearance.BorderSize = 2;
+            this.LightModeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LightModeTheme.ForeColor = System.Drawing.Color.White;
+            this.LightModeTheme.Location = new System.Drawing.Point(86, 30);
+            this.LightModeTheme.Name = "LightModeTheme";
+            this.LightModeTheme.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.LightModeTheme.Size = new System.Drawing.Size(275, 56);
+            this.LightModeTheme.TabIndex = 1;
+            this.LightModeTheme.Text = "Light Mode Theme";
+            this.LightModeTheme.UseVisualStyleBackColor = false;
+            this.LightModeTheme.Click += new System.EventHandler(this.LightModeTheme_Click);
+            // 
+            // ThemeSelectClose
+            // 
+            this.ThemeSelectClose.Location = new System.Drawing.Point(191, 234);
+            this.ThemeSelectClose.Name = "ThemeSelectClose";
+            this.ThemeSelectClose.Size = new System.Drawing.Size(75, 23);
+            this.ThemeSelectClose.TabIndex = 0;
+            this.ThemeSelectClose.Text = "Close";
+            this.ThemeSelectClose.UseVisualStyleBackColor = true;
+            this.ThemeSelectClose.Click += new System.EventHandler(this.ThemeSelectClose_Click);
+            // 
             // ThemeButton
             // 
             this.ThemeButton.AutoSize = true;
@@ -181,38 +221,6 @@ namespace ComboCounter.Forms
             this.ThemeButton.UseVisualStyleBackColor = false;
             this.ThemeButton.Click += new System.EventHandler(this.ThemeButton_Click);
             // 
-            // LightModeTheme
-            // 
-            this.LightModeTheme.AutoSize = true;
-            this.LightModeTheme.BackColor = System.Drawing.Color.Transparent;
-            this.LightModeTheme.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.LightModeTheme.FlatAppearance.BorderSize = 2;
-            this.LightModeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LightModeTheme.ForeColor = System.Drawing.Color.White;
-            this.LightModeTheme.Location = new System.Drawing.Point(86, 30);
-            this.LightModeTheme.Name = "LightModeTheme";
-            this.LightModeTheme.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.LightModeTheme.Size = new System.Drawing.Size(275, 56);
-            this.LightModeTheme.TabIndex = 1;
-            this.LightModeTheme.Text = "Light Mode Theme";
-            this.LightModeTheme.UseVisualStyleBackColor = false;
-            // 
-            // DarkModeTheme
-            // 
-            this.DarkModeTheme.AutoSize = true;
-            this.DarkModeTheme.BackColor = System.Drawing.Color.Transparent;
-            this.DarkModeTheme.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.DarkModeTheme.FlatAppearance.BorderSize = 2;
-            this.DarkModeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DarkModeTheme.ForeColor = System.Drawing.Color.White;
-            this.DarkModeTheme.Location = new System.Drawing.Point(86, 129);
-            this.DarkModeTheme.Name = "DarkModeTheme";
-            this.DarkModeTheme.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.DarkModeTheme.Size = new System.Drawing.Size(275, 56);
-            this.DarkModeTheme.TabIndex = 2;
-            this.DarkModeTheme.Text = "Dark Mode Theme";
-            this.DarkModeTheme.UseVisualStyleBackColor = false;
-            // 
             // UserSettings
             // 
             this.Controls.Add(this.MainPanel);
@@ -220,10 +228,10 @@ namespace ComboCounter.Forms
             this.Size = new System.Drawing.Size(971, 579);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            this.ThemeSelectPanel.ResumeLayout(false);
-            this.ThemeSelectPanel.PerformLayout();
             this.CheckBoxPanel.ResumeLayout(false);
             this.CheckBoxPanel.PerformLayout();
+            this.ThemeSelectPanel.ResumeLayout(false);
+            this.ThemeSelectPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -234,18 +242,20 @@ namespace ComboCounter.Forms
             ThemeButton.Visible = false;
             ThemeSelectPanel.Visible = true;
 
+           
+
         }
 
         private void AscendingTime_CheckedChanged(object sender, EventArgs e)
         {
             if (AscendingTimeToggle.Checked == true)
             {
-                //UserManager.UserSettings.AscendingClock = true;
+                UserManager.ChangeAscendingClock(true);
             }
 
             if (AscendingTimeToggle.Checked == false)
             {
-                //do whtever here when un checked  
+                UserManager.ChangeAscendingClock(false);
             }
         }
 
@@ -253,12 +263,12 @@ namespace ComboCounter.Forms
         {
             if (ShowTimerToggle.Checked == true)
             {
-                //do whtever here when checked  
+                UserManager.ChangeTurnOffTimer(true);
             }
 
             if (ShowTimerToggle.Checked == false)
             {
-                //do whtever here when un checked  
+                UserManager.ChangeTurnOffTimer(false);
             }
 
         }
@@ -268,12 +278,12 @@ namespace ComboCounter.Forms
         {
             if (VisualFeedbackToggle.Checked == true)
             {
-                //do whtever here when checked  
+                UserManager.ChangeTurnOffVisualFeedback(true);
             }
 
             if (VisualFeedbackToggle.Checked == false)
             {
-                //do whtever here when un checked  
+                UserManager.ChangeTurnOffVisualFeedback(false); 
             }
 
         }
@@ -282,12 +292,12 @@ namespace ComboCounter.Forms
         {
             if (HitSoundsToggle.Checked == true)
             {
-                //do whtever here when checked  
+                UserManager.ChangeHitSounds(true);  
             }
 
             if (HitSoundsToggle.Checked == false)
             {
-                //do whtever here when un checked  
+                UserManager.ChangeHitSounds(false);
             }
         }
 
@@ -295,12 +305,12 @@ namespace ComboCounter.Forms
         {
             if (MissSoundsToggle.Checked == true)
             {
-                //do whtever here when checked  
+                UserManager.ChangeMissSounds(true); 
             }
 
             if (MissSoundsToggle.Checked == false)
             {
-                //do whtever here when un checked  
+                UserManager.ChangeMissSounds(false);  
             }
         }
 
@@ -311,6 +321,16 @@ namespace ComboCounter.Forms
             ThemeButton.Visible = true;
             //ThemeSelectPanel.Location = new Point((Width / 2) - (panel3.Width / 2) + 200, (Height / 2) - (panel3.Height / 2) + 150);
 
+        }
+
+        private void LightModeTheme_Click(object sender, EventArgs e)
+        {
+            UserManager.ChangeColorScheme(0);
+        }
+
+        private void DarkModeTheme_Click(object sender, EventArgs e)
+        {
+            UserManager.ChangeColorScheme(1);
         }
     }
     
