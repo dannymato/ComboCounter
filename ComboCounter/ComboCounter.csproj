@@ -482,6 +482,9 @@
     <EmbeddedResource Include="Forms\UserAccountForm.resx">
       <DependentUpon>UserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="homeControl.resx">
       <DependentUpon>homeControl.cs</DependentUpon>
     </EmbeddedResource>

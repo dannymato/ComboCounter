@@ -33,6 +33,8 @@ namespace ComboCounter
         BaseFormControl currentControl;
         histogram histogramForm;
 
+
+
         public Main()
         {
             InitializeComponent();
@@ -54,6 +56,7 @@ namespace ComboCounter
         private void home_button_Click(object sender, EventArgs e)
         {
             LoadNewPage(home);
+            home.ResetTheme();
         }
 
         #endregion
@@ -62,9 +65,6 @@ namespace ComboCounter
         {
             //Forms.justToTry UserAccountForm = new Forms.justToTry();
             // UserAccountForm.Show();
-
-            Forms.UserAccountForm UserAccountForm = new Forms.UserAccountForm();
-            UserAccountForm.Show();
 
             if (userAccount == null)
             {

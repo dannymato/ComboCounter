@@ -190,11 +190,11 @@ namespace ComboCounter.Classes
 
             if (t == 0)
             {
-                return ThemeConstants.white;
+                return ThemeConstants.black;
             }
             else if (t == 1)
             {
-                return ThemeConstants.red;
+                return ThemeConstants.white;
             }
             else if (t == 3)
             {
