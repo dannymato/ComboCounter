@@ -27,8 +27,6 @@ namespace ComboCounter.CustomControls
             FlatAppearance.BorderSize = 2;
             FlatAppearance.BorderColor = Color.SteelBlue;
 
-            ForeColor = Color.White;
-
             AutoSize = true;
 
             Padding = new Padding()

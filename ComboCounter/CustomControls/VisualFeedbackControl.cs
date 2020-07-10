@@ -14,7 +14,7 @@ namespace ComboCounter.CustomControls
     // When using this class it is important that before the window is destroyed cleanup is called
     // If cleanup is not called an exception may occur since the timers would stil continue going
     // Adding the control to the parent control should be the last thing when creating the control
-    // If the control is added by the designed the adding is automatically after the creation
+    // If not FinishSetup has to be called explicitly
     class VisualFeedbackControl : UserControl
     {
         // Holds onto punches to queue up for animation

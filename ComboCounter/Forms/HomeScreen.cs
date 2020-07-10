@@ -63,12 +63,12 @@ namespace ComboCounter.Forms
             this.totalTimeDefault = new ComboCounter.CustomControls.OutlineButton();
             this.totalForceDefault = new ComboCounter.CustomControls.OutlineButton();
             this.comboCounterDefault = new ComboCounter.CustomControls.OutlineButton();
+            this.ghostPanel = new System.Windows.Forms.Panel();
             this.ghostPanel2 = new System.Windows.Forms.Panel();
             this.clockPanel = new System.Windows.Forms.Panel();
             this.date = new ComboCounter.Classes.SmallInfo();
             this.clockText = new ComboCounter.Classes.SmallInfo();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.ghostPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.clockPanel.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +100,6 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.Controls.Add(this.ghostPanel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ghostPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.clockPanel, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -114,7 +113,6 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15943F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1565, 871);
             this.tableLayoutPanel1.TabIndex = 0;
-
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // h31
@@ -163,7 +161,6 @@ namespace ComboCounter.Forms
             this.compPound.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.compPound.FlatAppearance.BorderSize = 2;
             this.compPound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.compPound.ForeColor = System.Drawing.Color.White;
             this.compPound.Location = new System.Drawing.Point(64, 638);
             this.compPound.Name = "compPound";
             this.compPound.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -181,7 +178,6 @@ namespace ComboCounter.Forms
             this.sensorAdj.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.sensorAdj.FlatAppearance.BorderSize = 2;
             this.sensorAdj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sensorAdj.ForeColor = System.Drawing.Color.White;
             this.sensorAdj.Location = new System.Drawing.Point(42, 771);
             this.sensorAdj.Name = "sensorAdj";
             this.sensorAdj.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -199,7 +195,6 @@ namespace ComboCounter.Forms
             this.punchCountDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.punchCountDefault.FlatAppearance.BorderSize = 2;
             this.punchCountDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.punchCountDefault.ForeColor = System.Drawing.Color.White;
             this.punchCountDefault.Location = new System.Drawing.Point(676, 638);
             this.punchCountDefault.Name = "punchCountDefault";
             this.punchCountDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -217,7 +212,6 @@ namespace ComboCounter.Forms
             this.punchCountCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.punchCountCustom.FlatAppearance.BorderSize = 2;
             this.punchCountCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.punchCountCustom.ForeColor = System.Drawing.Color.White;
             this.punchCountCustom.Location = new System.Drawing.Point(681, 771);
             this.punchCountCustom.Name = "punchCountCustom";
             this.punchCountCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -235,7 +229,6 @@ namespace ComboCounter.Forms
             this.punchChallengeDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.punchChallengeDefault.FlatAppearance.BorderSize = 2;
             this.punchChallengeDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.punchChallengeDefault.ForeColor = System.Drawing.Color.White;
             this.punchChallengeDefault.Location = new System.Drawing.Point(1198, 638);
             this.punchChallengeDefault.Name = "punchChallengeDefault";
             this.punchChallengeDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -253,7 +246,6 @@ namespace ComboCounter.Forms
             this.punchChallengeCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.punchChallengeCustom.FlatAppearance.BorderSize = 2;
             this.punchChallengeCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.punchChallengeCustom.ForeColor = System.Drawing.Color.White;
             this.punchChallengeCustom.Location = new System.Drawing.Point(1203, 771);
             this.punchChallengeCustom.Name = "punchChallengeCustom";
             this.punchChallengeCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -307,7 +299,6 @@ namespace ComboCounter.Forms
             this.comboCountCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.comboCountCustom.FlatAppearance.BorderSize = 2;
             this.comboCountCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboCountCustom.ForeColor = System.Drawing.Color.White;
             this.comboCountCustom.Location = new System.Drawing.Point(161, 388);
             this.comboCountCustom.Name = "comboCountCustom";
             this.comboCountCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -325,7 +316,6 @@ namespace ComboCounter.Forms
             this.totalForce2Play.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.totalForce2Play.FlatAppearance.BorderSize = 2;
             this.totalForce2Play.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalForce2Play.ForeColor = System.Drawing.Color.White;
             this.totalForce2Play.Location = new System.Drawing.Point(662, 388);
             this.totalForce2Play.Name = "totalForce2Play";
             this.totalForce2Play.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -343,7 +333,6 @@ namespace ComboCounter.Forms
             this.totalTimeCustom.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.totalTimeCustom.FlatAppearance.BorderSize = 2;
             this.totalTimeCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalTimeCustom.ForeColor = System.Drawing.Color.White;
             this.totalTimeCustom.Location = new System.Drawing.Point(1203, 388);
             this.totalTimeCustom.Name = "totalTimeCustom";
             this.totalTimeCustom.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -361,7 +350,6 @@ namespace ComboCounter.Forms
             this.totalTimeDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.totalTimeDefault.FlatAppearance.BorderSize = 2;
             this.totalTimeDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalTimeDefault.ForeColor = System.Drawing.Color.White;
             this.totalTimeDefault.Location = new System.Drawing.Point(1198, 262);
             this.totalTimeDefault.Name = "totalTimeDefault";
             this.totalTimeDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -379,7 +367,6 @@ namespace ComboCounter.Forms
             this.totalForceDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.totalForceDefault.FlatAppearance.BorderSize = 2;
             this.totalForceDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.totalForceDefault.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.totalForceDefault.Location = new System.Drawing.Point(676, 262);
             this.totalForceDefault.Name = "totalForceDefault";
             this.totalForceDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -397,7 +384,6 @@ namespace ComboCounter.Forms
             this.comboCounterDefault.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.comboCounterDefault.FlatAppearance.BorderSize = 2;
             this.comboCounterDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboCounterDefault.ForeColor = System.Drawing.Color.White;
             this.comboCounterDefault.Location = new System.Drawing.Point(156, 262);
             this.comboCounterDefault.Name = "comboCounterDefault";
             this.comboCounterDefault.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -406,6 +392,14 @@ namespace ComboCounter.Forms
             this.comboCounterDefault.Text = "Default";
             this.comboCounterDefault.UseVisualStyleBackColor = false;
             this.comboCounterDefault.Click += new System.EventHandler(this.comboCounterDefault_Click);
+            // 
+            // ghostPanel
+            // 
+            this.ghostPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ghostPanel.Location = new System.Drawing.Point(524, 4);
+            this.ghostPanel.Name = "ghostPanel";
+            this.ghostPanel.Size = new System.Drawing.Size(513, 120);
+            this.ghostPanel.TabIndex = 20;
             // 
             // ghostPanel2
             // 
@@ -429,7 +423,7 @@ namespace ComboCounter.Forms
             this.date.ForeColor = System.Drawing.Color.White;
             this.date.Location = new System.Drawing.Point(146, 68);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(0, 45);
+            this.date.Size = new System.Drawing.Size(0, 61);
             this.date.TabIndex = 2;
             // 
             // clockText
@@ -439,7 +433,7 @@ namespace ComboCounter.Forms
             this.clockText.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.clockText.Location = new System.Drawing.Point(190, 23);
             this.clockText.Name = "clockText";
-            this.clockText.Size = new System.Drawing.Size(0, 45);
+            this.clockText.Size = new System.Drawing.Size(0, 61);
             this.clockText.TabIndex = 1;
             this.clockText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -448,14 +442,6 @@ namespace ComboCounter.Forms
             this.timer.Enabled = true;
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // ghostPanel
-            // 
-            this.ghostPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ghostPanel.Location = new System.Drawing.Point(524, 4);
-            this.ghostPanel.Name = "ghostPanel";
-            this.ghostPanel.Size = new System.Drawing.Size(513, 120);
-            this.ghostPanel.TabIndex = 20;
             // 
             // HomeScreen
             // 
@@ -469,6 +455,11 @@ namespace ComboCounter.Forms
             this.clockPanel.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        public void ResetTheme()
+        {
+            InitializeComponent();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
