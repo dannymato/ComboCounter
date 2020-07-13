@@ -273,7 +273,6 @@ namespace ComboCounter.UserControls
             // 
             this.lastHit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastHit.AutoSize = true;
-            this.lastHit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lastHit.Location = new System.Drawing.Point(1370, 731);
             this.lastHit.Name = "lastHit";
             this.lastHit.Size = new System.Drawing.Size(455, 240);
@@ -286,7 +285,6 @@ namespace ComboCounter.UserControls
             // 
             this.currentTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currentTime.AutoSize = true;
-            this.currentTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.currentTime.Location = new System.Drawing.Point(1161, 405);
             this.currentTime.Name = "currentTime";
             this.currentTime.Size = new System.Drawing.Size(873, 240);

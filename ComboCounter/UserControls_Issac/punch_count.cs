@@ -20,8 +20,8 @@ namespace ComboCounter.UserControls
         private readonly SoundPlayer bellRung;
         private readonly SoundPlayer missedHit;
 
-        private bool hitSoundGate = UserManager.HitSoundSetting();
-        private bool missSoundGate = UserManager.MissSoundSetting(); 
+        private bool hitSoundGate = UserManager.UseHitSound();
+        private bool missSoundGate = UserManager.UseMissSound(); 
 
         private VisualFeedbackControl feedbackControl;
 
@@ -45,7 +45,9 @@ namespace ComboCounter.UserControls
             feedbackControl.Left = 100;
             feedbackControl.Top = 10;
             feedbackControl.Height = 50;
+            feedbackControl.Width = 400;
             Controls.Add(feedbackControl);
+            feedbackControl.FinishSetup();
             Header.Left = tableLayoutPanel1.Left + ((tableLayoutPanel1.Width - Header.Width) / 2);
         }
 
@@ -215,8 +217,6 @@ namespace ComboCounter.UserControls
                 {
                     missPunch++;
                     numInvalidPunch.Text = missPunch.ToString();
-
-
                 }
             }
         }       
@@ -253,6 +253,9 @@ namespace ComboCounter.UserControls
         {
             base.OnPageAttached();
             useFeedback = !UserManager.VisualFeedbackOff();
+
+            hitSoundGate = UserManager.UseHitSound();
+            missSoundGate = UserManager.UseMissSound();
         }
 
         public override void OnPageRemoved()
