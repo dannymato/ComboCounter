@@ -72,7 +72,6 @@ namespace ComboCounter.UserControls
             this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.ForeColor = System.Drawing.Color.White;
             this.plusIcon.Location = new System.Drawing.Point(784, 89);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
@@ -90,7 +89,6 @@ namespace ComboCounter.UserControls
             this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.ForeColor = System.Drawing.Color.White;
             this.minusIcon.Location = new System.Drawing.Point(4, 83);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
@@ -125,7 +123,6 @@ namespace ComboCounter.UserControls
             // 
             this.forceGoalHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forceGoalHeader.AutoSize = true;
-            this.forceGoalHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.forceGoalHeader.Location = new System.Drawing.Point(295, 0);
             this.forceGoalHeader.Name = "forceGoalHeader";
             this.forceGoalHeader.Size = new System.Drawing.Size(644, 158);
@@ -149,7 +146,6 @@ namespace ComboCounter.UserControls
             this.forceGoalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.forceGoalLabel.AutoSize = true;
-            this.forceGoalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.forceGoalLabel.Location = new System.Drawing.Point(78, 0);
             this.forceGoalLabel.Name = "forceGoalLabel";
             this.forceGoalLabel.Size = new System.Drawing.Size(699, 240);
@@ -160,7 +156,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForce.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForce.AutoSize = true;
-            this.totalForce.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.totalForce.Location = new System.Drawing.Point(511, 583);
             this.totalForce.Name = "totalForce";
             this.totalForce.Size = new System.Drawing.Size(212, 240);
@@ -171,7 +166,6 @@ namespace ComboCounter.UserControls
             // 
             this.forceAccruedHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forceAccruedHeader.AutoSize = true;
-            this.forceAccruedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.forceAccruedHeader.Location = new System.Drawing.Point(186, 404);
             this.forceAccruedHeader.Name = "forceAccruedHeader";
             this.forceAccruedHeader.Size = new System.Drawing.Size(861, 158);
@@ -202,7 +196,6 @@ namespace ComboCounter.UserControls
             // 
             this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimeHeader.AutoSize = true;
-            this.currTimeHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.currTimeHeader.Location = new System.Drawing.Point(216, 0);
             this.currTimeHeader.Name = "currTimeHeader";
             this.currTimeHeader.Size = new System.Drawing.Size(801, 158);
@@ -213,7 +206,6 @@ namespace ComboCounter.UserControls
             // 
             this.txtResult.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtResult.AutoSize = true;
-            this.txtResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.txtResult.Location = new System.Drawing.Point(236, 158);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(761, 240);
@@ -242,7 +234,6 @@ namespace ComboCounter.UserControls
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header.AutoSize = true;
-            this.header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.header.Location = new System.Drawing.Point(478, 10);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(778, 180);
@@ -256,7 +247,6 @@ namespace ComboCounter.UserControls
             this.resetButton.AutoSize = true;
             this.resetButton.BackColor = System.Drawing.Color.Transparent;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.resetButton.Location = new System.Drawing.Point(888, 4);
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";

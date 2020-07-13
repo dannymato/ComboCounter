@@ -332,7 +332,6 @@ namespace ComboCounter.UserControls
             this.plusIconPlayer2.FlatAppearance.BorderSize = 0;
             this.plusIconPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plusIconPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.plusIconPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
             this.plusIconPlayer2.Location = new System.Drawing.Point(435, 29);
             this.plusIconPlayer2.Margin = new System.Windows.Forms.Padding(4);
             this.plusIconPlayer2.Name = "plusIconPlayer2";
@@ -351,7 +350,6 @@ namespace ComboCounter.UserControls
             this.minusIconPlayer2.FlatAppearance.BorderSize = 0;
             this.minusIconPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusIconPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.minusIconPlayer2.ForeColor = System.Drawing.Color.SteelBlue;
             this.minusIconPlayer2.Location = new System.Drawing.Point(4, 23);
             this.minusIconPlayer2.Margin = new System.Windows.Forms.Padding(4);
             this.minusIconPlayer2.Name = "minusIconPlayer2";
@@ -370,7 +368,6 @@ namespace ComboCounter.UserControls
             this.plusIconPlayer1.FlatAppearance.BorderSize = 0;
             this.plusIconPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plusIconPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.plusIconPlayer1.ForeColor = System.Drawing.Color.SteelBlue;
             this.plusIconPlayer1.Location = new System.Drawing.Point(435, 29);
             this.plusIconPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.plusIconPlayer1.Name = "plusIconPlayer1";
@@ -389,7 +386,6 @@ namespace ComboCounter.UserControls
             this.minusIconPlayer1.FlatAppearance.BorderSize = 0;
             this.minusIconPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusIconPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.minusIconPlayer1.ForeColor = System.Drawing.Color.SteelBlue;
             this.minusIconPlayer1.Location = new System.Drawing.Point(4, 23);
             this.minusIconPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.minusIconPlayer1.Name = "minusIconPlayer1";

@@ -289,7 +289,7 @@ namespace ComboCounter.Classes
         {
             if (t == 0)
             {
-                return ThemeConstants.black;
+                return ThemeConstants.Theme1TextColor;
             }
             else if (t == 1)
             {

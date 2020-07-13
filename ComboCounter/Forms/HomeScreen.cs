@@ -420,7 +420,6 @@ namespace ComboCounter.Forms
             // date
             // 
             this.date.AutoSize = true;
-            this.date.ForeColor = System.Drawing.Color.White;
             this.date.Location = new System.Drawing.Point(146, 68);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(0, 61);
@@ -429,7 +428,6 @@ namespace ComboCounter.Forms
             // clockText
             // 
             this.clockText.AutoSize = true;
-            this.clockText.ForeColor = System.Drawing.Color.White;
             this.clockText.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.clockText.Location = new System.Drawing.Point(190, 23);
             this.clockText.Name = "clockText";

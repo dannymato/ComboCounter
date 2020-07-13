@@ -29,19 +29,28 @@ namespace ComboCounter.Forms
         {
             InitializeComponent();
 
-            this.AscendingTimeToggle.ForeColor = ThemeManager.initH2Color();
-            this.ShowTimerToggle.ForeColor = ThemeManager.initH2Color();
-            this.VisualFeedbackToggle.ForeColor = ThemeManager.initH2Color();
-            this.HitSoundsToggle.ForeColor = ThemeManager.initH2Color();
-            this.MissSoundsToggle.ForeColor = ThemeManager.initH2Color();
+            SetupColors();
 
             
             AscendingTimeToggle.Checked = UserManager.AscendingClockSetting();
             ShowTimerToggle.Checked = UserManager.TimerSetting();
             VisualFeedbackToggle.Checked = UserManager.VisualFeedbackOff();
-            HitSoundsToggle.Checked = UserManager.HitSoundSetting();
-            MissSoundsToggle.Checked = UserManager.MissSoundSetting();
+            HitSoundsToggle.Checked = UserManager.UseHitSound();
+            MissSoundsToggle.Checked = UserManager.UseMissSound();
            
+        }
+
+        private void SetupColors()
+        {
+            AscendingTimeToggle.ForeColor = ThemeManager.initH2Color();
+            ShowTimerToggle.ForeColor = ThemeManager.initH2Color();
+            VisualFeedbackToggle.ForeColor = ThemeManager.initH2Color();
+            HitSoundsToggle.ForeColor = ThemeManager.initH2Color();
+            MissSoundsToggle.ForeColor = ThemeManager.initH2Color();
+
+            DarkModeTheme.ForeColor = ThemeManager.initButtonColor();
+            LightModeTheme.ForeColor = ThemeManager.initButtonColor();
+            ThemeButton.ForeColor = ThemeManager.initButtonColor();
         }
 
         private void InitializeComponent()
@@ -90,7 +99,6 @@ namespace ComboCounter.Forms
             // 
             this.MissSoundsToggle.AutoSize = true;
             this.MissSoundsToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MissSoundsToggle.ForeColor = System.Drawing.Color.White;
             this.MissSoundsToggle.Location = new System.Drawing.Point(28, 184);
             this.MissSoundsToggle.Name = "MissSoundsToggle";
             this.MissSoundsToggle.Size = new System.Drawing.Size(348, 43);
@@ -103,7 +111,6 @@ namespace ComboCounter.Forms
             // 
             this.HitSoundsToggle.AutoSize = true;
             this.HitSoundsToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HitSoundsToggle.ForeColor = System.Drawing.Color.White;
             this.HitSoundsToggle.Location = new System.Drawing.Point(28, 143);
             this.HitSoundsToggle.Name = "HitSoundsToggle";
             this.HitSoundsToggle.Size = new System.Drawing.Size(320, 43);
@@ -116,7 +123,6 @@ namespace ComboCounter.Forms
             // 
             this.VisualFeedbackToggle.AutoSize = true;
             this.VisualFeedbackToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VisualFeedbackToggle.ForeColor = System.Drawing.Color.White;
             this.VisualFeedbackToggle.Location = new System.Drawing.Point(28, 96);
             this.VisualFeedbackToggle.Name = "VisualFeedbackToggle";
             this.VisualFeedbackToggle.Size = new System.Drawing.Size(416, 43);
@@ -129,7 +135,6 @@ namespace ComboCounter.Forms
             // 
             this.ShowTimerToggle.AutoSize = true;
             this.ShowTimerToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowTimerToggle.ForeColor = System.Drawing.Color.White;
             this.ShowTimerToggle.Location = new System.Drawing.Point(28, 55);
             this.ShowTimerToggle.Name = "ShowTimerToggle";
             this.ShowTimerToggle.Size = new System.Drawing.Size(279, 43);
@@ -142,7 +147,6 @@ namespace ComboCounter.Forms
             // 
             this.AscendingTimeToggle.AutoSize = true;
             this.AscendingTimeToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AscendingTimeToggle.ForeColor = System.Drawing.Color.Maroon;
             this.AscendingTimeToggle.Location = new System.Drawing.Point(28, 14);
             this.AscendingTimeToggle.Name = "AscendingTimeToggle";
             this.AscendingTimeToggle.Size = new System.Drawing.Size(284, 43);
@@ -170,7 +174,6 @@ namespace ComboCounter.Forms
             this.DarkModeTheme.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.DarkModeTheme.FlatAppearance.BorderSize = 2;
             this.DarkModeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DarkModeTheme.ForeColor = System.Drawing.Color.White;
             this.DarkModeTheme.Location = new System.Drawing.Point(86, 129);
             this.DarkModeTheme.Name = "DarkModeTheme";
             this.DarkModeTheme.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -187,7 +190,6 @@ namespace ComboCounter.Forms
             this.LightModeTheme.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.LightModeTheme.FlatAppearance.BorderSize = 2;
             this.LightModeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LightModeTheme.ForeColor = System.Drawing.Color.White;
             this.LightModeTheme.Location = new System.Drawing.Point(86, 30);
             this.LightModeTheme.Name = "LightModeTheme";
             this.LightModeTheme.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -214,7 +216,6 @@ namespace ComboCounter.Forms
             this.ThemeButton.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.ThemeButton.FlatAppearance.BorderSize = 2;
             this.ThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemeButton.ForeColor = System.Drawing.Color.White;
             this.ThemeButton.Location = new System.Drawing.Point(180, 30);
             this.ThemeButton.Name = "ThemeButton";
             this.ThemeButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -242,6 +243,7 @@ namespace ComboCounter.Forms
         public event EventHandler<EventArgs> OnThemeChanged;
 
         private void ThemeChanged() {
+            SetupColors();
             OnThemeChanged?.Invoke(this, EventArgs.Empty);
         }
 

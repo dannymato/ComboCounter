@@ -17,7 +17,7 @@ namespace ComboCounter
         HomeScreen home;
 
         BaseFormControl currentControl = null;
-        Dictionary<string, BaseFormControl> pages;
+        readonly Dictionary<string, BaseFormControl> pages;
 
         public Main()
         {
