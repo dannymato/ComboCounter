@@ -20,7 +20,7 @@ namespace ComboCounter.CustomControls
         // Most likely will only hold onto 1 punch at a time
         // Just in case the punches are coming faster than we can animate them
         private Queue<float> punchQueue = new Queue<float>(5);
-        const float MAX_FORCE = 400;
+        public float MaxForce { get; set; }
         const int MIN_LENGTH = 40;
         TimeSpan animationDuration = new TimeSpan(1000000);
 
@@ -63,6 +63,8 @@ namespace ComboCounter.CustomControls
             Medium = medium;
             High = high;
 
+            MaxForce = 300.0f;
+
             punchQueue = new Queue<float>();
 
             bar = new UserControl();
@@ -72,7 +74,10 @@ namespace ComboCounter.CustomControls
             InitializerTimer.Elapsed += InitializerTimer_Tick;
             InitializerTimer.Start();
         }
-
+        /// <summary>
+        /// Adjusts the sizing of the elements depending on the size of the 
+        /// entire control. Also creates the hashmarks
+        /// </summary>
         public void FinishSetup()
         {
             BackColor = Color.Transparent;
@@ -101,6 +106,12 @@ namespace ComboCounter.CustomControls
             }
         }
 
+        /// <summary>
+        /// Called on every tick of the initializer timer
+        /// Reponsible for pushing new animation timers and for enacting the idle decrease animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InitializerTimer_Tick(object sender, EventArgs e)
         {
             bar.Height = (int)(Height * 0.8);
@@ -111,7 +122,7 @@ namespace ComboCounter.CustomControls
                 AnimationTimer = new System.Timers.Timer();
                 AnimationTimer.Interval = 10;
                 AnimationTimer.Elapsed += AnimationTimer_Tick;
-                currWidth = (int)Math.Min(Width, Width * (current_Force / MAX_FORCE) + MIN_LENGTH);
+                currWidth = (int)Math.Min(Width, Width * (current_Force / MaxForce) + MIN_LENGTH);
                 AnimationTimer.Start();
                 animationStart = DateTime.Now;
                 isRunning = true;
@@ -131,6 +142,11 @@ namespace ComboCounter.CustomControls
             }
         }
 
+        /// <summary>
+        /// Needs to be called before the window is destroyed
+        /// Makes sure that the timers are disposed of before the window is destroyed
+        /// If this method is not called there is an exception on exit
+        /// </summary>
         public void Cleanup()
         {
             InitializerTimer.Stop();
@@ -142,6 +158,12 @@ namespace ComboCounter.CustomControls
             InitializerTimer.Dispose();
         }
 
+        /// <summary>
+        /// Responsible for animating the bar between force values
+        /// The method is called for every tick of the AnimationTimer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AnimationTimer_Tick(object sender, ElapsedEventArgs e)
         {
             TimeSpan span = e.SignalTime - animationStart;
@@ -154,7 +176,7 @@ namespace ComboCounter.CustomControls
                 isRunning = false;
             }
 
-            float percentForce = current_Force / MAX_FORCE;
+            float percentForce = current_Force / MaxForce;
 
 
             int width = (int)(lastWidth + (currWidth - lastWidth) * percentTime);
@@ -168,6 +190,10 @@ namespace ComboCounter.CustomControls
             bar.BackColor = Color.FromArgb(255, forceColor.R, forceColor.G, forceColor.B);
         }
 
+        /// <summary>
+        /// Public method to add a new force to the queue to be animated
+        /// </summary>
+        /// <param name="force">The force of the last punch</param>
         public void PushPunch(float force)
         {
             punchQueue.Enqueue(force);
