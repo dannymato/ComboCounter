@@ -109,53 +109,7 @@ namespace ComboCounter.Classes
         {
             sex = value;
         }
-#if !NEW_DB
-        // GETTER SETTER CLASS
-        public static string GetClass()
-        {
-            return c_lass;
-        }
 
-        public static void SetClass(string value)
-        {
-            c_lass = value;
-        }
-
-        // GETTER SETTER HEIGHT
-        public static string GetHeight()
-        {
-            return height;
-        }
-
-        public static void SetHeight(string value)
-        {
-            height = value;
-        }
-
-
-        // GETTER SETTER WEIGHT
-        public static string GetWeight()
-        {
-            return weight;
-        }
-
-        public static void SetWeight(string value)
-        {
-            weight = value;
-        }
-
-
-        // GETTER SETTER AGE
-        public static int GetAge()
-        {
-            return age;
-        }
-
-        public static void SetAge(int value)
-        {
-            age = value;
-        }
-#else
         public static void SetHeight(int value)
         {
             height = value;
@@ -202,18 +156,29 @@ namespace ComboCounter.Classes
             DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
         }
 
+        public static void ChangeClockToggle(bool toggleClock)
+        {
+            _UserSettings.ToggleClock = toggleClock;
+            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+        }
+
+
         public static bool AscendingClockSetting() { return _UserSettings.AscendingClock; }
         public static bool TimerSetting() { return _UserSettings.TurnOffTimers; }
-        public static bool HitSoundSetting() { return _UserSettings.TurnOffHitSounds; }
-        public static bool MissSoundSetting() { return _UserSettings.TurnOffMissSounds; }
+        public static bool UseHitSound() { return _UserSettings.TurnOffHitSounds; }
+        public static bool UseMissSound() { return _UserSettings.TurnOffMissSounds; }
         public static bool VisualFeedbackOff() { return _UserSettings.TurnOffVisualFeedback; }
-
+        public static bool ClockFormat() { return _UserSettings.ToggleClock; }
         public static int ThemeSetting() { return _UserSettings.ColorScheme; }
 
+
+
         public static void SetUserSettings(UserSettings userSettings) { _UserSettings = userSettings; }
+
+     
         
 
-#endif
+
 
     }
 
@@ -232,8 +197,10 @@ namespace ComboCounter.Classes
         // If true the sounds for missing will be disabled
         public bool TurnOffMissSounds;
 
+        public bool ToggleClock;
+
         public UserSettings(int colorScheme, bool ascendingClock, bool turnOffTimers,
-            bool turnOffVisualFeedback, bool turnOffHitSounds, bool turnOffMissSounds)
+            bool turnOffVisualFeedback, bool turnOffHitSounds, bool turnOffMissSounds, bool toggleClock)
         {
             AscendingClock = ascendingClock;
             ColorScheme = colorScheme;
@@ -241,6 +208,7 @@ namespace ComboCounter.Classes
             TurnOffVisualFeedback = turnOffVisualFeedback;
             TurnOffHitSounds = turnOffHitSounds;
             TurnOffMissSounds = turnOffMissSounds;
+            ToggleClock = toggleClock;
         }
     }
 
