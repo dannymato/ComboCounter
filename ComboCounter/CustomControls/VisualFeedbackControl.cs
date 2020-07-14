@@ -30,7 +30,7 @@ namespace ComboCounter.CustomControls
 
         // Essentially acts like a while loop checking for new punches to animate
         // Also has the duty of animating the retracting animation when not animating
-        System.Timers.Timer InitializerTimer;
+        readonly System.Timers.Timer InitializerTimer;
 
         // Animates the increasing bar when a new hit is input into the system
         System.Timers.Timer AnimationTimer;

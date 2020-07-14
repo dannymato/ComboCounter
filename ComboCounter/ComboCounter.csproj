@@ -130,7 +130,7 @@
     <Compile Include="Forms\Exit.Designer.cs">
       <DependentUpon>Exit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HomeScreen.cs">
+    <Compile Include="Pages\HomeScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Register1.2.cs">
@@ -140,7 +140,7 @@
       <DependentUpon>Register1.2.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\UserManager.cs" />
-    <Compile Include="Forms\UserSettings.cs">
+    <Compile Include="Pages\UserSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="homeControl.cs">
@@ -155,28 +155,28 @@
     <Compile Include="quickStart.Designer.cs">
       <DependentUpon>quickStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Ariel\combo_control.cs">
+    <Compile Include="Pages\combo_control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\combo_control.Designer.cs">
+    <Compile Include="Pages\combo_control.Designer.cs">
       <DependentUpon>combo_control.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Ariel\combo_tracker.cs">
+    <Compile Include="Pages\combo_tracker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\combo_tracker.Designer.cs">
+    <Compile Include="Pages\combo_tracker.Designer.cs">
       <DependentUpon>combo_tracker.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Ariel\histogram.cs">
+    <Compile Include="Pages\histogram.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\histogram.Designer.cs">
+    <Compile Include="Pages\histogram.Designer.cs">
       <DependentUpon>histogram.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Ariel\home_user.cs">
+    <Compile Include="Pages\home_user.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\home_user.Designer.cs">
+    <Compile Include="Pages\home_user.Designer.cs">
       <DependentUpon>home_user.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
@@ -185,10 +185,10 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestForms\ComboCounterForm.cs">
+    <Compile Include="Forms with Ardiuno Code\ComboCounterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForms\ComboCounterForm.Designer.cs">
+    <Compile Include="Forms with Ardiuno Code\ComboCounterForm.Designer.cs">
       <DependentUpon>ComboCounterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main.cs">
@@ -197,121 +197,121 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestForms\force_tracker_form.cs">
+    <Compile Include="Forms with Ardiuno Code\force_tracker_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForms\force_tracker_form.Designer.cs">
+    <Compile Include="Forms with Ardiuno Code\force_tracker_form.Designer.cs">
       <DependentUpon>force_tracker_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="UserControls_Ariel\timeMode.cs">
+    <Compile Include="Forms with Ardiuno Code\timeMode.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\timeMode.Designer.cs">
+    <Compile Include="Forms with Ardiuno Code\timeMode.Designer.cs">
       <DependentUpon>timeMode.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Ariel\total_force.cs">
+    <Compile Include="Pages\total_force.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\total_force.Designer.cs">
+    <Compile Include="Pages\total_force.Designer.cs">
       <DependentUpon>total_force.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Ariel\user_control.cs">
+    <Compile Include="Pages\user_control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Ariel\user_control.Designer.cs">
+    <Compile Include="Pages\user_control.Designer.cs">
       <DependentUpon>user_control.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Gabriel\CensorControl.cs">
+    <Compile Include="Pages\CensorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Gabriel\CensorControl.Designer.cs">
+    <Compile Include="Pages\CensorControl.Designer.cs">
       <DependentUpon>CensorControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Gabriel\ComboScoreCompControl.cs">
+    <Compile Include="Pages\ComboScoreCompControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Gabriel\ComboScoreCompControl.Designer.cs">
+    <Compile Include="Pages\ComboScoreCompControl.Designer.cs">
       <DependentUpon>ComboScoreCompControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Gabriel\ComboScoreControl.cs">
+    <Compile Include="Pages\ComboScoreControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Gabriel\ComboScoreControl.Designer.cs">
+    <Compile Include="Pages\ComboScoreControl.Designer.cs">
       <DependentUpon>ComboScoreControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Gabriel\UserAccount.cs">
+    <Compile Include="Pages\UserAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Gabriel\UserAccount.Designer.cs">
+    <Compile Include="Pages\UserAccount.Designer.cs">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Gabriel\exitMenu.cs">
+    <Compile Include="Pages\exitMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Gabriel\exitMenu.Designer.cs">
+    <Compile Include="Pages\exitMenu.Designer.cs">
       <DependentUpon>exitMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_challenge.cs">
+    <Compile Include="Pages\punch_challenge.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_challenge.designer.cs">
+    <Compile Include="Pages\punch_challenge.designer.cs">
       <DependentUpon>punch_challenge.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_challenge_comp.cs">
+    <Compile Include="Pages\punch_challenge_comp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_challenge_comp.designer.cs">
+    <Compile Include="Pages\punch_challenge_comp.designer.cs">
       <DependentUpon>punch_challenge_comp.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_count.cs">
+    <Compile Include="Pages\punch_count.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_count.designer.cs">
+    <Compile Include="Pages\punch_count.designer.cs">
       <DependentUpon>punch_count.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_count_comp.cs">
+    <Compile Include="Pages\punch_count_comp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\punch_count_comp.designer.cs">
+    <Compile Include="Pages\punch_count_comp.designer.cs">
       <DependentUpon>punch_count_comp.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_force.cs">
+    <Compile Include="Pages\targeted_total_of_force.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_force.designer.cs">
+    <Compile Include="Pages\targeted_total_of_force.designer.cs">
       <DependentUpon>targeted_total_of_force.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_force_comp.cs">
+    <Compile Include="Pages\targeted_total_of_force_comp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_force_comp.Designer.cs">
+    <Compile Include="Pages\targeted_total_of_force_comp.Designer.cs">
       <DependentUpon>targeted_total_of_force_comp.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_time.cs">
+    <Compile Include="Pages\targeted_total_of_time.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_time.Designer.cs">
+    <Compile Include="Pages\targeted_total_of_time.Designer.cs">
       <DependentUpon>targeted_total_of_time.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_time_comp.cs">
+    <Compile Include="Pages\targeted_total_of_time_comp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls_Issac\targeted_total_of_time_comp.Designer.cs">
+    <Compile Include="Pages\targeted_total_of_time_comp.Designer.cs">
       <DependentUpon>targeted_total_of_time_comp.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomeScreen.resx">
+    <EmbeddedResource Include="Pages\HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register1.2.resx">
       <DependentUpon>Register1.2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSettings.resx">
+    <EmbeddedResource Include="Pages\UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homeControl.resx">
@@ -320,28 +320,28 @@
     <EmbeddedResource Include="quickStart.resx">
       <DependentUpon>quickStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Ariel\combo_control.resx">
+    <EmbeddedResource Include="Pages\combo_control.resx">
       <DependentUpon>combo_control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Ariel\combo_tracker.resx">
+    <EmbeddedResource Include="Pages\combo_tracker.resx">
       <DependentUpon>combo_tracker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Ariel\histogram.resx">
+    <EmbeddedResource Include="Pages\histogram.resx">
       <DependentUpon>histogram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Ariel\home_user.resx">
+    <EmbeddedResource Include="Pages\home_user.resx">
       <DependentUpon>home_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestForms\ComboCounterForm.resx">
+    <EmbeddedResource Include="Forms with Ardiuno Code\ComboCounterForm.resx">
       <DependentUpon>ComboCounterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestForms\force_tracker_form.resx">
+    <EmbeddedResource Include="Forms with Ardiuno Code\force_tracker_form.resx">
       <DependentUpon>force_tracker_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -354,53 +354,53 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls_Ariel\timeMode.resx">
+    <EmbeddedResource Include="Forms with Ardiuno Code\timeMode.resx">
       <DependentUpon>timeMode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Ariel\total_force.resx">
+    <EmbeddedResource Include="Pages\total_force.resx">
       <DependentUpon>total_force.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Ariel\user_control.resx">
+    <EmbeddedResource Include="Pages\user_control.resx">
       <DependentUpon>user_control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Gabriel\CensorControl.resx">
+    <EmbeddedResource Include="Pages\CensorControl.resx">
       <DependentUpon>CensorControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Gabriel\ComboScoreCompControl.resx">
+    <EmbeddedResource Include="Pages\ComboScoreCompControl.resx">
       <DependentUpon>ComboScoreCompControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Gabriel\ComboScoreControl.resx">
+    <EmbeddedResource Include="Pages\ComboScoreControl.resx">
       <DependentUpon>ComboScoreControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Gabriel\exitMenu.resx">
+    <EmbeddedResource Include="Pages\exitMenu.resx">
       <DependentUpon>exitMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Gabriel\UserAccount.resx">
+    <EmbeddedResource Include="Pages\UserAccount.resx">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\punch_challenge.resx">
+    <EmbeddedResource Include="Pages\punch_challenge.resx">
       <DependentUpon>punch_challenge.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\punch_challenge_comp.resx">
+    <EmbeddedResource Include="Pages\punch_challenge_comp.resx">
       <DependentUpon>punch_challenge_comp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\Punch_Count.resx">
+    <EmbeddedResource Include="Pages\Punch_Count.resx">
       <DependentUpon>punch_count.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\punch_count_comp.resx">
+    <EmbeddedResource Include="Pages\punch_count_comp.resx">
       <DependentUpon>punch_count_comp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\targeted_total_of_force.resx">
+    <EmbeddedResource Include="Pages\targeted_total_of_force.resx">
       <DependentUpon>targeted_total_of_force.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\targeted_total_of_force_comp.resx">
+    <EmbeddedResource Include="Pages\targeted_total_of_force_comp.resx">
       <DependentUpon>targeted_total_of_force_comp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\targeted_total_of_time.resx">
+    <EmbeddedResource Include="Pages\targeted_total_of_time.resx">
       <DependentUpon>targeted_total_of_time.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls_Issac\targeted_total_of_time_comp.resx">
+    <EmbeddedResource Include="Pages\targeted_total_of_time_comp.resx">
       <DependentUpon>targeted_total_of_time_comp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="fonts\Roboto-Medium.ttf" />

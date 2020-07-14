@@ -144,6 +144,15 @@ namespace ComboCounter
 
         }
 
+        /// <summary>
+        /// Called when the ThemeChanged event is fired
+        /// Removes all the pages from the dictionary and recreates the HomeScreen
+        /// It allows for the new theme to take effect on the rest of the pages
+        /// Haven't been able to think of good solution of resetting all the pages without
+        /// recreating the pages
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eArgs"></param>
         private void RefreshPages(object sender, EventArgs eArgs)
         {
             pages.Clear();
