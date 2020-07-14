@@ -420,7 +420,6 @@ namespace ComboCounter.Forms
             // date
             // 
             this.date.AutoSize = true;
-            this.date.ForeColor = System.Drawing.Color.White;
             this.date.Location = new System.Drawing.Point(146, 68);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(0, 61);
@@ -429,7 +428,6 @@ namespace ComboCounter.Forms
             // clockText
             // 
             this.clockText.AutoSize = true;
-            this.clockText.ForeColor = System.Drawing.Color.White;
             this.clockText.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.clockText.Location = new System.Drawing.Point(190, 23);
             this.clockText.Name = "clockText";
@@ -459,6 +457,13 @@ namespace ComboCounter.Forms
 
         public void ResetTheme()
         {
+            InitializeComponent();
+        }
+
+        public override void RecreateView()
+        {
+            base.RecreateView();
+            tableLayoutPanel1 = null;
             InitializeComponent();
         }
 
@@ -546,8 +551,18 @@ namespace ComboCounter.Forms
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            clockText.Text = DateTime.Now.ToString("HH:mm");
-            date.Text = DateTime.Now.ToString("MMM dd yyyy");
+            if(UserManager.ClockFormat())
+            {
+                clockText.Text = DateTime.Now.ToString("HH:mm");
+                date.Text = DateTime.Now.ToString("MMM dd yyyy");
+            }
+            
+            else
+            {
+                clockText.Text = DateTime.Now.ToString("hh:mm tt");
+                date.Text = DateTime.Now.ToString("MMM dd yyyy");
+
+            }
         }
 
         private void smallInfo1_Click(object sender, EventArgs e)
