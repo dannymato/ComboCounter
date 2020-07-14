@@ -124,134 +124,20 @@
     <Compile Include="CustomControls\VisualFeedbackControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ComboScore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ComboScore.Designer.cs">
-      <DependentUpon>ComboScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ComboScoreComp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ComboScoreComp.Designer.cs">
-      <DependentUpon>ComboScoreComp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomComboScore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomComboScore.Designer.cs">
-      <DependentUpon>CustomComboScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomPunchChallange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomPunchChallange.Designer.cs">
-      <DependentUpon>CustomPunchChallange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomPunchCount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomPunchCount.Designer.cs">
-      <DependentUpon>CustomPunchCount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomTargetTotalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomTargetTotalForm.Designer.cs">
-      <DependentUpon>CustomTargetTotalForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomTargetTotalTime.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomTargetTotalTime.Designer.cs">
-      <DependentUpon>CustomTargetTotalTime.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Exit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Exit.Designer.cs">
       <DependentUpon>Exit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HistogramForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HistogramForm.Designer.cs">
-      <DependentUpon>HistogramForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\HomeScreen.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\justToTry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\justToTry.Designer.cs">
-      <DependentUpon>justToTry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PunchChallange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PunchChallange.Designer.cs">
-      <DependentUpon>PunchChallange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PunchChallangeComp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PunchChallangeComp.Designer.cs">
-      <DependentUpon>PunchChallangeComp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PunchCount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PunchCount.Designer.cs">
-      <DependentUpon>PunchCount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PunchCountComp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PunchCountComp.Designer.cs">
-      <DependentUpon>PunchCountComp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\QuickStartForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QuickStartForm.Designer.cs">
-      <DependentUpon>QuickStartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Register1.2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Register1.2.Designer.cs">
       <DependentUpon>Register1.2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TargetedTotalForce.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TargetedTotalForce.Designer.cs">
-      <DependentUpon>TargetedTotalForce.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TargetTotalForceComp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TargetTotalForceComp.Designer.cs">
-      <DependentUpon>TargetTotalForceComp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TargetTotalTime.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TargetTotalTime.Designer.cs">
-      <DependentUpon>TargetTotalTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TargetTotalTimeComp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TargetTotalTimeComp.Designer.cs">
-      <DependentUpon>TargetTotalTimeComp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserAccountForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserAccountForm.Designer.cs">
-      <DependentUpon>UserAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\UserManager.cs" />
     <Compile Include="Forms\UserSettings.cs">
@@ -416,71 +302,14 @@
     <Compile Include="UserControls_Issac\targeted_total_of_time_comp.Designer.cs">
       <DependentUpon>targeted_total_of_time_comp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\ComboScore.resx">
-      <DependentUpon>ComboScore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ComboScoreComp.resx">
-      <DependentUpon>ComboScoreComp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomComboScore.resx">
-      <DependentUpon>CustomComboScore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomPunchChallange.resx">
-      <DependentUpon>CustomPunchChallange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomPunchCount.resx">
-      <DependentUpon>CustomPunchCount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomTargetTotalForm.resx">
-      <DependentUpon>CustomTargetTotalForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomTargetTotalTime.resx">
-      <DependentUpon>CustomTargetTotalTime.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HistogramForm.resx">
-      <DependentUpon>HistogramForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\justToTry.resx">
-      <DependentUpon>justToTry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PunchChallange.resx">
-      <DependentUpon>PunchChallange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PunchChallangeComp.resx">
-      <DependentUpon>PunchChallangeComp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PunchCount.resx">
-      <DependentUpon>PunchCount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PunchCountComp.resx">
-      <DependentUpon>PunchCountComp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuickStartForm.resx">
-      <DependentUpon>QuickStartForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register1.2.resx">
       <DependentUpon>Register1.2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TargetedTotalForce.resx">
-      <DependentUpon>TargetedTotalForce.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TargetTotalForceComp.resx">
-      <DependentUpon>TargetTotalForceComp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TargetTotalTime.resx">
-      <DependentUpon>TargetTotalTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TargetTotalTimeComp.resx">
-      <DependentUpon>TargetTotalTimeComp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserAccountForm.resx">
-      <DependentUpon>UserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>

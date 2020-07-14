@@ -6,6 +6,7 @@ namespace ComboCounter.Forms
 {
     public class HomeScreen : BaseFormControl
     {
+        #region UI Control Definitions
         private CustomControls.OutlineButton comboCounterDefault;
         private H3 h31;
         private H3 h32;
@@ -31,6 +32,7 @@ namespace ComboCounter.Forms
         private SmallInfo clockText;
         private SmallInfo date;
         private Panel ghostPanel;
+        #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
 
@@ -113,7 +115,6 @@ namespace ComboCounter.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15943F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1565, 871);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // h31
             // 
@@ -139,7 +140,6 @@ namespace ComboCounter.Forms
             this.h32.TabIndex = 3;
             this.h32.Text = "Total Force";
             this.h32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.h32.Click += new System.EventHandler(this.h32_Click);
             // 
             // h33
             // 
@@ -455,30 +455,14 @@ namespace ComboCounter.Forms
 
         }
 
-        public void ResetTheme()
-        {
-            InitializeComponent();
-        }
-
-        public override void RecreateView()
-        {
-            base.RecreateView();
-            tableLayoutPanel1 = null;
-            InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         public event EventHandler<OptionClickEventArgs> OnOptionClicked;
 
         private void Option_Clicked(ClassToCall classToCall)
         {
             OnOptionClicked?.Invoke(this, new OptionClickEventArgs(classToCall));
         }
-
+        
+        // Next few methods fire the OnOptionClicked event to notify the main page of a change
         private void comboCounterDefault_Click(object sender, EventArgs e)
         {
             Option_Clicked(ClassToCall.ComboCounter);
@@ -539,25 +523,15 @@ namespace ComboCounter.Forms
             Option_Clicked(ClassToCall.PunchChallengeCustom);
         }
 
-        private void h32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// On the tick of the timer the clock gets the new time and displays it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer_Tick(object sender, EventArgs e)
         {
             clockText.Text = DateTime.Now.ToString("HH:mm");
             date.Text = DateTime.Now.ToString("MMM dd yyyy");
-        }
-
-        private void smallInfo1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
