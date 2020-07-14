@@ -46,8 +46,9 @@ namespace ComboCounter.UserControls_Gabriel
             feedbackControl.Height = 80;
             feedbackControl.Left = 1000;
             feedbackControl.Top = 180;
+            feedbackControl.Width = 500;
             Controls.Add(feedbackControl);
-
+            feedbackControl.FinishSetup();
         }
 
         // Start Button

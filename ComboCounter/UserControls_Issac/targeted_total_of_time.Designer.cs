@@ -48,6 +48,7 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.visualFeedbackControl1 = new ComboCounter.CustomControls.VisualFeedbackControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -59,7 +60,6 @@ namespace ComboCounter.UserControls
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Location = new System.Drawing.Point(73, 71);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -76,7 +76,6 @@ namespace ComboCounter.UserControls
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(484, 71);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
@@ -99,7 +98,6 @@ namespace ComboCounter.UserControls
             this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.ForeColor = System.Drawing.Color.White;
             this.minusIcon.Location = new System.Drawing.Point(4, 80);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
@@ -117,7 +115,6 @@ namespace ComboCounter.UserControls
             this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.ForeColor = System.Drawing.Color.White;
             this.plusIcon.Location = new System.Drawing.Point(714, 87);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";
@@ -134,7 +131,6 @@ namespace ComboCounter.UserControls
             this.resetButton.AutoSize = true;
             this.resetButton.BackColor = System.Drawing.Color.Transparent;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.resetButton.Location = new System.Drawing.Point(895, 71);
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
@@ -150,7 +146,6 @@ namespace ComboCounter.UserControls
             this.headerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.headerLabel.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.headerLabel, 2);
-            this.headerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.headerLabel.Location = new System.Drawing.Point(861, 0);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(759, 180);
@@ -162,7 +157,6 @@ namespace ComboCounter.UserControls
             // 
             this.timeSetHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeSetHeader.AutoSize = true;
-            this.timeSetHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.timeSetHeader.Location = new System.Drawing.Point(233, 285);
             this.timeSetHeader.Name = "timeSetHeader";
             this.timeSetHeader.Size = new System.Drawing.Size(774, 158);
@@ -173,7 +167,6 @@ namespace ComboCounter.UserControls
             // 
             this.currTimeHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currTimeHeader.AutoSize = true;
-            this.currTimeHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.currTimeHeader.Location = new System.Drawing.Point(1460, 285);
             this.currTimeHeader.Name = "currTimeHeader";
             this.currTimeHeader.Size = new System.Drawing.Size(801, 158);
@@ -184,7 +177,6 @@ namespace ComboCounter.UserControls
             // 
             this.forceAccruedHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forceAccruedHeader.AutoSize = true;
-            this.forceAccruedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.forceAccruedHeader.Location = new System.Drawing.Point(189, 689);
             this.forceAccruedHeader.Name = "forceAccruedHeader";
             this.forceAccruedHeader.Size = new System.Drawing.Size(861, 158);
@@ -195,7 +187,6 @@ namespace ComboCounter.UserControls
             // 
             this.currentTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.currentTime.AutoSize = true;
-            this.currentTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.currentTime.Location = new System.Drawing.Point(1480, 446);
             this.currentTime.Name = "currentTime";
             this.currentTime.Size = new System.Drawing.Size(761, 240);
@@ -206,7 +197,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForce.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForce.AutoSize = true;
-            this.totalForce.ForeColor = System.Drawing.Color.Maroon;
             this.totalForce.Location = new System.Drawing.Point(514, 847);
             this.totalForce.Name = "totalForce";
             this.totalForce.Size = new System.Drawing.Size(212, 240);
@@ -218,7 +208,6 @@ namespace ComboCounter.UserControls
             this.setTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.setTime.AutoSize = true;
-            this.setTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.setTime.Location = new System.Drawing.Point(111, 0);
             this.setTime.Name = "setTime";
             this.setTime.Size = new System.Drawing.Size(596, 240);
@@ -239,6 +228,7 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.forceAccruedHeader, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.visualFeedbackControl1, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -282,6 +272,15 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1235, 234);
             this.tableLayoutPanel2.TabIndex = 80;
             // 
+            // visualFeedbackControl1
+            // 
+            this.visualFeedbackControl1.BackColor = System.Drawing.Color.Transparent;
+            this.visualFeedbackControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visualFeedbackControl1.Location = new System.Drawing.Point(1243, 692);
+            this.visualFeedbackControl1.Name = "visualFeedbackControl1";
+            this.visualFeedbackControl1.Size = new System.Drawing.Size(1235, 152);
+            this.visualFeedbackControl1.TabIndex = 81;
+            // 
             // targeted_total_of_time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -320,5 +319,6 @@ namespace ComboCounter.UserControls
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private TextButton minusIcon;
         private TextButton plusIcon;
+        private VisualFeedbackControl visualFeedbackControl1;
     }
 }

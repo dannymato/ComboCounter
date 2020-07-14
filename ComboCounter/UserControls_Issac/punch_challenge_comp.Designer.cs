@@ -90,7 +90,6 @@ namespace ComboCounter.UserControls
             // 
             this.player1TotalPunchHead.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player1TotalPunchHead.AutoSize = true;
-            this.player1TotalPunchHead.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.player1TotalPunchHead.Location = new System.Drawing.Point(259, 81);
             this.player1TotalPunchHead.Name = "player1TotalPunchHead";
             this.player1TotalPunchHead.Size = new System.Drawing.Size(438, 81);
@@ -101,7 +100,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForcePlayer2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForcePlayer2.AutoSize = true;
-            this.totalForcePlayer2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.totalForcePlayer2.Location = new System.Drawing.Point(325, 518);
             this.totalForcePlayer2.Name = "totalForcePlayer2";
             this.totalForcePlayer2.Size = new System.Drawing.Size(212, 240);
@@ -112,7 +110,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForcePlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForcePlayer1.AutoSize = true;
-            this.totalForcePlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.totalForcePlayer1.Location = new System.Drawing.Point(372, 517);
             this.totalForcePlayer1.Name = "totalForcePlayer1";
             this.totalForcePlayer1.Size = new System.Drawing.Size(212, 240);
@@ -123,7 +120,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalPunchPlay2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalPunchPlay2.AutoSize = true;
-            this.totalPunchPlay2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.totalPunchPlay2.Location = new System.Drawing.Point(325, 162);
             this.totalPunchPlay2.Name = "totalPunchPlay2";
             this.totalPunchPlay2.Size = new System.Drawing.Size(212, 240);
@@ -135,7 +131,6 @@ namespace ComboCounter.UserControls
             this.punchNumPlay1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.punchNumPlay1.AutoSize = true;
             this.punchNumPlay1.BackColor = System.Drawing.Color.Transparent;
-            this.punchNumPlay1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.punchNumPlay1.Location = new System.Drawing.Point(372, 162);
             this.punchNumPlay1.Name = "punchNumPlay1";
             this.punchNumPlay1.Size = new System.Drawing.Size(212, 240);
@@ -146,7 +141,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForcePlay2Head.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForcePlay2Head.AutoSize = true;
-            this.totalForcePlay2Head.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.totalForcePlay2Head.Location = new System.Drawing.Point(257, 402);
             this.totalForcePlay2Head.Name = "totalForcePlay2Head";
             this.totalForcePlay2Head.Size = new System.Drawing.Size(348, 81);
@@ -157,7 +151,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalForcePlay1Head.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalForcePlay1Head.AutoSize = true;
-            this.totalForcePlay1Head.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.totalForcePlay1Head.Location = new System.Drawing.Point(304, 402);
             this.totalForcePlay1Head.Name = "totalForcePlay1Head";
             this.totalForcePlay1Head.Size = new System.Drawing.Size(348, 81);
@@ -168,7 +161,6 @@ namespace ComboCounter.UserControls
             // 
             this.totalPunchPlayer2Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalPunchPlayer2Header.AutoSize = true;
-            this.totalPunchPlayer2Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.totalPunchPlayer2Header.Location = new System.Drawing.Point(212, 81);
             this.totalPunchPlayer2Header.Name = "totalPunchPlayer2Header";
             this.totalPunchPlayer2Header.Size = new System.Drawing.Size(438, 81);
@@ -179,7 +171,6 @@ namespace ComboCounter.UserControls
             // 
             this.player2Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player2Header.AutoSize = true;
-            this.player2Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.player2Header.Location = new System.Drawing.Point(311, 0);
             this.player2Header.Name = "player2Header";
             this.player2Header.Size = new System.Drawing.Size(240, 81);
@@ -190,7 +181,6 @@ namespace ComboCounter.UserControls
             // 
             this.player1Header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player1Header.AutoSize = true;
-            this.player1Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.player1Header.Location = new System.Drawing.Point(362, 0);
             this.player1Header.Name = "player1Header";
             this.player1Header.Size = new System.Drawing.Size(232, 81);
@@ -202,7 +192,6 @@ namespace ComboCounter.UserControls
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header.AutoSize = true;
-            this.header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.header.Location = new System.Drawing.Point(217, 0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1961, 180);
@@ -298,7 +287,6 @@ namespace ComboCounter.UserControls
             this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.ForeColor = System.Drawing.Color.White;
             this.minusIcon.Location = new System.Drawing.Point(4, 82);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
@@ -333,7 +321,6 @@ namespace ComboCounter.UserControls
             this.plusIcon.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.ForeColor = System.Drawing.Color.White;
             this.plusIcon.Location = new System.Drawing.Point(438, 87);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.plusIcon.Name = "plusIcon";

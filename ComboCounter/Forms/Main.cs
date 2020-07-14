@@ -5,37 +5,18 @@ using ComboCounter.UserControls_Gabriel;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Web.UI;
 using System.Windows.Forms;
 
 namespace ComboCounter
 {
 
-    public partial class Main : Form
-    {
+    public partial class Main : Form {
 
-        HomeScreen home;
-        
-        //ComboScoreControl comboScore;
-
-        //targeted_total_of_force totalForce;
-        //Targeted_total_of_force_comp totalForceComp;
-        //targeted_total_of_time totalTime;
-        //targeted_total_of_time_comp totalTimeComp;
-        //ComboScoreCompControl poundForPound;
-        //CensorControl sensorAdj;
-        //punch_count punchCount;
-        //punch_count_comp punchCountComp;
-        //punch_challenge punchChallenge;
-        //punch_challenge_comp punchChallengeComp;
-
-        //UserAccount userAccount;
         Forms.UserSettings userSettingsForm;
+        HomeScreen home;
 
-        //histogram histogramForm;
-
-        BaseFormControl currentControl;
-        Dictionary<string, BaseFormControl> pages;
+        BaseFormControl currentControl = null;
+        readonly Dictionary<string, BaseFormControl> pages;
 
         public Main()
         {
@@ -58,19 +39,24 @@ namespace ComboCounter
         #region Welcome Page
         private void home_button_Click(object sender, EventArgs e)
         {
-            home.Invalidate();
-
-
+            if (home == null)
+            {
+                LoadHomeScreen();
+            }
             LoadNewPage(home);
             
+        }
+
+        private void LoadHomeScreen()
+        {
+            home = new HomeScreen();
+            home.OnOptionClicked += SelectNewPage;
         }
 
         #endregion
 
         private void user_button_Click(object sender, EventArgs e)
         {
-            //Forms.justToTry UserAccountForm = new Forms.justToTry();
-            // UserAccountForm.Show();
 
             if (!pages.ContainsKey(nameof(UserAccount)))
             {
@@ -78,7 +64,6 @@ namespace ComboCounter
             }
             LoadNewPage(pages[nameof(UserAccount)]);
 
-            // user_control1.BringToFront();
         }
 
         private void exit_button_Click(object sender, EventArgs e)
@@ -129,117 +114,23 @@ namespace ComboCounter
             Height = screenSize.Height;
 
 
-            home = new HomeScreen();
-            this.currentControl = home;
-            mainPanel.Controls.Add(home);
             mainPanel.Width = Width;
             mainPanel.Height = Height - tableLayoutPanel1.Height;
             mainPanel.Location = new Point(0, tableLayoutPanel1.Height);
 
-            home.Width = mainPanel.Width;
-            home.Height = mainPanel.Height;
-
             BackColor = ThemeManager.initBackground();
 
-            home.OnOptionClicked += (send, args) => {
-
-                // Determines which control to page in depending on the argument passed through the event
-                switch (args.ClassToCall)
-                {
-                    case ClassToCall.ComboCounter:
-                        if (!pages.ContainsKey(nameof(ComboScoreControl)))
-                        {
-                            pages.Add(nameof(ComboScoreControl), new ComboScoreControl());
-                        }
-                        LoadNewPage(pages[nameof(ComboScoreControl)]);
-                        break;
-                    case ClassToCall.TotalForce:
-                        if (!pages.ContainsKey(nameof(targeted_total_of_force)))
-                        {
-                            pages.Add(nameof(targeted_total_of_force), new targeted_total_of_force());
-                        }
-                        LoadNewPage(pages[nameof(targeted_total_of_force)]);
-                        break;
-                    case ClassToCall.TotalForce2Play:
-                        if (!pages.ContainsKey(nameof(Targeted_total_of_force_comp)))
-                        {
-                            pages.Add(nameof(Targeted_total_of_force_comp), new Targeted_total_of_force_comp());
-                        }
-                        LoadNewPage(pages[nameof(Targeted_total_of_force_comp)]);
-                        break;
-                    case ClassToCall.TotalTime:
-                        if (!pages.ContainsKey(nameof(targeted_total_of_time)))
-                        {
-                            pages.Add(nameof(targeted_total_of_time), new targeted_total_of_time());
-                        }
-                        LoadNewPage(pages[nameof(targeted_total_of_time)]);
-                        break;
-                    case ClassToCall.TotalTimeCustom:
-                        if (!pages.ContainsKey(nameof(targeted_total_of_time_comp)))
-                        {
-                            pages.Add(nameof(targeted_total_of_time_comp), new targeted_total_of_time_comp());
-                        }
-                        LoadNewPage(pages[nameof(targeted_total_of_time_comp)]);
-                        break;
-                    case ClassToCall.CompetePound:
-                        if (!pages.ContainsKey(nameof(ComboScoreCompControl)))
-                        {
-                            pages.Add(nameof(ComboScoreCompControl), new ComboScoreCompControl());
-                        }
-                        LoadNewPage(pages[nameof(ComboScoreCompControl)]);
-                        break;
-                    case ClassToCall.SensorAdj:
-                        if (!pages.ContainsKey(nameof(CensorControl)))
-                        {
-                            pages.Add(nameof(CensorControl), new CensorControl());
-                        }
-                        LoadNewPage(pages[nameof(CensorControl)]);
-                        break;
-                    case ClassToCall.PunchCount:
-                        if (!pages.ContainsKey(nameof(punch_count)))
-                        {
-                            pages.Add(nameof(punch_count), new punch_count());
-                        }
-                        LoadNewPage(pages[nameof(punch_count)]);
-                        break;
-                    case ClassToCall.PunchCountCustom:
-                        if (!pages.ContainsKey(nameof(punch_count_comp)))
-                        {
-                            pages.Add(nameof(punch_count_comp), new punch_count_comp());
-                        }
-                        LoadNewPage(pages[nameof(punch_count_comp)]);
-                        break;
-                    case ClassToCall.PunchChallenge:
-                        if (!pages.ContainsKey(nameof(punch_challenge)))
-                        {
-                            pages.Add(nameof(punch_challenge), new punch_challenge());
-                        }
-                        LoadNewPage(pages[nameof(punch_challenge)]);
-                        break;
-                    case ClassToCall.PunchChallengeCustom:
-                        if (!pages.ContainsKey(nameof(punch_challenge_comp)))
-                        {
-                            pages.Add(nameof(punch_challenge_comp), new punch_challenge_comp());
-                        }
-                        LoadNewPage(pages[nameof(punch_challenge)]);
-                        break;
-                    default:
-                        break;
-                }
-            };
-
+            LoadHomeScreen();
+            LoadNewPage(home);
 
         }
 
         private void RefreshPages(object sender, EventArgs eArgs)
         {
-            foreach (var page in pages.Values)
-            {
-                page.Invalidate();
-            }
+            pages.Clear();
 
-            home.Invalidate();
-            userSettingsForm.Invalidate();
+            home = null;
+            BackColor = ThemeManager.initBackground();
         }
 
         // Removes the old page in the panel and places the new one in
@@ -248,7 +139,10 @@ namespace ComboCounter
         {
             this.mainPanel.Hide();
             this.mainPanel.Controls.Clear();
-            currentControl.OnPageRemoved();
+            if (currentControl != null)
+            {
+                currentControl.OnPageRemoved();
+            }
 
             newPage.OnPageAttached();
             this.mainPanel.Controls.Add(newPage);
@@ -257,6 +151,92 @@ namespace ComboCounter
             newPage.Left = (mainPanel.Width - newPage.Width) / 2;
             newPage.Top = (mainPanel.Height - newPage.Height) / 2;
             this.mainPanel.Show();
+        }
+
+        private void SelectNewPage(object sender, OptionClickEventArgs args)
+        {
+            switch (args.ClassToCall)
+            {
+                case ClassToCall.ComboCounter:
+                    if (!pages.ContainsKey(nameof(ComboScoreControl)))
+                    {
+                        pages.Add(nameof(ComboScoreControl), new ComboScoreControl());
+                    }
+                    LoadNewPage(pages[nameof(ComboScoreControl)]);
+                    break;
+                case ClassToCall.TotalForce:
+                    if (!pages.ContainsKey(nameof(targeted_total_of_force)))
+                    {
+                        pages.Add(nameof(targeted_total_of_force), new targeted_total_of_force());
+                    }
+                    LoadNewPage(pages[nameof(targeted_total_of_force)]);
+                    break;
+                case ClassToCall.TotalForce2Play:
+                    if (!pages.ContainsKey(nameof(Targeted_total_of_force_comp)))
+                    {
+                        pages.Add(nameof(Targeted_total_of_force_comp), new Targeted_total_of_force_comp());
+                    }
+                    LoadNewPage(pages[nameof(Targeted_total_of_force_comp)]);
+                    break;
+                case ClassToCall.TotalTime:
+                    if (!pages.ContainsKey(nameof(targeted_total_of_time)))
+                    {
+                        pages.Add(nameof(targeted_total_of_time), new targeted_total_of_time());
+                    }
+                    LoadNewPage(pages[nameof(targeted_total_of_time)]);
+                    break;
+                case ClassToCall.TotalTimeCustom:
+                    if (!pages.ContainsKey(nameof(targeted_total_of_time_comp)))
+                    {
+                        pages.Add(nameof(targeted_total_of_time_comp), new targeted_total_of_time_comp());
+                    }
+                    LoadNewPage(pages[nameof(targeted_total_of_time_comp)]);
+                    break;
+                case ClassToCall.CompetePound:
+                    if (!pages.ContainsKey(nameof(ComboScoreCompControl)))
+                    {
+                        pages.Add(nameof(ComboScoreCompControl), new ComboScoreCompControl());
+                    }
+                    LoadNewPage(pages[nameof(ComboScoreCompControl)]);
+                    break;
+                case ClassToCall.SensorAdj:
+                    if (!pages.ContainsKey(nameof(CensorControl)))
+                    {
+                        pages.Add(nameof(CensorControl), new CensorControl());
+                    }
+                    LoadNewPage(pages[nameof(CensorControl)]);
+                    break;
+                case ClassToCall.PunchCount:
+                    if (!pages.ContainsKey(nameof(punch_count)))
+                    {
+                        pages.Add(nameof(punch_count), new punch_count());
+                    }
+                    LoadNewPage(pages[nameof(punch_count)]);
+                    break;
+                case ClassToCall.PunchCountCustom:
+                    if (!pages.ContainsKey(nameof(punch_count_comp)))
+                    {
+                        pages.Add(nameof(punch_count_comp), new punch_count_comp());
+                    }
+                    LoadNewPage(pages[nameof(punch_count_comp)]);
+                    break;
+                case ClassToCall.PunchChallenge:
+                    if (!pages.ContainsKey(nameof(punch_challenge)))
+                    {
+                        pages.Add(nameof(punch_challenge), new punch_challenge());
+                    }
+                    LoadNewPage(pages[nameof(punch_challenge)]);
+                    break;
+                case ClassToCall.PunchChallengeCustom:
+                    if (!pages.ContainsKey(nameof(punch_challenge_comp)))
+                    {
+                        pages.Add(nameof(punch_challenge_comp), new punch_challenge_comp());
+                    }
+                    LoadNewPage(pages[nameof(punch_challenge)]);
+                    break;
+                default:
+                    break;
+            }
         }
 
     }

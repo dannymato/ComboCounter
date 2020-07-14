@@ -110,7 +110,6 @@
             // 
             this.h41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h41.AutoSize = true;
-            this.h41.ForeColor = System.Drawing.Color.SteelBlue;
             this.h41.Location = new System.Drawing.Point(62, 34);
             this.h41.Name = "h41";
             this.h41.Size = new System.Drawing.Size(240, 54);
@@ -121,7 +120,6 @@
             // 
             this.TotForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotForceInfo.AutoSize = true;
-            this.TotForceInfo.ForeColor = System.Drawing.Color.LightBlue;
             this.TotForceInfo.Location = new System.Drawing.Point(479, 277);
             this.TotForceInfo.Name = "TotForceInfo";
             this.TotForceInfo.Size = new System.Drawing.Size(133, 61);
@@ -132,7 +130,6 @@
             // 
             this.HardestHitInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HardestHitInfo.AutoSize = true;
-            this.HardestHitInfo.ForeColor = System.Drawing.Color.LightBlue;
             this.HardestHitInfo.Location = new System.Drawing.Point(479, 31);
             this.HardestHitInfo.Name = "HardestHitInfo";
             this.HardestHitInfo.Size = new System.Drawing.Size(133, 61);
@@ -143,7 +140,6 @@
             // 
             this.h42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h42.AutoSize = true;
-            this.h42.ForeColor = System.Drawing.Color.SteelBlue;
             this.h42.Location = new System.Drawing.Point(36, 157);
             this.h42.Name = "h42";
             this.h42.Size = new System.Drawing.Size(292, 54);
@@ -154,7 +150,6 @@
             // 
             this.AvgForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AvgForceInfo.AutoSize = true;
-            this.AvgForceInfo.ForeColor = System.Drawing.Color.LightBlue;
             this.AvgForceInfo.Location = new System.Drawing.Point(479, 154);
             this.AvgForceInfo.Name = "AvgForceInfo";
             this.AvgForceInfo.Size = new System.Drawing.Size(133, 61);
@@ -165,7 +160,6 @@
             // 
             this.h43.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h43.AutoSize = true;
-            this.h43.ForeColor = System.Drawing.Color.SteelBlue;
             this.h43.Location = new System.Drawing.Point(65, 280);
             this.h43.Name = "h43";
             this.h43.Size = new System.Drawing.Size(233, 54);
@@ -176,18 +170,17 @@
             // 
             this.h44.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h44.AutoSize = true;
-            this.h44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.h44.Location = new System.Drawing.Point(3, 403);
             this.h44.Name = "h44";
             this.h44.Size = new System.Drawing.Size(358, 54);
             this.h44.TabIndex = 6;
             this.h44.Text = "Shortest Hit Time";
+            this.h44.Click += new System.EventHandler(this.h44_Click);
             // 
             // h45
             // 
             this.h45.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h45.AutoSize = true;
-            this.h45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(161)))), ((int)(((byte)(242)))));
             this.h45.Location = new System.Drawing.Point(5, 528);
             this.h45.Name = "h45";
             this.h45.Size = new System.Drawing.Size(354, 54);
@@ -198,7 +191,6 @@
             // 
             this.shortestTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shortestTimeLabel.AutoSize = true;
-            this.shortestTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.shortestTimeLabel.Location = new System.Drawing.Point(485, 400);
             this.shortestTimeLabel.Name = "shortestTimeLabel";
             this.shortestTimeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -210,7 +202,6 @@
             // 
             this.averageTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.averageTimeLabel.AutoSize = true;
-            this.averageTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.averageTimeLabel.Location = new System.Drawing.Point(485, 524);
             this.averageTimeLabel.Name = "averageTimeLabel";
             this.averageTimeLabel.Size = new System.Drawing.Size(122, 61);
