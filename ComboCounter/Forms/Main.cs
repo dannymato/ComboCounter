@@ -16,6 +16,7 @@ namespace ComboCounter
         HomeScreen home;
 
         BaseFormControl currentControl = null;
+
         readonly Dictionary<string, BaseFormControl> pages;
 
         public Main()
@@ -103,8 +104,8 @@ namespace ComboCounter
 
             ToolTip HomeToolTip = new ToolTip();
             HomeToolTip.SetToolTip(home_button, "Home");
-            HomeToolTip.SetToolTip(force_tracker, "Force Tracker");
-            HomeToolTip.SetToolTip(time_button, "Time Tracker");
+            HomeToolTip.SetToolTip(force_tracker, "Sensor Calibration");
+            HomeToolTip.SetToolTip(time_button, "User Settings");
             HomeToolTip.SetToolTip(histogram, "Show History");
             HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
             HomeToolTip.SetToolTip(exit_button, "Exit Program");
@@ -232,7 +233,7 @@ namespace ComboCounter
                     {
                         pages.Add(nameof(punch_challenge_comp), new punch_challenge_comp());
                     }
-                    LoadNewPage(pages[nameof(punch_challenge)]);
+                    LoadNewPage(pages[nameof(punch_challenge_comp)]);
                     break;
                 default:
                     break;
