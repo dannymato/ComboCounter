@@ -24,7 +24,7 @@ namespace ComboCounter.CustomControls
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
 
-            ForeColor = Color.White;
+            ForeColor = ThemeManager.initTextColor();
             AutoSize = true;
 
             Padding = new Padding()

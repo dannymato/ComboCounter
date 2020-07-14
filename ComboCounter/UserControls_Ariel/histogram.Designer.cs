@@ -175,6 +175,7 @@
             this.h44.Size = new System.Drawing.Size(358, 54);
             this.h44.TabIndex = 6;
             this.h44.Text = "Shortest Hit Time";
+            this.h44.Click += new System.EventHandler(this.h44_Click);
             // 
             // h45
             // 

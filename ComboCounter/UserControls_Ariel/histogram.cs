@@ -97,5 +97,9 @@ namespace ComboCounter.UserControls
             comboBox1.Items.AddRange(History.GetSessions().ToArray());
         }
 
+        private void h44_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
