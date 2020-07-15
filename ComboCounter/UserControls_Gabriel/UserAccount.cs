@@ -25,15 +25,8 @@ namespace ComboCounter.UserControls_Gabriel
                 password = UserManager.GetPassword();
                 fname = UserManager.GetFname();
                 lname = UserManager.GetLname();
-                // age_tb.Text = (reader["age"]).ToString();
-                //  id.Text = (reader["id"]).ToString();
-                //  height_tb.Text = (reader["height"]).ToString();
-                //  weight_tb.Text = (reader["weight"]).ToString();
-                // cl.Text = (reader["class"]).ToString();
-                //   sex_tb.Text = (reader["age"]).ToString();
                 textBox17.Text = username;
                 textBox18.Text = password;
-              //  textBox11.Text = fname;
 
         }
 
@@ -151,6 +144,11 @@ namespace ComboCounter.UserControls_Gabriel
         }
 
         public override void OnExit()
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }

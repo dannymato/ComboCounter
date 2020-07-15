@@ -20,14 +20,14 @@ namespace ComboCounter.UserControls
         private readonly SoundPlayer bellRung;
         private readonly SoundPlayer missedHit;
 
-        private bool hitSoundGate = UserManager.HitSoundSetting();
-        private bool missSoundGate = UserManager.MissSoundSetting(); 
+        private bool hitSoundGate = UserManager.UseHitSound();
+        private bool missSoundGate = UserManager.UseMissSound(); 
 
         private VisualFeedbackControl feedbackControl;
 
         private Session session;
 
-
+        
         private bool useFeedback;
 
         int i = 0;
@@ -45,10 +45,17 @@ namespace ComboCounter.UserControls
             feedbackControl.Left = 100;
             feedbackControl.Top = 10;
             feedbackControl.Height = 50;
+            feedbackControl.Width = 400;
             Controls.Add(feedbackControl);
+            feedbackControl.FinishSetup();
             Header.Left = tableLayoutPanel1.Left + ((tableLayoutPanel1.Width - Header.Width) / 2);
         }
-    
+
+        public override void RecreateView()
+        {
+            base.RecreateView();
+        }
+
         // Start Button
         private void button2_Click(object sender, EventArgs e)
         {
@@ -183,7 +190,7 @@ namespace ComboCounter.UserControls
                 }
                 else if (lastHitVal >= (thresholdVal - (thresholdVal * 0.1)) && lastHitVal < (thresholdVal + (thresholdVal * 0.1)))
                 {
-                    lastHit.ForeColor = System.Drawing.Color.Yellow;
+                    lastHit.ForeColor = System.Drawing.Color.Orange;
 
                     if(hitSoundGate == true)
                     {
@@ -201,7 +208,7 @@ namespace ComboCounter.UserControls
                     };
                 }
 
-                if (lastHit.ForeColor == System.Drawing.Color.Yellow || lastHit.ForeColor == System.Drawing.Color.Green)
+                if (lastHit.ForeColor == System.Drawing.Color.Orange || lastHit.ForeColor == System.Drawing.Color.Green)
                 {
                     punchCounterVal++;
                     punchCounter.Text = punchCounterVal.ToString();
@@ -210,8 +217,6 @@ namespace ComboCounter.UserControls
                 {
                     missPunch++;
                     numInvalidPunch.Text = missPunch.ToString();
-
-
                 }
             }
         }       
@@ -248,6 +253,9 @@ namespace ComboCounter.UserControls
         {
             base.OnPageAttached();
             useFeedback = !UserManager.VisualFeedbackOff();
+
+            hitSoundGate = UserManager.UseHitSound();
+            missSoundGate = UserManager.UseMissSound();
         }
 
         public override void OnPageRemoved()

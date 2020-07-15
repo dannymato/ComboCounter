@@ -13,7 +13,7 @@ namespace ComboCounter.Classes
         public override Font Font { get; set; }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
+        public override Color ForeColor { get; set; }
 
         public H2() : base()
         {

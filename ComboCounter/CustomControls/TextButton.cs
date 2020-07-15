@@ -12,7 +12,7 @@ namespace ComboCounter.CustomControls
         public override Font Font { get; set; }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
+        public override Color ForeColor { get; set; }
 
         public TextButton() : base()
         {
@@ -24,7 +24,7 @@ namespace ComboCounter.CustomControls
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
 
-            ForeColor = Color.White;
+            ForeColor = ThemeManager.initTextColor();
             AutoSize = true;
 
             Padding = new Padding()

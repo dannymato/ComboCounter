@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ComboCounter.Classes;
 using System.Diagnostics;
+using System.Windows.Media;
 
 namespace ComboCounter.UserControls
 {
@@ -16,6 +17,8 @@ namespace ComboCounter.UserControls
         Session session;
         Stopwatch timeKeeper;
 
+        Random r;
+
         public targeted_total_of_time()
         {
             InitializeComponent();
@@ -23,6 +26,10 @@ namespace ComboCounter.UserControls
             timer1 = new Timer();
             timer1.Interval = 100;
             timer1.Tick += new EventHandler(timer1_Tick);
+
+            r = new Random();
+
+            visualFeedbackControl1.FinishSetup();
         }
 
         // Start Button
@@ -69,11 +76,18 @@ namespace ComboCounter.UserControls
             long remainingMsecs = (timeIntervalSecs * 1000) - timeKeeper.ElapsedMilliseconds;
 
             currentTime.Text = Tools.FormatCurrentTime(remainingMsecs);
-            
-            totalForceBox += 50;
-            totalForce.Text = totalForceBox.ToString();
-            session.insertHit(50, timeKeeper.Elapsed.TotalSeconds);
 
+            if (remainingMsecs % 2 == 0)
+            {
+                int nextForce = r.Next(50, 250);
+
+                totalForceBox += nextForce;
+                totalForce.Text = totalForceBox.ToString();
+                session.insertHit(nextForce, timeKeeper.Elapsed.TotalSeconds);
+
+                visualFeedbackControl1.PushPunch(nextForce);
+
+            }
             if (remainingMsecs <= 0)
             {
                 timer1.Stop();

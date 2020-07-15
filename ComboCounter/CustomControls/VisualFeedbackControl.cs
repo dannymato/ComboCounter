@@ -8,13 +8,12 @@ using System.Windows.Forms;
 namespace ComboCounter.CustomControls
 {
 
-    // This class will show a visual representation of the current hit
+    // This class will show a visual representation of the last hit
     // The low medium and high are the colors which are used for the bar
     // The hits are input with the PushPunch method
     // When using this class it is important that before the window is destroyed cleanup is called
     // If cleanup is not called an exception may occur since the timers would stil continue going
-    // Adding the control to the parent control should be the last thing when creating the control
-    // If not FinishSetup has to be called explicitly
+    // FinishSetup has to be called explicitly once the control size has been set
     class VisualFeedbackControl : UserControl
     {
         // Holds onto punches to queue up for animation
@@ -23,7 +22,6 @@ namespace ComboCounter.CustomControls
         private Queue<float> punchQueue = new Queue<float>(5);
         const float MAX_FORCE = 400;
         const int MIN_LENGTH = 40;
-        const int MAX_LENGTH = 500;
         TimeSpan animationDuration = new TimeSpan(1000000);
 
         Color Low;
@@ -77,7 +75,6 @@ namespace ComboCounter.CustomControls
 
         public void FinishSetup()
         {
-            Width = MAX_LENGTH;
             BackColor = Color.Transparent;
 
             bar.Height = (int)(Height * 0.8);
@@ -88,8 +85,9 @@ namespace ComboCounter.CustomControls
 
             Controls.Add(bar);
 
-            int numMarks = MAX_LENGTH / 40;
+            int numMarks = Width / 40;
 
+            hashMarks = null;
             hashMarks = new List<UserControl>(numMarks);
             for (int i = 0; i < numMarks; i++)
             {
@@ -103,12 +101,6 @@ namespace ComboCounter.CustomControls
             }
         }
 
-        protected override void OnParentChanged(EventArgs e)
-        {
-            base.OnParentChanged(e);
-            FinishSetup();
-        }
-
         private void InitializerTimer_Tick(object sender, EventArgs e)
         {
             bar.Height = (int)(Height * 0.8);
@@ -119,7 +111,7 @@ namespace ComboCounter.CustomControls
                 AnimationTimer = new System.Timers.Timer();
                 AnimationTimer.Interval = 10;
                 AnimationTimer.Elapsed += AnimationTimer_Tick;
-                currWidth = (int)Math.Min(MAX_LENGTH, MAX_LENGTH * (current_Force / MAX_FORCE) + MIN_LENGTH);
+                currWidth = (int)Math.Min(Width, Width * (current_Force / MAX_FORCE) + MIN_LENGTH);
                 AnimationTimer.Start();
                 animationStart = DateTime.Now;
                 isRunning = true;
@@ -127,6 +119,7 @@ namespace ComboCounter.CustomControls
             else if (!isRunning && punchQueue.Count == 0 && lastWidth > 0)
             {
                 lastWidth -= decreasePerTick;
+                bar.BackColor = Tools.Interpolate(Low, Medium, High, (float)lastWidth / (float)Width);
                 if (lastWidth <= 0)
                 {
                     lastWidth = 0;
@@ -144,7 +137,9 @@ namespace ComboCounter.CustomControls
             if (AnimationTimer != null)
             {
                 AnimationTimer.Stop();
+                AnimationTimer.Dispose();
             }
+            InitializerTimer.Dispose();
         }
 
         private void AnimationTimer_Tick(object sender, ElapsedEventArgs e)
@@ -156,15 +151,15 @@ namespace ComboCounter.CustomControls
             {
                 AnimationTimer.Stop();
                 lastWidth = currWidth;
-                decreasePerTick = Math.Max(lastWidth / 100, 1);
                 isRunning = false;
             }
 
             float percentForce = current_Force / MAX_FORCE;
 
-            Color forceColor = Tools.Interpolate(Low, Medium, High, percentForce);
 
             int width = (int)(lastWidth + (currWidth - lastWidth) * percentTime);
+            
+            Color forceColor = Tools.Interpolate(Low, Medium, High, (float)width / (float)Width);
 
             Invoke((MethodInvoker)delegate
             {

@@ -18,9 +18,11 @@ public class ThemeConstants
             public static Color HeaderTextColor1 = Color.FromArgb(29, 161, 242);
 
             // HEADER 2 ELEMENTS
-            public static Color H2TextColor1 = Color.FromArgb(200, 200, 200);
+            public static Color H2TextColor1 = Color.FromArgb(20, 20, 20);
             public static Color H2HoverColor1 = Color.FromArgb(29, 161, 242);
             public static Color H2ClickColor1 = Color.FromArgb(0, 0, 0);
+
+    public static Color Theme1TextColor = Color.FromArgb(20, 20, 20);
 
     //-------------------------
 
