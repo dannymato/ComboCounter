@@ -8,7 +8,7 @@ namespace ComboCounter.UserControls
 {
     public partial class timeMode : UserControl
     {
-        combo_tracker ct = new combo_tracker();
+        //combo_tracker ct = new combo_tracker();
 
         bool timeButtonClicked = false;
         bool forceButtonClicked = false;

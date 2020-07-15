@@ -45,6 +45,7 @@ namespace ComboCounter.UserControls
             this.stopButton = new ComboCounter.CustomControls.OutlineButton();
             this.resetButton = new ComboCounter.CustomControls.OutlineButton();
             this.totalPunchHeader = new ComboCounter.Classes.H2();
+            this.visualFeedbackControl1 = new ComboCounter.CustomControls.VisualFeedbackControl();
             this.SuspendLayout();
             // 
             // timer1
@@ -57,8 +58,7 @@ namespace ComboCounter.UserControls
             this.startButton.AutoSize = true;
             this.startButton.BackColor = System.Drawing.Color.Transparent;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.startButton.Location = new System.Drawing.Point(1264, 887);
+            this.startButton.Location = new System.Drawing.Point(1263, 703);
             this.startButton.Margin = new System.Windows.Forms.Padding(4);
             this.startButton.Name = "startButton";
             this.startButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -74,7 +74,6 @@ namespace ComboCounter.UserControls
             this.minusIcon.BackColor = System.Drawing.Color.Transparent;
             this.minusIcon.FlatAppearance.BorderSize = 0;
             this.minusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
             this.minusIcon.Location = new System.Drawing.Point(1390, 521);
             this.minusIcon.Margin = new System.Windows.Forms.Padding(4);
             this.minusIcon.Name = "minusIcon";
@@ -91,7 +90,6 @@ namespace ComboCounter.UserControls
             this.plusIcon.BackColor = System.Drawing.Color.Transparent;
             this.plusIcon.FlatAppearance.BorderSize = 0;
             this.plusIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusIcon.Font = new System.Drawing.Font("Roboto Medium", 20F);
             this.plusIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.plusIcon.Location = new System.Drawing.Point(2038, 521);
             this.plusIcon.Margin = new System.Windows.Forms.Padding(4);
@@ -118,7 +116,6 @@ namespace ComboCounter.UserControls
             // 
             this.limit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.limit.ForeColor = System.Drawing.Color.DarkRed;
             this.limit.Location = new System.Drawing.Point(1497, 447);
             this.limit.Name = "limit";
             this.limit.Size = new System.Drawing.Size(489, 225);
@@ -175,8 +172,7 @@ namespace ComboCounter.UserControls
             this.stopButton.AutoSize = true;
             this.stopButton.BackColor = System.Drawing.Color.Transparent;
             this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton.ForeColor = System.Drawing.Color.Red;
-            this.stopButton.Location = new System.Drawing.Point(1608, 887);
+            this.stopButton.Location = new System.Drawing.Point(1607, 703);
             this.stopButton.Name = "stopButton";
             this.stopButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.stopButton.Size = new System.Drawing.Size(268, 94);
@@ -190,8 +186,7 @@ namespace ComboCounter.UserControls
             this.resetButton.AutoSize = true;
             this.resetButton.BackColor = System.Drawing.Color.Transparent;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.resetButton.Location = new System.Drawing.Point(1948, 887);
+            this.resetButton.Location = new System.Drawing.Point(1947, 703);
             this.resetButton.Name = "resetButton";
             this.resetButton.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.resetButton.Size = new System.Drawing.Size(268, 94);
@@ -212,11 +207,20 @@ namespace ComboCounter.UserControls
             this.totalPunchHeader.Text = "Total Punches";
             this.totalPunchHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // visualFeedbackControl1
+            // 
+            this.visualFeedbackControl1.Location = new System.Drawing.Point(1263, 838);
+            this.visualFeedbackControl1.MaxForce = 300F;
+            this.visualFeedbackControl1.Name = "visualFeedbackControl1";
+            this.visualFeedbackControl1.Size = new System.Drawing.Size(964, 130);
+            this.visualFeedbackControl1.TabIndex = 80;
+            // 
             // punch_challenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.visualFeedbackControl1);
             this.Controls.Add(this.totalPunchHeader);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.stopButton);
@@ -252,5 +256,6 @@ namespace ComboCounter.UserControls
         private OutlineButton stopButton;
         private OutlineButton resetButton;
         private H2 totalPunchHeader;
+        private VisualFeedbackControl visualFeedbackControl1;
     }
 }

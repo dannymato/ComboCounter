@@ -3,7 +3,6 @@ using System.Timers;
 using System;
 using System.Media;
 using ComboCounter.Classes;
-using MySqlX.XDevAPI.Relational;
 using System.Drawing;
 using ComboCounter.CustomControls;
 
@@ -15,38 +14,31 @@ namespace ComboCounter.UserControls_Gabriel
         int h, m, s, totalForceBox;
         int actualForce = 50000;
 
-        const float MAX_FORCE = 1600;
-
-        const int MAX_LENGTH = 200;
-
         SmallInfo[] forceLabels = new SmallInfo[9];
         SmallInfo[] timeLabels = new SmallInfo[8];
-
-        DateTime animationStart;
-        TimeSpan animationDuration = new TimeSpan(1000000);
 
         VisualFeedbackControl feedbackControl;
 
         int forceIndex = 0;
 
-        int timeLabelIndex = 0;
 
         readonly int[] forceArray = new int[] { 90, 152, 1041, 1541, 1098, 1012, 43, 704, 632, 323, 451, 341, 456, 711, 634 };
         readonly double[] timeArray = new double[] { 0.078, 0.297, 0.360, 0.500, 0.390, 0.300, 0.266, 0.438, .232, .453, .342, .235, .543, .343 };
 
         double cumulativeTime = 0.0;
 
-
         Session session;
 
         public ComboScoreControl()
         {
             InitializeComponent();
-            feedbackControl = new VisualFeedbackControl();
-            feedbackControl.Height = 80;
-            feedbackControl.Left = 1000;
-            feedbackControl.Top = 180;
-            feedbackControl.Width = 500;
+            feedbackControl = new VisualFeedbackControl
+            {
+                Height = 80,
+                Left = 1000,
+                Top = 180,
+                Width = 500
+            };
             Controls.Add(feedbackControl);
             feedbackControl.FinishSetup();
         }
@@ -71,7 +63,7 @@ namespace ComboCounter.UserControls_Gabriel
             t.Stop();
             s = 0; m = 0; h = 0;
             totalForceBox = 0;
-            totalTime.Text = "00:00.0";
+            totalTime.Text = Tools.FormatCurrentTime(0);
 
             scoreInfoLabel.Text = " N/A";
             totalTimeLabelnfo.Text = " N/A";
@@ -88,73 +80,12 @@ namespace ComboCounter.UserControls_Gabriel
 
             forceIndex = 0;
 
-            timeLabelIndex = 0;
         }
 
         private void PauseTimers()
         {
             t.Stop();
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, System.EventArgs e)
-        {
-
-        }
-
-        //private void IndicateHit(float force)
-        //{
-        //    System.Timers.Timer animate = new System.Timers.Timer();
-        //    animate.Interval = 16;
-        //    animate.Elapsed += (object sender, ElapsedEventArgs e) =>
-        //    {
-        //        TimeSpan span = e.SignalTime - animationStart;
-        //        double percentTime = span.TotalMilliseconds / animationDuration.TotalMilliseconds;
-
-        //        if (span >= animationDuration)
-        //        {
-        //            animate.Stop();
-        //        }
-
-        //        float percentForce = force / MAX_FORCE;
-
-        //        Color forceColor = Tools.Interpolate(Color.Red, Color.Yellow, Color.Green, percentForce);
-        //        int width = (int)(Math.Min(MAX_LENGTH, (MAX_LENGTH * percentForce + 40)));
-
-        //        punchIndicator.Invoke((MethodInvoker)delegate
-        //        {
-        //            punchIndicator.Width = width;
-        //        });
-        //        punchIndicator.BackColor = Color.FromArgb((int)(255 * percentTime), forceColor.R, forceColor.G, forceColor.B);
-        //    };
-        //    animationStart = DateTime.Now;
-        //    animate.Start();
-
-        //}
 
         private void ComboScoreControl_Load(object sender, System.EventArgs e)
         {
@@ -164,6 +95,7 @@ namespace ComboCounter.UserControls_Gabriel
 
             FontManager fm = FontManager.getInstance();
 
+            // Load all the labels for the force table
             for (int i = 0; i < forceLabels.Length; i++)
             {
 
@@ -174,9 +106,10 @@ namespace ComboCounter.UserControls_Gabriel
                     Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
-                tableLayoutPanel1.Controls.Add(forceLabels[i]);
+                forceLabelTable.Controls.Add(forceLabels[i]);
             }
 
+            // Load all the labels for the time interval table
             for (int i = 0; i < timeLabels.Length; i++)
             {
                 timeLabels[i] = new SmallInfo
@@ -185,7 +118,7 @@ namespace ComboCounter.UserControls_Gabriel
                     Anchor = AnchorStyles.None,
                     Dock = DockStyle.Fill
                 };
-                tableLayoutPanel2.Controls.Add(timeLabels[i]);
+                timeIntervalLabelTable.Controls.Add(timeLabels[i]);
             }
 
             headerLabel.Font = fm.getHeaderFont();
@@ -204,6 +137,7 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
+        //TODO: Change the time calculation to be more accurate
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
             Invoke(new Action(() =>
@@ -222,7 +156,7 @@ namespace ComboCounter.UserControls_Gabriel
 
                 if (s % 30 == 0)
                 {
-                    ;
+                    
                     if (forceIndex >= forceLabels.Length)
                     {
                         for (int i = 0; i < forceLabels.Length; i++)

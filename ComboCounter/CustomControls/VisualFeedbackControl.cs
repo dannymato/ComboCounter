@@ -48,7 +48,7 @@ namespace ComboCounter.CustomControls
 
         // Calculated at the end of an animation
         // Is calculated to be approx. 5 seconds to fully retract with a minimum of 1 per tick
-        int decreasePerTick = 2;
+        public int decreasePerTick = 2;
 
         UserControl bar;
 
@@ -104,6 +104,8 @@ namespace ComboCounter.CustomControls
                 hashMarks[i].Left = 40 * i;
                 Controls.Add(hashMarks[i]);
             }
+
+            decreasePerTick = Width / 200;
         }
 
         /// <summary>

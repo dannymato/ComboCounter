@@ -31,12 +31,11 @@ namespace ComboCounter.UserControls_Gabriel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.forceLabelTable = new System.Windows.Forms.TableLayoutPanel();
+            this.timeIntervalLabelTable = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new ComboCounter.CustomControls.OutlineButton();
             this.button2 = new ComboCounter.CustomControls.OutlineButton();
             this.button3 = new ComboCounter.CustomControls.OutlineButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.totalTime = new ComboCounter.Classes.BigInfo();
             this.headerLabel = new ComboCounter.Classes.Header1();
             this.forceHeader = new ComboCounter.Classes.H2();
@@ -49,46 +48,44 @@ namespace ComboCounter.UserControls_Gabriel
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(508, 600);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1516, 102);
-            this.tableLayoutPanel2.TabIndex = 49;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            this.timeIntervalLabelTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.timeIntervalLabelTable.ColumnCount = 8;
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.timeIntervalLabelTable.Location = new System.Drawing.Point(508, 600);
+            this.timeIntervalLabelTable.Margin = new System.Windows.Forms.Padding(4);
+            this.timeIntervalLabelTable.Name = "tableLayoutPanel2";
+            this.timeIntervalLabelTable.RowCount = 1;
+            this.timeIntervalLabelTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.timeIntervalLabelTable.Size = new System.Drawing.Size(1516, 102);
+            this.timeIntervalLabelTable.TabIndex = 49;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 9;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11451F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11451F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(409, 363);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1711, 102);
-            this.tableLayoutPanel1.TabIndex = 50;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.forceLabelTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.forceLabelTable.ColumnCount = 9;
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11451F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11451F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11014F));
+            this.forceLabelTable.Location = new System.Drawing.Point(409, 363);
+            this.forceLabelTable.Margin = new System.Windows.Forms.Padding(4);
+            this.forceLabelTable.Name = "tableLayoutPanel1";
+            this.forceLabelTable.RowCount = 1;
+            this.forceLabelTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.forceLabelTable.Size = new System.Drawing.Size(1711, 102);
+            this.forceLabelTable.TabIndex = 50;
             // 
             // button1
             // 
@@ -144,10 +141,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // totalTime
             // 
             this.totalTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -169,7 +162,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.headerLabel.TabIndex = 65;
             this.headerLabel.Text = "Combo Score";
             this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.headerLabel.Click += new System.EventHandler(this.label7_Click);
             // 
             // forceHeader
             // 
@@ -181,7 +173,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.forceHeader.TabIndex = 66;
             this.forceHeader.Text = "Force";
             this.forceHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.forceHeader.Click += new System.EventHandler(this.label19_Click);
             // 
             // timeLabel
             // 
@@ -193,7 +184,6 @@ namespace ComboCounter.UserControls_Gabriel
             this.timeLabel.TabIndex = 67;
             this.timeLabel.Text = "Time Interval";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.timeLabel.Click += new System.EventHandler(this.label20_Click);
             // 
             // scoreLabel
             // 
@@ -255,8 +245,8 @@ namespace ComboCounter.UserControls_Gabriel
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.forceLabelTable);
+            this.Controls.Add(this.forceLabelTable);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ComboScoreControl";
             this.Size = new System.Drawing.Size(2287, 985);
@@ -267,8 +257,8 @@ namespace ComboCounter.UserControls_Gabriel
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel forceLabelTable;
+        private System.Windows.Forms.TableLayoutPanel timeIntervalLabelTable;
         private System.Windows.Forms.Timer timer1;
         private CustomControls.OutlineButton button1;
         private CustomControls.OutlineButton button2;

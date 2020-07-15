@@ -25,6 +25,9 @@ namespace ComboCounter.UserControls
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1000;
             timer1.Tick += new EventHandler(timer1_Tick);
+
+            visualFeedbackControl1.FinishSetup();
+            visualFeedbackControl1.MaxForce = 310;
         }
 
         private void consecutive_punch_challenge_Load(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace ComboCounter.UserControls
             currentForceVal += lastHitVal;
             totalForce.Text = currentForceVal.ToString();
             session.insertHit(arrayTest[i], stopwatch.Elapsed.TotalSeconds);
+            visualFeedbackControl1.PushPunch(arrayTest[i]);
 
             i = (i + 1) % arrayTest.Length;
 
@@ -121,6 +125,12 @@ namespace ComboCounter.UserControls
             {
                 PauseClocks();
             }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            visualFeedbackControl1.Cleanup();
         }
     }
 }

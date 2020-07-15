@@ -9,7 +9,7 @@ namespace ComboCounter.UserControls
     public partial class targeted_total_of_force : BaseFormControl
     {
         Timer t;
-        int totalForceBox;
+        int totalForceBox = 0;
         int forceGoalNum = 15000;
 
         const int FORCE_INTERVAL = 100;
@@ -17,14 +17,11 @@ namespace ComboCounter.UserControls
         Stopwatch stopwatch = new Stopwatch();
         Session session;
 
-        DateTime animationStart;
-
-        TimeSpan animationDuration = new TimeSpan(2000000);
-
         public targeted_total_of_force()
         {
             InitializeComponent();
             header.Left = (Width - header.Width) / 2;
+            visualFeedbackControl1.FinishSetup();
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -88,33 +85,13 @@ namespace ComboCounter.UserControls
                 {
                     double time = stopwatch.Elapsed.TotalSeconds;
                     int newForce = new Random().Next(100, 700);
-                    totalForceBox = totalForceBox + newForce;
+                    totalForceBox += + newForce;
                     totalForce.Text = totalForceBox.ToString();
 
                     session.insertHit(newForce, time);
+                    visualFeedbackControl1.PushPunch(newForce);
                 }
             }));
-        }
-
-        private void IndicateHit()
-        {
-            Timer animate = new Timer();
-            animate.Interval = 10;
-            animate.Elapsed += (object sender, ElapsedEventArgs e) =>
-            {
-                TimeSpan span = e.SignalTime - animationStart;
-                double percentTime = span.TotalMilliseconds / animationDuration.TotalMilliseconds;
-
-                if (span >= animationDuration)
-                {
-                    animate.Stop();
-                }
-
-                punchIndicator.BackColor = System.Drawing.Color.FromArgb((int)(255 * percentTime), 255, 255, 255);
-            };
-            animationStart = DateTime.Now;
-            animate.Start();
-            
         }
 
         private void stopButton_Click(object sender, EventArgs e)
@@ -146,6 +123,12 @@ namespace ComboCounter.UserControls
             {
                 PauseTimers();
             }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            visualFeedbackControl1.Cleanup();
         }
 
     }

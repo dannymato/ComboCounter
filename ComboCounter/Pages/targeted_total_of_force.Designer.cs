@@ -44,21 +44,21 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.currTimeHeader = new ComboCounter.Classes.H2();
             this.txtResult = new ComboCounter.Classes.BigInfo();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.startButton = new ComboCounter.CustomControls.OutlineButton();
+            this.stopButton = new ComboCounter.CustomControls.OutlineButton();
+            this.resetButton = new ComboCounter.CustomControls.OutlineButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.header = new ComboCounter.Classes.Header1();
-            this.resetButton = new ComboCounter.CustomControls.OutlineButton();
-            this.stopButton = new ComboCounter.CustomControls.OutlineButton();
-            this.startButton = new ComboCounter.CustomControls.OutlineButton();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.punchIndicator = new System.Windows.Forms.FlowLayoutPanel();
+            this.visualFeedbackControl1 = new ComboCounter.CustomControls.VisualFeedbackControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -179,7 +179,7 @@ namespace ComboCounter.UserControls
             this.tableLayoutPanel2.Controls.Add(this.currTimeHeader, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtResult, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.punchIndicator, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.visualFeedbackControl1, 0, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -212,6 +212,72 @@ namespace ComboCounter.UserControls
             this.txtResult.TabIndex = 77;
             this.txtResult.Text = "00:00.0";
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.AutoSize = true;
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.startButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.stopButton, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.resetButton, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 401);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1227, 100);
+            this.tableLayoutPanel3.TabIndex = 78;
+            // 
+            // startButton
+            // 
+            this.startButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startButton.AutoSize = true;
+            this.startButton.BackColor = System.Drawing.Color.Transparent;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Location = new System.Drawing.Point(70, 4);
+            this.startButton.Margin = new System.Windows.Forms.Padding(4);
+            this.startButton.Name = "startButton";
+            this.startButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
+            this.startButton.Size = new System.Drawing.Size(268, 92);
+            this.startButton.TabIndex = 17;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // stopButton
+            // 
+            this.stopButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.stopButton.AutoSize = true;
+            this.stopButton.BackColor = System.Drawing.Color.Transparent;
+            this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopButton.Location = new System.Drawing.Point(479, 4);
+            this.stopButton.Margin = new System.Windows.Forms.Padding(4);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
+            this.stopButton.Size = new System.Drawing.Size(268, 92);
+            this.stopButton.TabIndex = 19;
+            this.stopButton.Text = "Stop";
+            this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
+            // 
+            // resetButton
+            // 
+            this.resetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetButton.AutoSize = true;
+            this.resetButton.BackColor = System.Drawing.Color.Transparent;
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButton.Location = new System.Drawing.Point(888, 4);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
+            this.resetButton.Size = new System.Drawing.Size(268, 92);
+            this.resetButton.TabIndex = 18;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // splitContainer1
             // 
             this.splitContainer1.IsSplitterFixed = true;
@@ -241,81 +307,14 @@ namespace ComboCounter.UserControls
             this.header.Text = "Total Force";
             this.header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // resetButton
+            // visualFeedbackControl1
             // 
-            this.resetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.resetButton.AutoSize = true;
-            this.resetButton.BackColor = System.Drawing.Color.Transparent;
-            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Location = new System.Drawing.Point(888, 4);
-            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
-            this.resetButton.Size = new System.Drawing.Size(268, 92);
-            this.resetButton.TabIndex = 18;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
-            // stopButton
-            // 
-            this.stopButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.stopButton.AutoSize = true;
-            this.stopButton.BackColor = System.Drawing.Color.Transparent;
-            this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopButton.ForeColor = System.Drawing.Color.Red;
-            this.stopButton.Location = new System.Drawing.Point(479, 4);
-            this.stopButton.Margin = new System.Windows.Forms.Padding(4);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
-            this.stopButton.Size = new System.Drawing.Size(268, 92);
-            this.stopButton.TabIndex = 19;
-            this.stopButton.Text = "Stop";
-            this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
-            // 
-            // startButton
-            // 
-            this.startButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startButton.AutoSize = true;
-            this.startButton.BackColor = System.Drawing.Color.Transparent;
-            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.ForeColor = System.Drawing.Color.Lime;
-            this.startButton.Location = new System.Drawing.Point(70, 4);
-            this.startButton.Margin = new System.Windows.Forms.Padding(4);
-            this.startButton.Name = "startButton";
-            this.startButton.Padding = new System.Windows.Forms.Padding(13, 6, 13, 6);
-            this.startButton.Size = new System.Drawing.Size(268, 92);
-            this.startButton.TabIndex = 17;
-            this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.AutoSize = true;
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.startButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.stopButton, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.resetButton, 2, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 401);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1227, 100);
-            this.tableLayoutPanel3.TabIndex = 78;
-            // 
-            // punchIndicator
-            // 
-            this.punchIndicator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.punchIndicator.Location = new System.Drawing.Point(3, 507);
-            this.punchIndicator.Name = "punchIndicator";
-            this.punchIndicator.Size = new System.Drawing.Size(1227, 335);
-            this.punchIndicator.TabIndex = 79;
+            this.visualFeedbackControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.visualFeedbackControl1.Location = new System.Drawing.Point(88, 567);
+            this.visualFeedbackControl1.MaxForce = 300F;
+            this.visualFeedbackControl1.Name = "visualFeedbackControl1";
+            this.visualFeedbackControl1.Size = new System.Drawing.Size(1056, 214);
+            this.visualFeedbackControl1.TabIndex = 79;
             // 
             // targeted_total_of_force
             // 
@@ -334,13 +333,13 @@ namespace ComboCounter.UserControls
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,8 +362,8 @@ namespace ComboCounter.UserControls
         private OutlineButton startButton;
         private OutlineButton stopButton;
         private OutlineButton resetButton;
-        private System.Windows.Forms.FlowLayoutPanel punchIndicator;
         private TextButton plusIcon;
         private TextButton minusIcon;
+        private VisualFeedbackControl visualFeedbackControl1;
     }
 }

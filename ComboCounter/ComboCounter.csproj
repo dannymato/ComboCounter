@@ -155,18 +155,6 @@
     <Compile Include="quickStart.Designer.cs">
       <DependentUpon>quickStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\combo_control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\combo_control.Designer.cs">
-      <DependentUpon>combo_control.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\combo_tracker.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\combo_tracker.Designer.cs">
-      <DependentUpon>combo_tracker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\histogram.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,18 +199,6 @@
     </Compile>
     <Compile Include="Forms with Ardiuno Code\timeMode.Designer.cs">
       <DependentUpon>timeMode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\total_force.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\total_force.Designer.cs">
-      <DependentUpon>total_force.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\user_control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\user_control.Designer.cs">
-      <DependentUpon>user_control.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\CensorControl.cs">
       <SubType>UserControl</SubType>
@@ -320,12 +296,6 @@
     <EmbeddedResource Include="quickStart.resx">
       <DependentUpon>quickStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\combo_control.resx">
-      <DependentUpon>combo_control.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\combo_tracker.resx">
-      <DependentUpon>combo_tracker.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\histogram.resx">
       <DependentUpon>histogram.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,12 +326,6 @@
     </Compile>
     <EmbeddedResource Include="Forms with Ardiuno Code\timeMode.resx">
       <DependentUpon>timeMode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\total_force.resx">
-      <DependentUpon>total_force.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\user_control.resx">
-      <DependentUpon>user_control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\CensorControl.resx">
       <DependentUpon>CensorControl.cs</DependentUpon>
