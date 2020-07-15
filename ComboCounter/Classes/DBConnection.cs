@@ -197,7 +197,7 @@ namespace ComboCounter.Classes
             dbConn.Open();
 
             string Query = "SELECT color_scheme, AscendingClock, TurnOffTimers, TurnOffVisualFeedback," +
-                    "TurnOffHitSounds, TurnOffMissSounds FROM " + DATABASE + ".user_settings " +
+                    "TurnOffHitSounds, TurnOffMissSounds, Use24HourClock FROM " + DATABASE + ".user_settings " +
                     "WHERE fk_user_id = @userID;";
 
             MySqlCommand readSettingsCmd = new MySqlCommand(Query, dbConn);
@@ -215,7 +215,8 @@ namespace ComboCounter.Classes
                     reader.GetBoolean("TurnOffTimers"),
                     reader.GetBoolean("TurnOffVisualFeedback"),
                     reader.GetBoolean("TurnOffHitSounds"),
-                    reader.GetBoolean("TurnOffMissSounds")
+                    reader.GetBoolean("TurnOffMissSounds"),
+                    reader.GetBoolean("Use24HourClock")
                     );
                 dbConn.Close();
                 return settings;
@@ -238,8 +239,8 @@ namespace ComboCounter.Classes
             string Query = "UPDATE " + DATABASE + ".user_settings " +
                 "SET color_scheme = @colorScheme, AscendingClock = @ascendingClock, " +
                 "TurnOffTimers = @turnOffTimers, TurnOffVisualFeedback = @TurnOffVisualFeedback, " +
-                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds " +
-                "WHERE fk_user_id = @userID";
+                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds ," +
+                "Use24HourClock = @use24hClock WHERE fk_user_id = @userID";
 
             dbConn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, dbConn);
@@ -250,6 +251,7 @@ namespace ComboCounter.Classes
             cmd.Parameters.AddWithValue("TurnOffVisualFeedback", userSettings.TurnOffVisualFeedback);
             cmd.Parameters.AddWithValue("turnOffHitSounds", userSettings.TurnOffHitSounds);
             cmd.Parameters.AddWithValue("turnOffMissSounds", userSettings.TurnOffMissSounds);
+            cmd.Parameters.AddWithValue("use24hClock", userSettings.ToggleClock);
             cmd.Parameters.AddWithValue("userID", userID);
 
             int success = cmd.ExecuteNonQuery();
