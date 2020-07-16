@@ -530,8 +530,18 @@ namespace ComboCounter.Forms
         /// <param name="e"></param>
         private void timer_Tick(object sender, EventArgs e)
         {
-            clockText.Text = DateTime.Now.ToString("HH:mm");
-            date.Text = DateTime.Now.ToString("MMM dd yyyy");
+            if(UserManager.ClockFormat())
+            {
+                clockText.Text = DateTime.Now.ToString("HH:mm");
+                date.Text = DateTime.Now.ToString("MMM dd yyyy");
+            }
+            
+            else
+            {
+                clockText.Text = DateTime.Now.ToString("hh:mm tt");
+                date.Text = DateTime.Now.ToString("MMM dd yyyy");
+
+            }
         }
     }
 
