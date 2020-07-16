@@ -16,6 +16,14 @@ namespace ComboCounter
         HomeScreen home;
 
         BaseFormControl currentControl = null;
+
+
+        /// <summary>
+        /// Contains all the pages that are displayed on the main page
+        /// With the exception of the homescreen and the usersettings
+        /// This allows us to easily reset the theme of all the pages
+        /// by clearing the dictionary forcing all the pages to reset
+        /// </summary>
         readonly Dictionary<string, BaseFormControl> pages;
 
         public Main()
@@ -47,6 +55,10 @@ namespace ComboCounter
             
         }
 
+        /// <summary>
+        /// Creates a new homescreen object and sets adds the newpage event handler
+        /// to the option clicked event
+        /// </summary>
         private void LoadHomeScreen()
         {
             home = new HomeScreen();
@@ -70,7 +82,14 @@ namespace ComboCounter
         {
 
             Forms.Exit exit = new Forms.Exit();
-            exit.ExitApplication += (s, arg) => { Close(); currentControl.OnExit(); };
+            exit.ExitApplication += (s, arg) => 
+            { 
+                Close();
+                foreach (var page in pages.Values)
+                {
+                    page.OnExit();
+                }
+            };
 
             exit.ClientSize = new Size(Width, Height);
             exit.Show();
@@ -103,8 +122,8 @@ namespace ComboCounter
 
             ToolTip HomeToolTip = new ToolTip();
             HomeToolTip.SetToolTip(home_button, "Home");
-            HomeToolTip.SetToolTip(force_tracker, "Force Tracker");
-            HomeToolTip.SetToolTip(time_button, "Time Tracker");
+            HomeToolTip.SetToolTip(force_tracker, "Sensor Calibration");
+            HomeToolTip.SetToolTip(time_button, "User Settings");
             HomeToolTip.SetToolTip(histogram, "Show History");
             HomeToolTip.SetToolTip(user_button, "Show/Edit User Information");
             HomeToolTip.SetToolTip(exit_button, "Exit Program");
@@ -125,6 +144,15 @@ namespace ComboCounter
 
         }
 
+        /// <summary>
+        /// Called when the ThemeChanged event is fired
+        /// Removes all the pages from the dictionary and recreates the HomeScreen
+        /// It allows for the new theme to take effect on the rest of the pages
+        /// Haven't been able to think of good solution of resetting all the pages without
+        /// recreating the pages
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eArgs"></param>
         private void RefreshPages(object sender, EventArgs eArgs)
         {
             pages.Clear();
@@ -153,6 +181,12 @@ namespace ComboCounter
             this.mainPanel.Show();
         }
 
+        /// <summary>
+        /// Event handler to detect when the user clicks on an option on the homescreen
+        /// Depending on the ClassToCall method it will load a different page onto the homescreen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectNewPage(object sender, OptionClickEventArgs args)
         {
             switch (args.ClassToCall)
@@ -232,7 +266,7 @@ namespace ComboCounter
                     {
                         pages.Add(nameof(punch_challenge_comp), new punch_challenge_comp());
                     }
-                    LoadNewPage(pages[nameof(punch_challenge)]);
+                    LoadNewPage(pages[nameof(punch_challenge_comp)]);
                     break;
                 default:
                     break;

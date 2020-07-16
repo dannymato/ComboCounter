@@ -8,6 +8,8 @@ namespace ComboCounter.CustomControls
     class ContainedButton : Button
     {
 
+        // Makes sure that the designer does automatically not override the color set here in the constructor
+        // Manual overrides of ForeColor and Font are still possible
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override Font Font {get; set;}
 
