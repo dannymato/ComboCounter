@@ -9,6 +9,8 @@ namespace ComboCounter.UserControls
     public partial class targeted_total_of_time : BaseFormControl
     {
 
+        const WorkoutApplication application = WorkoutApplication.TotalTime;
+
         const int timeIntervalDefault = 30;
         int totalForceBox;
 
@@ -38,7 +40,7 @@ namespace ComboCounter.UserControls
             if (!timer1.Enabled)
             {
                 timer1.Start();
-                session = new Session(DateTime.Now);
+                session = new Session(DateTime.Now, application);
                 timeKeeper.Start();
             }
         }

@@ -14,6 +14,9 @@ namespace ComboCounter.UserControls_Gabriel
         int h, m, s, totalForceBox;
         int actualForce = 50000;
 
+        const WorkoutApplication applicationType = WorkoutApplication.ComboScore;
+
+
         SmallInfo[] forceLabels = new SmallInfo[9];
         SmallInfo[] timeLabels = new SmallInfo[8];
 
@@ -47,7 +50,7 @@ namespace ComboCounter.UserControls_Gabriel
         private void button1_Click(object sender, System.EventArgs e)
         {
             t.Start();
-            session = new Session(DateTime.Now);
+            session = new Session(DateTime.Now, applicationType);
             
         }
 

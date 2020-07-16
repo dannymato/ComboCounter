@@ -6,6 +6,9 @@ namespace ComboCounter.UserControls
 {
     public partial class punch_challenge : BaseFormControl
     {
+
+        const WorkoutApplication application = WorkoutApplication.PunchChallenge;
+
         int punchLimit = 100;
         int i = 0;
         int currentForceVal, lastHitVal;
@@ -108,7 +111,7 @@ namespace ComboCounter.UserControls
             if (!timer1.Enabled)
             {
                 timer1.Enabled = true;
-                session = new Session(DateTime.Now);
+                session = new Session(DateTime.Now, application);
                 stopwatch.Start();
             }
         }

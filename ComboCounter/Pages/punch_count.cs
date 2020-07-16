@@ -9,6 +9,7 @@ namespace ComboCounter.UserControls
     public partial class punch_count : BaseFormControl
     {
         const int DEFAULT_INTERVAL = 30;
+        const WorkoutApplication application = WorkoutApplication.PunchCount;
         
         Int32 quickTotal;
         int setThreshold = 200;
@@ -70,7 +71,7 @@ namespace ComboCounter.UserControls
                 quickTotal = timeIntervalSec * 1000;
                 timer2.Enabled = true;
 
-                session = new Session(DateTime.Now);
+                session = new Session(DateTime.Now, application);
 
             }
             

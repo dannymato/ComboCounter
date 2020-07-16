@@ -274,7 +274,7 @@ namespace ComboCounter.Classes
         public List<Session> GetSessions(int userID)
         {
 
-            string Query = "SELECT workout_sessionid, date " +
+            string Query = "SELECT workout_sessionid, date, workout_application " +
                 "FROM " + DATABASE + ".workout_sessions " +
                 "WHERE user_id = @user_id";
 
@@ -291,7 +291,7 @@ namespace ComboCounter.Classes
                 List<Session> sessions = new List<Session>();
                 while (reader.Read())
                 {
-                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid")));
+                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid"), (WorkoutApplication)reader.GetInt16("workout_application"));
                 }
 
                 dbConn.Close();
@@ -433,8 +433,8 @@ namespace ComboCounter.Classes
         public void InsertSession(int userID, Session session)
         {
             // Inserts the session to the workout_sessions table
-            string Query = "INSERT INTO " + DATABASE + ".workout_sessions (user_id, date)" +
-                "VALUES (@userID, @date);" +
+            string Query = "INSERT INTO " + DATABASE + ".workout_sessions (user_id, date, workout_application)" +
+                "VALUES (@userID, @date @workoutApplication);" +
                 "SELECT LAST_INSERT_ID();";
 
             dbConn.Open();
@@ -443,6 +443,7 @@ namespace ComboCounter.Classes
 
             cmd.Parameters.AddWithValue("userID", userID);
             cmd.Parameters.AddWithValue("date", session.StartDate);
+            cmd.Parameters.AddWithValue("workoutApplication", session.application);
 
             int newSessionID;
 

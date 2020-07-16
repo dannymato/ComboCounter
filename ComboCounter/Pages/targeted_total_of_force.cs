@@ -8,6 +8,9 @@ namespace ComboCounter.UserControls
 {
     public partial class targeted_total_of_force : BaseFormControl
     {
+
+        const WorkoutApplication application = WorkoutApplication.TotalForce;
+
         Timer t;
         int totalForceBox = 0;
         int forceGoalNum = 15000;
@@ -29,7 +32,7 @@ namespace ComboCounter.UserControls
             if (!t.Enabled)
             {
                 t.Start();
-                session = new Session(DateTime.Now);
+                session = new Session(DateTime.Now, application);
                 stopwatch.Start();
             }
         }
