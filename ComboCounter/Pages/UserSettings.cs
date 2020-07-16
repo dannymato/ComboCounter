@@ -31,13 +31,13 @@ namespace ComboCounter.Forms
 
             SetupColors();
 
-            
+
             AscendingTimeToggle.Checked = UserManager.AscendingClockSetting();
             ShowTimerToggle.Checked = UserManager.TimerSetting();
             VisualFeedbackToggle.Checked = UserManager.VisualFeedbackOff();
-            HitSoundsToggle.Checked = UserManager.UseHitSound();
-            MissSoundsToggle.Checked = UserManager.UseMissSound();
-           
+            HitSoundsToggle.Checked = UserManager.HitSoundOff();
+            MissSoundsToggle.Checked = UserManager.MissSoundOff();
+
         }
 
         private void SetupColors()
@@ -80,7 +80,7 @@ namespace ComboCounter.Forms
             this.MainPanel.Controls.Add(this.CheckBoxPanel);
             this.MainPanel.Location = new System.Drawing.Point(210, 27);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(605, 529);
+            this.MainPanel.Size = new System.Drawing.Size(747, 529);
             this.MainPanel.TabIndex = 0;
             // 
             // ThemeSelectPanel
@@ -179,7 +179,7 @@ namespace ComboCounter.Forms
             this.CheckBoxPanel.Controls.Add(this.AscendingTimeToggle);
             this.CheckBoxPanel.Location = new System.Drawing.Point(151, 123);
             this.CheckBoxPanel.Name = "CheckBoxPanel";
-            this.CheckBoxPanel.Size = new System.Drawing.Size(331, 271);
+            this.CheckBoxPanel.Size = new System.Drawing.Size(581, 271);
             this.CheckBoxPanel.TabIndex = 4;
             // 
             // MissSoundsToggle
@@ -188,7 +188,7 @@ namespace ComboCounter.Forms
             this.MissSoundsToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MissSoundsToggle.Location = new System.Drawing.Point(28, 184);
             this.MissSoundsToggle.Name = "MissSoundsToggle";
-            this.MissSoundsToggle.Size = new System.Drawing.Size(348, 43);
+            this.MissSoundsToggle.Size = new System.Drawing.Size(278, 35);
             this.MissSoundsToggle.TabIndex = 7;
             this.MissSoundsToggle.Text = "Toggle Miss Sounds";
             this.MissSoundsToggle.UseVisualStyleBackColor = true;
@@ -200,7 +200,7 @@ namespace ComboCounter.Forms
             this.HitSoundsToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HitSoundsToggle.Location = new System.Drawing.Point(28, 143);
             this.HitSoundsToggle.Name = "HitSoundsToggle";
-            this.HitSoundsToggle.Size = new System.Drawing.Size(320, 43);
+            this.HitSoundsToggle.Size = new System.Drawing.Size(256, 35);
             this.HitSoundsToggle.TabIndex = 6;
             this.HitSoundsToggle.Text = "Toggle Hit Sounds";
             this.HitSoundsToggle.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@ namespace ComboCounter.Forms
             this.VisualFeedbackToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VisualFeedbackToggle.Location = new System.Drawing.Point(28, 96);
             this.VisualFeedbackToggle.Name = "VisualFeedbackToggle";
-            this.VisualFeedbackToggle.Size = new System.Drawing.Size(416, 43);
+            this.VisualFeedbackToggle.Size = new System.Drawing.Size(332, 35);
             this.VisualFeedbackToggle.TabIndex = 5;
             this.VisualFeedbackToggle.Text = "Disable Visual Feedback";
             this.VisualFeedbackToggle.UseVisualStyleBackColor = true;
@@ -224,9 +224,9 @@ namespace ComboCounter.Forms
             this.ShowTimerToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowTimerToggle.Location = new System.Drawing.Point(28, 55);
             this.ShowTimerToggle.Name = "ShowTimerToggle";
-            this.ShowTimerToggle.Size = new System.Drawing.Size(279, 43);
+            this.ShowTimerToggle.Size = new System.Drawing.Size(546, 35);
             this.ShowTimerToggle.TabIndex = 4;
-            this.ShowTimerToggle.Text = "Timers on Page";
+            this.ShowTimerToggle.Text = "Turn Off Timers when the page is removed";
             this.ShowTimerToggle.UseVisualStyleBackColor = true;
             this.ShowTimerToggle.CheckedChanged += new System.EventHandler(this.ShowTimerToggle_CheckedChanged);
             // 
@@ -236,7 +236,7 @@ namespace ComboCounter.Forms
             this.AscendingTimeToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AscendingTimeToggle.Location = new System.Drawing.Point(28, 14);
             this.AscendingTimeToggle.Name = "AscendingTimeToggle";
-            this.AscendingTimeToggle.Size = new System.Drawing.Size(284, 43);
+            this.AscendingTimeToggle.Size = new System.Drawing.Size(227, 35);
             this.AscendingTimeToggle.TabIndex = 3;
             this.AscendingTimeToggle.Text = "Ascending Time";
             this.AscendingTimeToggle.UseVisualStyleBackColor = true;
@@ -259,7 +259,8 @@ namespace ComboCounter.Forms
 
         public event EventHandler<EventArgs> OnThemeChanged;
 
-        private void ThemeChanged() {
+        private void ThemeChanged()
+        {
             SetupColors();
             OnThemeChanged?.Invoke(this, EventArgs.Empty);
         }
@@ -270,7 +271,7 @@ namespace ComboCounter.Forms
             ThemeButton.Visible = false;
             ThemeSelectPanel.Visible = true;
 
-           
+
 
         }
 
@@ -311,7 +312,7 @@ namespace ComboCounter.Forms
 
             if (VisualFeedbackToggle.Checked == false)
             {
-                UserManager.ChangeTurnOffVisualFeedback(false); 
+                UserManager.ChangeTurnOffVisualFeedback(false);
             }
 
         }
@@ -320,7 +321,7 @@ namespace ComboCounter.Forms
         {
             if (HitSoundsToggle.Checked == true)
             {
-                UserManager.ChangeHitSounds(true);  
+                UserManager.ChangeHitSounds(true);
             }
 
             if (HitSoundsToggle.Checked == false)
@@ -333,12 +334,12 @@ namespace ComboCounter.Forms
         {
             if (MissSoundsToggle.Checked == true)
             {
-                UserManager.ChangeMissSounds(true); 
+                UserManager.ChangeMissSounds(true);
             }
 
             if (MissSoundsToggle.Checked == false)
             {
-                UserManager.ChangeMissSounds(false);  
+                UserManager.ChangeMissSounds(false);
             }
         }
 
@@ -369,5 +370,5 @@ namespace ComboCounter.Forms
             ThemeChanged();
         }
     }
-    
+
 }

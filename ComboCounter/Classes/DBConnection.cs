@@ -70,7 +70,7 @@ namespace ComboCounter.Classes
         /// <returns>If successful the new user, null otherwise</returns>
         public User insertUser(int id, String username, String password, String fName, String lName, String sex,
             int height, int weight, int year)
-        {
+        { 
             String query = "INSERT into " + DATABASE + ".user(user_id, username, password, first_name," +
                 " last_name, sex, height, weight, birth_year) values (@id, @username, @password, @fname, @lname, @sex, @height, @weight, @year);";
 
@@ -82,7 +82,7 @@ namespace ComboCounter.Classes
             cmd.Parameters.AddWithValue("password", password);
             cmd.Parameters.AddWithValue("fname", fName);
             cmd.Parameters.AddWithValue("lname", lName);
-            cmd.Parameters.AddWithValue("sex", sex);
+            cmd.Parameters.AddWithValue("sex", sex.ToUpper());
             cmd.Parameters.AddWithValue("height", height);
             cmd.Parameters.AddWithValue("weight", weight);
             cmd.Parameters.AddWithValue("year", year);
@@ -291,7 +291,7 @@ namespace ComboCounter.Classes
                 List<Session> sessions = new List<Session>();
                 while (reader.Read())
                 {
-                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid"), (WorkoutApplication)reader.GetInt16("workout_application"));
+                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid"), (WorkoutApplication)reader.GetInt16("workout_application")));
                 }
 
                 dbConn.Close();

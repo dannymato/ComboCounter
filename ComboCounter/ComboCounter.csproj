@@ -80,6 +80,7 @@
     <Compile Include="Classes\BaseFormControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Classes\ClassDefiner.cs" />
     <Compile Include="Classes\Tools.cs" />
     <Compile Include="CustomControls\BigInfo.cs">
       <SubType>Component</SubType>

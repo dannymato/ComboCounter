@@ -40,8 +40,6 @@ namespace ComboCounter.Forms
 
             Guid guid = Guid.NewGuid();
 
-
-#if NEW_DB
             // Need to change to the year
             User newUser = db.insertUser(
                 id,
@@ -54,30 +52,13 @@ namespace ComboCounter.Forms
                 Int32.Parse(weightBox.Text),
                 Int32.Parse(yearBox.Text)
                 );
-#else
-            User newUser = db.insertUser(
-                id,
-                username_tb.Text,
-                passwordBox.Text,
-                fNameBox.Text,
-                lNameBox.Text,
-                sexBox.Text,
-                classBox.Text,
-                heightBox.Text,
-                weightBox.Text,
-                GetAgeFromDOB()
-                );
-
-#endif
 
             if (newUser != null)
             {
 
                 UserManager.setUser(newUser);
 
-#if NEW_DB
                 UserManager.SetUserSettings(db.CreateNewUserSettings(newUser.Id));
-#endif
                 Main main = new Main();
                 Hide();
                 main.Show();
@@ -96,8 +77,6 @@ namespace ComboCounter.Forms
 
             Guid guid = Guid.NewGuid();
 
-
-#if NEW_DB
             // Need to change to the year
             User newUser = db.insertUser(
                 id,
@@ -109,30 +88,13 @@ namespace ComboCounter.Forms
                 Int32.Parse(heightBox.Text),
                 Int32.Parse(weightBox.Text),
                 2002);
-#else
-            User newUser = db.insertUser(
-                id,
-                username_tb.Text,
-                passwordBox.Text,
-                fNameBox.Text,
-                lNameBox.Text,
-                sexBox.Text,
-                classBox.Text,
-                heightBox.Text,
-                weightBox.Text,
-                GetAgeFromDOB()
-                );
-
-#endif
 
             if (newUser != null)
             {
 
                 UserManager.setUser(newUser);
 
-#if NEW_DB
                 UserManager.SetUserSettings(db.CreateNewUserSettings(newUser.Id));
-#endif
                 Main main = new Main();
                 Hide();
                 main.Show();
