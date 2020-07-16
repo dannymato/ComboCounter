@@ -12,21 +12,12 @@ namespace ComboCounter.Classes
         private static string fname;
         private static string lname;
         private static string sex;
-#if !NEW_DB
-        private static string c_lass;
-        private static string height;
-        private static string weight;
-        private static int age;
-#else
         private static int height;
         private static int weight;
         private static int year;
-#endif
 
-
-#if NEW_DB
         private static UserSettings _UserSettings;
-#endif
+
 
         public static void setUser(User user)
         {
@@ -36,10 +27,6 @@ namespace ComboCounter.Classes
             fname = user.fname;
             lname = user.lname;
             sex = user.sex;
-#if !NEW_DB
-            c_lass = user.c_lass;
-            age = user.age;
-#endif
             height = user.height;
             weight = user.weight;
         }
@@ -165,8 +152,8 @@ namespace ComboCounter.Classes
 
         public static bool AscendingClockSetting() { return _UserSettings.AscendingClock; }
         public static bool TimerSetting() { return _UserSettings.TurnOffTimers; }
-        public static bool UseHitSound() { return _UserSettings.TurnOffHitSounds; }
-        public static bool UseMissSound() { return _UserSettings.TurnOffMissSounds; }
+        public static bool HitSoundOff() { return _UserSettings.TurnOffHitSounds; }
+        public static bool MissSoundOff() { return _UserSettings.TurnOffMissSounds; }
         public static bool VisualFeedbackOff() { return _UserSettings.TurnOffVisualFeedback; }
         public static bool ClockFormat() { return _UserSettings.ToggleClock; }
         public static int ThemeSetting() { return _UserSettings.ColorScheme; }

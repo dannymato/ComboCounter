@@ -10,7 +10,7 @@ namespace ComboCounter.UserControls
     {
         const int DEFAULT_INTERVAL = 30;
         const WorkoutApplication application = WorkoutApplication.PunchCount;
-        
+
         Int32 quickTotal;
         int setThreshold = 200;
         int timeIntervalSec = DEFAULT_INTERVAL;
@@ -21,14 +21,14 @@ namespace ComboCounter.UserControls
         private readonly SoundPlayer bellRung;
         private readonly SoundPlayer missedHit;
 
-        private bool hitSoundGate = UserManager.UseHitSound();
-        private bool missSoundGate = UserManager.UseMissSound(); 
+        private bool hitSoundGate = UserManager.HitSoundOff();
+        private bool missSoundGate = UserManager.MissSoundOff();
 
         private VisualFeedbackControl feedbackControl;
 
         private Session session;
 
-        
+
         private bool useFeedback;
 
         int i = 0;
@@ -42,7 +42,7 @@ namespace ComboCounter.UserControls
             InitializeComponent();
 
             feedbackControl = new VisualFeedbackControl();
-            
+
             feedbackControl.Left = 100;
             feedbackControl.Top = 10;
             feedbackControl.Height = 50;
@@ -74,7 +74,7 @@ namespace ComboCounter.UserControls
                 session = new Session(DateTime.Now, application);
 
             }
-            
+
         }
 
         // Called on every tick of the timer to simulate punches to the punching bag
@@ -86,7 +86,7 @@ namespace ComboCounter.UserControls
                 feedbackControl.PushPunch(arrayTest[i]);
 
             session.insertHit(arrayTest[i], timeIntervalSec - (quickTotal / 1000.0));
-            
+
             i = (i + 1) % arrayTest.Length;
         }
 
@@ -103,7 +103,7 @@ namespace ComboCounter.UserControls
         // Stop Button
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
             timer1.Stop();
             timer2.Stop();
 
@@ -115,7 +115,7 @@ namespace ComboCounter.UserControls
 
             quickTotal -= 100;
             currentTime.Text = Tools.FormatCurrentTime(quickTotal);
-            
+
             if (quickTotal == 0)
             {
                 timer2.Stop();
@@ -148,7 +148,7 @@ namespace ComboCounter.UserControls
             timeIntervalSec = DEFAULT_INTERVAL;
             setTime.Text = Tools.FormatTimeSetter(timeIntervalSec);
             currentTime.Text = "00:00.00";
-           
+
             lastHit.Text = "N/A";
             lastHit.ForeColor = System.Drawing.Color.DimGray;
             punchCounterVal = 0;
@@ -156,7 +156,7 @@ namespace ComboCounter.UserControls
             i = 0;
             missPunch = 0;
             numInvalidPunch.Text = missPunch.ToString();
-            
+
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace ComboCounter.UserControls
         private void lastHit_TextChanged_1(object sender, EventArgs e)
         {
             SoundPlayer rightHook = new SoundPlayer(@"soundEffect\RightHook.wav");
-           
+
             SoundPlayer upperCut = new SoundPlayer(@"soundEffect\UpperCut.wav");
 
             if (lastHit.Text == "N/A")
@@ -187,21 +187,21 @@ namespace ComboCounter.UserControls
                     lastHit.ForeColor = System.Drawing.Color.Red;
                     missPunch++;
                     numInvalidPunch.Text = missPunch.ToString();
-                    if(missSoundGate == true)
+                    if (missSoundGate == true)
                     {
                         missedHit.Play();
                     }
-                    
+
                 }
                 else if (lastHitVal >= (thresholdVal - (thresholdVal * 0.1)) && lastHitVal < (thresholdVal + (thresholdVal * 0.1)))
                 {
                     lastHit.ForeColor = System.Drawing.Color.Orange;
 
-                    if(hitSoundGate == true)
+                    if (hitSoundGate == true)
                     {
                         rightHook.Play();
                     }
-                   
+
                 }
                 else if (lastHitVal > (thresholdVal + (thresholdVal * 0.1)))
                 {
@@ -224,7 +224,7 @@ namespace ComboCounter.UserControls
                     numInvalidPunch.Text = missPunch.ToString();
                 }
             }
-        }       
+        }
 
         private void plusIcon_Click(object sender, EventArgs e)
         {
@@ -234,8 +234,8 @@ namespace ComboCounter.UserControls
 
         private void punch_count_Load(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -263,8 +263,8 @@ namespace ComboCounter.UserControls
             base.OnPageAttached();
             useFeedback = !UserManager.VisualFeedbackOff();
 
-            hitSoundGate = UserManager.UseHitSound();
-            missSoundGate = UserManager.UseMissSound();
+            hitSoundGate = UserManager.HitSoundOff();
+            missSoundGate = UserManager.MissSoundOff();
         }
 
         public override void OnPageRemoved()
