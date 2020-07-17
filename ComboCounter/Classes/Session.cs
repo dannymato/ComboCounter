@@ -42,6 +42,20 @@ namespace ComboCounter.Classes
 
         public readonly WorkoutApplication application;
 
+        public static string ApplicationTitleFromEnum(WorkoutApplication application)
+        {
+            switch(application)
+            {
+                case WorkoutApplication.None:           return "None Specified";
+                case WorkoutApplication.ComboScore:     return "Combo Score";
+                case WorkoutApplication.TotalForce:     return "Total Force";
+                case WorkoutApplication.TotalTime:      return "Total Time";
+                case WorkoutApplication.PunchChallenge: return "Punch Goal";
+                case WorkoutApplication.PunchCount:     return "Timed Punch Goal";
+                default:                                return "Invalid Application";
+            }
+        }
+
         /// <summary>
         /// Adds a record to both the forces and the time list
         /// </summary>

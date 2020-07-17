@@ -73,6 +73,7 @@ namespace ComboCounter.UserControls
 
             averageTimeLabel.Text = FormatTimeValue(session.AverageTime);
             shortestTimeLabel.Text = FormatTimeValue(session.ShortestTime);
+            ApplicationUsed.Text = Session.ApplicationTitleFromEnum(session.application);
 
         }
 

@@ -44,6 +44,8 @@
             this.h45 = new ComboCounter.Classes.H4();
             this.shortestTimeLabel = new ComboCounter.Classes.SmallInfo();
             this.averageTimeLabel = new ComboCounter.Classes.SmallInfo();
+            this.ApplicationHeader = new ComboCounter.Classes.H4();
+            this.ApplicationUsed = new ComboCounter.Classes.SmallInfo();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(679, 165);
+            this.chart1.Location = new System.Drawing.Point(748, 164);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -95,22 +97,25 @@
             this.tableLayoutPanel1.Controls.Add(this.h45, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.shortestTimeLabel, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.averageTimeLabel, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ApplicationHeader, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ApplicationUsed, 1, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 165);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(623, 618);
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(623, 646);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // h41
             // 
             this.h41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h41.AutoSize = true;
-            this.h41.Location = new System.Drawing.Point(107, 34);
+            this.h41.Location = new System.Drawing.Point(107, 26);
             this.h41.Name = "h41";
             this.h41.Size = new System.Drawing.Size(240, 54);
             this.h41.TabIndex = 0;
@@ -120,7 +125,7 @@
             // 
             this.TotForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotForceInfo.AutoSize = true;
-            this.TotForceInfo.Location = new System.Drawing.Point(472, 277);
+            this.TotForceInfo.Location = new System.Drawing.Point(472, 237);
             this.TotForceInfo.Name = "TotForceInfo";
             this.TotForceInfo.Size = new System.Drawing.Size(133, 61);
             this.TotForceInfo.TabIndex = 5;
@@ -130,7 +135,7 @@
             // 
             this.HardestHitInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HardestHitInfo.AutoSize = true;
-            this.HardestHitInfo.Location = new System.Drawing.Point(472, 31);
+            this.HardestHitInfo.Location = new System.Drawing.Point(472, 23);
             this.HardestHitInfo.Name = "HardestHitInfo";
             this.HardestHitInfo.Size = new System.Drawing.Size(133, 61);
             this.HardestHitInfo.TabIndex = 1;
@@ -140,7 +145,7 @@
             // 
             this.h42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h42.AutoSize = true;
-            this.h42.Location = new System.Drawing.Point(81, 157);
+            this.h42.Location = new System.Drawing.Point(81, 133);
             this.h42.Name = "h42";
             this.h42.Size = new System.Drawing.Size(292, 54);
             this.h42.TabIndex = 2;
@@ -150,7 +155,7 @@
             // 
             this.AvgForceInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AvgForceInfo.AutoSize = true;
-            this.AvgForceInfo.Location = new System.Drawing.Point(472, 154);
+            this.AvgForceInfo.Location = new System.Drawing.Point(472, 130);
             this.AvgForceInfo.Name = "AvgForceInfo";
             this.AvgForceInfo.Size = new System.Drawing.Size(133, 61);
             this.AvgForceInfo.TabIndex = 4;
@@ -160,7 +165,7 @@
             // 
             this.h43.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h43.AutoSize = true;
-            this.h43.Location = new System.Drawing.Point(111, 280);
+            this.h43.Location = new System.Drawing.Point(111, 240);
             this.h43.Name = "h43";
             this.h43.Size = new System.Drawing.Size(233, 54);
             this.h43.TabIndex = 3;
@@ -170,7 +175,7 @@
             // 
             this.h44.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h44.AutoSize = true;
-            this.h44.Location = new System.Drawing.Point(3, 403);
+            this.h44.Location = new System.Drawing.Point(3, 347);
             this.h44.Name = "h44";
             this.h44.Size = new System.Drawing.Size(449, 54);
             this.h44.TabIndex = 6;
@@ -180,7 +185,7 @@
             // 
             this.h45.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.h45.AutoSize = true;
-            this.h45.Location = new System.Drawing.Point(5, 528);
+            this.h45.Location = new System.Drawing.Point(5, 454);
             this.h45.Name = "h45";
             this.h45.Size = new System.Drawing.Size(445, 54);
             this.h45.TabIndex = 7;
@@ -190,7 +195,7 @@
             // 
             this.shortestTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shortestTimeLabel.AutoSize = true;
-            this.shortestTimeLabel.Location = new System.Drawing.Point(478, 400);
+            this.shortestTimeLabel.Location = new System.Drawing.Point(478, 344);
             this.shortestTimeLabel.Name = "shortestTimeLabel";
             this.shortestTimeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.shortestTimeLabel.Size = new System.Drawing.Size(122, 61);
@@ -201,11 +206,32 @@
             // 
             this.averageTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.averageTimeLabel.AutoSize = true;
-            this.averageTimeLabel.Location = new System.Drawing.Point(478, 524);
+            this.averageTimeLabel.Location = new System.Drawing.Point(478, 451);
             this.averageTimeLabel.Name = "averageTimeLabel";
             this.averageTimeLabel.Size = new System.Drawing.Size(122, 61);
             this.averageTimeLabel.TabIndex = 9;
             this.averageTimeLabel.Text = "0.0s";
+            // 
+            // ApplicationHeader
+            // 
+            this.ApplicationHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ApplicationHeader.AutoSize = true;
+            this.ApplicationHeader.Location = new System.Drawing.Point(53, 563);
+            this.ApplicationHeader.Name = "ApplicationHeader";
+            this.ApplicationHeader.Size = new System.Drawing.Size(349, 54);
+            this.ApplicationHeader.TabIndex = 10;
+            this.ApplicationHeader.Text = "Application Used";
+            this.ApplicationHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ApplicationUsed
+            // 
+            this.ApplicationUsed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ApplicationUsed.AutoSize = true;
+            this.ApplicationUsed.Location = new System.Drawing.Point(519, 560);
+            this.ApplicationUsed.Name = "ApplicationUsed";
+            this.ApplicationUsed.Size = new System.Drawing.Size(39, 61);
+            this.ApplicationUsed.TabIndex = 11;
+            this.ApplicationUsed.Text = " ";
             // 
             // histogram
             // 
@@ -217,7 +243,7 @@
             this.Controls.Add(this.chart1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "histogram";
-            this.Size = new System.Drawing.Size(1730, 846);
+            this.Size = new System.Drawing.Size(1835, 846);
             this.Load += new System.EventHandler(this.histogram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -241,5 +267,7 @@
         private Classes.H4 h45;
         private Classes.SmallInfo shortestTimeLabel;
         private Classes.SmallInfo averageTimeLabel;
+        private Classes.H4 ApplicationHeader;
+        private Classes.SmallInfo ApplicationUsed;
     }
 }
