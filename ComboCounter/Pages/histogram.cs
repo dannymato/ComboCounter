@@ -95,6 +95,7 @@ namespace ComboCounter.UserControls
         {
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(History.GetSessions().ToArray());
+            comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
         }
 
     }
