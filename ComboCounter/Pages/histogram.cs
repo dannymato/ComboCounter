@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 using ComboCounter.Classes;
-using MySql.Data.MySqlClient;
 
 namespace ComboCounter.UserControls
 {
@@ -73,6 +70,7 @@ namespace ComboCounter.UserControls
 
             averageTimeLabel.Text = FormatTimeValue(session.AverageTime);
             shortestTimeLabel.Text = FormatTimeValue(session.ShortestTime);
+            ApplicationUsed.Text = Session.ApplicationTitleFromEnum(session.application);
 
         }
 
@@ -95,6 +93,7 @@ namespace ComboCounter.UserControls
         {
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(History.GetSessions().ToArray());
+            comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
         }
 
     }

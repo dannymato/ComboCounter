@@ -23,7 +23,6 @@ namespace ComboCounter.Forms
         private CustomControls.OutlineButton LightModeTheme;
         private System.Windows.Forms.Panel MainPanel;
         private CustomControls.OutlineButton theme2Button;
-        private int initialTheme;
 
         public UserSettings()
         {
@@ -51,6 +50,7 @@ namespace ComboCounter.Forms
             DarkModeTheme.ForeColor = ThemeManager.initButtonColor();
             LightModeTheme.ForeColor = ThemeManager.initButtonColor();
             ThemeButton.ForeColor = ThemeManager.initButtonColor();
+            theme2Button.ForeColor = ThemeManager.initButtonColor();
         }
 
         private void InitializeComponent()
