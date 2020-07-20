@@ -8,13 +8,9 @@ namespace ComboCounter.Classes
     class DBConnection
     {
         private const String SERVER = "localhost";
-#if NEW_DB
         private const String DATABASE = "combo_counter";
-#else
-        private const String DATABASE = "project";
-#endif
         private const String UID = "root";
-        private const String PASSWORD = "root";
+        private const String PASSWORD = "1234";
         private static MySqlConnection dbConn;
 
         private static DBConnection instance;
@@ -58,7 +54,6 @@ namespace ComboCounter.Classes
             };
         }
 
-#if NEW_DB
         /// <summary>
         /// insertUser takes the inputs and inserts the user information into the database 
         /// If it is successful it returns a new User otherwise it returns null
@@ -75,7 +70,7 @@ namespace ComboCounter.Classes
         /// <returns>If successful the new user, null otherwise</returns>
         public User insertUser(int id, String username, String password, String fName, String lName, String sex,
             int height, int weight, int year)
-        {
+        { 
             String query = "INSERT into " + DATABASE + ".user(user_id, username, password, first_name," +
                 " last_name, sex, height, weight, birth_year) values (@id, @username, @password, @fname, @lname, @sex, @height, @weight, @year);";
 
@@ -87,7 +82,7 @@ namespace ComboCounter.Classes
             cmd.Parameters.AddWithValue("password", password);
             cmd.Parameters.AddWithValue("fname", fName);
             cmd.Parameters.AddWithValue("lname", lName);
-            cmd.Parameters.AddWithValue("sex", sex);
+            cmd.Parameters.AddWithValue("sex", sex.ToUpper());
             cmd.Parameters.AddWithValue("height", height);
             cmd.Parameters.AddWithValue("weight", weight);
             cmd.Parameters.AddWithValue("year", year);
@@ -105,58 +100,6 @@ namespace ComboCounter.Classes
 
         }
 
-#else
-
-        /// <summary>
-        /// insertUser takes the inputs and inserts the user information into the database 
-        /// If it is successful it returns a new User otherwise it returns null
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        /// <param name="fName"></param>
-        /// <param name="lName"></param>
-        /// <param name="sex"></param>
-        /// <param name="wClass"></param>
-        /// <param name="height"></param>
-        /// <param name="weight"></param>
-        /// <param name="age"></param>
-        /// <returns>If successful the new user, null otherwise</returns>
-        public User insertUser(int id, String username, String password, String fName, String lName, String sex,
-            String wClass, String height, String weight, int age)
-        {
-            String query = "INSERT into " + DATABASE + ".users(id, username, password, fname, lname, sex, height, weight, " +
-                "class, age) values (@id, @username, @password, @fname, @lname, @sex, @height, @weight, @class, @age);";
-
-            MySqlCommand cmd = new MySqlCommand(query, dbConn);
-            dbConn.Open();
-            cmd.Parameters.AddWithValue("id", id);
-            cmd.Parameters.AddWithValue("username", username);
-            cmd.Parameters.AddWithValue("password", password);
-            cmd.Parameters.AddWithValue("fname", fName);
-            cmd.Parameters.AddWithValue("lname", lName);
-            cmd.Parameters.AddWithValue("sex", sex);
-            cmd.Parameters.AddWithValue("height", height);
-            cmd.Parameters.AddWithValue("weight", weight);
-            cmd.Parameters.AddWithValue("class", wClass);
-            cmd.Parameters.AddWithValue("age", age);
-
-            int success = cmd.ExecuteNonQuery();
-            dbConn.Close();
-
-            if (success == 1)
-            {
-                User newUser = new User(id, username, password, fName, lName, sex, wClass, height, weight, age);
-
-                return newUser;
-            }
-            return null;
-
-        }
-
-#endif
-
-#if NEW_DB
         /// <summary>
         /// getLogin checks the login information against the information stored in the database
         /// If the login info is correct the user's information is pulled from the database and is returned
@@ -218,72 +161,11 @@ namespace ComboCounter.Classes
             dbConn.Close();
             return null;
         }
-#else
         /// <summary>
-        /// getLogin checks the login information against the information stored in the database
-        /// If the login info is correct the user's information is pulled from the database and is returned
-        /// If the login info is incorrect a null value is returned
+        /// Creates a new UserSettings row for the new user with the default values
         /// </summary>
-        /// <param name="uName">The username provided in the login form</param>
-        /// <param name="pWord">The password provided in the login form</param>
-        /// <returns></returns>
-        public User getLogin(string uName, string pWord)
-        {
-            String query = "SELECT username, password FROM " + DATABASE + ".users WHERE username=@username";
-
-            MySqlCommand verifyCmd = new MySqlCommand(query, dbConn);
-            dbConn.Open();
-            verifyCmd.Parameters.AddWithValue("username", uName);
-
-            MySqlDataReader reader = verifyCmd.ExecuteReader();
-
-            bool isCorrect = false;
-
-            while (reader.Read())
-            {
-                isCorrect = pWord == (reader["password"].ToString());
-            }
-
-            reader.Close();
-
-            if (isCorrect)
-            {
-                String getUserQuery = "SELECT * FROM " + DATABASE + ".users WHERE username = @username";
-
-                MySqlCommand getUserCmd = new MySqlCommand(getUserQuery, dbConn);
-
-                getUserCmd.Parameters.AddWithValue("username", uName);
-                MySqlDataReader userReader = getUserCmd.ExecuteReader();
-
-                User newUser;
-
-                if (userReader.Read())
-                {
-                    newUser = new User(
-                        (int)userReader["id"],
-                        uName,
-                        userReader["password"].ToString(),
-                        userReader["fname"].ToString(),
-                        userReader["lname"].ToString(),
-                        userReader["sex"].ToString(),
-                        userReader["class"].ToString(),
-                        userReader["height"].ToString(),
-                        userReader["weight"].ToString(),
-                        Int32.Parse(userReader["age"].ToString())
-                        );
-                    dbConn.Close();
-                    return newUser;
-                }
-                dbConn.Close();
-                return null;
-                
-            }
-            dbConn.Close();
-            return null;
-        }
-
-#endif
-
+        /// <param name="UserID">The user that the UserSettings applies to</param>
+        /// <returns>Return the newly created UserSettings</returns>
         public UserSettings CreateNewUserSettings(int UserID)
         {
             dbConn.Open();
@@ -305,12 +187,17 @@ namespace ComboCounter.Classes
 
         }
 
+        /// <summary>
+        /// Read the specified user settings from the database
+        /// </summary>
+        /// <param name="userID">The userID of the user we want UserSettings for</param>
+        /// <returns>The UserSettings retrieved from the database or a blank UserSettings if it is not successful</returns>
         public UserSettings ReadUserSettings(int userID) {
 
             dbConn.Open();
 
             string Query = "SELECT color_scheme, AscendingClock, TurnOffTimers, TurnOffVisualFeedback," +
-                    "TurnOffHitSounds, TurnOffMissSounds FROM " + DATABASE + ".user_settings " +
+                    "TurnOffHitSounds, TurnOffMissSounds, Use24HourClock FROM " + DATABASE + ".user_settings " +
                     "WHERE fk_user_id = @userID;";
 
             MySqlCommand readSettingsCmd = new MySqlCommand(Query, dbConn);
@@ -328,7 +215,8 @@ namespace ComboCounter.Classes
                     reader.GetBoolean("TurnOffTimers"),
                     reader.GetBoolean("TurnOffVisualFeedback"),
                     reader.GetBoolean("TurnOffHitSounds"),
-                    reader.GetBoolean("TurnOffMissSounds")
+                    reader.GetBoolean("TurnOffMissSounds"),
+                    reader.GetBoolean("Use24HourClock")
                     );
                 dbConn.Close();
                 return settings;
@@ -338,13 +226,21 @@ namespace ComboCounter.Classes
 
         }
 
+        /// <summary>
+        /// Sends an update query to the database to update the specified user's user settings
+        /// Currently all the settings are push at the same time regardless of how many settings are
+        /// updated
+        /// </summary>
+        /// <param name="userID">ID for the user who's settings are being updated</param>
+        /// <param name="userSettings">Setting data to be pushed to the database</param>
+        /// <returns>Returns a new usersettings if the database query is unsuccessful</returns>
         public UserSettings UpdateUserSettings (int userID, UserSettings userSettings)
         {
             string Query = "UPDATE " + DATABASE + ".user_settings " +
                 "SET color_scheme = @colorScheme, AscendingClock = @ascendingClock, " +
                 "TurnOffTimers = @turnOffTimers, TurnOffVisualFeedback = @TurnOffVisualFeedback, " +
-                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds " +
-                "WHERE fk_user_id = @userID";
+                "TurnOffHitSounds = @turnOffHitSounds, TurnOffMissSounds = @turnOffMissSounds ," +
+                "Use24HourClock = @use24hClock WHERE fk_user_id = @userID";
 
             dbConn.Open();
             MySqlCommand cmd = new MySqlCommand(Query, dbConn);
@@ -355,6 +251,7 @@ namespace ComboCounter.Classes
             cmd.Parameters.AddWithValue("TurnOffVisualFeedback", userSettings.TurnOffVisualFeedback);
             cmd.Parameters.AddWithValue("turnOffHitSounds", userSettings.TurnOffHitSounds);
             cmd.Parameters.AddWithValue("turnOffMissSounds", userSettings.TurnOffMissSounds);
+            cmd.Parameters.AddWithValue("use24hClock", userSettings.ToggleClock);
             cmd.Parameters.AddWithValue("userID", userID);
 
             int success = cmd.ExecuteNonQuery();
@@ -365,13 +262,53 @@ namespace ComboCounter.Classes
             }
             return new UserSettings();
 
+        }
+
+
+        public UsrAccount UpdateUserAccount(int userID, UsrAccount userAccount)
+        {
+            string Query = "UPDATE " + DATABASE + ".user " +
+                "SET username = @userName, password = @password, " +
+                "first_name = @firstName, last_name = @lastName, " +
+                "sex = @sex, birth_year = @year , height = @height ," +
+                "weight = @weight WHERE user_id = @userID";
+
+            dbConn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, dbConn);
+
+            cmd.Parameters.AddWithValue("userName", userAccount.UserName);
+            cmd.Parameters.AddWithValue("password", userAccount.Password);
+            cmd.Parameters.AddWithValue("firstName", userAccount.FirstName);
+            cmd.Parameters.AddWithValue("lastName", userAccount.LastName);
+            cmd.Parameters.AddWithValue("sex", userAccount.Sex);
+            cmd.Parameters.AddWithValue("height", userAccount.UserHeight);
+            cmd.Parameters.AddWithValue("weight", userAccount.UserWeight);
+            cmd.Parameters.AddWithValue("userID", userID);
+            cmd.Parameters.AddWithValue("year", userAccount.UserYear);
+
+            int success = cmd.ExecuteNonQuery();
+            dbConn.Close();
+            if (success >= 0)
+            {
+                return userAccount;
+            }
+            return new UsrAccount();
 
         }
 
+
+
+
+        /// <summary>
+        /// Retrieves all the Sessions for the specified user
+        /// This includes an additional DB call for each session to retrieve the data
+        /// </summary>
+        /// <param name="userID">User who's sessions we want to retrieve</param>
+        /// <returns>List of the Sessions that belong to the specified user</returns>
         public List<Session> GetSessions(int userID)
         {
 
-            string Query = "SELECT workout_sessionid, date " +
+            string Query = "SELECT workout_sessionid, date, workout_application " +
                 "FROM " + DATABASE + ".workout_sessions " +
                 "WHERE user_id = @user_id";
 
@@ -388,7 +325,7 @@ namespace ComboCounter.Classes
                 List<Session> sessions = new List<Session>();
                 while (reader.Read())
                 {
-                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid")));
+                    sessions.Add(new Session(reader.GetDateTime("date"), reader.GetInt32("workout_sessionid"), (WorkoutApplication)reader.GetInt16("workout_application")));
                 }
 
                 dbConn.Close();
@@ -409,6 +346,12 @@ namespace ComboCounter.Classes
 
         }
 
+        /// <summary>
+        /// Gets all the data from the specific session and adds it to the session
+        /// The sessionID variable is required to be set if not the session will retrieve the wrong data
+        /// </summary>
+        /// <param name="session">The session we want to add the data to</param>
+        /// <returns>The session with the correct data or null if the DB read was unsuccessful</returns>
         public Session AddDataToSession(Session session)
         {
             string Query = "SELECT `index`, `force`, `time_interval` " +
@@ -441,7 +384,12 @@ namespace ComboCounter.Classes
 
         }
         
-
+        /// <summary>
+        /// Retrieves a session from the database from the sessionID and sessionStart
+        /// </summary>
+        /// <param name="sessionID">The sessionID of the requested session</param>
+        /// <param name="sessionStart">Start date of the session</param>
+        /// <returns></returns>
         public Session GetSession(int sessionID, DateTime sessionStart)
         {
             string Query = "SELECT index, force, time_interval " +
@@ -511,10 +459,16 @@ namespace ComboCounter.Classes
 
         }
 
+        /// <summary>
+        /// Inserts a new workout session into the database to be associated to the specific user
+        /// </summary>
+        /// <param name="userID">The userID of the user that the session belongs to</param>
+        /// <param name="session">The session that is to be pushed to the database</param>
         public void InsertSession(int userID, Session session)
         {
-            string Query = "INSERT INTO " + DATABASE + ".workout_sessions (user_id, date)" +
-                "VALUES (@userID, @date);" +
+            // Inserts the session to the workout_sessions table
+            string Query = "INSERT INTO " + DATABASE + ".workout_sessions (user_id, date, workout_application)" +
+                "VALUES (@userID, @date @workoutApplication);" +
                 "SELECT LAST_INSERT_ID();";
 
             dbConn.Open();
@@ -523,6 +477,7 @@ namespace ComboCounter.Classes
 
             cmd.Parameters.AddWithValue("userID", userID);
             cmd.Parameters.AddWithValue("date", session.StartDate);
+            cmd.Parameters.AddWithValue("workoutApplication", session.application);
 
             int newSessionID;
 
@@ -537,6 +492,7 @@ namespace ComboCounter.Classes
                 return;
             }
 
+            // Inserts the hit data to the hit_data table
             string InsertHitQuery = "INSERT INTO " + DATABASE + ".hit_data (`index`, `force`, `time_interval`, `session_id`) " +
                 "VALUES (@index, @force, @time_interval, @sessionID);";
 
