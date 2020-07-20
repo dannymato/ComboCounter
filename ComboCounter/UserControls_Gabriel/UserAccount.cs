@@ -25,7 +25,7 @@ namespace ComboCounter.UserControls_Gabriel
                 password = UserManager.GetPassword();
                 fname = UserManager.GetFname();
                 lname = UserManager.GetLname();
-                P1User.Text = username;
+                textBox17.Text = username;
                 textBox18.Text = password;
 
         }
@@ -42,7 +42,7 @@ namespace ComboCounter.UserControls_Gabriel
             textBox5.Visible = true;
             textBox8.Visible = true;
             textBox9.Visible = true;
-           // textBox7.Visible = true;
+            textBox7.Visible = true;
             submit_b.Visible = true;
             panel1.Visible = false;
             panel2.Location = new Point((Width / 2) - (panel3.Width / 2) + 200, (Height / 2) - (panel3.Height / 2) + 150);
@@ -63,10 +63,8 @@ namespace ComboCounter.UserControls_Gabriel
             textBox5.Visible = false;
             textBox8.Visible = false;
             textBox9.Visible = false;
-          //  textBox7.Visible = false;
+            textBox7.Visible = false;
             submit_b.Visible = false;
-            panel2.Visible = false;
-            panel1.Visible = true;
         }
 
         private void UserAccount_Load(object sender, EventArgs e)
@@ -88,10 +86,13 @@ namespace ComboCounter.UserControls_Gabriel
             panel3.Location = new Point((Width / 2) - (panel3.Width / 2), (Height / 2) - (panel3.Height / 2));
             panel1.Location = new Point((panel3.Width / 2) - (panel1.Width / 2), (panel1.Height / 2) - (panel1.Height / 2) + 110);
             header11.Location = new Point((panel3.Width / 2) - (header11.Width / 2), 0);
-           
-            P1User.Text = UserManager.GetUsername();
-            P1Name.Text = UserManager.GetFname() + " " + UserManager.GetLname();
-            P1Class.Text = ClassDefiner.WeightDivision();
+            /**
+            panel1.Visible = false;
+            panel2.Visible = true;
+            panel2.Location = new Point((panel3.Width / 2) - (panel2.Width / 2), (panel2.Height / 2) - (panel2.Height / 2) + 110);
+            **/    
+    
+
 
         }
 
@@ -148,11 +149,6 @@ namespace ComboCounter.UserControls_Gabriel
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
