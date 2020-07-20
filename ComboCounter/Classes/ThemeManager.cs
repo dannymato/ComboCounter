@@ -173,9 +173,9 @@ namespace ComboCounter.Classes
             {
                 return ThemeConstants.Theme2BgColor;
             }
-            else if (t == 3)
+            else if (t == 2)
             {
-                return ThemeConstants.green;
+                return ThemeConstants.Theme3BgColor;
             }
             else
             {
@@ -217,9 +217,9 @@ namespace ComboCounter.Classes
             {
                 return ThemeConstants.HeaderTextColor2;
             }
-            else if (t == 3)
+            else if (t == 2)
             {
-                return ThemeConstants.green;
+                return ThemeConstants.HeaderTextColor3;
             }
             else
             {
@@ -238,9 +238,9 @@ namespace ComboCounter.Classes
             {
                 return ThemeConstants.H2TextColor2;
             }
-            else if (t == 3)
+            else if (t == 2)
             {
-                return ThemeConstants.green;
+                return ThemeConstants.H2TextColor3;
             }
             else
             {
@@ -275,7 +275,7 @@ namespace ComboCounter.Classes
             {
                 return ThemeConstants.red;
             }
-            else if (t == 3)
+            else if (t == 2)
             {
                 return ThemeConstants.green;
             }
@@ -295,9 +295,9 @@ namespace ComboCounter.Classes
             {
                 return ThemeConstants.Theme2TextColor;
             }
-            else if (t == 3)
+            else if (t == 2)
             {
-                return ThemeConstants.green;
+                return ThemeConstants.Theme3TextColor;
             }
             else
             {

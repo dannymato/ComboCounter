@@ -8,8 +8,8 @@ namespace ComboCounter.Classes
 {
     class ClassDefiner
     {
-        private static string sex;
-        static int weight;
+        private static string sex = UserManager.GetSex();
+        private static int weight = UserManager.GetWeight();
 
         private static string GetSex()
         {

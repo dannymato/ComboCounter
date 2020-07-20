@@ -39,9 +39,10 @@ public class ThemeConstants
 
             public static Color Theme2TextColor = white;
 
+
     //-------------------------
-            // THEME 2 (UR A PHYSCO MF BOI MODE)
-            public static Color Theme3BgColor = Color.FromArgb(0, 0, 0);
+            // THEME 3 ORIGINAL STYLING
+            public static Color Theme3BgColor = Color.FromArgb(16, 23, 30);
 
             // HEADER ELEMENTS
             public static Color HeaderTextColor3 = Color.FromArgb(29, 161, 242);
@@ -50,5 +51,18 @@ public class ThemeConstants
             public static Color H2TextColor3 = Color.FromArgb(255, 255, 255);
             public static Color H2HoverColor3 = Color.FromArgb(29, 161, 242);
             public static Color H2ClickColor3 = Color.FromArgb(200, 200, 200);
+
+            public static Color Theme3TextColor = Color.FromArgb(240, 255, 255, 255);
+
+
+    public static Color Theme4BgColor = Color.FromArgb(0, 0, 0);
+
+    // HEADER ELEMENTS
+    public static Color HeaderTextColor4 = Color.FromArgb(29, 161, 242);
+
+    // HEADER 2 ELEMENTS
+    public static Color H2TextColor4 = Color.FromArgb(255, 255, 255);
+    public static Color H2HoverColor4 = Color.FromArgb(29, 161, 242);
+    public static Color H2ClickColor4 = Color.FromArgb(200, 200, 200);
 }
 

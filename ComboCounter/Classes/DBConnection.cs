@@ -296,9 +296,6 @@ namespace ComboCounter.Classes
 
         }
 
-
-
-
         /// <summary>
         /// Retrieves all the Sessions for the specified user
         /// This includes an additional DB call for each session to retrieve the data
@@ -468,7 +465,7 @@ namespace ComboCounter.Classes
         {
             // Inserts the session to the workout_sessions table
             string Query = "INSERT INTO " + DATABASE + ".workout_sessions (user_id, date, workout_application)" +
-                "VALUES (@userID, @date @workoutApplication);" +
+                "VALUES (@userID, @date, @workoutApplication);" +
                 "SELECT LAST_INSERT_ID();";
 
             dbConn.Open();
