@@ -10,7 +10,7 @@ namespace ComboCounter.Classes
         private const String SERVER = "localhost";
         private const String DATABASE = "combo_counter";
         private const String UID = "root";
-        private const String PASSWORD = "root";
+        private const String PASSWORD = "1234";
         private static MySqlConnection dbConn;
 
         private static DBConnection instance;
@@ -262,6 +262,37 @@ namespace ComboCounter.Classes
             }
             return new UserSettings();
 
+        }
+
+
+        public UsrAccount UpdateUserAccount(int userID, UsrAccount userAccount)
+        {
+            string Query = "UPDATE " + DATABASE + ".user " +
+                "SET username = @userName, password = @password, " +
+                "first_name = @firstName, last_name = @lastName, " +
+                "sex = @sex, birth_year = @year , height = @height ," +
+                "weight = @weight WHERE user_id = @userID";
+
+            dbConn.Open();
+            MySqlCommand cmd = new MySqlCommand(Query, dbConn);
+
+            cmd.Parameters.AddWithValue("userName", userAccount.UserName);
+            cmd.Parameters.AddWithValue("password", userAccount.Password);
+            cmd.Parameters.AddWithValue("firstName", userAccount.FirstName);
+            cmd.Parameters.AddWithValue("lastName", userAccount.LastName);
+            cmd.Parameters.AddWithValue("sex", userAccount.Sex);
+            cmd.Parameters.AddWithValue("height", userAccount.UserHeight);
+            cmd.Parameters.AddWithValue("weight", userAccount.UserWeight);
+            cmd.Parameters.AddWithValue("userID", userID);
+            cmd.Parameters.AddWithValue("year", userAccount.UserYear);
+
+            int success = cmd.ExecuteNonQuery();
+            dbConn.Close();
+            if (success >= 0)
+            {
+                return userAccount;
+            }
+            return new UsrAccount();
 
         }
 

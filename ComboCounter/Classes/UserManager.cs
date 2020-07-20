@@ -1,10 +1,12 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 
 namespace ComboCounter.Classes
 {
     class UserManager
     {
+        /**
 
         private static int id;
         private static string username;
@@ -16,26 +18,29 @@ namespace ComboCounter.Classes
         private static int weight;
         private static int year;
 
-        private static UserSettings _UserSettings;
+            **/
 
+        private static UserSettings _UserSettings;
+        private static UsrAccount _UsrAccount;
+        //private static User _UsrAccount;
 
         public static void setUser(User user)
         {
-            id = user.Id;
-            username = user.Username;
-            password = user.Password;
-            fname = user.fname;
-            lname = user.lname;
-            sex = user.sex;
-            height = user.height;
-            weight = user.weight;
+            _UsrAccount.Id = user.Id;
+            _UsrAccount.UserName = user.Username;
+            _UsrAccount.Password = user.Password;
+            _UsrAccount.FirstName = user.fname;
+            _UsrAccount.LastName = user.lname;
+            _UsrAccount.Sex = user.sex;
+            _UsrAccount.UserHeight = user.height;
+            _UsrAccount.UserWeight = user.weight;
         }
 
         // GETTER SETTER ID
-        public static int GetId() { return id; }
+        public static int GetId() { return _UsrAccount.Id; }
 
         private static void SetId(int value)
-        { id = value; }
+        { _UsrAccount.Id = value; }
 
         public static User currentUser { get; set; }
 
@@ -44,110 +49,153 @@ namespace ComboCounter.Classes
         // GETTER SETTER USERNAME
         public static string GetUsername()
         {
-            return username;
+            return _UsrAccount.UserName;
         }
 
         private static void SetUsername(string value)
         {
-            username = value;
+            _UsrAccount.UserName = value;
         }
 
 
         // GETTER SETTER PASSWORD
         public static string GetPassword()
         {
-            return password;
+            return _UsrAccount.Password;
         }
 
         private static void SetPassword(string value)
         {
-            password = value;
+            _UsrAccount.Password = value;
         }
 
         // GETTER SETTER FNAME
 
         public static string GetFname()
         {
-            return fname;
+            return _UsrAccount.FirstName;
         }
 
         public static void SetFname(string value)
         {
-            fname = value;
+            _UsrAccount.FirstName = value;
         }
 
         public static string GetLname()
         {
-            return lname;
+            return _UsrAccount.LastName;
         }
 
         public static void SetLname(string value)
         {
-            lname = value;
+            _UsrAccount.LastName = value;
         }
 
         // GETTER SETTER SEX
         public static string GetSex()
         {
-            return sex;
+            return _UsrAccount.Sex;
         }
 
+        /**
         public static void SetSex(string value)
         {
-            sex = value;
+            _UsrAccount.Sex = value;
         }
 
         public static void SetHeight(int value)
         {
-            height = value;
+            _UsrAccount.UserHeight = value;
         }
+        **/
+        public static int GetHeight() { return _UsrAccount.UserHeight; }
 
-        public static int GetHeight() { return height; }
+        public static void SetWeight(int value) { _UsrAccount.UserWeight = value; }
 
-        public static void SetWeight(int value) { weight = value; }
+        public static int GetWeight() { return _UsrAccount.UserWeight; }
 
-        public static int GetWeight() { return weight; }
+        public static int GetYear() { return _UsrAccount.UserYear; }
 
-        public static int GetYear() { return year; }
-
-        public static void SetYear(int value) { year = value; }
+        public static void SetYear(int value) { _UsrAccount.UserYear = value; }
 
         public static void ChangeAscendingClock(bool ascendingClock)
         {
             _UserSettings.AscendingClock = ascendingClock;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
         public static void ChangeTurnOffTimer(bool turnOffTimer)
         {
             _UserSettings.TurnOffTimers = turnOffTimer;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
         public static void ChangeTurnOffVisualFeedback(bool visualFeedback)
         {
             _UserSettings.TurnOffVisualFeedback = visualFeedback;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
         public static void ChangeHitSounds(bool hitSounds)
         {
             _UserSettings.TurnOffHitSounds = hitSounds;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
         public static void ChangeMissSounds(bool missSounds)
         {
             _UserSettings.TurnOffMissSounds = missSounds;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
         public static void ChangeColorScheme(int colorScheme)
         {
             _UserSettings.ColorScheme = colorScheme;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
 
         public static void ChangeClockToggle(bool toggleClock)
         {
             _UserSettings.ToggleClock = toggleClock;
-            DBConnection.getInstance().UpdateUserSettings(id, _UserSettings);
+            DBConnection.getInstance().UpdateUserSettings(_UsrAccount.Id, _UserSettings);
         }
+
+        // USER ACCCOUNT SETTERS
+       
+       
+
+        public static void ChangeUserName(string username)
+        {
+            _UsrAccount.UserName = username;
+            DBConnection.getInstance().UpdateUserAccount(_UsrAccount.Id, _UsrAccount);
+        }
+
+        public static void ChangeFirstName(string firstname)
+        {
+            _UsrAccount.FirstName = firstname;
+            DBConnection.getInstance().UpdateUserAccount(_UsrAccount.Id, _UsrAccount);
+        }
+
+        public static void ChangeLastName(string lastname)
+        {
+            _UsrAccount.LastName = lastname;
+            DBConnection.getInstance().UpdateUserAccount(_UsrAccount.Id, _UsrAccount);
+        }
+
+
+        public static void ChangeWeight(int weight)
+        {
+            _UsrAccount.UserWeight = weight;
+            DBConnection.getInstance().UpdateUserAccount(_UsrAccount.Id, _UsrAccount);
+        }
+
+        public static void ChangeHeight(int height)
+        {
+            _UsrAccount.UserHeight = height;
+            DBConnection.getInstance().UpdateUserAccount(_UsrAccount.Id, _UsrAccount);
+        }
+
+        public static void ChangeSex(string sex)
+        {
+            _UsrAccount.Sex = sex.ToUpper();
+            DBConnection.getInstance().UpdateUserAccount(_UsrAccount.Id, _UsrAccount);
+        }
+
 
 
         public static bool AscendingClockSetting() { return _UserSettings.AscendingClock; }
@@ -196,6 +244,42 @@ namespace ComboCounter.Classes
             TurnOffHitSounds = turnOffHitSounds;
             TurnOffMissSounds = turnOffMissSounds;
             ToggleClock = toggleClock;
+        }
+    }
+
+    struct UsrAccount
+    {
+        public int Id;
+
+        public string UserName;
+
+        public string Password;
+
+        public string FirstName;
+
+        public string LastName;
+
+        public string Sex;
+
+        public int UserHeight;
+
+        public int UserWeight;
+
+        public int UserYear;
+
+
+        public UsrAccount(int idd, string username, string password, string firstname,
+            string lastname, string sex, int userheight, int userweight, int useryear)
+        {
+            Id = idd;
+            UserName = username;
+            Password = password;
+            FirstName = firstname;
+            LastName = lastname;
+            Sex = sex;
+            UserHeight = userheight;
+            UserWeight = userweight;
+            UserYear = useryear;
         }
     }
 

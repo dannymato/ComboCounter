@@ -8,6 +8,13 @@ namespace ComboCounter.UserControls_Gabriel
 {
     public partial class UserAccount : BaseFormControl
     {
+        public bool firstNameBool = false;
+        public bool lastNameBool = false;
+        public bool sexBool = false;
+        public bool weightBool = false;
+        public bool heightBool = false;
+
+
 
         public UserAccount()
         {
@@ -36,12 +43,12 @@ namespace ComboCounter.UserControls_Gabriel
 
             username_tb.Visible = true;
             textBox2.Visible = true;
-            textBox1.Visible = true;
-            textBox3.Visible = true;
-            textBox4.Visible = true;
-            textBox5.Visible = true;
-            textBox8.Visible = true;
-            textBox9.Visible = true;
+            p2Fn.Visible = true;
+            p2Ln.Visible = true;
+          //  textBox4.Visible = true;
+            p2Sex.Visible = true;
+            p2Height.Visible = true;
+            p2Weight.Visible = true;
            // textBox7.Visible = true;
             submit_b.Visible = true;
             panel1.Visible = false;
@@ -57,16 +64,35 @@ namespace ComboCounter.UserControls_Gabriel
         {
             username_tb.Visible = false;
             textBox2.Visible = false;
-            textBox1.Visible = false;
-            textBox3.Visible = false;
-            textBox4.Visible = false;
-            textBox5.Visible = false;
-            textBox8.Visible = false;
-            textBox9.Visible = false;
+            p2Fn.Visible = false;
+            p2Ln.Visible = false;
+          //  textBox4.Visible = false;
+            p2Sex.Visible = false;
+            p2Height.Visible = false;
+            p2Weight.Visible = false;
           //  textBox7.Visible = false;
             submit_b.Visible = false;
             panel2.Visible = false;
             panel1.Visible = true;
+        
+
+
+            if(firstNameBool == true)
+            { UserManager.ChangeFirstName(p2Fn.Text); }
+
+            if(lastNameBool == true)
+            { UserManager.ChangeLastName(p2Ln.Text); }
+            
+            if(sexBool == true)
+            { UserManager.ChangeSex(p2Sex.Text); }
+
+            if(weightBool == true)
+            { UserManager.ChangeWeight(Int32.Parse(p2Weight.Text)); }
+
+            if(heightBool == true)
+            { UserManager.ChangeHeight(Int32.Parse(p2Height.Text)); }
+            
+
         }
 
         private void UserAccount_Load(object sender, EventArgs e)
@@ -92,6 +118,8 @@ namespace ComboCounter.UserControls_Gabriel
             P1User.Text = UserManager.GetUsername();
             P1Name.Text = UserManager.GetFname() + " " + UserManager.GetLname();
             P1Class.Text = ClassDefiner.WeightDivision();
+
+            username_tb.Text = UserManager.GetUsername();
 
         }
 
@@ -157,11 +185,29 @@ namespace ComboCounter.UserControls_Gabriel
 
         }
 
-        /**
-        private void button1(object sender, EventArgs e)
+        private void p2Weight_TextChanged(object sender, EventArgs e)
         {
-
+            weightBool = true;
         }
-        **/
+
+        private void p2Height_TextChanged(object sender, EventArgs e)
+        {
+            heightBool = true;
+        }
+
+        private void p2Fn_TextChanged(object sender, EventArgs e)
+        {
+            firstNameBool = true;
+        }
+
+        private void p2Ln_TextChanged(object sender, EventArgs e)
+        {
+            lastNameBool = true;
+        }
+
+        private void p2Sex_TextChanged(object sender, EventArgs e)
+        {
+            sexBool = true;
+        }
     }
 }
